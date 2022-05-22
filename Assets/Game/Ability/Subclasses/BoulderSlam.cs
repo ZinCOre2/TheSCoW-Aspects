@@ -9,9 +9,14 @@ public class BoulderSlam : Ability
         {
             return; // Not enough energy
         }
+        if (abilityData.tpCost > user.time)
+        {
+            return; // Not enough energy
+        }
 
         base.UseAbility(user, aoe);
         user.ChangeEnergy(-abilityData.epCost);
+        user.ChangeTime(-abilityData.tpCost);        
 
         Unit target;
         foreach (PathNode pathNode in aoe)
@@ -19,7 +24,7 @@ public class BoulderSlam : Ability
             AbilityEffect aEffect;
             aEffect = ObjectPooler.Instance.SpawnFromPool(abilityEffect.EffectTag, pathNode.node.transform.position, abilityEffect.transform.rotation).GetComponent<AbilityEffect>();
 
-            target = SceneController.Instance.Grid.GetUnitOnNode(pathNode.node.Coords);
+            target = GameController.Instance.Grid.GetUnitOnNode(pathNode.node.Coords);
             if (target && target.TeamId != 0 && target.TeamId != user.TeamId)
             {
                 target.ChangeHealth(-abilityData.values[0]);

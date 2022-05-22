@@ -26,5 +26,6 @@ MonoBehaviour:
   maxRange: 0
   minAreaRange: 0
   maxAreaRange: 0
-  epCost: 0
+  epCost: 5
+  tpCost: 15
   values: 00000000

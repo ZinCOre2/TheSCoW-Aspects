@@ -7,11 +7,14 @@ using UnityEngine;
 public class UIAbility : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, IPointerExitHandler
 {
     public event Action<Ability, int> OnAbilitySelect;
+    
+    public Transform ScaledCardHolder;    
 
-    [SerializeField] private float scaleOnHover = 2f, scaleOnSelected = 1.3f;
+    [SerializeField] private float scaleOnHover = 2.5f, scaleOnSelected = 1f;
     [SerializeField] private Image icon;
-    [SerializeField] private Image cardBack;
-    [SerializeField] private TextMeshProUGUI cardName, description, epCost, range, area;
+    [SerializeField] private TextMeshProUGUI cardName, description, epCost, tpCost, range, area;
+    [SerializeField] private GameObject[] aspectCovers = new GameObject[4];
+    [SerializeField] private TextMeshProUGUI[] aspectDedications = new TextMeshProUGUI[4]; 
 
     public float ScaleOnSelected { get { return scaleOnSelected; } private set { scaleOnSelected = value; } }
     public int Id { get; private set; }
@@ -27,12 +30,27 @@ public class UIAbility : MonoBehaviour, IPointerClickHandler, IPointerEnterHandl
             if (cardName != null) cardName.text = ability.AbilityInfo.cardName;
             if (description != null) description.text = ability.AbilityInfo.description;
             if (epCost != null) epCost.text = ability.AbilityInfo.epCost.ToString();
-            if (range != null) range.text = ability.AbilityInfo.minRange.ToString() + "-" + ability.AbilityInfo.maxRange.ToString();
-            if (area != null) area.text = ability.AbilityInfo.minAreaRange.ToString() + "-" + ability.AbilityInfo.maxAreaRange.ToString();
+            if (tpCost != null) tpCost.text = ability.AbilityInfo.tpCost.ToString();
+            if (range != null) range.text = ability.AbilityInfo.minRange.ToString() + "\n-\n" + ability.AbilityInfo.maxRange.ToString();
+            if (area != null) area.text = ability.AbilityInfo.minAreaRange.ToString() + "\n-\n" + ability.AbilityInfo.maxAreaRange.ToString();
+            
+            for (var i = 0; i < 4; i++)
+            {
+                if (aspectDedications[i] != null)
+                {
+                    aspectDedications[i].text = $"{ability.AbilityInfo.Dedications[i].Value}";
+                    aspectDedications[i].gameObject.SetActive(ability.AbilityInfo.Dedications[i].IsUsable);
+                }
+                
+                if (aspectCovers[i] != null)
+                {
+                    aspectCovers[i].SetActive(!ability.AbilityInfo.Dedications[i].IsUsable);
+                }
+            }
         }
         else
         {
-            if (UIController.Instance.selectedAbilityId == Id)
+            if (GameController.Instance.UIController.selectedAbilityId == Id)
             {
                 transform.localScale = Vector3.one;
                 if (TryGetComponent(out Image image))
@@ -44,18 +62,27 @@ public class UIAbility : MonoBehaviour, IPointerClickHandler, IPointerEnterHandl
         }
     }
 
+    public void SetAbility(AbilityHolder.AType aType)
+    {
+        var abl = GameController.Instance.AbilityHolder.GetAbility(aType);
+        
+        SetAbility(abl);
+    }
+
     public void OnPointerClick(PointerEventData eventData)
     {
         if (ability)
+        {
             OnAbilitySelect?.Invoke(ability, Id);
+        }
     }
     public void OnPointerEnter(PointerEventData eventData)
     {
-        transform.localScale = Vector3.one * scaleOnHover;
+        ScaledCardHolder.localScale = Vector3.one * scaleOnHover;
         transform.SetAsLastSibling();
     }
     public void OnPointerExit(PointerEventData eventData)
     {
-        transform.localScale = Vector3.one;
+        ScaledCardHolder.localScale = Vector3.one;
     }
 }

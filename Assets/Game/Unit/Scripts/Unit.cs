@@ -8,10 +8,12 @@ public class Unit : Entity
 {
     public event Action<Unit, int> OnHealthChanged;
     public event Action<Unit, int> OnEnergyChanged;
+    public event Action<Unit, int> OnTimeChanged;
     public event Action<Unit> OnUnitDeath;
     public event Action OnFinishAbilityUse;
 
-    [Header("General")]
+    [Header("General")] 
+    [SerializeField] private UnitBarPack unitBarPack;
     [SerializeField] private UnitData unitData;
     [SerializeField] private Animator animator;
     [SerializeField] private float moveSpeed = 50f;
@@ -19,28 +21,33 @@ public class Unit : Entity
     [SerializeField] private GameObject marker;
     [SerializeField] private MeshRenderer highlight;
     [SerializeField] private int teamId;
-
-    [Header("Abilities")]
-    [SerializeField] private List<AbilityHolder.AType> deck = new List<AbilityHolder.AType>();
-
+    
     // Stats
     public int health { get; private set; }
     public int energy { get; private set; }
+    public int time { get; private set; }
+
     // General
-    public UnitData UnitData_ { get { return unitData; } private set { unitData = value; } }
+    public UnitData UnitData { get { return unitData; } private set { unitData = value; } }
     public Animator AnimatorUnit { get { return animator; } private set { animator = value; } }
     public int TeamId { get { return teamId; } private set { teamId = value; } }
     // Abilities
-    public List<AbilityHolder.AType> drawPile { get; private set; } = new List<AbilityHolder.AType>();
-    public AbilityHolder.AType[] hand { get; private set; } = new AbilityHolder.AType[6];
-    public List<AbilityHolder.AType> discardPile { get; private set; } = new List<AbilityHolder.AType>();
+    public DeckManager DeckManager = new DeckManager();
 
     public bool usingAbility { get; private set; } = false;
 
+    private UnitBarPack _boundBarPack;
+
     private void Start()
     {
-        SceneController.Instance.Grid.unitList.Add(this);
-        SceneController.Instance.OnUnitSelect += MarkerUnit;
+        if (unitBarPack != null)
+        {
+            _boundBarPack = Instantiate(unitBarPack, GameController.Instance.UIController.WorldUIParent);
+            _boundBarPack.BindUnit(this);
+        }
+
+        GameController.Instance.Grid.unitList.Add(this);
+        GameController.Instance.SceneController.OnUnitSelect += MarkerUnit;
 
         marker.SetActive(false);
         SetNearbyCoordsAndPosition();
@@ -49,11 +56,12 @@ public class Unit : Entity
 
         health = unitData.maxHealth;
         energy = unitData.maxEnergy;
+        time = unitData.maxTime;
 
-        drawPile = deck;
+        DeckManager.SetStartingDeck(UnitData.StartingDeck);
         for (int i = 0; i < 3; i++)
         {
-            DrawCard();
+            DeckManager.DrawCard();
         }
         switch (teamId)
         {
@@ -71,11 +79,13 @@ public class Unit : Entity
         {
             if (unit == this)
             {
-                SceneController.Instance.OnUnitSelect -= MarkerUnit;
+                GameController.Instance.SceneController.OnUnitSelect -= MarkerUnit;
+                Destroy(_boundBarPack.gameObject);
+                
                 Destroy(pivot.gameObject, 3f);
             }
         };
-        OnUnitDeath += SceneController.Instance.UnitDeath;
+        OnUnitDeath += GameController.Instance.SceneController.UnitDeath;
     }
 
     private Vector2Int GetNearbyCoords(Vector3 startPoint, Vector2Int gridSize, float nodeSize)
@@ -91,16 +101,16 @@ public class Unit : Entity
     {
         Vector2Int testCoords;
 
-        testCoords = GetNearbyCoords(SceneController.Instance.transform.position, new Vector2Int(SceneController.Instance.Grid.XSize,
-            SceneController.Instance.Grid.YSize), SceneController.Instance.Grid.NodeSize);
+        testCoords = GetNearbyCoords(GameController.Instance.Grid.transform.position, new Vector2Int(GameController.Instance.Grid.XSize,
+            GameController.Instance.Grid.YSize), GameController.Instance.Grid.NodeSize);
         if (testCoords != new Vector2Int(-1, -1))
         {
             coords = testCoords;
         }
-        pivot.transform.position = SceneController.Instance.transform.position +
-                new Vector3(coords.x * SceneController.Instance.Grid.NodeSize, pivot.transform.position.y, coords.y * SceneController.Instance.Grid.NodeSize);
+        pivot.transform.position = GameController.Instance.Grid.transform.position +
+                new Vector3(coords.x * GameController.Instance.Grid.NodeSize, pivot.transform.position.y, 
+                    coords.y * GameController.Instance.Grid.NodeSize);
     }
-
     private void MarkerUnit(Unit unit)
     {
         if (unit == this)
@@ -110,6 +120,7 @@ public class Unit : Entity
         }
         marker?.SetActive(false);
     }
+    
     public void ChangeHealth(int value)
     {
         health += value;
@@ -134,54 +145,11 @@ public class Unit : Entity
         energy = Mathf.Clamp(energy, 0, unitData.maxEnergy);
         OnEnergyChanged?.Invoke(this, energy);
     }
-
-    public bool DrawCard()
+    public void ChangeTime(int value)
     {
-        Ability card;
-        int handIndex = -1;
-
-        // Find free card slot in hand, else don't draw and exit method w/ false
-        for (int i = 0; i < 6; i++)
-        {
-            if (hand[i] == AbilityHolder.AType.None)
-            {
-                handIndex = i;
-                break;
-            }
-        }
-        if (handIndex == -1) { return false; }
-
-        // Draw card. If draw pile is empty, shuffle discard pile in it and check again (in case of both empty piles)
-        if (drawPile.Count <= 0)
-        {
-            drawPile = discardPile;
-            discardPile = new List<AbilityHolder.AType>();
-        }
-        if (drawPile.Count > 0)
-        {
-            int index = UnityEngine.Random.Range(0, drawPile.Count - 1);
-            card = AbilityHolder.Instance.GetAbility(drawPile[index]);
-            hand[handIndex] = drawPile[index];
-            UIController.Instance.AbilitySlots[handIndex + 1].gameObject.SetActive(true);
-            UIController.Instance.AbilitySlots[handIndex + 1].SetAbility(card);
-
-            drawPile.RemoveAt(index);
-            return true;
-        }
-        
-        return false;
-    }
-    public void DiscardCard(int index)
-    {
-        if (hand[index] != AbilityHolder.AType.None)
-        {
-            AbilityHolder.AType discardedCard = hand[index];
-            discardPile.Add(discardedCard);
-
-            hand[index] = new AbilityHolder.AType();
-            hand[index] = AbilityHolder.AType.None;
-            UIController.Instance.AbilitySlots[index + 1].SetAbility(null);
-        }
+        time += value;
+        time = Mathf.Clamp(time, 0, unitData.maxTime);
+        OnTimeChanged?.Invoke(this, time);
     }
 
     public IEnumerator MoveByPath(List<PathNode> path)

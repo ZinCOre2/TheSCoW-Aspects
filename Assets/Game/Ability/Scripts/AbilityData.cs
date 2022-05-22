@@ -17,5 +17,7 @@ public class AbilityData : ScriptableObject
     public int minRange, maxRange, minAreaRange, maxAreaRange;
     [Header("Ability Data")]
     public int epCost;
+    public int tpCost;
+    public AspectDedication[] Dedications = new AspectDedication[4];
     public List<int> values;
 }

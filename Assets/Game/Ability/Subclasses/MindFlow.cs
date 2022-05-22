@@ -9,17 +9,22 @@ public class MindFlow : Ability
         {
             return; // Not enough energy
         }
-
+        if (abilityData.tpCost > user.time)
+        {
+            return; // Not enough energy
+        }
+        
         base.UseAbility(user, aoe);
         user.ChangeEnergy(-abilityData.epCost);
-
+        user.ChangeTime(-abilityData.tpCost);
+        
         AbilityEffect aEffect;
         aEffect = ObjectPooler.Instance.SpawnFromPool(abilityEffect.EffectTag, 
-            SceneController.Instance.Grid.nodeList[user.Coords.x, user.Coords.y].transform.position, abilityEffect.transform.rotation).GetComponent<AbilityEffect>();
+            GameController.Instance.Grid.nodeList[user.Coords.x, user.Coords.y].transform.position, abilityEffect.transform.rotation).GetComponent<AbilityEffect>();
 
-        for (int i = 0; i < 2; i++)
+        for (var i = 0; i < 2; i++)
         {
-            user.DrawCard();
+            user.DeckManager.DrawCard();
         }
     }
 }

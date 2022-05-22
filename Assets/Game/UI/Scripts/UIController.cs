@@ -6,17 +6,18 @@ using UnityEngine;
 
 public class UIController : MonoBehaviour
 {
-    public static UIController Instance;
-
-    [SerializeField] private GameObject unitDataPanel;
+    public Transform WorldUIParent;
+    [SerializeField] private UnitDataPanel unitDataPanel;
 
     [Header("Unit Data")]
     [SerializeField] private Image portrait;
     [SerializeField] private TextMeshProUGUI unitNameText;
-    [SerializeField] private Image hpBar, epBar;
-    [SerializeField] private TextMeshProUGUI hpStateText, epStateText, hpRegenText, epRegenText, moveCostText, powerText, defenceText;
+    [SerializeField] private Image hpBar, epBar, tpBar;
+    [SerializeField] private TextMeshProUGUI hpStateText, epStateText, tpStateText, hpRegenText, epRegenText, powerText, defenceText;
     [SerializeField] private UIAbility[] abilitySlots = new UIAbility[7];
     [SerializeField] private Image[] cardBacks = new Image[6];
+    
+    
     [SerializeField] private TextMeshProUGUI gameTimer;
 
     public UIAbility[] AbilitySlots { get { return abilitySlots; } private set { abilitySlots = value; } }
@@ -25,26 +26,18 @@ public class UIController : MonoBehaviour
     public void SetId(int id) { selectedAbilityId = id; }
 
     private float _gameTime = 0f;
-
-    private void Awake()
-    {
-        if (Instance)
-        {
-            Destroy(gameObject);
-            return;
-        }
-        Instance = this;
-    }
+    
     private void Start()
     {
-        SceneController.Instance.OnUnitSelect += ShowUnitUI;
-        SceneController.Instance.OnTurnEnd += () =>
+        GameController.Instance.SceneController.OnUnitSelect += ShowUnitUI;
+        GameController.Instance.SceneController.OnTurnEnd += () =>
         {
-            unitDataPanel.SetActive(false);
+            unitDataPanel.gameObject.SetActive(false);
             if (selectedUnit)
             {
                 selectedUnit.OnHealthChanged -= UnitHealthChanged;
                 selectedUnit.OnEnergyChanged -= UnitEnergyChanged;
+                selectedUnit.OnTimeChanged -= UnitTimeChanged;
                 selectedUnit.OnUnitDeath -= UnitDeath;
                 selectedUnit = null;
             }
@@ -57,12 +50,12 @@ public class UIController : MonoBehaviour
                 {
                     if (uiAbility.Id == id)
                     {
-                        uiAbility.transform.localScale *= uiAbility.ScaleOnSelected;
+                        uiAbility.ScaledCardHolder.localScale *= uiAbility.ScaleOnSelected;
                         selectedImage.color = Color.green;
 
                         if (abilitySlots[selectedAbilityId].TryGetComponent(out Image prevImage))
                         {
-                            abilitySlots[selectedAbilityId].transform.localScale /= abilitySlots[selectedAbilityId].ScaleOnSelected;
+                            abilitySlots[selectedAbilityId].ScaledCardHolder.localScale /= abilitySlots[selectedAbilityId].ScaleOnSelected;
                             prevImage.color = Color.white;
                         }
 
@@ -71,18 +64,18 @@ public class UIController : MonoBehaviour
                 }
             };
         }
-        unitDataPanel.SetActive(false);
+        unitDataPanel.gameObject.SetActive(false);
     }
     public void SetSelectedId(int id)
     {
         if (abilitySlots[id].TryGetComponent(out Image selectedImage))
         {
-            abilitySlots[id].transform.localScale *= abilitySlots[id].ScaleOnSelected;
+            abilitySlots[id].ScaledCardHolder.localScale *= abilitySlots[id].ScaleOnSelected;
             selectedImage.color = Color.green;
 
             if (abilitySlots[selectedAbilityId].TryGetComponent(out Image prevImage))
             {
-                abilitySlots[selectedAbilityId].transform.localScale /= abilitySlots[selectedAbilityId].ScaleOnSelected;
+                abilitySlots[selectedAbilityId].ScaledCardHolder.localScale /= abilitySlots[selectedAbilityId].ScaleOnSelected;
                 prevImage.color = Color.white;
             }
 
@@ -97,14 +90,18 @@ public class UIController : MonoBehaviour
 
     public void ShowUnitUI(Unit unit)
     {
-        if (unit.TeamId - 1 != SceneController.Instance.turnId)
+        if (unit.TeamId - 1 != GameController.Instance.SceneController.turnId)
         {
             for (int i = 0; i < 6; i++)
             {
-                if (unit.hand[i] != AbilityHolder.AType.None)
+                if (unit.DeckManager.Hand[i] != AbilityHolder.AType.None)
+                {
                     cardBacks[i].gameObject.SetActive(true);
+                }
                 else
+                {
                     cardBacks[i].gameObject.SetActive(false);
+                }
             }
         }
         else
@@ -117,42 +114,45 @@ public class UIController : MonoBehaviour
         {
             selectedUnit.OnHealthChanged -= UnitHealthChanged;
             selectedUnit.OnEnergyChanged -= UnitEnergyChanged;
+            selectedUnit.OnTimeChanged -= UnitTimeChanged;
             selectedUnit.OnUnitDeath -= UnitDeath;
         }
         selectedUnit = unit;
         selectedUnit.OnHealthChanged += UnitHealthChanged;
         selectedUnit.OnEnergyChanged += UnitEnergyChanged;
+        selectedUnit.OnTimeChanged += UnitTimeChanged;
         selectedUnit.OnUnitDeath += UnitDeath;
 
-        unitDataPanel.SetActive(true);
+        unitDataPanel.gameObject.SetActive(true);
 
-        unitNameText.text = unit.UnitData_.unitName;
-        portrait.sprite = unit.UnitData_.portrait;
+        unitNameText.text = unit.UnitData.unitName;
+        portrait.sprite = unit.UnitData.portrait;
 
-        hpBar.fillAmount = unit.health / (float)unit.UnitData_.maxHealth;
-        hpStateText.text = unit.health.ToString() + "/\n" + unit.UnitData_.maxHealth.ToString();
-        hpRegenText.text = "+" + unit.UnitData_.hpRegen.ToString();
+        hpBar.fillAmount = unit.health / (float)unit.UnitData.maxHealth;
+        hpStateText.text = unit.health.ToString() + "\n/\n" + unit.UnitData.maxHealth.ToString();
+        hpRegenText.text = "+" + unit.UnitData.hpRegen.ToString();
 
-        epBar.fillAmount = unit.energy / (float)unit.UnitData_.maxEnergy;
-        epStateText.text = unit.energy.ToString() + "/\n" + unit.UnitData_.maxEnergy.ToString();
-        epRegenText.text = "+" + unit.UnitData_.epRegen.ToString();
-
-        moveCostText.text = unit.UnitData_.moveCost.ToString();
-        powerText.text = unit.UnitData_.power.ToString();
-        defenceText.text = unit.UnitData_.defence.ToString();
-
-
+        epBar.fillAmount = unit.energy / (float)unit.UnitData.maxEnergy;
+        epStateText.text = unit.energy.ToString() + "\n/\n" + unit.UnitData.maxEnergy.ToString();
+        epRegenText.text = "+" + unit.UnitData.epRegen.ToString();
+        
+        tpBar.fillAmount = unit.time / (float)unit.UnitData.maxTime;
+        tpStateText.text = unit.time.ToString() + "\n/\n" + unit.UnitData.maxTime.ToString();
+        
+        powerText.text = unit.UnitData.power.ToString();
+        defenceText.text = unit.UnitData.defence.ToString();
+        
         if (abilitySlots[selectedAbilityId].TryGetComponent(out Image prevImage))
         {
             abilitySlots[selectedAbilityId].transform.localScale = Vector3.one;
             prevImage.color = Color.white;
         }
-        abilitySlots[0].SetAbility(AbilityHolder.Instance.GetAbility(AbilityHolder.AType.Move));
-        SceneController.Instance.SetSelectedAbility(abilitySlots[0].ability);
+        abilitySlots[0].SetAbility(GameController.Instance.AbilityHolder.GetAbility(AbilityHolder.AType.Move));
+        GameController.Instance.SceneController.SetSelectedAbility(abilitySlots[0].ability);
         abilitySlots[0].SetId(0);
         if (abilitySlots[0].TryGetComponent(out Image image))
         {
-            abilitySlots[0].transform.localScale = Vector3.one * abilitySlots[0].ScaleOnSelected;
+            abilitySlots[0].ScaledCardHolder.localScale = Vector3.one * abilitySlots[0].ScaleOnSelected;
             image.color = Color.green;
         }
         selectedAbilityId = 0;
@@ -161,7 +161,7 @@ public class UIController : MonoBehaviour
         {
             abilitySlots[i].gameObject.SetActive(true);
             abilitySlots[i].SetId(i);
-            abilitySlots[i].SetAbility(AbilityHolder.Instance.GetAbility(selectedUnit.hand[i - 1]));
+            abilitySlots[i].SetAbility(GameController.Instance.AbilityHolder.GetAbility(selectedUnit.DeckManager.Hand[i - 1]));
         }       
     }
 
@@ -169,16 +169,24 @@ public class UIController : MonoBehaviour
     {
         if (selectedUnit == unit)
         {
-            hpBar.fillAmount = newHealth / (float)unit.UnitData_.maxHealth;
-            hpStateText.text = newHealth.ToString() + "/\n" + unit.UnitData_.maxHealth.ToString();
+            hpBar.fillAmount = newHealth / (float)unit.UnitData.maxHealth;
+            hpStateText.text = newHealth.ToString() + "\n/\n" + unit.UnitData.maxHealth.ToString();
         }
     }
     private void UnitEnergyChanged(Unit unit, int newEnergy)
     {
         if (selectedUnit == unit)
         {
-            epBar.fillAmount = newEnergy / (float)unit.UnitData_.maxEnergy;
-            epStateText.text = newEnergy.ToString() + "/\n" + unit.UnitData_.maxEnergy.ToString();
+            epBar.fillAmount = newEnergy / (float)unit.UnitData.maxEnergy;
+            epStateText.text = newEnergy.ToString() + "\n/\n" + unit.UnitData.maxEnergy.ToString();
+        }
+    }
+    private void UnitTimeChanged(Unit unit, int newTime)
+    {
+        if (selectedUnit == unit)
+        {
+            tpBar.fillAmount = newTime / (float)unit.UnitData.maxTime;
+            tpStateText.text = newTime.ToString() + "\n/\n" + unit.UnitData.maxTime.ToString();
         }
     }
     private void UnitDeath(Unit unit)
@@ -186,7 +194,7 @@ public class UIController : MonoBehaviour
         if (selectedUnit == unit)
         {
             selectedUnit = null;
-            unitDataPanel.SetActive(false);
+            unitDataPanel.gameObject.SetActive(false);
         }
     }
 }

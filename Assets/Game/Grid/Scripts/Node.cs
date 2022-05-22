@@ -9,7 +9,7 @@ public class Node : Entity
 
     private void Awake()
     {
-        SceneController.Instance.Grid.nodeList[coords.x, coords.y] = this;
+        GameController.Instance.Grid.nodeList[coords.x, coords.y] = this;
         if (!basicMaterial) basicMaterial = rend.material;
         if (!selectedMaterial)
         {

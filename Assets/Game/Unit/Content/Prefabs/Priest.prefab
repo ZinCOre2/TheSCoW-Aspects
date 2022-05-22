@@ -405,6 +405,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0}
+  unitBarPack: {fileID: 7841295407035870317, guid: d4dc950f1453ed044895e9f2a9a837d1,
+    type: 3}
   unitData: {fileID: 11400000, guid: 66489726ee5551d42a9218ef7f43d1dc, type: 2}
   animator: {fileID: 2506718294664843846}
   moveSpeed: 20

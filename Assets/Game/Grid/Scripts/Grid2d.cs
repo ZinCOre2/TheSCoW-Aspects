@@ -19,6 +19,13 @@ public class Grid2d : MonoBehaviour
     {
         unitList = new List<Unit>();
         nodeList = new Node[xSize, ySize];
+
+        var nodes = GetComponentsInChildren<Node>();
+
+        foreach (var node in nodes)
+        {
+            nodeList[node.Coords.x, node.Coords.y] = node;
+        }
     }
 
     public bool NodeExists(Vector2Int coords)

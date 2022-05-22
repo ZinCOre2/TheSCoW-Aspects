@@ -17,13 +17,23 @@ MonoBehaviour:
   icon: {fileID: 21300000, guid: cbe533d4f2b325546be1af9728ebd8d1, type: 3}
   description: "\u0412\u044B\u043F\u0443\u0441\u043A\u0430\u0435\u0442 \u0432\u043E\u043A\u0440\u0443\u0433
     \u0441\u0435\u0431\u044F \u0432\u043E\u043B\u043D\u0443 \u044D\u043D\u0435\u0440\u0433\u0438\u0438,
-    \u0441\u0436\u0438\u0433\u0430\u044E\u0449\u0443\u044E 40 \u0437\u0434\u043E\u0440\u043E\u0432\u044C\u044F
-    \u0438 20 \u044D\u043D\u0435\u0440\u0433\u0438\u0438 \u043F\u0440\u043E\u0442\u0438\u0432\u043D\u0438\u043A\u043E\u0432."
+    \u0441\u0436\u0438\u0433\u0430\u044E\u0449\u0443\u044E 60 \u0437\u0434\u043E\u0440\u043E\u0432\u044C\u044F
+    \u0438 40 \u044D\u043D\u0435\u0440\u0433\u0438\u0438 \u043F\u0440\u043E\u0442\u0438\u0432\u043D\u0438\u043A\u043E\u0432."
   rangeType: 2
   areaType: 2
   minRange: 0
   maxRange: 0
   minAreaRange: 1
   maxAreaRange: 2
-  epCost: 40
-  values: 2800000014000000
+  epCost: 50
+  tpCost: 30
+  Dedications:
+  - IsUsable: 1
+    Value: 0
+  - IsUsable: 0
+    Value: 0
+  - IsUsable: 1
+    Value: 0
+  - IsUsable: 0
+    Value: 0
+  values: 3c00000028000000

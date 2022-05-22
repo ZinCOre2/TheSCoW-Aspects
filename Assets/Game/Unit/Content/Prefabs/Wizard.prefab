@@ -2275,6 +2275,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0}
+  unitBarPack: {fileID: 7841295407035870317, guid: d4dc950f1453ed044895e9f2a9a837d1,
+    type: 3}
   unitData: {fileID: 11400000, guid: 6975649ec67aaf041a5f4d8ee55b5a72, type: 2}
   animator: {fileID: 7518816465652633471}
   moveSpeed: 30

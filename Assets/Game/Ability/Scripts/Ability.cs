@@ -14,10 +14,10 @@ public class Ability : MonoBehaviour
 
     public virtual List<PathNode> GetNodesInRange(Unit user)
     {
-        if (!user || !SceneController.Instance.Grid.NodeExists(user.Coords))
+        if (!user || !GameController.Instance.Grid.NodeExists(user.Coords))
             return new List<PathNode>();
 
-        Node start = SceneController.Instance.Grid.nodeList[user.Coords.x, user.Coords.y];
+        Node start = GameController.Instance.Grid.nodeList[user.Coords.x, user.Coords.y];
         area = new List<PathNode>();
 
         switch (abilityData.rangeType)
@@ -64,12 +64,12 @@ public class Ability : MonoBehaviour
             audioSource.Play();
         }
 
-        if (UIController.Instance.selectedAbilityId != 0)
+        if (GameController.Instance.UIController.selectedAbilityId != 0)
         {
-            user.DiscardCard(UIController.Instance.selectedAbilityId - 1);
+            user.DeckManager.DiscardCard(GameController.Instance.UIController.selectedAbilityId - 1);
             user.AnimatorUnit.SetTrigger("UseSpell");
-            UIController.Instance.SetId(0);
-            SceneController.Instance.SetSelectedAbility(null);
+            GameController.Instance.UIController.SetId(0);
+            GameController.Instance.SceneController.SetSelectedAbility(null);
         }
     }
 

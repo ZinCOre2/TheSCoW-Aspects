@@ -16,7 +16,7 @@ MonoBehaviour:
   icon: {fileID: 21300000, guid: 9d18d3d48ba609443bf2da111aec7ed8, type: 3}
   description: "\u0421\u043E\u0437\u0434\u0430\u0435\u0442 \u0432 \u043E\u0431\u043B\u0430\u0441\u0442\u0438
     \u043E\u0433\u043B\u0443\u0448\u0430\u044E\u0449\u0438\u0439 \u0438\u043C\u043F\u0443\u043B\u044C\u0441,
-    \u0441\u0436\u0438\u0433\u0430\u044E\u0449\u0438\u0439 20 \u044D\u043D\u0435\u0440\u0433\u0438\u0438
+    \u0441\u0436\u0438\u0433\u0430\u044E\u0449\u0438\u0439 35 \u044D\u043D\u0435\u0440\u0433\u0438\u0438
     \u043F\u0440\u043E\u0442\u0438\u0432\u043D\u0438\u043A\u043E\u0432."
   rangeType: 1
   areaType: 2
@@ -24,5 +24,15 @@ MonoBehaviour:
   maxRange: 3
   minAreaRange: 0
   maxAreaRange: 2
-  epCost: 20
-  values: 14000000
+  epCost: 30
+  tpCost: 20
+  Dedications:
+  - IsUsable: 1
+    Value: 0
+  - IsUsable: 0
+    Value: 0
+  - IsUsable: 0
+    Value: 0
+  - IsUsable: 0
+    Value: 0
+  values: 23000000
