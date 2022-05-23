@@ -2188,7 +2188,7 @@ GameObject:
   - component: {fileID: 7518816465652633471}
   - component: {fileID: 1736086691767666464}
   - component: {fileID: 4972845071688109282}
-  - component: {fileID: 1164191760956183758}
+  - component: {fileID: 4492174275742544468}
   m_Layer: 0
   m_Name: Wizard
   m_TagString: Untagged
@@ -2262,7 +2262,7 @@ MonoBehaviour:
   abilityEffect: {fileID: 0}
   soundEffect: {fileID: 0}
   audioSource: {fileID: 0}
---- !u!114 &1164191760956183758
+--- !u!114 &4492174275742544468
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2271,20 +2271,47 @@ MonoBehaviour:
   m_GameObject: {fileID: 7291047781639188351}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4351a4dc41fad69418430eb5d36a6b22, type: 3}
+  m_Script: {fileID: 11500000, guid: 2150682ccb02433da7c6ba44b5d9002a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0}
-  unitBarPack: {fileID: 7841295407035870317, guid: d4dc950f1453ed044895e9f2a9a837d1,
-    type: 3}
-  unitData: {fileID: 11400000, guid: 6975649ec67aaf041a5f4d8ee55b5a72, type: 2}
-  animator: {fileID: 7518816465652633471}
-  moveSpeed: 30
   pivot: {fileID: 7291047781639615325}
   marker: {fileID: 8090041793964401386}
   highlight: {fileID: 7952076717514211388}
+  UnitStats:
+    UnitName: 
+    Portrait: {fileID: 0}
+    MaxHealth: 0
+    HealthRegen: 0
+    Health: 0
+    MaxEnergy: 0
+    EnergyRegen: 0
+    Energy: 0
+    MaxTime: 0
+    Time: 0
+    Power: 0
+    Defence: 0
+    AspectDedications:
+    - IsUsable: 0
+      Value: 0
+    - IsUsable: 0
+      Value: 0
+    - IsUsable: 0
+      Value: 0
+    - IsUsable: 0
+      Value: 0
+    InnerAbilities: 
+    TeamId: 0
+    MasterId: 0
+  unitData: {fileID: 11400000, guid: ef1dead1d31f3514586c943cc1251c1e, type: 2}
+  animator: {fileID: 7518816465652633471}
+  moveSpeed: 30
   teamId: 1
-  deck: 050000000500000005000000050000000700000007000000070000000d0000000d0000000d0000000600000006000000060000000c0000000c0000000b0000000b0000000e000000
+  MasterUnitData: {fileID: 11400000, guid: ef1dead1d31f3514586c943cc1251c1e, type: 2}
+  DeckManager:
+    DrawPile: 
+    Hand: 000000000000000000000000000000000000000000000000
+    DiscardPile: 
 --- !u!1 &8090041793964401386
 GameObject:
   m_ObjectHideFlags: 0

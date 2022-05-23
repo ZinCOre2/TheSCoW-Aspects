@@ -1,12 +1,12 @@
 ﻿using UnityEngine.EventSystems;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class CameraController : MonoBehaviour
 {
-    public static CameraController Instance;
     public Transform FollowTransform;
 
-    [SerializeField] private Camera cam;
+    [FormerlySerializedAs("cam")] public Camera Camera;
 
     [Header("Camera Movement Values")]
     [SerializeField] private float normalSpeed = 0.2f;
@@ -32,19 +32,9 @@ public class CameraController : MonoBehaviour
 
     private void Start()
     {
-        if (Instance == null)
-        {
-            Instance = this;
-        }
-        else
-        {
-            Destroy(this.gameObject);
-            return;
-        }
-
         _newPosition = transform.position;
         _newRotation = transform.rotation;
-        _newZoom = cam.transform.localPosition;
+        _newZoom = Camera.transform.localPosition;
     }
     private void Update()
     {
@@ -72,7 +62,7 @@ public class CameraController : MonoBehaviour
         {
             if (Input.mouseScrollDelta.y != 0)
             {
-                _newZoom -= cam.transform.localPosition.normalized *
+                _newZoom -= Camera.transform.localPosition.normalized *
                     Input.mouseScrollDelta.y * zoomAmount;
                 _newZoom.y = Mathf.Clamp(_newZoom.y, zoomRange.x, zoomRange.y);
                 _newZoom.z = Mathf.Clamp(_newZoom.z, -zoomRange.y, -zoomRange.x);
@@ -84,7 +74,7 @@ public class CameraController : MonoBehaviour
             {
                 Plane plane = new Plane(Vector3.up, Vector3.zero);
 
-                Ray ray = cam.ScreenPointToRay(Input.mousePosition);
+                Ray ray = Camera.ScreenPointToRay(Input.mousePosition);
 
                 float entry;
 
@@ -97,7 +87,7 @@ public class CameraController : MonoBehaviour
             {
                 Plane plane = new Plane(Vector3.up, Vector3.zero);
 
-                Ray ray = cam.ScreenPointToRay(Input.mousePosition);
+                Ray ray = Camera.ScreenPointToRay(Input.mousePosition);
 
                 float entry;
 
@@ -152,11 +142,11 @@ public class CameraController : MonoBehaviour
 
         if (Input.GetKey(KeyCode.R))
         {
-            _newZoom += cam.transform.localPosition.normalized * zoomAmount * .2f;
+            _newZoom += Camera.transform.localPosition.normalized * zoomAmount * .2f;
         }
         if (Input.GetKey(KeyCode.F))
         {
-            _newZoom -= cam.transform.localPosition.normalized * zoomAmount * .2f;
+            _newZoom -= Camera.transform.localPosition.normalized * zoomAmount * .2f;
         }
 
         _newPosition.x = Mathf.Clamp(_newPosition.x, minPos.x, maxPos.x);
@@ -166,6 +156,6 @@ public class CameraController : MonoBehaviour
 
         transform.position = Vector3.Lerp(transform.position, _newPosition, Time.deltaTime * movementTime);
         transform.rotation = Quaternion.Lerp(transform.rotation, _newRotation, Time.deltaTime * movementTime);
-        cam.transform.localPosition = Vector3.Lerp(cam.transform.localPosition, _newZoom, Time.deltaTime * movementTime);
+        Camera.transform.localPosition = Vector3.Lerp(Camera.transform.localPosition, _newZoom, Time.deltaTime * movementTime);
     }
 }

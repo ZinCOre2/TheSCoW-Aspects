@@ -2,32 +2,30 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b0c121a3-3be3-48d5-88f0-a8b3abbfdeaf" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Game/WorldUI/Scripts/HWTType.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Game/WorldUI/Scripts/HWTType.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Game/WorldUI/Scripts/WorldUIManager.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Game/WorldUI/Scripts/WorldUIManager.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Game/Audio/Scripts/AudioManager.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Game/Audio/Scripts/AudioManager.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Game/Camera.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Game/Camera/Scripts.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Game/Entity/Scripts/PhysicalEntity.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Game/Entity/Scripts/PhysicalEntity.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Game/Selection/Scripts/SelectionStage.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Game/Selection/Scripts/SelectionStage.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Game/Unit/Scripts/EntityManager.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Game/Unit/Scripts/MasterUnit.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Game/Unit/Scripts/MasterUnit.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Game/Unit/Scripts/MasterUnitData.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Game/Unit/Scripts/MasterUnitData.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Game/Unit/Scripts/UnitStats.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Game/Unit/Scripts/UnitStats.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.TTheSCoW-Aspects/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TTheSCoW-Aspects/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assembly-CSharp.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Assembly-CSharp.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Fonts/JazzCreateBubble SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Fonts/JazzCreateBubble SDF.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Ability/Scriptables/Blast.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Ability/Scriptables/Blast.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Game/Ability/Scriptables/BoulderCage.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Ability/Scriptables/BoulderCage.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Game/Ability/Scriptables/BoulderSlam.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Ability/Scriptables/BoulderSlam.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Game/Ability/Scriptables/EMP.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Ability/Scriptables/EMP.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Game/Ability/Scriptables/Energize.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Ability/Scriptables/Energize.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Game/Ability/Scriptables/EnergyBurst.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Ability/Scriptables/EnergyBurst.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Ability/Scriptables/EnergyDrain.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Ability/Scriptables/EnergyDrain.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Ability/Scriptables/FireSpirits.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Ability/Scriptables/FireSpirits.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Ability/Scriptables/Fireball.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Ability/Scriptables/Fireball.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Ability/Scriptables/Healing.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Ability/Scriptables/Healing.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Ability/Scriptables/HealingCircle.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Ability/Scriptables/HealingCircle.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Ability/Scriptables/LeechLife.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Ability/Scriptables/LeechLife.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Ability/Scriptables/MindFlow.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Ability/Scriptables/MindFlow.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Ability/Scriptables/Move.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Ability/Scriptables/Move.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Ability/Scriptables/Strike.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Ability/Scriptables/Strike.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Ability/Scriptables/StunSlam.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Ability/Scriptables/StunSlam.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Game/Ability/Scripts/Ability.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Ability/Scripts/Ability.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Ability/Scripts/AbilityData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Ability/Scripts/AbilityData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Ability/Scripts/AbilityHolder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Ability/Scripts/AbilityHolder.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Game/Ability/Subclasses/Blast.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Ability/Subclasses/Blast.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Game/Ability/Subclasses/BoulderCage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Ability/Subclasses/BoulderCage.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Game/Ability/Subclasses/BoulderSlam.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Ability/Subclasses/BoulderSlam.cs" afterDir="false" />
@@ -41,68 +39,56 @@
       <change beforePath="$PROJECT_DIR$/Assets/Game/Ability/Subclasses/HealingCircle.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Ability/Subclasses/HealingCircle.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Game/Ability/Subclasses/LeechLife.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Ability/Subclasses/LeechLife.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Game/Ability/Subclasses/MindFlow.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Ability/Subclasses/MindFlow.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Ability/Subclasses/Move.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Ability/Subclasses/Move.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Ability/Subclasses/Strike.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Ability/Subclasses/SweepStrike.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Ability/Subclasses/Strike.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Ability/Subclasses/SweepStrike.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Game/Ability/Subclasses/StunningSlam.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Ability/Subclasses/StunningSlam.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Ability/Subclasses/SweepStrike.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Ability/Subclasses/SweepStrike.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Game/Card/Scripts/DeckManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Card/Scripts/DeckManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Entity/Content/Prefabs/OakTree-1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Entity/Content/Prefabs/OakTree-1.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Entity/Content/Prefabs/OakTree-2.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Entity/Content/Prefabs/OakTree-2.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Entity/Content/Prefabs/Rock-1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Entity/Content/Prefabs/Rock-1.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Entity/Content/Prefabs/Rock-2.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Entity/Content/Prefabs/Rock-2.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Entity/Content/Prefabs/Rock-3.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Entity/Content/Prefabs/Rock-3.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Entity/Content/Prefabs/Rock-4.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Entity/Content/Prefabs/Rock-4.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Entity/Content/Prefabs/pineTree_1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Entity/Content/Prefabs/pineTree_1.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Entity/Content/Prefabs/pineTree_2.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Entity/Content/Prefabs/pineTree_2.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Game/Game/Scripts/GameController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Game/Scripts/GameController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Game/Game/Scripts/SceneController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Game/Scripts/SceneController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Game/Scripts/TurnManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Game/Scripts/TurnManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Grid/Content/Materials/MatNodeActive.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Grid/Content/Materials/MatNodeActive.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Grid/Scripts/Grid2d.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Grid/Scripts/Grid2d.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Grid/Scripts/Node.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Grid/Scripts/Node.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Game/Grid/Scripts/Pathfinding.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Grid/Scripts/Pathfinding.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Scene/Content/Animation/MainMenu/CardRotation.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Scene/Content/Animation/MainMenu/CardRotation.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Scene/Content/Prefabs/MainMenu/RotatingCard.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Scene/Content/Prefabs/MainMenu/RotatingCard.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Scene/Scripts/CameraController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Camera/Scripts/CameraController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Scene/Scripts/CameraController.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Camera/Scripts/CameraController.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Selection/Scripts/SelectionManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Selection/Scripts/SelectionManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Team.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Game/UI/Scripts/UIAbility.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/UI/Scripts/UIAbility.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Game/UI/Scripts/UIController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/UI/Scripts/UIController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/UI/Scripts/UnitDataPanel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/UI/Scripts/UnitDataPanel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Unit/Scriptables/Priest.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Unit/Scriptables/Priest.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Unit/Content/Prefabs/Knight.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Unit/Content/Prefabs/Knight.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Unit/Content/Prefabs/Priest.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Unit/Content/Prefabs/Priest.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Unit/Content/Prefabs/Wizard.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Unit/Content/Prefabs/Wizard.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Game/Unit/Scripts/Unit.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Unit/Scripts/Unit.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Unit/Scripts/UnitData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Unit/Scripts/UnitData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Unit/Scripts/UnitManager.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Unit/Scripts/UnitManager.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Unit/Scripts/EntityManager.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Utility/Scripts/ObjectPooler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Utility/Scripts/ObjectPooler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/WorldUI/Content/Prefabs/UnitBarPack.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/WorldUI/Content/Prefabs/UnitBarPack.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/WorldUI/Content/Prefabs/UnitBarPack.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/WorldUI/Content/Prefabs/UnitBarPack.prefab.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/WorldUI/Scripts/Billboard.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/WorldUI/Scripts/Billboard.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Game/WorldUI/Scripts/UnitBarPack.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/WorldUI/Scripts/UnitBarPack.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/WorldUI/Scripts/WorldUIManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/WorldUI/Scripts/WorldUIManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/GameField.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GameField.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainMenu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MainMenu.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/TeamEditor.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/TeamEditor.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Fonts/LiberationSansCyrillic.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Fonts/LiberationSansCyrillic.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/ArtifactDB" beforeDir="false" afterPath="$PROJECT_DIR$/Library/ArtifactDB" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/Artifacts/09/09facbf8908f158ed757110734232251" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/Artifacts/0b/0bf709e8cc3f68c6bdd1265945386548" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/Artifacts/14/1405d3a0c6f177f6aea006a78c946fda" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/Artifacts/15/15619e978e34f824ade823c5a5e2faaa" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/Artifacts/23/231e1c06a9fa39fd4105409dcc49ad49" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/Artifacts/23/23428f2258db8f22a687d7ca3e45aca0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/Artifacts/33/33c7a56c753cd7e2810882c3080ee515" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/Artifacts/33/33da30582087af6079a82cc18c68ec4d" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/Artifacts/34/34dcdff71b7b5e4b461c73edd0993787" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/Artifacts/3b/3b32d68b58d8399579e4998dfb8f9d8e" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/Artifacts/4d/4dd0f8699271015f9d67f8ec784e7391" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/Artifacts/53/5359c64ee73b8810f6bcbb8c5bcf0609" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/Artifacts/55/55bcfca29d56e4264d76d7825a41d81f" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/Artifacts/58/587681e8fad6ef45be2dced34476a655" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/Artifacts/59/596b37c85c227d721d65f3180750350d" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/Artifacts/5a/5aab40e3d431bad7e3069ebdcd958c4b" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/Artifacts/5c/5c8e00dc26aeb3fad9128c081d22e14c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/Artifacts/6c/6c359e1a06a8f07330edc41736487c03" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/Artifacts/72/72a557fb0ec76c6add8c822356d80430" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/Artifacts/73/73a12a591b1f6c0ff806ccb106bb0080" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/Artifacts/74/743c5d77e0314fffd490a32522924025" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/Artifacts/7a/7a6f26bcc99fe90ccc175ddbb2fabf84" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/Artifacts/7d/7d925f1ae5595c3e7f4002d6172f54d1" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/Artifacts/b8/b88e824530c9d99e7b4be98c76e30279" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/Artifacts/bf/bfdcc6e4e1fcec5475e98aaf3c968761" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/Artifacts/d1/d180be694775e870184808b26e5104b3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/Artifacts/d3/d3bdbd405242bf46da54cc77f7f69015" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/Artifacts/db/db8995f7146715bb3d2451a83892045f" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/Artifacts/db/db970293fbe03fee305e23a37dfcf23f" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/Artifacts/e1/e1bb8f454f277a1f12051e5867af3ca7" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/Artifacts/e3/e39d0a7e63c6bad9ac7da9de19f817f1" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/CurrentLayout-default.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/Library/CurrentLayout-default.dwlt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/InspectorExpandedItems.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Library/InspectorExpandedItems.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/ScriptAssemblies/Assembly-CSharp.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Library/ScriptAssemblies/Assembly-CSharp.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/ScriptAssemblies/Assembly-CSharp.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Library/ScriptAssemblies/Assembly-CSharp.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/SourceAssetDB" beforeDir="false" afterPath="$PROJECT_DIR$/Library/SourceAssetDB" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/StateCache/Hierarchy/02da2c-304e0757f77082242a.json" beforeDir="false" afterPath="$PROJECT_DIR$/Library/StateCache/Hierarchy/02da2c-304e0757f77082242a.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/StateCache/Hierarchy/02da2c-04f86473c3accb34d9.json" beforeDir="false" afterPath="$PROJECT_DIR$/Library/StateCache/Hierarchy/02da2c-04f86473c3accb34d9.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/StateCache/Hierarchy/02da2c-a8745080818b71e4a8.json" beforeDir="false" afterPath="$PROJECT_DIR$/Library/StateCache/Hierarchy/02da2c-a8745080818b71e4a8.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/StateCache/Hierarchy/02da2c-baa0b4901bed06947a.json" beforeDir="false" afterPath="$PROJECT_DIR$/Library/StateCache/Hierarchy/02da2c-baa0b4901bed06947a.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/StateCache/Hierarchy/02da2c-mainStage.json" beforeDir="false" afterPath="$PROJECT_DIR$/Library/StateCache/Hierarchy/02da2c-mainStage.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/StateCache/SceneView/c20bda-304e0757f77082242a.json" beforeDir="false" afterPath="$PROJECT_DIR$/Library/StateCache/SceneView/c20bda-304e0757f77082242a.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/StateCache/SceneView/c20bda-b247e888e9e9b5a4cb.json" beforeDir="false" afterPath="$PROJECT_DIR$/Library/StateCache/SceneView/c20bda-b247e888e9e9b5a4cb.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/StateCache/SceneView/c20bda-mainStage.json" beforeDir="false" afterPath="$PROJECT_DIR$/Library/StateCache/SceneView/c20bda-mainStage.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/shadercompiler-UnityShaderCompiler.exe0.log" beforeDir="false" afterPath="$PROJECT_DIR$/Library/shadercompiler-UnityShaderCompiler.exe0.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/Assembly-CSharp.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/Assembly-CSharp.csprojAssemblyReference.cache" afterDir="false" />
@@ -125,27 +111,35 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Game/WorldUI/Scripts/Billboard.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../../Program Files/Unity/Hub/Editor/2019.3.1f1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Editor/UI/RawImageEditor.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../../Program Files/Unity/Hub/Editor/2019.3.1f1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/UI/Core/Selectable.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Game/UI/Scripts/TurnQueueUnitPanel.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Game/Animation/Scripts/AnimationHolder.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../../../Program Files/Unity/Hub/Editor/2019.3.1f1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/UI/Core/ScrollRect.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../Program Files/Unity/Hub/Editor/2019.3.1f1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/UI/Core/Text.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.test-framework@1.1.11/UnityEngine.TestRunner/Utils/AssemblyProvider/ITestAssemblyProvider.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/94c5f4c38cdc42d2b006f8badef04394112600/7e/31f04e5d/Object.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../../../Program Files/Unity/Hub/Editor/2019.3.1f1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/UI/Core/Layout/ILayoutElement.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Game/Game/Scripts/GameController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/437ba245d8404784b9fbab9b439ac9083e2400/2b/bdb098b4/List`1.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Game/WorldUI/Scripts/UnitBarPack.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/cafb29d5233847fbb4edcf8d7c32b1e3299c90/ea/79f7c927/Int32.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.timeline@1.2.10/Runtime/Animation/AnimationPlayableAsset.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/94c5f4c38cdc42d2b006f8badef04394112600/98/defe1116/UnitySynchronizationContext.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../Program Files/Unity/Hub/Editor/2019.3.1f1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/EventSystem/InputModules/StandaloneInputModule.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../../../Program Files/Unity/Hub/Editor/2019.3.1f1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/EventSystem/EventSystem.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../../../Program Files/Unity/Hub/Editor/2019.3.1f1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/UI/Core/Layout/ContentSizeFitter.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/94c5f4c38cdc42d2b006f8badef04394112600/f9/4a47ec99/Debug.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.timeline@1.2.10/Editor/Utilities/TrackResourceCache.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../../Program Files/Unity/Hub/Editor/2019.3.1f1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/EventSystem/Raycasters/BaseRaycaster.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../Program Files/Unity/Hub/Editor/2019.3.1f1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/UI/Core/InputField.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../Program Files/Unity/Hub/Editor/2019.3.1f1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Tests/Runtime/Canvas/NestedCanvas.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../../../Program Files/Unity/Hub/Editor/2019.3.1f1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/EventSystem/ExecuteEvents.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.timeline@1.2.10/Editor/Shortcuts.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.timeline@1.2.10/Editor/Window/TimelineMarkerHeaderGUI.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.timeline@1.2.10/Editor/Signals/SignalEmitterInspector.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../../Program Files/Unity/Hub/Editor/2019.3.1f1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Editor/UI/TextEditor.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../../Program Files/Unity/Hub/Editor/2019.3.1f1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/UI/Core/ScrollRect.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.test-framework@1.1.11/UnityEngine.TestRunner/Utils/AssemblyProvider/ITestAssemblyProvider.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/94c5f4c38cdc42d2b006f8badef04394112600/7e/31f04e5d/Object.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../../Program Files/Unity/Hub/Editor/2019.3.1f1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/UI/Core/Layout/ILayoutElement.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/cafb29d5233847fbb4edcf8d7c32b1e3299c90/ea/79f7c927/Int32.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../../Program Files/Unity/Hub/Editor/2019.3.1f1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/EventSystem/EventSystem.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../../Program Files/Unity/Hub/Editor/2019.3.1f1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/UI/Core/Layout/ContentSizeFitter.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Game/Card/Scripts/UICard.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../../Program Files/Unity/Hub/Editor/2019.3.1f1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/EventSystem/ExecuteEvents.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="29Q7T20ZsXPHCsmsLUYfnINGaga" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -173,10 +167,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="2692">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="5320">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="2692" />
+      <option name="pid" value="5320" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -196,7 +190,8 @@
       <workItem from="1653035858262" duration="3396000" />
       <workItem from="1653203471264" duration="22622000" />
       <workItem from="1653263370837" duration="4274000" />
-      <workItem from="1653291997118" duration="19600000" />
+      <workItem from="1653291997118" duration="22184000" />
+      <workItem from="1653330069056" duration="10869000" />
     </task>
     <servers />
   </component>
@@ -225,43 +220,17 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Game/Grid/Scripts/Grid2d.cs</url>
-          <line>58</line>
-          <properties documentPath="C:\Users\pavelno\jklasdf\TTheSCoW-Aspects\Assets\Game\Grid\Scripts\Grid2d.cs" initialLine="58" containingFunctionPresentation="method 'NodeOccupied'">
+          <url>file://$PROJECT_DIR$/Assets/Game/Grid/Scripts/Pathfinding.cs</url>
+          <line>117</line>
+          <properties documentPath="C:\Users\pavelno\jklasdf\TTheSCoW-Aspects\Assets\Game\Grid\Scripts\Pathfinding.cs" initialLine="117" containingFunctionPresentation="method 'RecPathfinding'">
             <startOffsets>
-              <option value="1820" />
+              <option value="5412" />
             </startOffsets>
             <endOffsets>
-              <option value="1851" />
+              <option value="5675" />
             </endOffsets>
           </properties>
-          <option name="timeStamp" value="7" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Game/Grid/Scripts/Grid2d.cs</url>
-          <line>81</line>
-          <properties documentPath="C:\Users\pavelno\jklasdf\TTheSCoW-Aspects\Assets\Game\Grid\Scripts\Grid2d.cs" initialLine="81" containingFunctionPresentation="method 'GetUnitOnNode'">
-            <startOffsets>
-              <option value="2512" />
-            </startOffsets>
-            <endOffsets>
-              <option value="2543" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="8" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Game/Grid/Scripts/Grid2d.cs</url>
-          <line>86</line>
-          <properties documentPath="C:\Users\pavelno\jklasdf\TTheSCoW-Aspects\Assets\Game\Grid\Scripts\Grid2d.cs" initialLine="86" containingFunctionPresentation="method 'GetUnitOnNode'">
-            <startOffsets>
-              <option value="2659" />
-            </startOffsets>
-            <endOffsets>
-              <option value="2671" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="11" />
+          <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

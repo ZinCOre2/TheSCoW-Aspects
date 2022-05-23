@@ -30,8 +30,8 @@ public class EnergyDrain : Ability
                 user.ChangeTime(-abilityData.tpCost);
 
                 AbilityEffect aEffect;
-                aEffect = ObjectPooler.Instance.SpawnFromPool(abilityEffect.EffectTag, pathNode.node.transform.position, abilityEffect.transform.rotation).GetComponent<AbilityEffect>();
-                aEffect = ObjectPooler.Instance.SpawnFromPool(abilityEffect.EffectTag, 
+                aEffect = GameController.Instance.ObjectPooler.SpawnFromPool(abilityEffect.EffectTag, pathNode.node.transform.position, abilityEffect.transform.rotation).GetComponent<AbilityEffect>();
+                aEffect = GameController.Instance.ObjectPooler.SpawnFromPool(abilityEffect.EffectTag, 
                     GameController.Instance.Grid.nodeList[user.Coords.x, user.Coords.y].transform.position, abilityEffect.transform.rotation).GetComponent<AbilityEffect>();
 
                 int newEnergy, oldEnergy;

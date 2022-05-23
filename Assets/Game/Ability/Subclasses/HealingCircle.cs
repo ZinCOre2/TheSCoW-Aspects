@@ -27,7 +27,7 @@ public class HealingCircle : Ability
         foreach (PathNode pathNode in aoe)
         {
             AbilityEffect aEffect;
-            aEffect = ObjectPooler.Instance.SpawnFromPool(abilityEffect.EffectTag, pathNode.node.transform.position, abilityEffect.transform.rotation).GetComponent<AbilityEffect>();
+            aEffect = GameController.Instance.ObjectPooler.SpawnFromPool(abilityEffect.EffectTag, pathNode.node.transform.position, abilityEffect.transform.rotation).GetComponent<AbilityEffect>();
 
             target = GameController.Instance.Grid.GetUnitOnNode(pathNode.node.Coords);
             if (target && target.TeamId == user.TeamId)

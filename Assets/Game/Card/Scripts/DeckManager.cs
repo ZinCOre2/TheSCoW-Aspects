@@ -6,11 +6,11 @@ public class DeckManager
 {
     public const int HAND_SIZE = 6;
     
-    public List<AbilityHolder.AType> DrawPile = new List<AbilityHolder.AType>();
-    public AbilityHolder.AType[] Hand = new AbilityHolder.AType[HAND_SIZE];
-    public List<AbilityHolder.AType> DiscardPile = new List<AbilityHolder.AType>();
+    public List<AbilityHolder.AbilityType> DrawPile = new List<AbilityHolder.AbilityType>();
+    public AbilityHolder.AbilityType[] Hand = new AbilityHolder.AbilityType[HAND_SIZE];
+    public List<AbilityHolder.AbilityType> DiscardPile = new List<AbilityHolder.AbilityType>();
 
-    public void SetStartingDeck(List<AbilityHolder.AType> abilities)
+    public void SetStartingDeck(List<AbilityHolder.AbilityType> abilities)
     {
         foreach (var ability in abilities)
         {
@@ -49,7 +49,7 @@ public class DeckManager
         var i = 0;
         for (; i < HAND_SIZE; i++)
         {
-            if (Hand[i] == AbilityHolder.AType.None)
+            if (Hand[i] == AbilityHolder.AbilityType.None)
             {
                 break;
             }
@@ -69,7 +69,7 @@ public class DeckManager
             GameController.Instance.UIController.UnitDataPanel.AbilitySlots[i + 1].SetAbility(Hand[i]);
         }
 
-        Hand[0] = AbilityHolder.AType.None;
+        Hand[0] = AbilityHolder.AbilityType.None;
         GameController.Instance.UIController.UnitDataPanel.AbilitySlots[1].SetAbility(Hand[0]);
     }
 
@@ -77,9 +77,9 @@ public class DeckManager
     {
         DiscardPile.Add(Hand[index]);
         
-        Hand[index] = AbilityHolder.AType.None;
+        Hand[index] = AbilityHolder.AbilityType.None;
         
-        GameController.Instance.UIController.UnitDataPanel.AbilitySlots[index + 1].SetAbility(AbilityHolder.AType.None);
+        GameController.Instance.UIController.UnitDataPanel.AbilitySlots[index + 1].SetAbility(AbilityHolder.AbilityType.None);
     }
 
     public void ShuffleDeck()

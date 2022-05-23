@@ -106,7 +106,7 @@ GameObject:
   - component: {fileID: 5357006671620210298}
   - component: {fileID: 5357006671619077666}
   - component: {fileID: 5357006671621346106}
-  - component: {fileID: 5357006671621346107}
+  - component: {fileID: -290344667081894934}
   m_Layer: 0
   m_Name: Rock-3
   m_TagString: Untagged
@@ -189,7 +189,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.8, y: 0.5, z: 0.8}
   m_Center: {x: 0, y: 0.25, z: 0}
---- !u!114 &5357006671621346107
+--- !u!114 &-290344667081894934
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -198,15 +198,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 5357006671621322738}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4351a4dc41fad69418430eb5d36a6b22, type: 3}
+  m_Script: {fileID: 11500000, guid: a42114c780be4265ac0f30a9f88c1b14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0}
-  unitData: {fileID: 0}
-  animator: {fileID: 0}
-  moveSpeed: 25
   pivot: {fileID: 5357006671621420330}
   marker: {fileID: 5357006670323617402}
   highlight: {fileID: 0}
-  teamId: 0
-  deck: 

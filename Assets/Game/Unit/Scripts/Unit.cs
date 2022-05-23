@@ -5,7 +5,7 @@ using UnityEngine;
 using Random = System.Random;
 
 [RequireComponent(typeof(Move))]
-public class Unit : Entity
+public class Unit : PhysicalEntity
 {
     public event Action<Unit, int> OnHealthChanged;
     public event Action<Unit, int> OnEnergyChanged;
@@ -13,13 +13,12 @@ public class Unit : Entity
     public event Action<Unit> OnUnitDeath;
     public event Action OnFinishAbilityUse;
 
+    [HideInInspector] public UnitStats UnitStats;
+    
     [Header("General")]
     [SerializeField] private UnitData unitData;
     [SerializeField] private Animator animator;
     [SerializeField] private float moveSpeed = 50f;
-    [SerializeField] private Transform pivot;
-    [SerializeField] private GameObject marker;
-    [SerializeField] private MeshRenderer highlight;
     [SerializeField] private int teamId;
     
     // Stats
@@ -29,20 +28,25 @@ public class Unit : Entity
 
     // General
     public UnitData UnitData { get { return unitData; } private set { unitData = value; } }
-    public Animator AnimatorUnit { get { return animator; } private set { animator = value; } }
+    public Animator Animator { get { return animator; } private set { animator = value; } }
     public int TeamId { get { return teamId; } private set { teamId = value; } }
-    // Abilities
-    public DeckManager DeckManager = new DeckManager();
 
     public bool usingAbility { get; private set; } = false;
 
-    private UnitBarPack _boundBarPack;
+    // private void OnEnable()
+    // {
+    //     GameController.Instance.SceneController.OnUnitSelect += MarkUnit;
+    //     
+    //     if (teamId == 0) { return; }
+    //     
+    //     OnUnitDeath += UnitDeath;
+    //     OnUnitDeath += GameController.Instance.SceneController.UnitDeath;
+    // }
 
-    private void Start()
+    protected virtual void Start()
     {
-        GameController.Instance.Grid.unitList.Add(this);
-        GameController.Instance.SceneController.OnUnitSelect += MarkerUnit;
-
+        GameController.Instance.SceneController.OnUnitSelect += MarkUnit;
+        
         marker.SetActive(false);
         SetNearbyCoordsAndPosition();
 
@@ -52,13 +56,11 @@ public class Unit : Entity
         energy = unitData.maxEnergy;
         time = unitData.maxTime;
 
-        _boundBarPack = GameController.Instance.WorldUIManager.CreateBarPack(this);
-
-        DeckManager.SetStartingDeck(UnitData.StartingDeck);
-        for (int i = 0; i < 3; i++)
-        {
-            DeckManager.DrawCard();
-        }
+        GameController.Instance.WorldUIManager.CreateBarPack(this);
+        
+        OnUnitDeath += UnitDeath;
+        OnUnitDeath += GameController.Instance.SceneController.UnitDeath;
+        
         switch (teamId)
         {
             case 1:
@@ -70,43 +72,24 @@ public class Unit : Entity
         }
 
         SceneController.Counter[teamId - 1]++;
-        Debug.Log("Team " + teamId + " counter: " + SceneController.Counter[teamId - 1]);
-        OnUnitDeath += (Unit unit) =>
-        {
-            if (unit == this)
-            {
-                GameController.Instance.SceneController.OnUnitSelect -= MarkerUnit;
-
-                Destroy(pivot.gameObject, 3f);
-            }
-        };
-        OnUnitDeath += GameController.Instance.SceneController.UnitDeath;
     }
 
-    private Vector2Int GetNearbyCoords(Vector3 startPoint, Vector2Int gridSize, float nodeSize)
+    private void OnDisable()
     {
-        Vector2Int newCoords = new Vector2Int(Mathf.RoundToInt((transform.position.x - startPoint.x) / nodeSize),
-            Mathf.RoundToInt((transform.position.z - startPoint.z) / nodeSize));
-
-        if (newCoords.x < 0 || newCoords.x >= gridSize.x || newCoords.y < 0 || newCoords.y >= gridSize.y) // if not in grid range
-            newCoords = new Vector2Int(-1, -1);
-        return newCoords;
+        GameController.Instance.SceneController.OnUnitSelect -= MarkUnit;
+        
+        if (teamId == 0) { return; }
+        
+        OnUnitDeath -= UnitDeath;
+        OnUnitDeath -= GameController.Instance.SceneController.UnitDeath;
     }
-    private void SetNearbyCoordsAndPosition()
+
+    private void OnDestroy()
     {
-        Vector2Int testCoords;
-
-        testCoords = GetNearbyCoords(GameController.Instance.Grid.transform.position, new Vector2Int(GameController.Instance.Grid.XSize,
-            GameController.Instance.Grid.YSize), GameController.Instance.Grid.NodeSize);
-        if (testCoords != new Vector2Int(-1, -1))
-        {
-            coords = testCoords;
-        }
-        pivot.transform.position = GameController.Instance.Grid.transform.position +
-                new Vector3(coords.x * GameController.Instance.Grid.NodeSize, pivot.transform.position.y, 
-                    coords.y * GameController.Instance.Grid.NodeSize);
+        GameController.Instance.EntityManager.RemoveEntity(this);
     }
-    private void MarkerUnit(Unit unit)
+
+    private void MarkUnit(Unit unit)
     {
         if (unit == this)
         {
@@ -115,7 +98,14 @@ public class Unit : Entity
         }
         marker?.SetActive(false);
     }
-    
+    private void UnitDeath(Unit unit)
+    {
+        if (unit == this)
+        {
+            Destroy(pivot.gameObject, 3f);
+        }
+    }
+
     public void ChangeHealth(int value)
     {
         if (value < 0)
@@ -173,6 +163,30 @@ public class Unit : Entity
         {
             GameController.Instance.WorldUIManager.CreateHoveringWorldText(HWTType.TimeBurned, transform.position, $"{value}");
         }
+    }
+
+    private Vector2Int GetNearbyCoords(Vector3 startPoint, Vector2Int gridSize, float nodeSize)
+    {
+        Vector2Int newCoords = new Vector2Int(Mathf.RoundToInt((transform.position.x - startPoint.x) / nodeSize),
+            Mathf.RoundToInt((transform.position.z - startPoint.z) / nodeSize));
+
+        if (newCoords.x < 0 || newCoords.x >= gridSize.x || newCoords.y < 0 || newCoords.y >= gridSize.y) // if not in grid range
+            newCoords = new Vector2Int(-1, -1);
+        return newCoords;
+    }
+    private void SetNearbyCoordsAndPosition()
+    {
+        Vector2Int testCoords;
+
+        testCoords = GetNearbyCoords(GameController.Instance.Grid.transform.position, new Vector2Int(GameController.Instance.Grid.XSize,
+            GameController.Instance.Grid.YSize), GameController.Instance.Grid.NodeSize);
+        if (testCoords != new Vector2Int(-1, -1))
+        {
+            coords = testCoords;
+        }
+        pivot.transform.position = GameController.Instance.Grid.transform.position +
+                new Vector3(coords.x * GameController.Instance.Grid.NodeSize, pivot.transform.position.y, 
+                    coords.y * GameController.Instance.Grid.NodeSize);
     }
 
     public IEnumerator MoveByPath(List<PathNode> path)

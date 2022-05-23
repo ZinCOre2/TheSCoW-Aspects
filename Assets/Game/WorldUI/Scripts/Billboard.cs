@@ -7,7 +7,7 @@ public class Billboard : MonoBehaviour
     private Transform _cameraPos;
     private void Start()
     {
-        _cameraPos = FindObjectOfType<CameraController>().transform;
+        _cameraPos = GameController.Instance.CameraController.transform;
     }
     
     private void Update()

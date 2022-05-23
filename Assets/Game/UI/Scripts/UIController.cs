@@ -83,22 +83,30 @@ public class UIController : MonoBehaviour
     {
         if (unit.TeamId - 1 != GameController.Instance.SceneController.turnId)
         {
-            for (int i = 0; i < 6; i++)
+            if (unit is MasterUnit)
             {
-                if (unit.DeckManager.Hand[i] != AbilityHolder.AType.None)
+                for (int i = 0; i < 6; i++)
                 {
-                    UnitDataPanel.CardBacks[i].gameObject.SetActive(true);
-                }
-                else
-                {
-                    UnitDataPanel.CardBacks[i].gameObject.SetActive(false);
+                    if (((MasterUnit)unit).DeckManager.Hand[i] != AbilityHolder.AbilityType.None)
+                    {
+                        UnitDataPanel.CardBacks[i].gameObject.SetActive(true);
+                    }
+                    else
+                    {
+                        UnitDataPanel.CardBacks[i].gameObject.SetActive(false);
+                    }
                 }
             }
         }
         else
         {
-            for (int i = 0; i < 6; i++)
-                UnitDataPanel.CardBacks[i].gameObject.SetActive(false);
+            if (unit is MasterUnit)
+            {
+                for (int i = 0; i < 6; i++)
+                {
+                    UnitDataPanel.CardBacks[i].gameObject.SetActive(false);
+                }
+            }
         }
 
         if (selectedUnit)
@@ -147,7 +155,7 @@ public class UIController : MonoBehaviour
             prevImage.color = Color.white;
         }
         
-        UnitDataPanel.AbilitySlots[0].SetAbility(GameController.Instance.AbilityHolder.GetAbility(AbilityHolder.AType.Move));
+        UnitDataPanel.AbilitySlots[0].SetAbility(GameController.Instance.AbilityHolder.GetAbility(AbilityHolder.AbilityType.Move));
         GameController.Instance.SceneController.SetSelectedAbility(UnitDataPanel.AbilitySlots[0].ability);
         UnitDataPanel.AbilitySlots[0].SetId(0);
         if (UnitDataPanel.AbilitySlots[0].TryGetComponent(out Image image))
@@ -157,12 +165,16 @@ public class UIController : MonoBehaviour
         }
         selectedAbilityId = 0;
 
-        for (int i = 1; i < 7; i++)
+        if (selectedUnit is MasterUnit)
         {
-            UnitDataPanel.AbilitySlots[i].gameObject.SetActive(true);
-            UnitDataPanel.AbilitySlots[i].SetId(i);
-            UnitDataPanel.AbilitySlots[i].SetAbility(GameController.Instance.AbilityHolder.GetAbility(selectedUnit.DeckManager.Hand[i - 1]));
-        }       
+            for (int i = 1; i < 7; i++)
+            {
+                UnitDataPanel.AbilitySlots[i].gameObject.SetActive(true);
+                UnitDataPanel.AbilitySlots[i].SetId(i);
+                UnitDataPanel.AbilitySlots[i]
+                    .SetAbility(GameController.Instance.AbilityHolder.GetAbility(((MasterUnit)selectedUnit).DeckManager.Hand[i - 1]));
+            }
+        }
     }
 
     private void UnitHealthChanged(Unit unit, int newHealth)

@@ -12,5 +12,4 @@ public class UnitData : ScriptableObject
     public int maxHealth, maxEnergy, maxTime, hpRegen, epRegen;
     public AspectDedication[] AspectDedications = new AspectDedication[4];
     public int power, defence;
-    public List<AbilityHolder.AType> StartingDeck;
 }

@@ -4,10 +4,12 @@ using System.Collections.Generic;
 
 public class Pathfinding
 {
-    enum Direction {
+    enum Direction 
+    {
         LeftUp, Up, RightUp,
         Left, None, Right,
-        LeftDown, Down, RightDown }
+        LeftDown, Down, RightDown 
+    }
 
     public static List<PathNode> GetNodesInPathfindingRange(Node start, int minRange, int maxRange)
     {
@@ -374,9 +376,10 @@ public class Pathfinding
             }
             path.Add(newPathNode);
 
-            if (GameController.Instance.Grid.GetUnitOnNode(x0, y0) != null &&
-                isBlockedByEntity && GameController.Instance.Grid.NodeOccupied(x0, y0) &&
-                GameController.Instance.Grid.GetUnitOnNode(x0, y0).TeamId == 0)
+            if (isBlockedByEntity && GameController.Instance.Grid.NodeOccupied(x0, y0) &&
+                ((GameController.Instance.Grid.GetUnitOnNode(x0, y0) != null &&
+                 GameController.Instance.Grid.GetUnitOnNode(x0, y0).TeamId == 0) ||
+                (GameController.Instance.Grid.GetUnitOnNode(x0, y0) == null)))
             {
                 break;
             }

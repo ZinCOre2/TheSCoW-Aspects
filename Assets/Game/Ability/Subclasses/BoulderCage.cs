@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class BoulderCage : Ability
 {
+    [SerializeField] private PhysicalEntity rockEntity;
+    
     public override void UseAbility(Unit user, List<PathNode> aoe)
     {
         if (abilityData.epCost > user.energy)
@@ -27,16 +29,19 @@ public class BoulderCage : Ability
         foreach (PathNode pathNode in aoe)
         {
             AbilityEffect aEffect;
-            aEffect = ObjectPooler.Instance.SpawnFromPool(abilityEffect.EffectTag, pathNode.node.transform.position, abilityEffect.transform.rotation).GetComponent<AbilityEffect>();
+            aEffect = GameController.Instance.ObjectPooler.SpawnFromPool(abilityEffect.EffectTag, pathNode.node.transform.position, abilityEffect.transform.rotation).GetComponent<AbilityEffect>();
 
             target = GameController.Instance.Grid.GetUnitOnNode(pathNode.node.Coords);
+            var damage = (int)((abilityData.values[0] * (1 + user.UnitData.AspectDedications[1].Value / 100f) + user.UnitData.power) / 5f) * 5;
+
             if (target && target.TeamId != 0 && target.TeamId != user.TeamId)
             {
-                target.ChangeHealth(-abilityData.values[0]);
+                target.ChangeHealth(-damage);
             }
             else
             {
-                // Create rock
+                var rock = Instantiate(rockEntity, pathNode.node.transform.position, Quaternion.identity);
+                GameController.Instance.EntityManager.AddEntity(rock);
             }
         }
     }

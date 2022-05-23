@@ -1,17 +1,28 @@
 using System;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 
 public class WorldUIManager : MonoBehaviour
 {
     public Transform WorldUIParent;
-    
+    [Header("Unit Bar Pack")]
+    public UnitBarPack MasterUnitBarPackPrefab;
     public UnitBarPack UnitBarPackPrefab;
-    public HoveringWorldText HealthRestoreHWT, DamageTakenHWT, EnergyRestoredHWT, EnergyBurnedHWT, TimeBurnedHWT, NotEnoughEnergyHWT, NotEnoughTimeHWT;
+    [Header("Hovering World Texts (HWTs)")]
+    public HoveringWorldText HealthRestoreHWT;
+    public HoveringWorldText DamageTakenHWT;
+    public HoveringWorldText EnergyRestoredHWT;
+    public HoveringWorldText EnergyBurnedHWT;
+    public HoveringWorldText TimeBurnedHWT;
+    public HoveringWorldText NotEnoughEnergyHWT;
+    public HoveringWorldText NotEnoughTimeHWT;
 
     public UnitBarPack CreateBarPack(Unit boundUnit)
     {
-        var barPack = Instantiate(UnitBarPackPrefab, WorldUIParent);
+        // if (boundUnit is MasterUnit) ... else {}
+        var barPack = Instantiate(MasterUnitBarPackPrefab, WorldUIParent);
+        // else {var barPack = Instantiate(UnitBarPackPrefab, WorldUIParent);}
         barPack.BindUnit(boundUnit);
 
         return barPack;

@@ -17,7 +17,6 @@ public class SceneController : MonoBehaviour
     public event Action OnTurnEnd;
 
     [Header("Game Data")]
-    [SerializeField] private Grid2d grid;
     [SerializeField] private Timer turnTimer;
     [SerializeField] private float turnDuration = 75f;
     [Header("UI Data")]
@@ -68,7 +67,7 @@ public class SceneController : MonoBehaviour
             UnmarkNodes();
             if (unit.TeamId - 1 == turnId)
             {
-                _selectedAbility = GameController.Instance.AbilityHolder.GetAbility(AbilityHolder.AType.Move);
+                _selectedAbility = GameController.Instance.AbilityHolder.GetAbility(AbilityHolder.AbilityType.Move);
 
                 _nodesInRange = _selectedAbility.GetNodesInRange(SelectedUnit);
             }
@@ -174,7 +173,7 @@ public class SceneController : MonoBehaviour
                                         _aoe = _selectedAbility.GetAoe(SelectedUnit, pathNode);
                                         _selectedAbility.UseAbility(SelectedUnit, _aoe);
 
-                                        _selectedAbility = GameController.Instance.AbilityHolder.GetAbility(AbilityHolder.AType.Move);
+                                        _selectedAbility = GameController.Instance.AbilityHolder.GetAbility(AbilityHolder.AbilityType.Move);
                                         _nodesInRange = _selectedAbility.GetNodesInRange(SelectedUnit);
 
                                         break;
@@ -192,12 +191,12 @@ public class SceneController : MonoBehaviour
                                 // Find selected node. If not in range, do nothing
                                 foreach (PathNode pathNode in _nodesInRange)
                                 {
-                                    if (pathNode.node == grid.nodeList[unitTarget.Coords.x, unitTarget.Coords.y])
+                                    if (pathNode.node == GameController.Instance.Grid.nodeList[unitTarget.Coords.x, unitTarget.Coords.y])
                                     {
                                         _aoe = _selectedAbility.GetAoe(SelectedUnit, pathNode);
                                         _selectedAbility.UseAbility(SelectedUnit, _aoe);
 
-                                        _selectedAbility = GameController.Instance.AbilityHolder.GetAbility(AbilityHolder.AType.Move);
+                                        _selectedAbility = GameController.Instance.AbilityHolder.GetAbility(AbilityHolder.AbilityType.Move);
                                         _nodesInRange = _selectedAbility.GetNodesInRange(SelectedUnit);
 
                                         break;
@@ -233,7 +232,7 @@ public class SceneController : MonoBehaviour
         foreach (PathNode pathNode in _nodesInRange)
         {
             Unit unitInRange;
-            unitInRange = grid.GetUnitOnNode(pathNode.node.Coords);
+            unitInRange = GameController.Instance.Grid.GetUnitOnNode(pathNode.node.Coords);
 
             pathNode.node.MarkCustom(markColor);
         }
@@ -242,7 +241,7 @@ public class SceneController : MonoBehaviour
         foreach (PathNode pathNode in _aoe)
         {
             Unit unitInRange;
-            unitInRange = grid.GetUnitOnNode(pathNode.node.Coords);
+            unitInRange = GameController.Instance.Grid.GetUnitOnNode(pathNode.node.Coords);
             pathNode.node.MarkCustom(Color.yellow);
         }
     }
@@ -255,7 +254,7 @@ public class SceneController : MonoBehaviour
             UnmarkNodes();
         }
 
-        grid.unitList.Remove(unit);
+        GameController.Instance.EntityManager.RemoveEntity(unit);
 
         Counter[unit.TeamId - 1]--;
         Debug.Log("Team " + (unit.TeamId - 1) + " counter: " + Counter[unit.TeamId - 1]);
@@ -300,7 +299,7 @@ public class SceneController : MonoBehaviour
     {
         UnmarkNodes();
 
-        foreach (Unit unit in grid.unitList)
+        foreach (Unit unit in GameController.Instance.EntityManager.Units)
         {
             if (unit.TeamId != 0)
             {
@@ -308,7 +307,8 @@ public class SceneController : MonoBehaviour
                 unit.ChangeEnergy(unit.UnitData.epRegen);
                 unit.ChangeTime(unit.UnitData.maxTime / 2);
 
-                unit.DeckManager.DrawCard();
+                if (unit is MasterUnit masterUnit)
+                masterUnit.DeckManager.DrawCard();
             }
         }
 

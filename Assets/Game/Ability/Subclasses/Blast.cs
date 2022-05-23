@@ -27,7 +27,7 @@ public class Blast : Ability
         foreach (PathNode pathNode in aoe)
         {
             AbilityEffect aEffect;
-            aEffect = ObjectPooler.Instance.SpawnFromPool(abilityEffect.EffectTag, pathNode.node.transform.position, abilityEffect.transform.rotation).GetComponent<AbilityEffect>();
+            aEffect = GameController.Instance.ObjectPooler.SpawnFromPool(abilityEffect.EffectTag, pathNode.node.transform.position, abilityEffect.transform.rotation).GetComponent<AbilityEffect>();
 
             target = GameController.Instance.Grid.GetUnitOnNode(pathNode.node.Coords);
             var damage = (int)((abilityData.values[0] * (1 + user.UnitData.AspectDedications[0].Value / 100f) + user.UnitData.power) / 5f) * 5;

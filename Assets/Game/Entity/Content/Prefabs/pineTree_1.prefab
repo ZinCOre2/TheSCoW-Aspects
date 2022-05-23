@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2014711437187234188}
   - component: {fileID: 2014711437185873068}
   - component: {fileID: 2014711437184032260}
-  - component: {fileID: 2014711437184032261}
+  - component: {fileID: 4520735973317105613}
   m_Layer: 0
   m_Name: pineTree_1
   m_TagString: Untagged
@@ -95,7 +95,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2, y: 2, z: 2}
   m_Center: {x: 0, y: 1, z: 0}
---- !u!114 &2014711437184032261
+--- !u!114 &4520735973317105613
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -104,18 +104,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 2014711437184198314}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4351a4dc41fad69418430eb5d36a6b22, type: 3}
+  m_Script: {fileID: 11500000, guid: a42114c780be4265ac0f30a9f88c1b14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0}
-  unitData: {fileID: 0}
-  animator: {fileID: 0}
-  moveSpeed: 25
   pivot: {fileID: 2014711437183891788}
   marker: {fileID: 2014711437643734043}
   highlight: {fileID: 0}
-  teamId: 0
-  deck: 
 --- !u!1 &2014711437643734043
 GameObject:
   m_ObjectHideFlags: 0

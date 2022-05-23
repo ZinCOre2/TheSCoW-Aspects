@@ -4,7 +4,7 @@ using UnityEngine;
 public class Ability : MonoBehaviour
 {
     [SerializeField] protected AbilityData abilityData;
-    public AbilityData AbilityInfo { get { return abilityData; } protected set { abilityData = value; } }
+    public AbilityData AbilityData { get { return abilityData; } protected set { abilityData = value; } }
     [SerializeField] protected AbilityEffect abilityEffect;
     [SerializeField] protected AudioClip soundEffect;
     [SerializeField] protected AudioSource audioSource;
@@ -64,10 +64,11 @@ public class Ability : MonoBehaviour
             audioSource.Play();
         }
 
+        if (!(user is MasterUnit masterUnit)) { return; }
         if (GameController.Instance.UIController.selectedAbilityId != 0)
         {
-            user.DeckManager.DiscardCard(GameController.Instance.UIController.selectedAbilityId - 1);
-            user.AnimatorUnit.SetTrigger("UseSpell");
+            masterUnit.DeckManager.DiscardCard(GameController.Instance.UIController.selectedAbilityId - 1);
+            user.Animator.SetTrigger("UseSpell");
             GameController.Instance.UIController.SetId(0);
             GameController.Instance.SceneController.SetSelectedAbility(null);
         }

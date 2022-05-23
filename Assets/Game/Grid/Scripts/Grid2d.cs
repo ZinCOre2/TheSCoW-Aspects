@@ -13,11 +13,9 @@ public class Grid2d : MonoBehaviour
     public float NodeSize { get { return nodeSize; } private set { nodeSize = value; } }
 
     public Node[,] nodeList { get; private set; }
-    public List<Unit> unitList { get; private set; }
 
     private void Awake()
     {
-        unitList = new List<Unit>();
         nodeList = new Node[xSize, ySize];
 
         var nodes = GetComponentsInChildren<Node>();
@@ -45,9 +43,9 @@ public class Grid2d : MonoBehaviour
     {
         if (coords.x < 0 || coords.x >= xSize || coords.y < 0 || coords.y >= ySize || nodeList[coords.x, coords.y] == null)
             return true;
-        foreach (Unit unit in unitList)
+        foreach (PhysicalEntity entity in GameController.Instance.EntityManager.PhysicalEntities)
         {
-            if (unit.Coords == coords)
+            if (entity.Coords == coords)
                 return true;
         }
         return false;
@@ -56,9 +54,9 @@ public class Grid2d : MonoBehaviour
     {
         if (x < 0 || x >= xSize || y < 0 || y >= ySize || nodeList[x, y] == null)
             return true;
-        foreach (Unit unit in unitList)
+        foreach (PhysicalEntity entity in GameController.Instance.EntityManager.PhysicalEntities)
         {
-            if (unit.Coords.x == x && unit.Coords.y == y)
+            if (entity.Coords.x == x && entity.Coords.y == y)
                 return true;
         }
         return false;
@@ -68,7 +66,7 @@ public class Grid2d : MonoBehaviour
     {
         if (coords.x < 0 || coords.x >= xSize || coords.y < 0 || coords.y >= ySize || nodeList[coords.x, coords.y] == null)
             return null;
-        foreach (Unit unit in unitList)
+        foreach (Unit unit in GameController.Instance.EntityManager.Units)
         {
             if (unit.Coords == coords)
                 return unit;
@@ -79,7 +77,7 @@ public class Grid2d : MonoBehaviour
     {
         if (x < 0 || x >= xSize || y < 0 || y >= ySize || nodeList[x, y] == null)
             return null;
-        foreach (Unit unit in unitList)
+        foreach (Unit unit in GameController.Instance.EntityManager.Units)
         {
             if (unit.Coords.x == x && unit.Coords.y == y)
                 return unit;

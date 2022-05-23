@@ -27,7 +27,7 @@ MonoBehaviour:
   epCost: 30
   tpCost: 20
   Dedications:
-  - IsUsable: 1
+  - IsUsable: 0
     Value: 0
   - IsUsable: 0
     Value: 0

@@ -27,7 +27,7 @@ public class UIAbility : MonoBehaviour, IPointerClickHandler, IPointerEnterHandl
         {
             this.ability = ability;
             
-            var abilityInfo = ability.AbilityInfo;
+            var abilityInfo = ability.AbilityData;
             
             if (icon != null) icon.sprite = abilityInfo.icon;
             if (cardName != null) cardName.text = abilityInfo.cardName;
@@ -57,13 +57,13 @@ public class UIAbility : MonoBehaviour, IPointerClickHandler, IPointerEnterHandl
             {
                 if (aspectDedications[i] != null)
                 {
-                    aspectDedications[i].text = $"{ability.AbilityInfo.Dedications[i].Value}";
-                    aspectDedications[i].gameObject.SetActive(ability.AbilityInfo.Dedications[i].IsUsable);
+                    aspectDedications[i].text = $"{ability.AbilityData.Dedications[i].Value}";
+                    aspectDedications[i].gameObject.SetActive(ability.AbilityData.Dedications[i].IsUsable);
                 }
                 
                 if (aspectCovers[i] != null)
                 {
-                    aspectCovers[i].SetActive(!ability.AbilityInfo.Dedications[i].IsUsable);
+                    aspectCovers[i].SetActive(!ability.AbilityData.Dedications[i].IsUsable);
                 }
             }
         }
@@ -81,9 +81,9 @@ public class UIAbility : MonoBehaviour, IPointerClickHandler, IPointerEnterHandl
         }
     }
 
-    public void SetAbility(AbilityHolder.AType aType)
+    public void SetAbility(AbilityHolder.AbilityType abilityType)
     {
-        var abl = GameController.Instance.AbilityHolder.GetAbility(aType);
+        var abl = GameController.Instance.AbilityHolder.GetAbility(abilityType);
         
         SetAbility(abl);
     }

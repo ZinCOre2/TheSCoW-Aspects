@@ -19,17 +19,19 @@ public class MindFlow : Ability
             return;
         }
         
+        if (!(user is MasterUnit masterUser)) { return; }
+        
         base.UseAbility(user, aoe);
         user.ChangeEnergy(-abilityData.epCost);
         user.ChangeTime(-abilityData.tpCost);
         
         AbilityEffect aEffect;
-        aEffect = ObjectPooler.Instance.SpawnFromPool(abilityEffect.EffectTag, 
+        aEffect = GameController.Instance.ObjectPooler.SpawnFromPool(abilityEffect.EffectTag, 
             GameController.Instance.Grid.nodeList[user.Coords.x, user.Coords.y].transform.position, abilityEffect.transform.rotation).GetComponent<AbilityEffect>();
 
         for (var i = 0; i < abilityData.values[0]; i++)
         {
-            user.DeckManager.DrawCard();
+            masterUser.DeckManager.DrawCard();
         }
     }
 }

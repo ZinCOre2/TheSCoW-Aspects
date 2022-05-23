@@ -311,8 +311,6 @@ MonoBehaviour:
   coords: {x: 16, y: 16}
   rend: {fileID: 6883848}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &6883847
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -423,8 +421,6 @@ MonoBehaviour:
   coords: {x: 15, y: 10}
   rend: {fileID: 10400618}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &10400617
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -608,8 +604,6 @@ MonoBehaviour:
   coords: {x: 12, y: 13}
   rend: {fileID: 12338142}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &12338141
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -720,8 +714,6 @@ MonoBehaviour:
   coords: {x: 18, y: 15}
   rend: {fileID: 15732343}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &15732342
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -832,8 +824,6 @@ MonoBehaviour:
   coords: {x: 14, y: 5}
   rend: {fileID: 17894918}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &17894917
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1019,8 +1009,6 @@ MonoBehaviour:
   coords: {x: 5, y: 14}
   rend: {fileID: 28498135}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &28498134
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1131,8 +1119,6 @@ MonoBehaviour:
   coords: {x: 14, y: 3}
   rend: {fileID: 29218950}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &29218949
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1243,8 +1229,6 @@ MonoBehaviour:
   coords: {x: 11, y: 5}
   rend: {fileID: 29960739}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &29960738
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1350,13 +1334,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SceneController: {fileID: 1684493515}
-  UIController: {fileID: 1858058426}
-  SelectionManager: {fileID: 1744370875}
   Grid: {fileID: 67761260}
-  UnitManager: {fileID: 476391578}
-  TurnManager: {fileID: 1080304821}
-  AbilityHolder: {fileID: 1447597401}
+  CameraController: {fileID: 195116189}
+  AudioManager: {fileID: 57347815}
+  UIController: {fileID: 1858058426}
   WorldUIManager: {fileID: 632691920}
+  SelectionManager: {fileID: 1744370875}
+  EntityManager: {fileID: 476391578}
+  AbilityHolder: {fileID: 1447597401}
+  TurnManager: {fileID: 1080304821}
+  ObjectPooler: {fileID: 810744324}
 --- !u!1001 &36526203
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1632,8 +1619,6 @@ MonoBehaviour:
   coords: {x: 8, y: 6}
   rend: {fileID: 39515626}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &39515625
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1863,8 +1848,6 @@ MonoBehaviour:
   coords: {x: 9, y: 5}
   rend: {fileID: 50051735}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &50051734
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1926,6 +1909,49 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 50051731}
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &57347813
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 57347814}
+  - component: {fileID: 57347815}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &57347814
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 57347813}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 664212583}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &57347815
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 57347813}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7827e2a868bb4e909bd413a0cdd62963, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &58058404
 GameObject:
   m_ObjectHideFlags: 0
@@ -2048,8 +2074,6 @@ MonoBehaviour:
   coords: {x: 7, y: 1}
   rend: {fileID: 59993814}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &59993813
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -2160,8 +2184,6 @@ MonoBehaviour:
   coords: {x: 11, y: 8}
   rend: {fileID: 63461328}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &63461327
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -2272,8 +2294,6 @@ MonoBehaviour:
   coords: {x: 0, y: 11}
   rend: {fileID: 64429550}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &64429549
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -2534,8 +2554,6 @@ MonoBehaviour:
   coords: {x: 15, y: 1}
   rend: {fileID: 66761793}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &66761792
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -2606,6 +2624,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 67761259}
+  - component: {fileID: 67761261}
   - component: {fileID: 67761260}
   m_Layer: 0
   m_Name: Grid
@@ -3026,7 +3045,7 @@ Transform:
   - {fileID: 1321768462}
   - {fileID: 2033267037}
   m_Father: {fileID: 664212583}
-  m_RootOrder: 4
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &67761260
 MonoBehaviour:
@@ -3043,6 +3062,24 @@ MonoBehaviour:
   nodeSize: 5
   xSize: 20
   ySize: 20
+--- !u!114 &67761261
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 67761258}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd147fa731ad0b9469e561a094f94053, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nodePrefab: {fileID: 936493241441818920, guid: e15f2a1cfc5a43f4cbda989a9ff38ab9,
+    type: 3}
+  xSize: 20
+  ySize: 20
+  nodeSize: 5
+  isGridGenerated: 1
 --- !u!1 &68343917
 GameObject:
   m_ObjectHideFlags: 0
@@ -3092,8 +3129,6 @@ MonoBehaviour:
   coords: {x: 12, y: 1}
   rend: {fileID: 68343921}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &68343920
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -3278,8 +3313,6 @@ MonoBehaviour:
   coords: {x: 8, y: 8}
   rend: {fileID: 80024645}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &80024644
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -3459,8 +3492,6 @@ MonoBehaviour:
   coords: {x: 9, y: 18}
   rend: {fileID: 90691277}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &90691276
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -3653,8 +3684,6 @@ MonoBehaviour:
   coords: {x: 19, y: 4}
   rend: {fileID: 97670081}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &97670080
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -3765,8 +3794,6 @@ MonoBehaviour:
   coords: {x: 8, y: 4}
   rend: {fileID: 99003556}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &99003555
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -3951,8 +3978,6 @@ MonoBehaviour:
   coords: {x: 5, y: 6}
   rend: {fileID: 112165059}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &112165058
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -4136,8 +4161,6 @@ MonoBehaviour:
   coords: {x: 2, y: 7}
   rend: {fileID: 116854979}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &116854978
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -4248,8 +4271,6 @@ MonoBehaviour:
   coords: {x: 18, y: 11}
   rend: {fileID: 119363876}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &119363875
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -4450,6 +4471,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3877281134070783614, guid: d9434ec6014aeb14eacb95509587cb26,
+        type: 3}
+      propertyPath: teamId
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4236196049779726038, guid: d9434ec6014aeb14eacb95509587cb26,
         type: 3}
       propertyPath: teamId
@@ -4512,8 +4538,6 @@ MonoBehaviour:
   coords: {x: 12, y: 18}
   rend: {fileID: 132366451}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &132366450
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -4624,8 +4648,6 @@ MonoBehaviour:
   coords: {x: 2, y: 0}
   rend: {fileID: 133703919}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &133703918
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -4725,7 +4747,7 @@ RectTransform:
   - {fileID: 1377021010}
   - {fileID: 2044015865}
   m_Father: {fileID: 2058082736}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
@@ -4817,8 +4839,6 @@ MonoBehaviour:
   coords: {x: 17, y: 8}
   rend: {fileID: 138478574}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &138478573
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -4929,8 +4949,6 @@ MonoBehaviour:
   coords: {x: 9, y: 13}
   rend: {fileID: 138655143}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &138655142
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -5083,8 +5101,6 @@ MonoBehaviour:
   coords: {x: 10, y: 11}
   rend: {fileID: 147735646}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &147735645
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -5195,8 +5211,6 @@ MonoBehaviour:
   coords: {x: 14, y: 17}
   rend: {fileID: 148841203}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &148841202
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -5307,8 +5321,6 @@ MonoBehaviour:
   coords: {x: 17, y: 1}
   rend: {fileID: 150561618}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &150561617
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -5419,8 +5431,6 @@ MonoBehaviour:
   coords: {x: 11, y: 14}
   rend: {fileID: 153891614}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &153891613
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -5685,8 +5695,6 @@ MonoBehaviour:
   coords: {x: 5, y: 15}
   rend: {fileID: 164247671}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &164247670
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -5797,8 +5805,6 @@ MonoBehaviour:
   coords: {x: 4, y: 18}
   rend: {fileID: 168456165}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &168456164
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -5909,8 +5915,6 @@ MonoBehaviour:
   coords: {x: 16, y: 2}
   rend: {fileID: 172734746}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &172734745
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -6021,8 +6025,6 @@ MonoBehaviour:
   coords: {x: 11, y: 9}
   rend: {fileID: 182113135}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &182113134
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -6133,8 +6135,6 @@ MonoBehaviour:
   coords: {x: 9, y: 0}
   rend: {fileID: 184646598}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &184646597
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -6402,8 +6402,6 @@ MonoBehaviour:
   coords: {x: 1, y: 8}
   rend: {fileID: 192174705}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &192174704
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -6514,8 +6512,6 @@ MonoBehaviour:
   coords: {x: 4, y: 19}
   rend: {fileID: 193913622}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &193913621
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -6607,7 +6603,7 @@ Transform:
   m_Children:
   - {fileID: 963194228}
   m_Father: {fileID: 664212583}
-  m_RootOrder: 7
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 45, z: 0}
 --- !u!114 &195116189
 MonoBehaviour:
@@ -6622,7 +6618,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FollowTransform: {fileID: 0}
-  cam: {fileID: 963194227}
+  Camera: {fileID: 963194227}
   normalSpeed: 0.4
   fastSpeedMultiplier: 2
   rotationAmount: 1
@@ -6680,8 +6676,6 @@ MonoBehaviour:
   coords: {x: 13, y: 10}
   rend: {fileID: 203835580}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &203835579
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -6864,8 +6858,6 @@ MonoBehaviour:
   coords: {x: 7, y: 2}
   rend: {fileID: 204941844}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &204941843
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -7117,8 +7109,6 @@ MonoBehaviour:
   coords: {x: 0, y: 4}
   rend: {fileID: 216702060}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &216702059
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -7390,8 +7380,6 @@ MonoBehaviour:
   coords: {x: 19, y: 10}
   rend: {fileID: 224989790}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &224989789
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -7502,8 +7490,6 @@ MonoBehaviour:
   coords: {x: 0, y: 6}
   rend: {fileID: 228423627}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &228423626
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -7650,8 +7636,6 @@ MonoBehaviour:
   coords: {x: 2, y: 10}
   rend: {fileID: 242490902}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &242490901
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -7839,8 +7823,6 @@ MonoBehaviour:
   coords: {x: 2, y: 9}
   rend: {fileID: 251808321}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &251808320
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -7951,8 +7933,6 @@ MonoBehaviour:
   coords: {x: 17, y: 3}
   rend: {fileID: 257144598}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &257144597
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -8137,8 +8117,6 @@ MonoBehaviour:
   coords: {x: 17, y: 14}
   rend: {fileID: 268733850}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &268733849
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -8249,8 +8227,6 @@ MonoBehaviour:
   coords: {x: 15, y: 0}
   rend: {fileID: 271084645}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &271084644
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -8433,8 +8409,6 @@ MonoBehaviour:
   coords: {x: 17, y: 0}
   rend: {fileID: 272060809}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &272060808
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -8620,8 +8594,6 @@ MonoBehaviour:
   coords: {x: 6, y: 14}
   rend: {fileID: 278168367}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &278168366
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -8732,8 +8704,6 @@ MonoBehaviour:
   coords: {x: 13, y: 7}
   rend: {fileID: 282219620}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &282219619
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -8844,8 +8814,6 @@ MonoBehaviour:
   coords: {x: 16, y: 3}
   rend: {fileID: 283224378}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &283224377
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -9029,8 +8997,6 @@ MonoBehaviour:
   coords: {x: 6, y: 18}
   rend: {fileID: 289152226}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &289152225
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -9174,8 +9140,6 @@ MonoBehaviour:
   coords: {x: 8, y: 1}
   rend: {fileID: 301547512}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &301547511
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -9286,8 +9250,6 @@ MonoBehaviour:
   coords: {x: 3, y: 4}
   rend: {fileID: 304291287}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &304291286
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -9553,8 +9515,6 @@ MonoBehaviour:
   coords: {x: 8, y: 17}
   rend: {fileID: 305489563}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &305489562
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -9665,8 +9625,6 @@ MonoBehaviour:
   coords: {x: 9, y: 9}
   rend: {fileID: 306092752}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &306092751
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -9777,8 +9735,6 @@ MonoBehaviour:
   coords: {x: 12, y: 16}
   rend: {fileID: 307178461}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &307178460
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -10045,8 +10001,6 @@ MonoBehaviour:
   coords: {x: 8, y: 13}
   rend: {fileID: 311433812}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &311433811
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -10157,8 +10111,6 @@ MonoBehaviour:
   coords: {x: 8, y: 12}
   rend: {fileID: 312231224}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &312231223
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -10269,8 +10221,6 @@ MonoBehaviour:
   coords: {x: 2, y: 5}
   rend: {fileID: 315119830}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &315119829
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -10381,8 +10331,6 @@ MonoBehaviour:
   coords: {x: 6, y: 13}
   rend: {fileID: 316384205}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &316384204
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -10493,8 +10441,6 @@ MonoBehaviour:
   coords: {x: 3, y: 7}
   rend: {fileID: 317987188}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &317987187
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -10605,8 +10551,6 @@ MonoBehaviour:
   coords: {x: 0, y: 16}
   rend: {fileID: 320245214}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &320245213
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -10717,8 +10661,6 @@ MonoBehaviour:
   coords: {x: 5, y: 11}
   rend: {fileID: 321957003}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &321957002
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -11186,8 +11128,6 @@ MonoBehaviour:
   coords: {x: 0, y: 8}
   rend: {fileID: 327836454}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &327836453
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -11387,8 +11327,6 @@ MonoBehaviour:
   coords: {x: 18, y: 3}
   rend: {fileID: 336857379}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &336857378
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -11499,8 +11437,6 @@ MonoBehaviour:
   coords: {x: 6, y: 11}
   rend: {fileID: 341119919}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &341119918
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -11611,8 +11547,6 @@ MonoBehaviour:
   coords: {x: 14, y: 15}
   rend: {fileID: 344599642}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &344599641
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -11723,8 +11657,6 @@ MonoBehaviour:
   coords: {x: 9, y: 6}
   rend: {fileID: 346847557}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &346847556
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -11910,8 +11842,6 @@ MonoBehaviour:
   coords: {x: 9, y: 1}
   rend: {fileID: 353422239}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &353422238
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -12022,8 +11952,6 @@ MonoBehaviour:
   coords: {x: 18, y: 1}
   rend: {fileID: 364778525}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &364778524
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -12116,7 +12044,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1880871248}
-  m_Father: {fileID: 2058082736}
+  m_Father: {fileID: 518225036}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -12263,8 +12191,6 @@ MonoBehaviour:
   coords: {x: 12, y: 14}
   rend: {fileID: 365713235}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &365713234
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -12420,7 +12346,7 @@ RectTransform:
   - {fileID: 674928452}
   - {fileID: 2141090192}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -12476,8 +12402,6 @@ MonoBehaviour:
   coords: {x: 13, y: 11}
   rend: {fileID: 367579596}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &367579595
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -12693,8 +12617,6 @@ MonoBehaviour:
   coords: {x: 1, y: 10}
   rend: {fileID: 381518290}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &381518289
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -12968,8 +12890,6 @@ MonoBehaviour:
   coords: {x: 10, y: 13}
   rend: {fileID: 404605940}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &404605939
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -13080,8 +13000,6 @@ MonoBehaviour:
   coords: {x: 6, y: 6}
   rend: {fileID: 412488679}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &412488678
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -13192,8 +13110,6 @@ MonoBehaviour:
   coords: {x: 3, y: 0}
   rend: {fileID: 413519817}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &413519816
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -13304,8 +13220,6 @@ MonoBehaviour:
   coords: {x: 11, y: 13}
   rend: {fileID: 424630723}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &424630722
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -13416,8 +13330,6 @@ MonoBehaviour:
   coords: {x: 10, y: 12}
   rend: {fileID: 433274638}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &433274637
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -13528,8 +13440,6 @@ MonoBehaviour:
   coords: {x: 2, y: 2}
   rend: {fileID: 434571021}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &434571020
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -13640,8 +13550,6 @@ MonoBehaviour:
   coords: {x: 19, y: 7}
   rend: {fileID: 441160968}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &441160967
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -13752,8 +13660,6 @@ MonoBehaviour:
   coords: {x: 7, y: 7}
   rend: {fileID: 443756226}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &443756225
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -13941,8 +13847,6 @@ MonoBehaviour:
   coords: {x: 19, y: 13}
   rend: {fileID: 447645467}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &447645466
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -14053,8 +13957,6 @@ MonoBehaviour:
   coords: {x: 14, y: 16}
   rend: {fileID: 449348632}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &449348631
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -14165,8 +14067,6 @@ MonoBehaviour:
   coords: {x: 1, y: 19}
   rend: {fileID: 449895182}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &449895181
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -14436,8 +14336,6 @@ MonoBehaviour:
   coords: {x: 15, y: 3}
   rend: {fileID: 466657636}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &466657635
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -14548,8 +14446,6 @@ MonoBehaviour:
   coords: {x: 14, y: 10}
   rend: {fileID: 470665115}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &470665114
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -14660,8 +14556,6 @@ MonoBehaviour:
   coords: {x: 10, y: 17}
   rend: {fileID: 472007865}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &472007864
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -14734,7 +14628,7 @@ GameObject:
   - component: {fileID: 476391577}
   - component: {fileID: 476391578}
   m_Layer: 0
-  m_Name: UnitManager
+  m_Name: EntityManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14752,7 +14646,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 664212583}
-  m_RootOrder: 5
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &476391578
 MonoBehaviour:
@@ -14766,6 +14660,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f20b0227a3934695a27971f3c4ef15b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Entities: []
+  PhysicalEntities: []
+  Units: []
 --- !u!1 &477154007
 GameObject:
   m_ObjectHideFlags: 0
@@ -14815,8 +14712,6 @@ MonoBehaviour:
   coords: {x: 0, y: 13}
   rend: {fileID: 477154011}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &477154010
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -15001,8 +14896,6 @@ MonoBehaviour:
   coords: {x: 17, y: 6}
   rend: {fileID: 478259553}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &478259552
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -15113,8 +15006,6 @@ MonoBehaviour:
   coords: {x: 14, y: 6}
   rend: {fileID: 480475077}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &480475076
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -15300,8 +15191,6 @@ MonoBehaviour:
   coords: {x: 0, y: 2}
   rend: {fileID: 481973766}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &481973765
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -15412,8 +15301,6 @@ MonoBehaviour:
   coords: {x: 19, y: 17}
   rend: {fileID: 483679753}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &483679752
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -15680,8 +15567,6 @@ MonoBehaviour:
   coords: {x: 1, y: 6}
   rend: {fileID: 489627629}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &489627628
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -15929,8 +15814,6 @@ MonoBehaviour:
   coords: {x: 7, y: 5}
   rend: {fileID: 491105874}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &491105873
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -16041,8 +15924,6 @@ MonoBehaviour:
   coords: {x: 17, y: 16}
   rend: {fileID: 494646206}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &494646205
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -16153,8 +16034,6 @@ MonoBehaviour:
   coords: {x: 17, y: 12}
   rend: {fileID: 494823997}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &494823996
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -16265,8 +16144,6 @@ MonoBehaviour:
   coords: {x: 5, y: 10}
   rend: {fileID: 497587180}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &497587179
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -16377,8 +16254,6 @@ MonoBehaviour:
   coords: {x: 4, y: 12}
   rend: {fileID: 508010970}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &508010969
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -16637,8 +16512,6 @@ MonoBehaviour:
   coords: {x: 15, y: 9}
   rend: {fileID: 512780186}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &512780185
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -16881,8 +16754,9 @@ RectTransform:
   m_Children:
   - {fileID: 1883828653}
   - {fileID: 677963169}
+  - {fileID: 365025775}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -16938,8 +16812,6 @@ MonoBehaviour:
   coords: {x: 2, y: 13}
   rend: {fileID: 519716769}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &519716768
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -17207,8 +17079,6 @@ MonoBehaviour:
   coords: {x: 14, y: 1}
   rend: {fileID: 526725277}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &526725276
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -17319,8 +17189,6 @@ MonoBehaviour:
   coords: {x: 15, y: 7}
   rend: {fileID: 526825431}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &526825430
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -17431,8 +17299,6 @@ MonoBehaviour:
   coords: {x: 18, y: 12}
   rend: {fileID: 529181653}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &529181652
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -17543,8 +17409,6 @@ MonoBehaviour:
   coords: {x: 14, y: 13}
   rend: {fileID: 530292930}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &530292929
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -17655,8 +17519,6 @@ MonoBehaviour:
   coords: {x: 3, y: 17}
   rend: {fileID: 531066542}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &531066541
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -17767,8 +17629,6 @@ MonoBehaviour:
   coords: {x: 16, y: 8}
   rend: {fileID: 546883805}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &546883804
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -17879,8 +17739,6 @@ MonoBehaviour:
   coords: {x: 17, y: 15}
   rend: {fileID: 554037411}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &554037410
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -17991,8 +17849,6 @@ MonoBehaviour:
   coords: {x: 9, y: 4}
   rend: {fileID: 556797657}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &556797656
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -18259,8 +18115,6 @@ MonoBehaviour:
   coords: {x: 5, y: 17}
   rend: {fileID: 557414022}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &557414021
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -18371,8 +18225,6 @@ MonoBehaviour:
   coords: {x: 6, y: 0}
   rend: {fileID: 562697997}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &562697996
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -18558,8 +18410,6 @@ MonoBehaviour:
   coords: {x: 16, y: 10}
   rend: {fileID: 569228936}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &569228935
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -18670,8 +18520,6 @@ MonoBehaviour:
   coords: {x: 14, y: 0}
   rend: {fileID: 575218670}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &575218669
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -18782,8 +18630,6 @@ MonoBehaviour:
   coords: {x: 14, y: 14}
   rend: {fileID: 577761316}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &577761315
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -19040,8 +18886,6 @@ MonoBehaviour:
   coords: {x: 2, y: 8}
   rend: {fileID: 579560509}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &579560508
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -19152,8 +18996,6 @@ MonoBehaviour:
   coords: {x: 15, y: 16}
   rend: {fileID: 588040027}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &588040026
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -19483,8 +19325,6 @@ MonoBehaviour:
   coords: {x: 18, y: 13}
   rend: {fileID: 601090064}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &601090063
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -19595,8 +19435,6 @@ MonoBehaviour:
   coords: {x: 16, y: 17}
   rend: {fileID: 604079493}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &604079492
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -19707,8 +19545,6 @@ MonoBehaviour:
   coords: {x: 4, y: 4}
   rend: {fileID: 611720108}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &611720107
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -19819,8 +19655,6 @@ MonoBehaviour:
   coords: {x: 11, y: 2}
   rend: {fileID: 612004985}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &612004984
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -19931,8 +19765,6 @@ MonoBehaviour:
   coords: {x: 7, y: 0}
   rend: {fileID: 615455723}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &615455722
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -20043,8 +19875,6 @@ MonoBehaviour:
   coords: {x: 14, y: 19}
   rend: {fileID: 622016316}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &622016315
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -20155,8 +19985,6 @@ MonoBehaviour:
   coords: {x: 2, y: 18}
   rend: {fileID: 626932413}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &626932412
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -20247,7 +20075,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 664212583}
-  m_RootOrder: 11
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &632691920
 MonoBehaviour:
@@ -20262,7 +20090,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   WorldUIParent: {fileID: 645293520}
-  UnitBarPackPrefab: {fileID: 7841295407035870317, guid: d4dc950f1453ed044895e9f2a9a837d1,
+  MasterUnitBarPackPrefab: {fileID: 7841295407035870317, guid: d4dc950f1453ed044895e9f2a9a837d1,
+    type: 3}
+  UnitBarPackPrefab: {fileID: 7841295407035870317, guid: ed46326125095794bbf7693682936b7f,
     type: 3}
   HealthRestoreHWT: {fileID: 3974700299062798489, guid: 0c6218abe7d07864686f6b5253ea86ab,
     type: 3}
@@ -20327,8 +20157,6 @@ MonoBehaviour:
   coords: {x: 3, y: 2}
   rend: {fileID: 639435890}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &639435889
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -20439,8 +20267,6 @@ MonoBehaviour:
   coords: {x: 15, y: 4}
   rend: {fileID: 645033592}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &645033591
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -20593,7 +20419,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -20649,8 +20475,6 @@ MonoBehaviour:
   coords: {x: 19, y: 8}
   rend: {fileID: 651086412}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &651086411
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -20761,8 +20585,6 @@ MonoBehaviour:
   coords: {x: 19, y: 9}
   rend: {fileID: 652476376}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &652476375
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -20832,6 +20654,11 @@ PrefabInstance:
     m_TransformParent: {fileID: 300354454}
     m_Modifications:
     - target: {fileID: 1164191760956183758, guid: a8745080818b71e4a8b2f0a40691206a,
+        type: 3}
+      propertyPath: teamId
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4492174275742544468, guid: a8745080818b71e4a8b2f0a40691206a,
         type: 3}
       propertyPath: teamId
       value: 2
@@ -20953,8 +20780,6 @@ MonoBehaviour:
   coords: {x: 6, y: 12}
   rend: {fileID: 656027863}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &656027862
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -21045,16 +20870,17 @@ Transform:
   m_Children:
   - {fileID: 34562004}
   - {fileID: 1684493514}
-  - {fileID: 1858058425}
-  - {fileID: 1744370874}
   - {fileID: 67761259}
-  - {fileID: 476391577}
-  - {fileID: 1080304819}
   - {fileID: 195116188}
-  - {fileID: 1990731824}
+  - {fileID: 57347814}
+  - {fileID: 1858058425}
+  - {fileID: 632691919}
+  - {fileID: 1744370874}
+  - {fileID: 476391577}
+  - {fileID: 1447597400}
+  - {fileID: 1080304819}
   - {fileID: 810744323}
   - {fileID: 679567841}
-  - {fileID: 632691919}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -21256,8 +21082,6 @@ MonoBehaviour:
   coords: {x: 9, y: 12}
   rend: {fileID: 671192479}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &671192478
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -21446,8 +21270,6 @@ MonoBehaviour:
   coords: {x: 3, y: 1}
   rend: {fileID: 675044580}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &675044579
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -21558,8 +21380,6 @@ MonoBehaviour:
   coords: {x: 5, y: 7}
   rend: {fileID: 675226910}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &675226909
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -21745,8 +21565,6 @@ MonoBehaviour:
   coords: {x: 5, y: 8}
   rend: {fileID: 676953953}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &676953952
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -21949,7 +21767,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 664212583}
-  m_RootOrder: 10
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &686637600
 GameObject:
@@ -22074,8 +21892,6 @@ MonoBehaviour:
   coords: {x: 5, y: 18}
   rend: {fileID: 690206234}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &690206233
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -22186,8 +22002,6 @@ MonoBehaviour:
   coords: {x: 2, y: 3}
   rend: {fileID: 698852420}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &698852419
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -22409,12 +22223,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 705507993}
-  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 20, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1990731824}
-  m_RootOrder: 0
+  m_Father: {fileID: 0}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!1 &712004473
 GameObject:
@@ -22465,8 +22279,6 @@ MonoBehaviour:
   coords: {x: 5, y: 5}
   rend: {fileID: 712004477}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &712004476
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -22658,8 +22470,6 @@ MonoBehaviour:
   coords: {x: 8, y: 2}
   rend: {fileID: 723471958}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &723471957
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -22770,8 +22580,6 @@ MonoBehaviour:
   coords: {x: 7, y: 11}
   rend: {fileID: 724745915}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &724745914
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -22951,8 +22759,6 @@ MonoBehaviour:
   coords: {x: 4, y: 2}
   rend: {fileID: 732857604}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &732857603
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -23063,8 +22869,6 @@ MonoBehaviour:
   coords: {x: 7, y: 13}
   rend: {fileID: 733668238}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &733668237
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -23248,8 +23052,6 @@ MonoBehaviour:
   coords: {x: 1, y: 7}
   rend: {fileID: 758524243}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &758524242
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -23516,8 +23318,6 @@ MonoBehaviour:
   coords: {x: 1, y: 4}
   rend: {fileID: 769577926}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &769577925
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -24146,8 +23946,6 @@ MonoBehaviour:
   coords: {x: 5, y: 3}
   rend: {fileID: 777897321}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &777897320
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -24264,8 +24062,6 @@ MonoBehaviour:
   coords: {x: 19, y: 6}
   rend: {fileID: 787357054}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &787357053
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -24376,8 +24172,6 @@ MonoBehaviour:
   coords: {x: 19, y: 12}
   rend: {fileID: 788080196}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &788080195
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -24488,8 +24282,6 @@ MonoBehaviour:
   coords: {x: 4, y: 0}
   rend: {fileID: 793191781}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &793191780
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -24600,8 +24392,6 @@ MonoBehaviour:
   coords: {x: 4, y: 8}
   rend: {fileID: 803909820}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &803909819
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -24712,8 +24502,6 @@ MonoBehaviour:
   coords: {x: 18, y: 0}
   rend: {fileID: 808306413}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &808306412
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -24824,8 +24612,6 @@ MonoBehaviour:
   coords: {x: 10, y: 19}
   rend: {fileID: 808680766}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &808680765
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -24916,7 +24702,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 664212583}
-  m_RootOrder: 9
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &810744324
 MonoBehaviour:
@@ -24995,8 +24781,6 @@ MonoBehaviour:
   coords: {x: 1, y: 3}
   rend: {fileID: 816253393}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &816253392
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -25107,8 +24891,6 @@ MonoBehaviour:
   coords: {x: 10, y: 3}
   rend: {fileID: 816479395}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &816479394
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -25219,8 +25001,6 @@ MonoBehaviour:
   coords: {x: 10, y: 6}
   rend: {fileID: 819743103}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &819743102
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -25331,8 +25111,6 @@ MonoBehaviour:
   coords: {x: 7, y: 16}
   rend: {fileID: 826159068}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &826159067
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -25443,8 +25221,6 @@ MonoBehaviour:
   coords: {x: 9, y: 14}
   rend: {fileID: 833546382}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &833546381
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -25555,8 +25331,6 @@ MonoBehaviour:
   coords: {x: 18, y: 10}
   rend: {fileID: 838118155}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &838118154
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -25673,8 +25447,6 @@ MonoBehaviour:
   coords: {x: 5, y: 9}
   rend: {fileID: 841886740}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &841886739
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -25938,8 +25710,6 @@ MonoBehaviour:
   coords: {x: 6, y: 19}
   rend: {fileID: 850512588}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &850512587
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -26050,8 +25820,6 @@ MonoBehaviour:
   coords: {x: 0, y: 9}
   rend: {fileID: 850947983}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &850947982
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -26236,8 +26004,6 @@ MonoBehaviour:
   coords: {x: 3, y: 15}
   rend: {fileID: 855447972}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &855447971
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -26348,8 +26114,6 @@ MonoBehaviour:
   coords: {x: 0, y: 7}
   rend: {fileID: 856500980}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &856500979
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -26460,8 +26224,6 @@ MonoBehaviour:
   coords: {x: 11, y: 6}
   rend: {fileID: 857416196}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &857416195
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -26572,8 +26334,6 @@ MonoBehaviour:
   coords: {x: 12, y: 4}
   rend: {fileID: 857663440}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &857663439
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -26684,8 +26444,6 @@ MonoBehaviour:
   coords: {x: 16, y: 14}
   rend: {fileID: 857681912}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &857681911
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -26796,8 +26554,6 @@ MonoBehaviour:
   coords: {x: 12, y: 10}
   rend: {fileID: 874879269}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &874879268
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -26908,8 +26664,6 @@ MonoBehaviour:
   coords: {x: 17, y: 7}
   rend: {fileID: 878622150}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &878622149
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -27095,8 +26849,6 @@ MonoBehaviour:
   coords: {x: 17, y: 5}
   rend: {fileID: 883431771}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &883431770
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -27282,8 +27034,6 @@ MonoBehaviour:
   coords: {x: 10, y: 10}
   rend: {fileID: 885073006}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &885073005
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -27394,8 +27144,6 @@ MonoBehaviour:
   coords: {x: 12, y: 17}
   rend: {fileID: 887100947}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &887100946
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -27506,8 +27254,6 @@ MonoBehaviour:
   coords: {x: 13, y: 5}
   rend: {fileID: 889873514}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &889873513
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -27618,8 +27364,6 @@ MonoBehaviour:
   coords: {x: 11, y: 0}
   rend: {fileID: 893158376}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &893158375
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -27730,8 +27474,6 @@ MonoBehaviour:
   coords: {x: 19, y: 5}
   rend: {fileID: 895939539}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &895939538
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -27842,8 +27584,6 @@ MonoBehaviour:
   coords: {x: 9, y: 3}
   rend: {fileID: 901361743}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &901361742
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -27954,8 +27694,6 @@ MonoBehaviour:
   coords: {x: 0, y: 15}
   rend: {fileID: 904666487}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &904666486
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -28066,8 +27804,6 @@ MonoBehaviour:
   coords: {x: 10, y: 0}
   rend: {fileID: 906544839}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &906544838
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -28178,8 +27914,6 @@ MonoBehaviour:
   coords: {x: 14, y: 18}
   rend: {fileID: 908389933}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &908389932
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -28290,8 +28024,6 @@ MonoBehaviour:
   coords: {x: 10, y: 4}
   rend: {fileID: 908824206}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &908824205
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -28402,8 +28134,6 @@ MonoBehaviour:
   coords: {x: 18, y: 18}
   rend: {fileID: 910663348}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &910663347
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -28514,8 +28244,6 @@ MonoBehaviour:
   coords: {x: 16, y: 13}
   rend: {fileID: 915134539}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &915134538
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -28626,8 +28354,6 @@ MonoBehaviour:
   coords: {x: 15, y: 18}
   rend: {fileID: 916743795}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &916743794
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -28738,8 +28464,6 @@ MonoBehaviour:
   coords: {x: 13, y: 9}
   rend: {fileID: 921659584}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &921659583
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -29034,8 +28758,6 @@ MonoBehaviour:
   coords: {x: 10, y: 18}
   rend: {fileID: 938832854}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &938832853
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -29146,8 +28868,6 @@ MonoBehaviour:
   coords: {x: 14, y: 9}
   rend: {fileID: 941206080}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &941206079
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -29333,8 +29053,6 @@ MonoBehaviour:
   coords: {x: 8, y: 0}
   rend: {fileID: 947913973}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &947913972
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -29445,8 +29163,6 @@ MonoBehaviour:
   coords: {x: 6, y: 15}
   rend: {fileID: 948482449}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &948482448
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -29557,8 +29273,6 @@ MonoBehaviour:
   coords: {x: 9, y: 7}
   rend: {fileID: 952041310}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &952041309
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -29669,8 +29383,6 @@ MonoBehaviour:
   coords: {x: 19, y: 1}
   rend: {fileID: 952264339}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &952264338
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -29781,8 +29493,6 @@ MonoBehaviour:
   coords: {x: 10, y: 8}
   rend: {fileID: 955654849}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &955654848
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -29893,8 +29603,6 @@ MonoBehaviour:
   coords: {x: 1, y: 1}
   rend: {fileID: 960630260}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &960630259
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -30165,8 +29873,7 @@ Transform:
   m_LocalRotation: {x: 0.38268343, y: 0, z: 0, w: 0.92387956}
   m_LocalPosition: {x: 0, y: 100, z: -100}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 1447597400}
+  m_Children: []
   m_Father: {fileID: 195116188}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 45, y: 0, z: 0}
@@ -30470,8 +30177,6 @@ MonoBehaviour:
   coords: {x: 17, y: 10}
   rend: {fileID: 967232960}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &967232959
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -30582,8 +30287,6 @@ MonoBehaviour:
   coords: {x: 16, y: 7}
   rend: {fileID: 974160903}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &974160902
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -30694,8 +30397,6 @@ MonoBehaviour:
   coords: {x: 0, y: 19}
   rend: {fileID: 980769893}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &980769892
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -30806,8 +30507,6 @@ MonoBehaviour:
   coords: {x: 13, y: 12}
   rend: {fileID: 980992019}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &980992018
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -31056,8 +30755,6 @@ MonoBehaviour:
   coords: {x: 9, y: 19}
   rend: {fileID: 996892289}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &996892288
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -31168,8 +30865,6 @@ MonoBehaviour:
   coords: {x: 0, y: 1}
   rend: {fileID: 997097853}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &997097852
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -31424,8 +31119,6 @@ MonoBehaviour:
   coords: {x: 12, y: 12}
   rend: {fileID: 1008063074}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &1008063073
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -31536,8 +31229,6 @@ MonoBehaviour:
   coords: {x: 16, y: 11}
   rend: {fileID: 1008567968}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &1008567967
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -31717,8 +31408,6 @@ MonoBehaviour:
   coords: {x: 16, y: 15}
   rend: {fileID: 1017867048}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &1017867047
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -31829,8 +31518,6 @@ MonoBehaviour:
   coords: {x: 18, y: 6}
   rend: {fileID: 1018776531}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &1018776530
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -31941,8 +31628,6 @@ MonoBehaviour:
   coords: {x: 2, y: 16}
   rend: {fileID: 1020733362}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &1020733361
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -32053,8 +31738,6 @@ MonoBehaviour:
   coords: {x: 15, y: 17}
   rend: {fileID: 1027313919}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &1027313918
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -32171,8 +31854,6 @@ MonoBehaviour:
   coords: {x: 15, y: 2}
   rend: {fileID: 1034563904}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &1034563903
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -32289,8 +31970,6 @@ MonoBehaviour:
   coords: {x: 8, y: 7}
   rend: {fileID: 1037673734}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &1037673733
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -32627,8 +32306,6 @@ MonoBehaviour:
   coords: {x: 15, y: 11}
   rend: {fileID: 1049468184}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &1049468183
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -32739,8 +32416,6 @@ MonoBehaviour:
   coords: {x: 3, y: 6}
   rend: {fileID: 1053562527}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &1053562526
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -32851,8 +32526,6 @@ MonoBehaviour:
   coords: {x: 1, y: 0}
   rend: {fileID: 1055163017}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &1055163016
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -33290,8 +32963,6 @@ MonoBehaviour:
   coords: {x: 13, y: 0}
   rend: {fileID: 1063712642}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &1063712641
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -33402,8 +33073,6 @@ MonoBehaviour:
   coords: {x: 15, y: 12}
   rend: {fileID: 1065152095}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &1065152094
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -33514,8 +33183,6 @@ MonoBehaviour:
   coords: {x: 2, y: 1}
   rend: {fileID: 1071015709}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &1071015708
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -33834,7 +33501,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 664212583}
-  m_RootOrder: 6
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1080304820
 MonoBehaviour:
@@ -33861,8 +33528,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 627ae28a132a45348e4a727c1eb0e4cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TurnId: 0
-  turnTimer: {fileID: 1080304820}
+  TurnTimer: {fileID: 1080304820}
+  TurnDuration: 75
+  TeamId: 0
 --- !u!1 &1081139274
 GameObject:
   m_ObjectHideFlags: 0
@@ -34486,8 +34154,6 @@ MonoBehaviour:
   coords: {x: 17, y: 19}
   rend: {fileID: 1098578725}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &1098578724
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -34598,8 +34264,6 @@ MonoBehaviour:
   coords: {x: 13, y: 3}
   rend: {fileID: 1099005721}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &1099005720
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -34784,8 +34448,6 @@ MonoBehaviour:
   coords: {x: 13, y: 6}
   rend: {fileID: 1104504844}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &1104504843
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -34965,8 +34627,6 @@ MonoBehaviour:
   coords: {x: 13, y: 18}
   rend: {fileID: 1110555859}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &1110555858
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -35077,8 +34737,6 @@ MonoBehaviour:
   coords: {x: 2, y: 15}
   rend: {fileID: 1110617497}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &1110617496
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -35189,8 +34847,6 @@ MonoBehaviour:
   coords: {x: 12, y: 6}
   rend: {fileID: 1113617231}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &1113617230
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -35301,8 +34957,6 @@ MonoBehaviour:
   coords: {x: 0, y: 12}
   rend: {fileID: 1117421921}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &1117421920
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -35559,8 +35213,6 @@ MonoBehaviour:
   coords: {x: 12, y: 2}
   rend: {fileID: 1124166400}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &1124166399
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -35671,8 +35323,6 @@ MonoBehaviour:
   coords: {x: 19, y: 16}
   rend: {fileID: 1129797351}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &1129797350
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -35783,8 +35433,6 @@ MonoBehaviour:
   coords: {x: 8, y: 15}
   rend: {fileID: 1134465276}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &1134465275
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -35973,8 +35621,6 @@ MonoBehaviour:
   coords: {x: 4, y: 1}
   rend: {fileID: 1152076557}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &1152076556
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -36085,8 +35731,6 @@ MonoBehaviour:
   coords: {x: 16, y: 9}
   rend: {fileID: 1152398135}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &1152398134
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -36222,7 +35866,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1157084251
 GameObject:
@@ -36273,8 +35917,6 @@ MonoBehaviour:
   coords: {x: 17, y: 4}
   rend: {fileID: 1157084255}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &1157084254
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -36527,8 +36169,6 @@ MonoBehaviour:
   coords: {x: 15, y: 19}
   rend: {fileID: 1173443535}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &1173443534
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -36712,8 +36352,6 @@ MonoBehaviour:
   coords: {x: 12, y: 15}
   rend: {fileID: 1177232688}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &1177232687
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -36824,8 +36462,6 @@ MonoBehaviour:
   coords: {x: 5, y: 12}
   rend: {fileID: 1182165977}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &1182165976
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -36936,8 +36572,6 @@ MonoBehaviour:
   coords: {x: 11, y: 3}
   rend: {fileID: 1201796109}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &1201796108
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -37188,8 +36822,6 @@ MonoBehaviour:
   coords: {x: 5, y: 4}
   rend: {fileID: 1209094924}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &1209094923
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -37373,8 +37005,6 @@ MonoBehaviour:
   coords: {x: 18, y: 8}
   rend: {fileID: 1210000895}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &1210000894
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -37712,8 +37342,6 @@ MonoBehaviour:
   coords: {x: 12, y: 11}
   rend: {fileID: 1230620050}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &1230620049
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -37971,8 +37599,6 @@ MonoBehaviour:
   coords: {x: 8, y: 10}
   rend: {fileID: 1243729251}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &1243729250
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -38083,8 +37709,6 @@ MonoBehaviour:
   coords: {x: 10, y: 2}
   rend: {fileID: 1246124741}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &1246124740
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -38195,8 +37819,6 @@ MonoBehaviour:
   coords: {x: 17, y: 2}
   rend: {fileID: 1246308345}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &1246308344
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -38307,8 +37929,6 @@ MonoBehaviour:
   coords: {x: 18, y: 19}
   rend: {fileID: 1247024395}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &1247024394
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -38419,8 +38039,6 @@ MonoBehaviour:
   coords: {x: 9, y: 2}
   rend: {fileID: 1253636322}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &1253636321
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -38531,8 +38149,6 @@ MonoBehaviour:
   coords: {x: 0, y: 10}
   rend: {fileID: 1254125823}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &1254125822
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -38643,8 +38259,6 @@ MonoBehaviour:
   coords: {x: 5, y: 16}
   rend: {fileID: 1260567229}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &1260567228
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -38755,8 +38369,6 @@ MonoBehaviour:
   coords: {x: 13, y: 1}
   rend: {fileID: 1261227598}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &1261227597
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -38867,8 +38479,6 @@ MonoBehaviour:
   coords: {x: 4, y: 15}
   rend: {fileID: 1262341727}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &1262341726
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -39251,8 +38861,6 @@ MonoBehaviour:
   coords: {x: 6, y: 7}
   rend: {fileID: 1262590747}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &1262590746
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -39679,8 +39287,6 @@ MonoBehaviour:
   coords: {x: 16, y: 19}
   rend: {fileID: 1281996796}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &1281996795
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -39791,8 +39397,6 @@ MonoBehaviour:
   coords: {x: 13, y: 17}
   rend: {fileID: 1282236374}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &1282236373
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -39861,6 +39465,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 300354454}
     m_Modifications:
+    - target: {fileID: -1134558138893460406, guid: 04f86473c3accb34d9cb26fc215a7bad,
+        type: 3}
+      propertyPath: teamId
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1217378464578296847, guid: 04f86473c3accb34d9cb26fc215a7bad,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -39983,8 +39592,6 @@ MonoBehaviour:
   coords: {x: 3, y: 3}
   rend: {fileID: 1294878486}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &1294878485
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -40095,8 +39702,6 @@ MonoBehaviour:
   coords: {x: 3, y: 10}
   rend: {fileID: 1299237604}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &1299237603
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -40713,8 +40318,6 @@ MonoBehaviour:
   coords: {x: 13, y: 16}
   rend: {fileID: 1314328242}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &1314328241
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -40825,8 +40428,6 @@ MonoBehaviour:
   coords: {x: 19, y: 18}
   rend: {fileID: 1321768465}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &1321768464
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -40937,8 +40538,6 @@ MonoBehaviour:
   coords: {x: 6, y: 3}
   rend: {fileID: 1324405245}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &1324405244
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -41049,8 +40648,6 @@ MonoBehaviour:
   coords: {x: 18, y: 14}
   rend: {fileID: 1328831069}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &1328831068
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -41317,8 +40914,6 @@ MonoBehaviour:
   coords: {x: 1, y: 18}
   rend: {fileID: 1340057418}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &1340057417
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -41429,8 +41024,6 @@ MonoBehaviour:
   coords: {x: 4, y: 3}
   rend: {fileID: 1344105850}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &1344105849
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -42040,8 +41633,6 @@ MonoBehaviour:
   coords: {x: 7, y: 3}
   rend: {fileID: 1351698500}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &1351698499
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -42152,8 +41743,6 @@ MonoBehaviour:
   coords: {x: 18, y: 4}
   rend: {fileID: 1351906234}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &1351906233
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -42378,8 +41967,6 @@ MonoBehaviour:
   coords: {x: 1, y: 17}
   rend: {fileID: 1371016495}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &1371016494
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -42490,8 +42077,6 @@ MonoBehaviour:
   coords: {x: 0, y: 3}
   rend: {fileID: 1371313792}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &1371313791
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -42959,8 +42544,6 @@ MonoBehaviour:
   coords: {x: 1, y: 11}
   rend: {fileID: 1377981893}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &1377981892
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -43071,8 +42654,6 @@ MonoBehaviour:
   coords: {x: 5, y: 2}
   rend: {fileID: 1381308962}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &1381308961
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -43183,8 +42764,6 @@ MonoBehaviour:
   coords: {x: 5, y: 19}
   rend: {fileID: 1389566726}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &1389566725
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -43450,8 +43029,6 @@ MonoBehaviour:
   coords: {x: 0, y: 5}
   rend: {fileID: 1395240477}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &1395240476
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -43717,8 +43294,6 @@ MonoBehaviour:
   coords: {x: 6, y: 8}
   rend: {fileID: 1400528700}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &1400528699
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -43829,8 +43404,6 @@ MonoBehaviour:
   coords: {x: 5, y: 13}
   rend: {fileID: 1413279114}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &1413279113
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -44088,8 +43661,6 @@ MonoBehaviour:
   coords: {x: 14, y: 2}
   rend: {fileID: 1429697133}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &1429697132
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -44200,8 +43771,6 @@ MonoBehaviour:
   coords: {x: 13, y: 2}
   rend: {fileID: 1446044873}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &1446044872
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -44301,6 +43870,10 @@ GameObject:
   - component: {fileID: 1447597410}
   - component: {fileID: 1447597409}
   - component: {fileID: 1447597429}
+  - component: {fileID: 1447597430}
+  - component: {fileID: 1447597433}
+  - component: {fileID: 1447597432}
+  - component: {fileID: 1447597431}
   m_Layer: 0
   m_Name: AbilityHolder
   m_TagString: Untagged
@@ -44315,12 +43888,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1447597399}
-  m_LocalRotation: {x: -0.35355338, y: -0.35355338, z: 0.1464466, w: 0.8535535}
-  m_LocalPosition: {x: -7.071068, y: 15, z: 156.42136}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 963194228}
-  m_RootOrder: 0
+  m_Father: {fileID: 664212583}
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1447597401
 MonoBehaviour:
@@ -44350,6 +43923,8 @@ MonoBehaviour:
   - {fileID: 1447597412}
   - {fileID: 1447597411}
   - {fileID: 1447597409}
+  - {fileID: 1447597430}
+  - {fileID: 1447597432}
 --- !u!114 &1447597402
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45931,6 +45506,236 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1447597430
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1447597399}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3abefb6ab47697b4db12e8645f49b401, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  abilityData: {fileID: 11400000, guid: 806a0e4779c070c469035eb4e3e35d7a, type: 2}
+  abilityEffect: {fileID: 4892236285719594659, guid: e6aa94cf7e552c44dbf98a7b523beba5,
+    type: 3}
+  soundEffect: {fileID: 8300000, guid: d33cc8d8108d9ed4a8be7b3eb6c7dba7, type: 3}
+  audioSource: {fileID: 1447597433}
+  rockEntity: {fileID: -290344667081894934, guid: 04bfe784829923a42b47ed7f08d012ed,
+    type: 3}
+--- !u!82 &1447597431
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1447597399}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!114 &1447597432
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1447597399}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d73000429946134f83e4d207f75e0cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  abilityData: {fileID: 11400000, guid: 59195091f10c3bb448d85c3b6c9d47d0, type: 2}
+  abilityEffect: {fileID: 4892236285719594659, guid: e6aa94cf7e552c44dbf98a7b523beba5,
+    type: 3}
+  soundEffect: {fileID: 8300000, guid: d33cc8d8108d9ed4a8be7b3eb6c7dba7, type: 3}
+  audioSource: {fileID: 1447597431}
+  rockEntity: {fileID: -7143464211442347350, guid: b247e888e9e9b5a4cbc40deb5b4afbe1,
+    type: 3}
+--- !u!82 &1447597433
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1447597399}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1449937194
 GameObject:
   m_ObjectHideFlags: 0
@@ -45980,8 +45785,6 @@ MonoBehaviour:
   coords: {x: 14, y: 4}
   rend: {fileID: 1449937198}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &1449937197
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -46092,8 +45895,6 @@ MonoBehaviour:
   coords: {x: 8, y: 11}
   rend: {fileID: 1461660792}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &1461660791
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -46204,8 +46005,6 @@ MonoBehaviour:
   coords: {x: 12, y: 9}
   rend: {fileID: 1462173797}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &1462173796
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -46389,8 +46188,6 @@ MonoBehaviour:
   coords: {x: 0, y: 18}
   rend: {fileID: 1471162078}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &1471162077
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -46858,8 +46655,6 @@ MonoBehaviour:
   coords: {x: 9, y: 15}
   rend: {fileID: 1478263723}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &1478263722
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -47045,8 +46840,6 @@ MonoBehaviour:
   coords: {x: 1, y: 16}
   rend: {fileID: 1497116924}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &1497116923
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -47157,8 +46950,6 @@ MonoBehaviour:
   coords: {x: 7, y: 14}
   rend: {fileID: 1498876037}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &1498876036
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -47269,8 +47060,6 @@ MonoBehaviour:
   coords: {x: 10, y: 16}
   rend: {fileID: 1500638630}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &1500638629
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -47381,8 +47170,6 @@ MonoBehaviour:
   coords: {x: 10, y: 14}
   rend: {fileID: 1501097562}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &1501097561
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -47493,8 +47280,6 @@ MonoBehaviour:
   coords: {x: 14, y: 11}
   rend: {fileID: 1504171307}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &1504171306
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -47881,8 +47666,6 @@ MonoBehaviour:
   coords: {x: 7, y: 10}
   rend: {fileID: 1520574749}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &1520574748
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -47993,8 +47776,6 @@ MonoBehaviour:
   coords: {x: 3, y: 8}
   rend: {fileID: 1523758506}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &1523758505
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -48105,8 +47886,6 @@ MonoBehaviour:
   coords: {x: 16, y: 6}
   rend: {fileID: 1525749581}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &1525749580
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -48217,8 +47996,6 @@ MonoBehaviour:
   coords: {x: 13, y: 4}
   rend: {fileID: 1526167190}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &1526167189
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -48329,8 +48106,6 @@ MonoBehaviour:
   coords: {x: 3, y: 5}
   rend: {fileID: 1526401800}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &1526401799
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -48441,8 +48216,6 @@ MonoBehaviour:
   coords: {x: 7, y: 6}
   rend: {fileID: 1533899784}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &1533899783
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -48553,8 +48326,6 @@ MonoBehaviour:
   coords: {x: 16, y: 4}
   rend: {fileID: 1535480626}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &1535480625
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -48665,8 +48436,6 @@ MonoBehaviour:
   coords: {x: 0, y: 17}
   rend: {fileID: 1537743860}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &1537743859
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -48852,8 +48621,6 @@ MonoBehaviour:
   coords: {x: 3, y: 9}
   rend: {fileID: 1540643811}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &1540643810
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -48964,8 +48731,6 @@ MonoBehaviour:
   coords: {x: 3, y: 16}
   rend: {fileID: 1542185468}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &1542185467
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -49148,8 +48913,6 @@ MonoBehaviour:
   coords: {x: 17, y: 18}
   rend: {fileID: 1544952370}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &1544952369
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -49260,8 +49023,6 @@ MonoBehaviour:
   coords: {x: 11, y: 19}
   rend: {fileID: 1545408964}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &1545408963
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -49372,8 +49133,6 @@ MonoBehaviour:
   coords: {x: 18, y: 16}
   rend: {fileID: 1546349932}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &1546349931
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -49484,8 +49243,6 @@ MonoBehaviour:
   coords: {x: 14, y: 8}
   rend: {fileID: 1548819139}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &1548819138
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -49596,8 +49353,6 @@ MonoBehaviour:
   coords: {x: 7, y: 18}
   rend: {fileID: 1549176050}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &1549176049
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -49708,8 +49463,6 @@ MonoBehaviour:
   coords: {x: 12, y: 3}
   rend: {fileID: 1549589700}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &1549589699
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -49820,8 +49573,6 @@ MonoBehaviour:
   coords: {x: 4, y: 7}
   rend: {fileID: 1556271097}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &1556271096
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -49932,8 +49683,6 @@ MonoBehaviour:
   coords: {x: 16, y: 1}
   rend: {fileID: 1568536850}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &1568536849
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -50044,8 +49793,6 @@ MonoBehaviour:
   coords: {x: 9, y: 10}
   rend: {fileID: 1568556081}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &1568556080
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -50232,8 +49979,6 @@ MonoBehaviour:
   coords: {x: 4, y: 13}
   rend: {fileID: 1580557062}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &1580557061
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -50344,8 +50089,6 @@ MonoBehaviour:
   coords: {x: 8, y: 9}
   rend: {fileID: 1583796650}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &1583796649
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -50456,8 +50199,6 @@ MonoBehaviour:
   coords: {x: 4, y: 9}
   rend: {fileID: 1585295678}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &1585295677
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -50790,8 +50531,6 @@ MonoBehaviour:
   coords: {x: 6, y: 16}
   rend: {fileID: 1594073580}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &1594073579
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -50902,8 +50641,6 @@ MonoBehaviour:
   coords: {x: 1, y: 12}
   rend: {fileID: 1598910027}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &1598910026
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -51014,8 +50751,6 @@ MonoBehaviour:
   coords: {x: 3, y: 13}
   rend: {fileID: 1610801982}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &1610801981
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -51201,8 +50936,6 @@ MonoBehaviour:
   coords: {x: 0, y: 14}
   rend: {fileID: 1613619072}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &1613619071
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -51313,8 +51046,6 @@ MonoBehaviour:
   coords: {x: 15, y: 13}
   rend: {fileID: 1613944623}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &1613944622
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -51425,8 +51156,6 @@ MonoBehaviour:
   coords: {x: 11, y: 10}
   rend: {fileID: 1614820016}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &1614820015
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -51537,8 +51266,6 @@ MonoBehaviour:
   coords: {x: 4, y: 16}
   rend: {fileID: 1615666586}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &1615666585
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -51649,8 +51376,6 @@ MonoBehaviour:
   coords: {x: 16, y: 18}
   rend: {fileID: 1625878871}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &1625878870
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -51761,8 +51486,6 @@ MonoBehaviour:
   coords: {x: 5, y: 1}
   rend: {fileID: 1629798067}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &1629798066
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -51873,8 +51596,6 @@ MonoBehaviour:
   coords: {x: 1, y: 15}
   rend: {fileID: 1631705669}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &1631705668
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -51985,8 +51706,6 @@ MonoBehaviour:
   coords: {x: 6, y: 17}
   rend: {fileID: 1640115613}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &1640115612
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -52172,8 +51891,6 @@ MonoBehaviour:
   coords: {x: 13, y: 14}
   rend: {fileID: 1645770719}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &1645770718
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -52284,8 +52001,6 @@ MonoBehaviour:
   coords: {x: 10, y: 9}
   rend: {fileID: 1653641268}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &1653641267
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -52396,8 +52111,6 @@ MonoBehaviour:
   coords: {x: 3, y: 12}
   rend: {fileID: 1656304364}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &1656304363
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -52508,8 +52221,6 @@ MonoBehaviour:
   coords: {x: 6, y: 1}
   rend: {fileID: 1659878989}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &1659878988
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -52620,8 +52331,6 @@ MonoBehaviour:
   coords: {x: 11, y: 18}
   rend: {fileID: 1660094768}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &1660094767
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -52732,8 +52441,6 @@ MonoBehaviour:
   coords: {x: 2, y: 17}
   rend: {fileID: 1662465819}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &1662465818
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -52912,7 +52619,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5bc4bd5dc44147d468b0cad82c379fb5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  grid: {fileID: 67761260}
   turnTimer: {fileID: 1684493516}
   turnDuration: 75
   blueTeamSlots:
@@ -53249,8 +52955,6 @@ MonoBehaviour:
   coords: {x: 1, y: 9}
   rend: {fileID: 1694170187}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &1694170186
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -53361,8 +53065,6 @@ MonoBehaviour:
   coords: {x: 12, y: 0}
   rend: {fileID: 1697258357}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &1697258356
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -54149,8 +53851,6 @@ MonoBehaviour:
   coords: {x: 4, y: 17}
   rend: {fileID: 1720144557}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &1720144556
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -54261,8 +53961,6 @@ MonoBehaviour:
   coords: {x: 11, y: 1}
   rend: {fileID: 1723348953}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &1723348952
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -54373,8 +54071,6 @@ MonoBehaviour:
   coords: {x: 2, y: 12}
   rend: {fileID: 1726653787}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &1726653786
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -54851,8 +54547,6 @@ MonoBehaviour:
   coords: {x: 17, y: 17}
   rend: {fileID: 1743042625}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &1743042624
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -54943,7 +54637,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 664212583}
-  m_RootOrder: 3
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1744370875
 MonoBehaviour:
@@ -54957,6 +54651,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14707dcbd09c4fd5beeae1f5fff27c12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  HoveredSelectable: {fileID: 0}
+  SelectedSelectable: {fileID: 0}
+  HoveredAbility: 0
+  SelectedAbility: 0
+  basicNodeMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
+  moveUsageNodeMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3,
+    type: 2}
+  usageAreaNodeMaterial: {fileID: 2100000, guid: a86d18294bbe94148a78fef4be186186,
+    type: 2}
+  effectAreaNodeMaterial: {fileID: 2100000, guid: d24b44619214c254799c3c8e0adae623,
+    type: 2}
+  occupiedNodeMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb,
+    type: 2}
+  UsageArea: []
+  EffectArea: []
 --- !u!1 &1744862656
 GameObject:
   m_ObjectHideFlags: 0
@@ -55006,8 +54715,6 @@ MonoBehaviour:
   coords: {x: 12, y: 8}
   rend: {fileID: 1744862660}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &1744862659
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -55118,8 +54825,6 @@ MonoBehaviour:
   coords: {x: 7, y: 19}
   rend: {fileID: 1747661491}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &1747661490
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -55305,8 +55010,6 @@ MonoBehaviour:
   coords: {x: 1, y: 14}
   rend: {fileID: 1751280090}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &1751280089
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -55492,8 +55195,6 @@ MonoBehaviour:
   coords: {x: 12, y: 19}
   rend: {fileID: 1752533625}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &1752533624
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -55604,8 +55305,6 @@ MonoBehaviour:
   coords: {x: 19, y: 15}
   rend: {fileID: 1754243158}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &1754243157
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -55716,8 +55415,6 @@ MonoBehaviour:
   coords: {x: 19, y: 0}
   rend: {fileID: 1754588403}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &1754588402
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -55828,8 +55525,6 @@ MonoBehaviour:
   coords: {x: 3, y: 11}
   rend: {fileID: 1764699793}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &1764699792
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -56095,8 +55790,6 @@ MonoBehaviour:
   coords: {x: 17, y: 13}
   rend: {fileID: 1767038241}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &1767038240
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -56355,8 +56048,6 @@ MonoBehaviour:
   coords: {x: 19, y: 3}
   rend: {fileID: 1767746990}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &1767746989
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -56500,8 +56191,6 @@ MonoBehaviour:
   coords: {x: 2, y: 19}
   rend: {fileID: 1768199143}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &1768199142
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -56612,8 +56301,6 @@ MonoBehaviour:
   coords: {x: 4, y: 11}
   rend: {fileID: 1768656076}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &1768656075
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -56724,8 +56411,6 @@ MonoBehaviour:
   coords: {x: 18, y: 7}
   rend: {fileID: 1769237494}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &1769237493
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -56836,8 +56521,6 @@ MonoBehaviour:
   coords: {x: 19, y: 2}
   rend: {fileID: 1771575680}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &1771575679
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -56948,8 +56631,6 @@ MonoBehaviour:
   coords: {x: 4, y: 10}
   rend: {fileID: 1778217859}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &1778217858
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -57060,8 +56741,6 @@ MonoBehaviour:
   coords: {x: 11, y: 11}
   rend: {fileID: 1781263061}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &1781263060
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -57172,8 +56851,6 @@ MonoBehaviour:
   coords: {x: 6, y: 10}
   rend: {fileID: 1781988190}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &1781988189
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -57284,8 +56961,6 @@ MonoBehaviour:
   coords: {x: 7, y: 8}
   rend: {fileID: 1782519929}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &1782519928
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -57396,8 +57071,6 @@ MonoBehaviour:
   coords: {x: 17, y: 9}
   rend: {fileID: 1784269709}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &1784269708
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -57508,8 +57181,6 @@ MonoBehaviour:
   coords: {x: 11, y: 12}
   rend: {fileID: 1784871486}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &1784871485
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -57626,8 +57297,6 @@ MonoBehaviour:
   coords: {x: 11, y: 17}
   rend: {fileID: 1811498459}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &1811498458
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -57738,8 +57407,6 @@ MonoBehaviour:
   coords: {x: 13, y: 8}
   rend: {fileID: 1824801755}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &1824801754
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -57850,8 +57517,6 @@ MonoBehaviour:
   coords: {x: 18, y: 2}
   rend: {fileID: 1828464757}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &1828464756
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -57962,8 +57627,6 @@ MonoBehaviour:
   coords: {x: 6, y: 5}
   rend: {fileID: 1829271127}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &1829271126
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -58074,8 +57737,6 @@ MonoBehaviour:
   coords: {x: 13, y: 15}
   rend: {fileID: 1830189781}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &1830189780
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -58326,8 +57987,6 @@ MonoBehaviour:
   coords: {x: 8, y: 19}
   rend: {fileID: 1834270832}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &1834270831
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -58438,8 +58097,6 @@ MonoBehaviour:
   coords: {x: 8, y: 14}
   rend: {fileID: 1834423164}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &1834423163
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -58550,8 +58207,6 @@ MonoBehaviour:
   coords: {x: 2, y: 14}
   rend: {fileID: 1835037120}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &1835037119
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -58668,8 +58323,6 @@ MonoBehaviour:
   coords: {x: 0, y: 0}
   rend: {fileID: 1837117252}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &1837117251
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -58780,8 +58433,6 @@ MonoBehaviour:
   coords: {x: 3, y: 18}
   rend: {fileID: 1851541300}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &1851541299
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -58892,8 +58543,6 @@ MonoBehaviour:
   coords: {x: 10, y: 5}
   rend: {fileID: 1852514753}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &1852514752
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -59004,8 +58653,6 @@ MonoBehaviour:
   coords: {x: 13, y: 13}
   rend: {fileID: 1854570242}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &1854570241
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -59116,8 +58763,6 @@ MonoBehaviour:
   coords: {x: 7, y: 12}
   rend: {fileID: 1855968205}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &1855968204
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -59228,8 +58873,6 @@ MonoBehaviour:
   coords: {x: 6, y: 2}
   rend: {fileID: 1857206073}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &1857206072
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -59321,7 +58964,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 664212583}
-  m_RootOrder: 2
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1858058426
 MonoBehaviour:
@@ -59399,8 +59042,6 @@ MonoBehaviour:
   coords: {x: 15, y: 14}
   rend: {fileID: 1858776120}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &1858776119
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -59511,8 +59152,6 @@ MonoBehaviour:
   coords: {x: 15, y: 6}
   rend: {fileID: 1859262692}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &1859262691
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -59623,8 +59262,6 @@ MonoBehaviour:
   coords: {x: 18, y: 5}
   rend: {fileID: 1867500158}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &1867500157
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -59882,8 +59519,6 @@ MonoBehaviour:
   coords: {x: 17, y: 11}
   rend: {fileID: 1873296006}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &1873296005
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -59994,8 +59629,6 @@ MonoBehaviour:
   coords: {x: 15, y: 15}
   rend: {fileID: 1874088990}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &1874088989
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -60106,8 +59739,6 @@ MonoBehaviour:
   coords: {x: 8, y: 16}
   rend: {fileID: 1875500444}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &1875500443
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -60218,8 +59849,6 @@ MonoBehaviour:
   coords: {x: 1, y: 5}
   rend: {fileID: 1880330065}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &1880330064
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -60562,8 +60191,6 @@ MonoBehaviour:
   coords: {x: 9, y: 16}
   rend: {fileID: 1890389084}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &1890389083
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -60674,8 +60301,6 @@ MonoBehaviour:
   coords: {x: 10, y: 1}
   rend: {fileID: 1892785038}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &1892785037
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -60786,8 +60411,6 @@ MonoBehaviour:
   coords: {x: 7, y: 17}
   rend: {fileID: 1893666080}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &1893666079
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -60898,8 +60521,6 @@ MonoBehaviour:
   coords: {x: 10, y: 7}
   rend: {fileID: 1903649946}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &1903649945
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -61010,8 +60631,6 @@ MonoBehaviour:
   coords: {x: 8, y: 5}
   rend: {fileID: 1915650536}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &1915650535
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -61122,8 +60741,6 @@ MonoBehaviour:
   coords: {x: 18, y: 17}
   rend: {fileID: 1920698293}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &1920698292
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -61234,8 +60851,6 @@ MonoBehaviour:
   coords: {x: 4, y: 14}
   rend: {fileID: 1921322138}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &1921322137
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -61297,98 +60912,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1921322134}
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &1924260024
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1924260025}
-  - component: {fileID: 1924260026}
-  m_Layer: 0
-  m_Name: MoonLight
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1924260025
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1924260024}
-  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: -20, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1990731824}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
---- !u!108 &1924260026
-Light:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1924260024}
-  m_Enabled: 1
-  serializedVersion: 10
-  m_Type: 1
-  m_Shape: 0
-  m_Color: {r: 0.09011213, g: 0.18851194, b: 0.764151, a: 1}
-  m_Intensity: 1
-  m_Range: 10
-  m_SpotAngle: 30
-  m_InnerSpotAngle: 21.80208
-  m_CookieSize: 10
-  m_Shadows:
-    m_Type: 0
-    m_Resolution: -1
-    m_CustomResolution: -1
-    m_Strength: 1
-    m_Bias: 0.05
-    m_NormalBias: 0.4
-    m_NearPlane: 0.2
-    m_CullingMatrixOverride:
-      e00: 1
-      e01: 0
-      e02: 0
-      e03: 0
-      e10: 0
-      e11: 1
-      e12: 0
-      e13: 0
-      e20: 0
-      e21: 0
-      e22: 1
-      e23: 0
-      e30: 0
-      e31: 0
-      e32: 0
-      e33: 1
-    m_UseCullingMatrixOverride: 0
-  m_Cookie: {fileID: 0}
-  m_DrawHalo: 0
-  m_Flare: {fileID: 0}
-  m_RenderMode: 0
-  m_CullingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_RenderingLayerMask: 1
-  m_Lightmapping: 4
-  m_LightShadowCasterMode: 0
-  m_AreaSize: {x: 1, y: 1}
-  m_BounceIntensity: 1
-  m_ColorTemperature: 6570
-  m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
-  m_UseBoundingSphereOverride: 0
-  m_ShadowRadius: 0
-  m_ShadowAngle: 0
 --- !u!1 &1934602486
 GameObject:
   m_ObjectHideFlags: 0
@@ -61438,8 +60961,6 @@ MonoBehaviour:
   coords: {x: 2, y: 4}
   rend: {fileID: 1934602490}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &1934602489
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -61550,8 +61071,6 @@ MonoBehaviour:
   coords: {x: 3, y: 14}
   rend: {fileID: 1939187850}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &1939187849
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -61662,8 +61181,6 @@ MonoBehaviour:
   coords: {x: 6, y: 9}
   rend: {fileID: 1946690219}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &1946690218
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -62002,8 +61519,6 @@ MonoBehaviour:
   coords: {x: 14, y: 7}
   rend: {fileID: 1959879032}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &1959879031
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -62114,8 +61629,6 @@ MonoBehaviour:
   coords: {x: 12, y: 5}
   rend: {fileID: 1961412766}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &1961412765
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -62226,8 +61739,6 @@ MonoBehaviour:
   coords: {x: 11, y: 15}
   rend: {fileID: 1963833028}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &1963833027
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -62338,8 +61849,6 @@ MonoBehaviour:
   coords: {x: 16, y: 0}
   rend: {fileID: 1966941745}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &1966941744
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -62450,8 +61959,6 @@ MonoBehaviour:
   coords: {x: 18, y: 9}
   rend: {fileID: 1970862803}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &1970862802
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -62562,8 +62069,6 @@ MonoBehaviour:
   coords: {x: 19, y: 14}
   rend: {fileID: 1981650759}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &1981650758
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -62674,8 +62179,6 @@ MonoBehaviour:
   coords: {x: 7, y: 9}
   rend: {fileID: 1982478400}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &1982478399
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -62786,8 +62289,6 @@ MonoBehaviour:
   coords: {x: 4, y: 5}
   rend: {fileID: 1984751690}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &1984751689
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -62849,52 +62350,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1984751686}
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &1990731823
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1990731824}
-  - component: {fileID: 1990731825}
-  m_Layer: 0
-  m_Name: DayCycleBeacon
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1990731824
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1990731823}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 705507995}
-  - {fileID: 1924260025}
-  m_Father: {fileID: 664212583}
-  m_RootOrder: 8
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1990731825
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1990731823}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a01bf35a882ea9b4fb0ebd5b019f98f4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rotationSpeed: 5
 --- !u!1 &1990925041
 GameObject:
   m_ObjectHideFlags: 0
@@ -63084,8 +62539,6 @@ MonoBehaviour:
   coords: {x: 11, y: 7}
   rend: {fileID: 1991727269}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &1991727268
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -63344,8 +62797,6 @@ MonoBehaviour:
   coords: {x: 16, y: 12}
   rend: {fileID: 1993887459}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &1993887458
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -63456,8 +62907,6 @@ MonoBehaviour:
   coords: {x: 9, y: 17}
   rend: {fileID: 1997643336}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &1997643335
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -63568,8 +63017,6 @@ MonoBehaviour:
   coords: {x: 15, y: 8}
   rend: {fileID: 1999944447}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &1999944446
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -63680,8 +63127,6 @@ MonoBehaviour:
   coords: {x: 14, y: 12}
   rend: {fileID: 2002257572}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &2002257571
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -63792,8 +63237,6 @@ MonoBehaviour:
   coords: {x: 15, y: 5}
   rend: {fileID: 2016265693}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &2016265692
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -63910,8 +63353,6 @@ MonoBehaviour:
   coords: {x: 2, y: 6}
   rend: {fileID: 2029758875}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &2029758874
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -64022,8 +63463,6 @@ MonoBehaviour:
   coords: {x: 13, y: 19}
   rend: {fileID: 2030030273}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &2030030272
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -64140,8 +63579,6 @@ MonoBehaviour:
   coords: {x: 9, y: 8}
   rend: {fileID: 2032360218}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &2032360217
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -64252,8 +63689,6 @@ MonoBehaviour:
   coords: {x: 10, y: 15}
   rend: {fileID: 2032868256}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &2032868255
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -64364,8 +63799,6 @@ MonoBehaviour:
   coords: {x: 1, y: 2}
   rend: {fileID: 2033081646}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &2033081645
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -64476,8 +63909,6 @@ MonoBehaviour:
   coords: {x: 19, y: 19}
   rend: {fileID: 2033267040}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &2033267039
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -64588,8 +64019,6 @@ MonoBehaviour:
   coords: {x: 12, y: 7}
   rend: {fileID: 2033353728}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &2033353727
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -64700,8 +64129,6 @@ MonoBehaviour:
   coords: {x: 4, y: 6}
   rend: {fileID: 2034344582}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &2034344581
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -64812,8 +64239,6 @@ MonoBehaviour:
   coords: {x: 9, y: 11}
   rend: {fileID: 2039083046}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &2039083045
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -65354,8 +64779,6 @@ MonoBehaviour:
   coords: {x: 3, y: 19}
   rend: {fileID: 2046746532}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &2046746531
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -65622,8 +65045,6 @@ MonoBehaviour:
   coords: {x: 11, y: 4}
   rend: {fileID: 2054741304}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &2054741303
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -65718,11 +65139,10 @@ RectTransform:
   m_Children:
   - {fileID: 368166492}
   - {fileID: 841998448}
-  - {fileID: 365025775}
   - {fileID: 134570358}
   - {fileID: 2059527993}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -65879,7 +65299,7 @@ RectTransform:
   - {fileID: 1767427235}
   - {fileID: 162932520}
   m_Father: {fileID: 2058082736}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
@@ -66016,8 +65436,6 @@ MonoBehaviour:
   coords: {x: 16, y: 5}
   rend: {fileID: 2069345906}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &2069345905
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -66128,8 +65546,6 @@ MonoBehaviour:
   coords: {x: 8, y: 18}
   rend: {fileID: 2072061703}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &2072061702
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -66240,8 +65656,6 @@ MonoBehaviour:
   coords: {x: 2, y: 11}
   rend: {fileID: 2079031686}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &2079031685
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -66427,8 +65841,6 @@ MonoBehaviour:
   coords: {x: 6, y: 4}
   rend: {fileID: 2087135324}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &2087135323
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -66773,8 +66185,6 @@ MonoBehaviour:
   coords: {x: 1, y: 13}
   rend: {fileID: 2112098193}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &2112098192
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -66885,8 +66295,6 @@ MonoBehaviour:
   coords: {x: 7, y: 4}
   rend: {fileID: 2112129121}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &2112129120
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -66997,8 +66405,6 @@ MonoBehaviour:
   coords: {x: 11, y: 16}
   rend: {fileID: 2112558229}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &2112558228
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -67184,8 +66590,6 @@ MonoBehaviour:
   coords: {x: 19, y: 11}
   rend: {fileID: 2127909254}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &2127909253
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -67296,8 +66700,6 @@ MonoBehaviour:
   coords: {x: 8, y: 3}
   rend: {fileID: 2134528269}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &2134528268
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -67408,8 +66810,6 @@ MonoBehaviour:
   coords: {x: 7, y: 15}
   rend: {fileID: 2140756548}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &2140756547
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -67670,8 +67070,6 @@ MonoBehaviour:
   coords: {x: 5, y: 0}
   rend: {fileID: 2142368230}
   basicMaterial: {fileID: 2100000, guid: 9510d07a1be5b6a4b9fe1c17cfefc587, type: 2}
-  occupiedMaterial: {fileID: 2100000, guid: 9fc42b68b3068c048ab896e8994d46bb, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 5f8452e1e87b7b8449b7dddf83c4c6f3, type: 2}
 --- !u!64 &2142368229
 MeshCollider:
   m_ObjectHideFlags: 0

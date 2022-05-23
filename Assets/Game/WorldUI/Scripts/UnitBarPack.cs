@@ -15,6 +15,13 @@ public class UnitBarPack : MonoBehaviour
     
     private Unit _boundUnit;
 
+    public void BindUnit(Unit unit)
+    {
+        _boundUnit = unit;
+        transform.position = _boundUnit.transform.position + offset;
+        
+        SubscribeEvents();
+    }
     private void Update()
     {
         if (_boundUnit != null)
@@ -22,28 +29,21 @@ public class UnitBarPack : MonoBehaviour
             transform.position = _boundUnit.transform.position + offset;
         }
 
+        if (!(_boundUnit is MasterUnit masterUnit)) { return; } 
+        
         var cardCount = 0;
-        for (var i = 0; i < _boundUnit.DeckManager.Hand.Length; i++)
+        for (var i = 0; i < masterUnit.DeckManager.Hand.Length; i++)
         {
-            if (_boundUnit.DeckManager.Hand[i] != AbilityHolder.AType.None)
+            if (masterUnit.DeckManager.Hand[i] != AbilityHolder.AbilityType.None)
             {
                 cardCount++;
             }
         }
-
         cardCountText.text = $"x{cardCount}";
     }
     private void OnDisable()
     {
         UnsubscribeEvents();
-    }
-
-    public void BindUnit(Unit unit)
-    {
-        _boundUnit = unit;
-        transform.position = _boundUnit.transform.position + offset;
-        
-        SubscribeEvents();
     }
 
     private void SubscribeEvents()
