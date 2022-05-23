@@ -11,6 +11,7 @@ public class GameController : MonoBehaviour
     public UnitManager UnitManager;
     public TurnManager TurnManager;
     public AbilityHolder AbilityHolder;
+    public WorldUIManager WorldUIManager;
 
     public void Awake()
     {

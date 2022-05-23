@@ -26,13 +26,32 @@ public class UIAbility : MonoBehaviour, IPointerClickHandler, IPointerEnterHandl
         if (ability != null)
         {
             this.ability = ability;
-            if (icon != null) icon.sprite = ability.AbilityInfo.icon;
-            if (cardName != null) cardName.text = ability.AbilityInfo.cardName;
-            if (description != null) description.text = ability.AbilityInfo.description;
-            if (epCost != null) epCost.text = ability.AbilityInfo.epCost.ToString();
-            if (tpCost != null) tpCost.text = ability.AbilityInfo.tpCost.ToString();
-            if (range != null) range.text = ability.AbilityInfo.minRange.ToString() + "\n-\n" + ability.AbilityInfo.maxRange.ToString();
-            if (area != null) area.text = ability.AbilityInfo.minAreaRange.ToString() + "\n-\n" + ability.AbilityInfo.maxAreaRange.ToString();
+            
+            var abilityInfo = ability.AbilityInfo;
+            
+            if (icon != null) icon.sprite = abilityInfo.icon;
+            if (cardName != null) cardName.text = abilityInfo.cardName;
+            if (description != null)
+            {
+                if (abilityInfo.values.Length > 0)
+                {
+                    var values = new object[abilityInfo.values.Length];
+                    for (var i = 0; i < values.Length; i++)
+                    {
+                        values[i] = abilityInfo.values[i];
+                    }
+                    
+                    description.text = String.Format(abilityInfo.description, values);
+                }
+                else
+                {
+                    description.text = abilityInfo.description;
+                }
+            }
+            if (epCost != null) epCost.text = abilityInfo.epCost.ToString();
+            if (tpCost != null) tpCost.text = abilityInfo.tpCost.ToString();
+            if (range != null) range.text = $"{abilityInfo.minRange.ToString()}\n-\n{abilityInfo.maxRange.ToString()}";
+            if (area != null) area.text = $"{abilityInfo.minAreaRange.ToString()}\n-\n{abilityInfo.maxAreaRange.ToString()}";
             
             for (var i = 0; i < 4; i++)
             {

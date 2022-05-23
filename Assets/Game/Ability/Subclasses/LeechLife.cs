@@ -7,11 +7,16 @@ public class LeechLife : Ability
     {
         if (abilityData.epCost > user.energy)
         {
-            return; // Not enough energy
+            GameController.Instance.WorldUIManager.CreateHoveringWorldText(HWTType.NotEnoughEnergy,
+                user.transform.position, "Недостаточно энергии!");
+            return;
         }
+        
         if (abilityData.tpCost > user.time)
         {
-            return; // Not enough energy
+            GameController.Instance.WorldUIManager.CreateHoveringWorldText(HWTType.NotEnoughTime,
+                user.transform.position, "Недостаточно времени!");
+            return;
         }
 
         Unit target;
@@ -32,6 +37,7 @@ public class LeechLife : Ability
                 int newHealth, oldHealth;
 
                 oldHealth = target.health;
+                var value = (int)((abilityData.values[0] * (1 + user.UnitData.AspectDedications[2].Value / 100f) + user.UnitData.power) / 5f) * 5;
                 target.ChangeHealth(-abilityData.values[0]);
                 newHealth = target.health;
                 user.ChangeHealth(oldHealth - newHealth);

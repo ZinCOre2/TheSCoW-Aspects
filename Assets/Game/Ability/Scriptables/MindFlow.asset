@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardName: "\u041F\u043E\u0442\u043E\u043A \u0440\u0430\u0437\u0443\u043C\u0430"
   icon: {fileID: 21300000, guid: e97c75d553306fe4680c9d41c96b77f1, type: 3}
-  description: "\u0412\u044B \u0431\u0435\u0440\u0435\u0442\u0435 2 \u043A\u0430\u0440\u0442\u044B."
+  description: "\u0412\u044B \u0431\u0435\u0440\u0435\u0442\u0435 {0} \u043A\u0430\u0440\u0442\u044B."
   rangeType: 2
   areaType: 2
   minRange: 0
@@ -22,7 +22,7 @@ MonoBehaviour:
   minAreaRange: 0
   maxAreaRange: 0
   epCost: 20
-  tpCost: 20
+  tpCost: 10
   Dedications:
   - IsUsable: 0
     Value: 0
@@ -32,4 +32,4 @@ MonoBehaviour:
     Value: 0
   - IsUsable: 1
     Value: 0
-  values: 
+  values: 02000000

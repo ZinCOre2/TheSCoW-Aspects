@@ -76,8 +76,8 @@
      <Compile Include="Assets\Game\Ability\Subclasses\LeechLife.cs" />
      <Compile Include="Assets\Game\Ability\Subclasses\MindFlow.cs" />
      <Compile Include="Assets\Game\Ability\Subclasses\Move.cs" />
-     <Compile Include="Assets\Game\Ability\Subclasses\Strike.cs" />
      <Compile Include="Assets\Game\Ability\Subclasses\StunningSlam.cs" />
+     <Compile Include="Assets\Game\Ability\Subclasses\SweepStrike.cs" />
      <Compile Include="Assets\Game\Animation\Scripts\AnimationHolder.cs" />
      <Compile Include="Assets\Game\Animation\Scripts\AnimationType.cs" />
      <Compile Include="Assets\Game\Aspect\Scripts\AspectDedication.cs" />
@@ -101,6 +101,8 @@
      <Compile Include="Assets\Game\Scene\Scripts\CameraController.cs" />
      <Compile Include="Assets\Game\Scene\Scripts\DayCycler.cs" />
      <Compile Include="Assets\Game\Selection\Scripts\SelectionManager.cs" />
+     <Compile Include="Assets\Game\UI\Scripts\TurnQueuePanel.cs" />
+     <Compile Include="Assets\Game\UI\Scripts\TurnQueueUnitPanel.cs" />
      <Compile Include="Assets\Game\UI\Scripts\UIAbility.cs" />
      <Compile Include="Assets\Game\UI\Scripts\UIController.cs" />
      <Compile Include="Assets\Game\UI\Scripts\UIMethods.cs" />
@@ -112,7 +114,10 @@
      <Compile Include="Assets\Game\Utility\Scripts\ObjectPooler.cs" />
      <Compile Include="Assets\Game\Utility\Scripts\Timer.cs" />
      <Compile Include="Assets\Game\WorldUI\Scripts\Billboard.cs" />
+     <Compile Include="Assets\Game\WorldUI\Scripts\HWTType.cs" />
+     <Compile Include="Assets\Game\WorldUI\Scripts\HoveringWorldText.cs" />
      <Compile Include="Assets\Game\WorldUI\Scripts\UnitBarPack.cs" />
+     <Compile Include="Assets\Game\WorldUI\Scripts\WorldUIManager.cs" />
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Bitmap.shader" />

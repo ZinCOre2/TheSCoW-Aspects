@@ -26,7 +26,7 @@ public class Ability : MonoBehaviour
                 area = Pathfinding.GetNodesInPathfindingRange(start, abilityData.minRange, abilityData.maxRange);
                 break;
             case AbilityData.AreaType.Impulse:
-                area = Pathfinding.GetNodesInImpulseRange(start, abilityData.minRange, abilityData.maxRange);
+                area = Pathfinding.GetNodesInImpulseRange(start, abilityData.minRange, abilityData.maxRange, false, true, true);
                 break;
             case AbilityData.AreaType.Absolute:
                 area = Pathfinding.GetNodesInAbsoluteRange(start, abilityData.minRange, abilityData.maxRange);
@@ -45,7 +45,7 @@ public class Ability : MonoBehaviour
                 aoe = Pathfinding.GetNodesInPathfindingRange(pathNode.node, abilityData.minAreaRange, abilityData.maxAreaRange);
                 break;
             case AbilityData.AreaType.Impulse:
-                aoe = Pathfinding.GetNodesInImpulseRange(pathNode.node, abilityData.minAreaRange, abilityData.maxAreaRange);
+                aoe = Pathfinding.GetNodesInImpulseRange(pathNode.node, abilityData.minAreaRange, abilityData.maxAreaRange, false, true, true);
                 break;
             case AbilityData.AreaType.Absolute:
                 aoe = Pathfinding.GetNodesInAbsoluteRange(pathNode.node, abilityData.minAreaRange, abilityData.maxAreaRange);

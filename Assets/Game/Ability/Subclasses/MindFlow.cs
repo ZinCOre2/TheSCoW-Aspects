@@ -7,11 +7,16 @@ public class MindFlow : Ability
     {
         if (abilityData.epCost > user.energy)
         {
-            return; // Not enough energy
+            GameController.Instance.WorldUIManager.CreateHoveringWorldText(HWTType.NotEnoughEnergy,
+                user.transform.position, "Недостаточно энергии!");
+            return;
         }
+        
         if (abilityData.tpCost > user.time)
         {
-            return; // Not enough energy
+            GameController.Instance.WorldUIManager.CreateHoveringWorldText(HWTType.NotEnoughTime,
+                user.transform.position, "Недостаточно времени!");
+            return;
         }
         
         base.UseAbility(user, aoe);
@@ -22,7 +27,7 @@ public class MindFlow : Ability
         aEffect = ObjectPooler.Instance.SpawnFromPool(abilityEffect.EffectTag, 
             GameController.Instance.Grid.nodeList[user.Coords.x, user.Coords.y].transform.position, abilityEffect.transform.rotation).GetComponent<AbilityEffect>();
 
-        for (var i = 0; i < 2; i++)
+        for (var i = 0; i < abilityData.values[0]; i++)
         {
             user.DeckManager.DrawCard();
         }

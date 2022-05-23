@@ -9,6 +9,7 @@ public class AbilityData : ScriptableObject
     [Header("General Data")]
     public string cardName;
     public Sprite icon;
+    [TextArea(3, 6)]
     public string description;
     [Header("Area Data")]
     //public bool targetSelf, targetAlly, targetEnemy, targetGround;
@@ -19,5 +20,5 @@ public class AbilityData : ScriptableObject
     public int epCost;
     public int tpCost;
     public AspectDedication[] Dedications = new AspectDedication[4];
-    public List<int> values;
+    public int[] values;
 }

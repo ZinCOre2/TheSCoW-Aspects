@@ -6,11 +6,16 @@ public class FireSpirits : Ability
     {
         if (abilityData.epCost > user.energy)
         {
-            return; // Not enough energy
+            GameController.Instance.WorldUIManager.CreateHoveringWorldText(HWTType.NotEnoughEnergy,
+                user.transform.position, "Недостаточно энергии!");
+            return;
         }
+        
         if (abilityData.tpCost > user.time)
         {
-            return; // Not enough energy
+            GameController.Instance.WorldUIManager.CreateHoveringWorldText(HWTType.NotEnoughTime,
+                user.transform.position, "Недостаточно времени!");
+            return;
         }
         
         base.UseAbility(user, aoe);
@@ -26,7 +31,9 @@ public class FireSpirits : Ability
             {
                 AbilityEffect aEffect;
                 aEffect = ObjectPooler.Instance.SpawnFromPool(abilityEffect.EffectTag, pathNode.node.transform.position, abilityEffect.transform.rotation).GetComponent<AbilityEffect>();
-                target.ChangeHealth(-abilityData.values[0]);
+                
+                var value = (int)((abilityData.values[0] * (1 + user.UnitData.AspectDedications[0].Value / 100f) + user.UnitData.power) / 5f) * 5;
+                target.ChangeHealth(-value);
             }
         }
     }

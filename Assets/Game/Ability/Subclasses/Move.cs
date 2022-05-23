@@ -23,6 +23,24 @@ public class Move : Ability
     }
     public override void UseAbility(Unit user, List<PathNode> aoe)
     {
+        if (user.energy < aoe[0].length * abilityData.epCost)
+        {
+            GameController.Instance.WorldUIManager.CreateHoveringWorldText(HWTType.NotEnoughEnergy,
+                user.transform.position, "Недостаточно энергии!");
+            return;
+        }
+        if (user.time < aoe[0].length * abilityData.tpCost)
+        {
+            GameController.Instance.WorldUIManager.CreateHoveringWorldText(HWTType.NotEnoughTime,
+                user.transform.position, "Недостаточно времени!");
+            return;
+        }
+
+        if (GameController.Instance.Grid.NodeOccupied(aoe[0].node.Coords))
+        {
+            return;
+        }
+        
         if (audioSource && soundEffect)
         {
             audioSource.clip = soundEffect;
@@ -32,20 +50,6 @@ public class Move : Ability
             {
                 audioSource.Stop();
             };
-        }
-
-        if (user.energy < aoe[0].length * abilityData.epCost)
-        {
-            return;
-        }
-        if (user.time < aoe[0].length * abilityData.tpCost)
-        {
-            return; // Not enough energy
-        }
-        
-        if (GameController.Instance.Grid.NodeOccupied(aoe[0].node.Coords))
-        {
-            return;
         }
 
         user.SetCoords(aoe[0].node.Coords);

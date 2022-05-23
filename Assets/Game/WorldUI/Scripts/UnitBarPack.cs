@@ -15,36 +15,6 @@ public class UnitBarPack : MonoBehaviour
     
     private Unit _boundUnit;
 
-    private void OnDisable()
-    {
-        _boundUnit.OnHealthChanged -= BoundUnit_OnHealthChanged;
-        _boundUnit.OnEnergyChanged -= BoundUnit_OnEnergyChanged;
-        _boundUnit.OnTimeChanged -= BoundUnit_OnTimeChanged;
-    }
-
-    public void BindUnit(Unit unit)
-    {
-        _boundUnit = unit;
-        transform.position = _boundUnit.transform.position + offset;
-        
-        _boundUnit.OnHealthChanged += BoundUnit_OnHealthChanged;
-        _boundUnit.OnEnergyChanged += BoundUnit_OnEnergyChanged;
-        _boundUnit.OnTimeChanged += BoundUnit_OnTimeChanged;
-    }
-    
-    private void BoundUnit_OnHealthChanged(Unit unit, int value)
-    {
-        hpBar.fillAmount = value / (float)_boundUnit.UnitData.maxHealth;
-    }
-    private void BoundUnit_OnEnergyChanged(Unit unit, int value)
-    {
-        epBar.fillAmount = value / (float)_boundUnit.UnitData.maxEnergy;
-    }
-    private void BoundUnit_OnTimeChanged(Unit unit, int value)
-    {
-        tpBar.fillAmount = value / (float)_boundUnit.UnitData.maxTime;
-    }    
-
     private void Update()
     {
         if (_boundUnit != null)
@@ -62,5 +32,50 @@ public class UnitBarPack : MonoBehaviour
         }
 
         cardCountText.text = $"x{cardCount}";
+    }
+    private void OnDisable()
+    {
+        UnsubscribeEvents();
+    }
+
+    public void BindUnit(Unit unit)
+    {
+        _boundUnit = unit;
+        transform.position = _boundUnit.transform.position + offset;
+        
+        SubscribeEvents();
+    }
+
+    private void SubscribeEvents()
+    {
+        _boundUnit.OnHealthChanged += BoundUnit_OnHealthChanged;
+        _boundUnit.OnEnergyChanged += BoundUnit_OnEnergyChanged;
+        _boundUnit.OnTimeChanged += BoundUnit_OnTimeChanged;
+        _boundUnit.OnUnitDeath += BoundUnit_OnUnitDeath;
+    }
+    private void UnsubscribeEvents()
+    {
+        _boundUnit.OnHealthChanged -= BoundUnit_OnHealthChanged;
+        _boundUnit.OnEnergyChanged -= BoundUnit_OnEnergyChanged;
+        _boundUnit.OnTimeChanged -= BoundUnit_OnTimeChanged;
+        _boundUnit.OnUnitDeath -= BoundUnit_OnUnitDeath;
+    }
+
+    private void BoundUnit_OnHealthChanged(Unit unit, int value)
+    {
+        hpBar.fillAmount = value / (float)_boundUnit.UnitData.maxHealth;
+    }
+    private void BoundUnit_OnEnergyChanged(Unit unit, int value)
+    {
+        epBar.fillAmount = value / (float)_boundUnit.UnitData.maxEnergy;
+    }
+    private void BoundUnit_OnTimeChanged(Unit unit, int value)
+    {
+        tpBar.fillAmount = value / (float)_boundUnit.UnitData.maxTime;
+    }
+    private void BoundUnit_OnUnitDeath(Unit unit)
+    {
+        UnsubscribeEvents();
+        Destroy(gameObject);
     }
 }

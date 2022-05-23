@@ -31,7 +31,7 @@ public class SceneController : MonoBehaviour
     public Timer TurnTimer { get { return turnTimer; } private set { turnTimer = value; } }
     public int turnId { get; private set; } = 0;
 
-    public Unit selectedUnit { get; private set; }
+    [HideInInspector] public Unit SelectedUnit;
     private Ability _selectedAbility = new Ability();
     private List<PathNode> _nodesInRange = new List<PathNode>();
     private List<PathNode> _aoe = new List<PathNode>();
@@ -48,7 +48,7 @@ public class SceneController : MonoBehaviour
     }
     private void Start()
     {
-        foreach (UIAbility uiAbility in GameController.Instance.UIController.AbilitySlots)
+        foreach (UIAbility uiAbility in GameController.Instance.UIController.UnitDataPanel.AbilitySlots)
         {
             uiAbility.OnAbilitySelect += (Ability _ability, int id) =>
             {
@@ -56,21 +56,21 @@ public class SceneController : MonoBehaviour
                 {
                     _selectedAbility = _ability;
                     UnmarkNodes();
-                    _nodesInRange = _ability.GetNodesInRange(selectedUnit);
+                    _nodesInRange = _ability.GetNodesInRange(SelectedUnit);
                     MarkNodes();
                 }
             };
         }
         OnUnitSelect += (Unit unit) =>
         {
-            selectedUnit = unit;
+            SelectedUnit = unit;
 
             UnmarkNodes();
             if (unit.TeamId - 1 == turnId)
             {
                 _selectedAbility = GameController.Instance.AbilityHolder.GetAbility(AbilityHolder.AType.Move);
 
-                _nodesInRange = _selectedAbility.GetNodesInRange(selectedUnit);
+                _nodesInRange = _selectedAbility.GetNodesInRange(SelectedUnit);
             }
             else
             {
@@ -102,9 +102,9 @@ public class SceneController : MonoBehaviour
                 // Hovering cursor - always check area of effect
                 if (_hitInfo.collider.gameObject.TryGetComponent(out Node node))
                 {
-                    if (selectedUnit && selectedUnit.TeamId != 0 && !selectedUnit.usingAbility)
+                    if (SelectedUnit && SelectedUnit.TeamId != 0 && !SelectedUnit.usingAbility)
                     {
-                        if (selectedUnit.TeamId - 1 == turnId)
+                        if (SelectedUnit.TeamId - 1 == turnId)
                         {
                             // Clear aoe/path
                             UnmarkNodes();
@@ -114,7 +114,7 @@ public class SceneController : MonoBehaviour
                             {
                                 if (pathNode.node == node)
                                 {
-                                    _aoe = _selectedAbility.GetAoe(selectedUnit, pathNode);
+                                    _aoe = _selectedAbility.GetAoe(SelectedUnit, pathNode);
                                     break;
                                 }
                             }
@@ -125,9 +125,9 @@ public class SceneController : MonoBehaviour
                 }
                 if (_hitInfo.collider.gameObject.TryGetComponent(out Unit unit))
                 {
-                    if (selectedUnit && selectedUnit.TeamId != 0 && !selectedUnit.usingAbility)
+                    if (SelectedUnit && SelectedUnit.TeamId != 0 && !SelectedUnit.usingAbility)
                     {
-                        if (selectedUnit.TeamId - 1 == turnId)
+                        if (SelectedUnit.TeamId - 1 == turnId)
                         {
                             // Clear aoe/path
                             UnmarkNodes();
@@ -137,7 +137,7 @@ public class SceneController : MonoBehaviour
                             {
                                 if (pathNode.node.Coords == unit.Coords)
                                 {
-                                    _aoe = _selectedAbility.GetAoe(selectedUnit, pathNode);
+                                    _aoe = _selectedAbility.GetAoe(SelectedUnit, pathNode);
                                     break;
                                 }
                             }
@@ -159,11 +159,11 @@ public class SceneController : MonoBehaviour
                 // When pressed RMB on node - if in range of ability, use it.
                 if (Input.GetMouseButtonDown(1))
                 {
-                    if (selectedUnit && selectedUnit.TeamId - 1 == turnId)
+                    if (SelectedUnit && SelectedUnit.TeamId - 1 == turnId)
                     {
                         if (_hitInfo.collider.gameObject.TryGetComponent(out Node nodeTarget))
                         {
-                            if (selectedUnit.TeamId != 0 && !selectedUnit.usingAbility)
+                            if (SelectedUnit.TeamId != 0 && !SelectedUnit.usingAbility)
                             {
                                 UnmarkNodes();
                                 // Find selected node. If not in range, do nothing
@@ -171,11 +171,11 @@ public class SceneController : MonoBehaviour
                                 {
                                     if (pathNode.node == nodeTarget)
                                     {
-                                        _aoe = _selectedAbility.GetAoe(selectedUnit, pathNode);
-                                        _selectedAbility.UseAbility(selectedUnit, _aoe);
+                                        _aoe = _selectedAbility.GetAoe(SelectedUnit, pathNode);
+                                        _selectedAbility.UseAbility(SelectedUnit, _aoe);
 
                                         _selectedAbility = GameController.Instance.AbilityHolder.GetAbility(AbilityHolder.AType.Move);
-                                        _nodesInRange = _selectedAbility.GetNodesInRange(selectedUnit);
+                                        _nodesInRange = _selectedAbility.GetNodesInRange(SelectedUnit);
 
                                         break;
                                     }
@@ -186,7 +186,7 @@ public class SceneController : MonoBehaviour
                         }
                         if (_hitInfo.collider.gameObject.TryGetComponent(out Unit unitTarget))
                         {
-                            if (selectedUnit.TeamId != 0 && !selectedUnit.usingAbility)
+                            if (SelectedUnit.TeamId != 0 && !SelectedUnit.usingAbility)
                             {
                                 UnmarkNodes();
                                 // Find selected node. If not in range, do nothing
@@ -194,11 +194,11 @@ public class SceneController : MonoBehaviour
                                 {
                                     if (pathNode.node == grid.nodeList[unitTarget.Coords.x, unitTarget.Coords.y])
                                     {
-                                        _aoe = _selectedAbility.GetAoe(selectedUnit, pathNode);
-                                        _selectedAbility.UseAbility(selectedUnit, _aoe);
+                                        _aoe = _selectedAbility.GetAoe(SelectedUnit, pathNode);
+                                        _selectedAbility.UseAbility(SelectedUnit, _aoe);
 
                                         _selectedAbility = GameController.Instance.AbilityHolder.GetAbility(AbilityHolder.AType.Move);
-                                        _nodesInRange = _selectedAbility.GetNodesInRange(selectedUnit);
+                                        _nodesInRange = _selectedAbility.GetNodesInRange(SelectedUnit);
 
                                         break;
                                     }
@@ -249,9 +249,9 @@ public class SceneController : MonoBehaviour
 
     public void UnitDeath(Unit unit)
     {
-        if (selectedUnit == unit)
+        if (SelectedUnit == unit)
         {
-            selectedUnit = null;
+            SelectedUnit = null;
             UnmarkNodes();
         }
 
@@ -339,7 +339,7 @@ public class SceneController : MonoBehaviour
         _selectedAbility = newAbility;
         if (_selectedAbility != null)
         {
-            _nodesInRange = _selectedAbility.GetNodesInRange(selectedUnit);
+            _nodesInRange = _selectedAbility.GetNodesInRange(SelectedUnit);
         }
         else
         {

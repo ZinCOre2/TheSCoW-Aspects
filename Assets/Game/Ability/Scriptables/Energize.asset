@@ -15,7 +15,7 @@ MonoBehaviour:
   cardName: "\u041F\u043E\u0434\u0437\u0430\u0440\u044F\u0434\u043A\u0430"
   icon: {fileID: 21300000, guid: a5c0de96ed385d3439886dfcc8b153be, type: 3}
   description: "\u0412\u043E\u0441\u0441\u0442\u0430\u043D\u0430\u0432\u043B\u0438\u0432\u0430\u0435\u0442
-    20 \u044D\u043D\u0435\u0440\u0433\u0438\u0438 \u0432\u044B\u0431\u0440\u0430\u043D\u043D\u043E\u0433\u043E
+    {0} \u044D\u043D\u0435\u0440\u0433\u0438\u0438 \u0432\u044B\u0431\u0440\u0430\u043D\u043D\u043E\u0433\u043E
     \u0441\u043E\u044E\u0437\u043D\u0438\u043A\u0430."
   rangeType: 1
   areaType: 1
@@ -24,7 +24,7 @@ MonoBehaviour:
   minAreaRange: 0
   maxAreaRange: 0
   epCost: 5
-  tpCost: 15
+  tpCost: 10
   Dedications:
   - IsUsable: 1
     Value: 0
@@ -32,6 +32,6 @@ MonoBehaviour:
     Value: 0
   - IsUsable: 0
     Value: 0
-  - IsUsable: 0
+  - IsUsable: 1
     Value: 0
   values: 14000000

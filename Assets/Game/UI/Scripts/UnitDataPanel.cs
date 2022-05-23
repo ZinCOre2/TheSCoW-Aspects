@@ -1,14 +1,30 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 public class UnitDataPanel : MonoBehaviour
 {
-    [Header("Unit Data")]
-    [SerializeField] private Image portrait;
-    [SerializeField] private TextMeshProUGUI unitNameText;
-    [SerializeField] private Image hpBar, epBar, tpBar;
-    [SerializeField] private TextMeshProUGUI hpStateText, epStateText, tpStateText, hpRegenText, epRegenText, powerText, defenceText;
-    [SerializeField] private UIAbility[] abilitySlots = new UIAbility[7];
-    [SerializeField] private Image[] cardBacks = new Image[6];
+    public Image Portrait;
+    public TextMeshProUGUI UnitNameText;
+    
+    public Image HPBar;
+    public Image EPBar;
+    public Image TPBar;
+    
+    public TextMeshProUGUI HPStateText;
+    public TextMeshProUGUI EPStateText;
+    public TextMeshProUGUI TPStateText;
+    
+    public TextMeshProUGUI HPRegenText;
+    public TextMeshProUGUI EPRegenText;
+
+    [FormerlySerializedAs("AspectDedications")] public TextMeshProUGUI[] AspectDedicationsText = new TextMeshProUGUI[4];
+    public GameObject[] AspectCovers = new GameObject[4];
+    
+    public TextMeshProUGUI PowerText;
+    public TextMeshProUGUI DefenceText;
+    
+    public UIAbility[] AbilitySlots = new UIAbility[7];
+    public Image[] CardBacks = new Image[6];
 }

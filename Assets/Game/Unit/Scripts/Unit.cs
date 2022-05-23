@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = System.Random;
 
 [RequireComponent(typeof(Move))]
 public class Unit : Entity
@@ -12,8 +13,7 @@ public class Unit : Entity
     public event Action<Unit> OnUnitDeath;
     public event Action OnFinishAbilityUse;
 
-    [Header("General")] 
-    [SerializeField] private UnitBarPack unitBarPack;
+    [Header("General")]
     [SerializeField] private UnitData unitData;
     [SerializeField] private Animator animator;
     [SerializeField] private float moveSpeed = 50f;
@@ -40,12 +40,6 @@ public class Unit : Entity
 
     private void Start()
     {
-        if (unitBarPack != null)
-        {
-            _boundBarPack = Instantiate(unitBarPack, GameController.Instance.UIController.WorldUIParent);
-            _boundBarPack.BindUnit(this);
-        }
-
         GameController.Instance.Grid.unitList.Add(this);
         GameController.Instance.SceneController.OnUnitSelect += MarkerUnit;
 
@@ -57,6 +51,8 @@ public class Unit : Entity
         health = unitData.maxHealth;
         energy = unitData.maxEnergy;
         time = unitData.maxTime;
+
+        _boundBarPack = GameController.Instance.WorldUIManager.CreateBarPack(this);
 
         DeckManager.SetStartingDeck(UnitData.StartingDeck);
         for (int i = 0; i < 3; i++)
@@ -80,8 +76,7 @@ public class Unit : Entity
             if (unit == this)
             {
                 GameController.Instance.SceneController.OnUnitSelect -= MarkerUnit;
-                Destroy(_boundBarPack.gameObject);
-                
+
                 Destroy(pivot.gameObject, 3f);
             }
         };
@@ -123,33 +118,61 @@ public class Unit : Entity
     
     public void ChangeHealth(int value)
     {
+        if (value < 0)
+        {
+            value += UnitData.defence;
+            value = Mathf.Clamp(value, Int32.MinValue, 0);
+        }
+        
         health += value;
         health = Mathf.Clamp(health, 0, unitData.maxHealth);
         OnHealthChanged?.Invoke(this, health);
 
-        if (health <= 0)
+        if (value < 0)
         {
-            animator?.SetTrigger("Death");
-            OnUnitDeath?.Invoke(this);
-            // Dead, show animation, remove unit from scene soon, subtract from counter above
-        }
-        else
-            if (value < 0)
+            GameController.Instance.WorldUIManager.CreateHoveringWorldText(HWTType.DamageTaken, transform.position, $"{value}");
+
+            if (health <= 0)
+            {
+                animator?.SetTrigger("Death");
+                OnUnitDeath?.Invoke(this);
+                // Dead, show animation, remove unit from scene soon, subtract from counter above
+            }
+            else
             {
                 animator?.SetTrigger("TakeHit");
             }
+        }
+        else
+        {
+            GameController.Instance.WorldUIManager.CreateHoveringWorldText(HWTType.HealthRestored, transform.position, $"+{value}");
+        }
     }
     public void ChangeEnergy(int value)
     {
         energy += value;
         energy = Mathf.Clamp(energy, 0, unitData.maxEnergy);
         OnEnergyChanged?.Invoke(this, energy);
+
+        if (value < 0)
+        {
+            GameController.Instance.WorldUIManager.CreateHoveringWorldText(HWTType.EnergyBurned, transform.position, $"{value}");
+        }
+        else
+        {
+            GameController.Instance.WorldUIManager.CreateHoveringWorldText(HWTType.EnergyRestored, transform.position, $"+{value}");
+        }
     }
     public void ChangeTime(int value)
     {
         time += value;
         time = Mathf.Clamp(time, 0, unitData.maxTime);
         OnTimeChanged?.Invoke(this, time);
+
+        if (value < 0)
+        {
+            GameController.Instance.WorldUIManager.CreateHoveringWorldText(HWTType.TimeBurned, transform.position, $"{value}");
+        }
     }
 
     public IEnumerator MoveByPath(List<PathNode> path)

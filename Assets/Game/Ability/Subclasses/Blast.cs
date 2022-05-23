@@ -7,12 +7,16 @@ public class Blast : Ability
     {
         if (abilityData.epCost > user.energy)
         {
-            return; // Not enough energy
+            GameController.Instance.WorldUIManager.CreateHoveringWorldText(HWTType.NotEnoughEnergy,
+                user.transform.position, "Недостаточно энергии!");
+            return;
         }
         
         if (abilityData.tpCost > user.time)
         {
-            return; // Not enough energy
+            GameController.Instance.WorldUIManager.CreateHoveringWorldText(HWTType.NotEnoughTime,
+                user.transform.position, "Недостаточно времени!");
+            return;
         }
         
         base.UseAbility(user, aoe);
@@ -26,9 +30,11 @@ public class Blast : Ability
             aEffect = ObjectPooler.Instance.SpawnFromPool(abilityEffect.EffectTag, pathNode.node.transform.position, abilityEffect.transform.rotation).GetComponent<AbilityEffect>();
 
             target = GameController.Instance.Grid.GetUnitOnNode(pathNode.node.Coords);
+            var damage = (int)((abilityData.values[0] * (1 + user.UnitData.AspectDedications[0].Value / 100f) + user.UnitData.power) / 5f) * 5;
+            
             if (target && target.TeamId != 0 && target.TeamId != user.TeamId)
             {
-                target.ChangeHealth(-abilityData.values[0]);
+                target.ChangeHealth(-damage);
             }
         }
     }

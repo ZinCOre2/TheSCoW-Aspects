@@ -7,12 +7,16 @@ public class BoulderCage : Ability
     {
         if (abilityData.epCost > user.energy)
         {
-            return; // Not enough energy
+            GameController.Instance.WorldUIManager.CreateHoveringWorldText(HWTType.NotEnoughEnergy,
+                user.transform.position, "Недостаточно энергии!");
+            return;
         }
         
         if (abilityData.tpCost > user.time)
         {
-            return; // Not enough energy
+            GameController.Instance.WorldUIManager.CreateHoveringWorldText(HWTType.NotEnoughTime,
+                user.transform.position, "Недостаточно времени!");
+            return;
         }
         
         base.UseAbility(user, aoe);
