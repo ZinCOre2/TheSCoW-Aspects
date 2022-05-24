@@ -90,7 +90,7 @@ public class SceneController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            SceneManager.LoadScene(0); // Main menu
+            SceneManager.LoadScene(0); // or Pause
         }
         if (!IsMouseOverUI())
         {
@@ -98,6 +98,9 @@ public class SceneController : MonoBehaviour
 
             if (Physics.Raycast(_ray, out _hitInfo))
             {
+                UnmarkNodes();
+                MarkNodes();
+                
                 // Hovering cursor - always check area of effect
                 if (_hitInfo.collider.gameObject.TryGetComponent(out Node node))
                 {
@@ -212,14 +215,6 @@ public class SceneController : MonoBehaviour
         }
     }
 
-    private void UnmarkNodes()
-    {
-        foreach (PathNode pathNodeAoe in _aoe)
-            pathNodeAoe.node.Unmark();
-
-        foreach (PathNode pathNode in _nodesInRange)
-            pathNode.node.Unmark();
-    }
     private void MarkNodes()
     {
         // Mark nodes in range
@@ -231,19 +226,50 @@ public class SceneController : MonoBehaviour
         
         foreach (PathNode pathNode in _nodesInRange)
         {
-            Unit unitInRange;
-            unitInRange = GameController.Instance.Grid.GetUnitOnNode(pathNode.node.Coords);
-
-            pathNode.node.MarkCustom(markColor);
+            if (GameController.Instance.Grid.NodeOccupied(pathNode.node.Coords))
+            {
+                if (GameController.Instance.Grid.GetUnitOnNode(pathNode.node.Coords) != null)
+                {
+                    pathNode.node.MarkCustom(Color.red);
+                }
+                else
+                {
+                    pathNode.node.MarkCustom(Color.cyan);
+                }
+            }
+            else
+            {
+                pathNode.node.MarkCustom(markColor);
+            }
         }
 
         // Mark nodes in aoe
         foreach (PathNode pathNode in _aoe)
         {
-            Unit unitInRange;
-            unitInRange = GameController.Instance.Grid.GetUnitOnNode(pathNode.node.Coords);
-            pathNode.node.MarkCustom(Color.yellow);
+            if (GameController.Instance.Grid.NodeOccupied(pathNode.node.Coords))
+            {
+                if (GameController.Instance.Grid.GetUnitOnNode(pathNode.node.Coords) != null)
+                {
+                    pathNode.node.MarkCustom(Color.red);
+                }
+                else
+                {
+                    pathNode.node.MarkCustom(Color.cyan);
+                }
+            }
+            else
+            {
+                pathNode.node.MarkCustom(Color.yellow);
+            }
         }
+    }
+    private void UnmarkNodes()
+    {
+        foreach (PathNode pathNodeAoe in _aoe)
+            pathNodeAoe.node.Unmark();
+
+        foreach (PathNode pathNode in _nodesInRange)
+            pathNode.node.Unmark();
     }
 
     public void UnitDeath(Unit unit)
@@ -308,7 +334,9 @@ public class SceneController : MonoBehaviour
                 unit.ChangeTime(unit.UnitData.maxTime / 2);
 
                 if (unit is MasterUnit masterUnit)
-                masterUnit.DeckManager.DrawCard();
+                {
+                    masterUnit.DeckManager.DrawCard();
+                }
             }
         }
 

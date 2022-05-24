@@ -28,22 +28,18 @@ public class Grid2d : MonoBehaviour
 
     public bool NodeExists(Vector2Int coords)
     {
-        if (coords.x < 0 || coords.x >= xSize || coords.y < 0 || coords.y >= ySize || nodeList[coords.x, coords.y] == null)
-            return false;
-        return true;
+        return coords.x >= 0 && coords.x < xSize && coords.y >= 0 && coords.y < ySize && nodeList[coords.x, coords.y] != null;
     }
     public bool NodeExists(int x, int y)
     {
-        if (x < 0 || x >= xSize || y < 0 || y >= ySize || nodeList[x, y] == null)
-            return false;
-        return true;
+        return x >= 0 && x < xSize && y >= 0 && y < ySize && nodeList[x, y] != null;
     }
 
     public bool NodeOccupied(Vector2Int coords)
     {
         if (coords.x < 0 || coords.x >= xSize || coords.y < 0 || coords.y >= ySize || nodeList[coords.x, coords.y] == null)
             return true;
-        foreach (PhysicalEntity entity in GameController.Instance.EntityManager.PhysicalEntities)
+        foreach (var entity in GameController.Instance.EntityManager.PhysicalEntities)
         {
             if (entity.Coords == coords)
                 return true;
@@ -54,7 +50,7 @@ public class Grid2d : MonoBehaviour
     {
         if (x < 0 || x >= xSize || y < 0 || y >= ySize || nodeList[x, y] == null)
             return true;
-        foreach (PhysicalEntity entity in GameController.Instance.EntityManager.PhysicalEntities)
+        foreach (var entity in GameController.Instance.EntityManager.PhysicalEntities)
         {
             if (entity.Coords.x == x && entity.Coords.y == y)
                 return true;
@@ -66,7 +62,7 @@ public class Grid2d : MonoBehaviour
     {
         if (coords.x < 0 || coords.x >= xSize || coords.y < 0 || coords.y >= ySize || nodeList[coords.x, coords.y] == null)
             return null;
-        foreach (Unit unit in GameController.Instance.EntityManager.Units)
+        foreach (var unit in GameController.Instance.EntityManager.Units)
         {
             if (unit.Coords == coords)
                 return unit;
@@ -77,7 +73,7 @@ public class Grid2d : MonoBehaviour
     {
         if (x < 0 || x >= xSize || y < 0 || y >= ySize || nodeList[x, y] == null)
             return null;
-        foreach (Unit unit in GameController.Instance.EntityManager.Units)
+        foreach (var unit in GameController.Instance.EntityManager.Units)
         {
             if (unit.Coords.x == x && unit.Coords.y == y)
                 return unit;

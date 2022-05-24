@@ -4,13 +4,6 @@ using System.Collections.Generic;
 
 public class Pathfinding
 {
-    enum Direction 
-    {
-        LeftUp, Up, RightUp,
-        Left, None, Right,
-        LeftDown, Down, RightDown 
-    }
-
     public static List<PathNode> GetNodesInPathfindingRange(Node start, int minRange, int maxRange)
     {
         Vector2Int maskCenter = new Vector2Int(maxRange, maxRange);
@@ -45,7 +38,8 @@ public class Pathfinding
                 area.Add(mask[maskCenter.x - 1, maskCenter.y]);
 
                 if (!GameController.Instance.Grid.NodeOccupied(start.Coords + Vector2Int.left) ||
-                    GameController.Instance.SceneController.SelectedUnit.TeamId == GameController.Instance.Grid.GetUnitOnNode(start.Coords + Vector2Int.left).TeamId) 
+                    (GameController.Instance.Grid.GetUnitOnNode(start.Coords + Vector2Int.left) != null &&
+                     GameController.Instance.SceneController.SelectedUnit.TeamId == GameController.Instance.Grid.GetUnitOnNode(start.Coords + Vector2Int.left).TeamId))
                     // offset + maskCenter
                 {
                     RecPathfinding(mask[maskCenter.x - 1, maskCenter.y], maxRange, area, offset, mask);
@@ -59,7 +53,8 @@ public class Pathfinding
                 area.Add(mask[maskCenter.x + 1, maskCenter.y]);
 
                 if (!GameController.Instance.Grid.NodeOccupied(start.Coords + Vector2Int.right) ||
-                    GameController.Instance.SceneController.SelectedUnit.TeamId == GameController.Instance.Grid.GetUnitOnNode(start.Coords + Vector2Int.right).TeamId)
+                    (GameController.Instance.Grid.GetUnitOnNode(start.Coords + Vector2Int.right) != null &&
+                     GameController.Instance.SceneController.SelectedUnit.TeamId == GameController.Instance.Grid.GetUnitOnNode(start.Coords + Vector2Int.right).TeamId))
                 {
                     RecPathfinding(mask[maskCenter.x + 1, maskCenter.y], maxRange, area, offset, mask);
                 }
@@ -72,7 +67,8 @@ public class Pathfinding
                 area.Add(mask[maskCenter.x, maskCenter.y + 1]);
 
                 if (!GameController.Instance.Grid.NodeOccupied(start.Coords + Vector2Int.up) ||
-                    GameController.Instance.SceneController.SelectedUnit.TeamId == GameController.Instance.Grid.GetUnitOnNode(start.Coords + Vector2Int.up).TeamId)
+                    (GameController.Instance.Grid.GetUnitOnNode(start.Coords + Vector2Int.up) != null &&
+                     GameController.Instance.SceneController.SelectedUnit.TeamId == GameController.Instance.Grid.GetUnitOnNode(start.Coords + Vector2Int.up).TeamId))
                 {
                     RecPathfinding(mask[maskCenter.x, maskCenter.y + 1], maxRange, area, offset, mask);
                 }
@@ -85,7 +81,8 @@ public class Pathfinding
                 area.Add(mask[maskCenter.x, maskCenter.y - 1]);
 
                 if (!GameController.Instance.Grid.NodeOccupied(start.Coords + Vector2Int.down) ||
-                    GameController.Instance.SceneController.SelectedUnit.TeamId == GameController.Instance.Grid.GetUnitOnNode(start.Coords + Vector2Int.down).TeamId)
+                    (GameController.Instance.Grid.GetUnitOnNode(start.Coords + Vector2Int.down) != null &&
+                     GameController.Instance.SceneController.SelectedUnit.TeamId == GameController.Instance.Grid.GetUnitOnNode(start.Coords + Vector2Int.down).TeamId))
                 {
                     RecPathfinding(mask[maskCenter.x, maskCenter.y - 1], maxRange, area, offset, mask);
                 }
@@ -116,7 +113,8 @@ public class Pathfinding
                 area.Add(mask[pathNode.node.Coords.x - offset.x - 1, pathNode.node.Coords.y - offset.y]);
 
                 if (!GameController.Instance.Grid.NodeOccupied(pathNode.node.Coords + Vector2Int.left) ||
-                    GameController.Instance.SceneController.SelectedUnit.TeamId == GameController.Instance.Grid.GetUnitOnNode(pathNode.node.Coords + Vector2Int.left).TeamId)
+                    (GameController.Instance.Grid.GetUnitOnNode(pathNode.node.Coords + Vector2Int.left) != null &&
+                    GameController.Instance.SceneController.SelectedUnit.TeamId == GameController.Instance.Grid.GetUnitOnNode(pathNode.node.Coords + Vector2Int.left).TeamId))
                 {
                     RecPathfinding(mask[pathNode.node.Coords.x - offset.x - 1, pathNode.node.Coords.y - offset.y], maxRange, area, offset, mask);
                 }
@@ -130,7 +128,8 @@ public class Pathfinding
                 area.Add(mask[pathNode.node.Coords.x - offset.x + 1, pathNode.node.Coords.y - offset.y]);
 
                 if (!GameController.Instance.Grid.NodeOccupied(pathNode.node.Coords + Vector2Int.right) ||
-                    GameController.Instance.SceneController.SelectedUnit.TeamId == GameController.Instance.Grid.GetUnitOnNode(pathNode.node.Coords + Vector2Int.right).TeamId)
+                    (GameController.Instance.Grid.GetUnitOnNode(pathNode.node.Coords + Vector2Int.right) != null &&
+                     GameController.Instance.SceneController.SelectedUnit.TeamId == GameController.Instance.Grid.GetUnitOnNode(pathNode.node.Coords + Vector2Int.right).TeamId))
                 {
                     RecPathfinding(mask[pathNode.node.Coords.x - offset.x + 1, pathNode.node.Coords.y - offset.y], maxRange, area, offset, mask);
                 }
@@ -144,7 +143,8 @@ public class Pathfinding
                 area.Add(mask[pathNode.node.Coords.x - offset.x, pathNode.node.Coords.y - offset.y + 1]);
 
                 if (!GameController.Instance.Grid.NodeOccupied(pathNode.node.Coords + Vector2Int.up) ||
-                    GameController.Instance.SceneController.SelectedUnit.TeamId == GameController.Instance.Grid.GetUnitOnNode(pathNode.node.Coords + Vector2Int.up).TeamId)
+                    (GameController.Instance.Grid.GetUnitOnNode(pathNode.node.Coords + Vector2Int.up) != null && 
+                     GameController.Instance.SceneController.SelectedUnit.TeamId == GameController.Instance.Grid.GetUnitOnNode(pathNode.node.Coords + Vector2Int.up).TeamId))
                 {
                     RecPathfinding(mask[pathNode.node.Coords.x - offset.x, pathNode.node.Coords.y - offset.y + 1], maxRange, area, offset, mask);
                 }
@@ -158,7 +158,8 @@ public class Pathfinding
                 area.Add(mask[pathNode.node.Coords.x - offset.x, pathNode.node.Coords.y - offset.y - 1]);
 
                 if (!GameController.Instance.Grid.NodeOccupied(pathNode.node.Coords + Vector2Int.down) ||
-                    GameController.Instance.SceneController.SelectedUnit.TeamId == GameController.Instance.Grid.GetUnitOnNode(pathNode.node.Coords + Vector2Int.down).TeamId)
+                    (GameController.Instance.Grid.GetUnitOnNode(pathNode.node.Coords + Vector2Int.down) != null &&
+                     GameController.Instance.SceneController.SelectedUnit.TeamId == GameController.Instance.Grid.GetUnitOnNode(pathNode.node.Coords + Vector2Int.down).TeamId))
                 {
                     RecPathfinding(mask[pathNode.node.Coords.x - offset.x, pathNode.node.Coords.y - offset.y - 1], maxRange, area, offset, mask);
                 }
@@ -229,72 +230,73 @@ public class Pathfinding
 
         return result;
     }
-    private static void RecImpulse(PathNode pathNode, int maxRange, Direction direction, List<PathNode> area, Vector2Int offset, PathNode[,] mask)
+    public static List<PathNode> GetLinePath(Node start, Vector2Int coords, bool isBlockedByAlly, bool isBlockedByEnemy, bool isBlockedByEntity)
     {
-        if (pathNode.length < maxRange)
+        int x0 = start.Coords.x, y0 = start.Coords.y;
+        int x1 = coords.x, y1 = coords.y;
+        var counter = 0;
+        
+        var path = new List<PathNode>();
+        
+        int dx = Math.Abs(x1 - x0), sx = x0 < x1 ? 1 : -1;
+        int dy = Math.Abs(y1 - y0), sy = y0 < y1 ? 1 : -1;
+        int err = (dx > dy ? dx : -dy) / 2, e2;
+
+        for(;;)
         {
-            if (GameController.Instance.Grid.NodeExists(pathNode.node.Coords + Vector2Int.left) &&
-                mask[pathNode.node.Coords.x - offset.x - 1, pathNode.node.Coords.y - offset.y].length > pathNode.length + 1)
+            if (!GameController.Instance.Grid.NodeExists(x0, y0))
             {
-                mask[pathNode.node.Coords.x - offset.x - 1, pathNode.node.Coords.y - offset.y].SetLength(pathNode.length + 1);
-                mask[pathNode.node.Coords.x - offset.x - 1, pathNode.node.Coords.y - offset.y].SetPrevious(pathNode);
-                area.Add(mask[pathNode.node.Coords.x - offset.x - 1, pathNode.node.Coords.y - offset.y]);
+                break;
+            }
+            
+            var newPathNode = new PathNode(GameController.Instance.Grid.nodeList[x0, y0], counter);
+            if (path.Count > 0)
+            {
+                newPathNode.SetPrevious(path[path.Count - 1]);
+            }
+            path.Add(newPathNode);
 
-                if ((direction == Direction.LeftDown || direction == Direction.Left || direction == Direction.LeftUp) &&
-                    (!GameController.Instance.Grid.NodeOccupied(pathNode.node.Coords + Vector2Int.left) ||
-                    GameController.Instance.SceneController.SelectedUnit.TeamId == GameController.Instance.Grid.GetUnitOnNode(pathNode.node.Coords + Vector2Int.left).TeamId))
-                {
-                    RecImpulse(mask[pathNode.node.Coords.x - offset.x - 1, pathNode.node.Coords.y - offset.y], maxRange, direction, area, offset, mask);
-                }
+            if (isBlockedByEntity && GameController.Instance.Grid.NodeOccupied(x0, y0) &&
+                ((GameController.Instance.Grid.GetUnitOnNode(x0, y0) != null &&
+                 GameController.Instance.Grid.GetUnitOnNode(x0, y0).TeamId == 0) ||
+                (GameController.Instance.Grid.GetUnitOnNode(x0, y0) == null)))
+            {
+                break;
             }
 
-            if (GameController.Instance.Grid.NodeExists(pathNode.node.Coords + Vector2Int.right) &&
-                mask[pathNode.node.Coords.x - offset.x + 1, pathNode.node.Coords.y - offset.y].length > pathNode.length + 1)
+            if (GameController.Instance.Grid.GetUnitOnNode(x0, y0) != null &&
+                isBlockedByAlly && GameController.Instance.SceneController.SelectedUnit.TeamId ==
+                GameController.Instance.Grid.GetUnitOnNode(x0, y0).TeamId)
             {
-                mask[pathNode.node.Coords.x - offset.x + 1, pathNode.node.Coords.y - offset.y].SetLength(pathNode.length + 1);
-                mask[pathNode.node.Coords.x - offset.x + 1, pathNode.node.Coords.y - offset.y].SetPrevious(pathNode);
-                area.Add(mask[pathNode.node.Coords.x - offset.x + 1, pathNode.node.Coords.y - offset.y]);
-
-                if ((direction == Direction.RightDown || direction == Direction.Right || direction == Direction.RightUp) &&
-                    (!GameController.Instance.Grid.NodeOccupied(pathNode.node.Coords + Vector2Int.right) ||
-                    GameController.Instance.SceneController.SelectedUnit.TeamId == GameController.Instance.Grid.GetUnitOnNode(pathNode.node.Coords + Vector2Int.right).TeamId))
-                {
-                    RecImpulse(mask[pathNode.node.Coords.x - offset.x + 1, pathNode.node.Coords.y - offset.y], maxRange, direction, area, offset, mask);
-                }
+                break;
             }
 
-            if (GameController.Instance.Grid.NodeExists(pathNode.node.Coords + Vector2Int.up) &&
-                mask[pathNode.node.Coords.x - offset.x, pathNode.node.Coords.y - offset.y + 1].length > pathNode.length + 1)
+            if (GameController.Instance.Grid.GetUnitOnNode(x0, y0) != null &&
+                isBlockedByEnemy && GameController.Instance.SceneController.SelectedUnit.TeamId !=
+                GameController.Instance.Grid.GetUnitOnNode(x0, y0).TeamId && 
+                GameController.Instance.Grid.GetUnitOnNode(x0, y0).TeamId != 0)
             {
-                mask[pathNode.node.Coords.x - offset.x, pathNode.node.Coords.y - offset.y + 1].SetLength(pathNode.length + 1);
-                mask[pathNode.node.Coords.x - offset.x, pathNode.node.Coords.y - offset.y + 1].SetPrevious(pathNode);
-                area.Add(mask[pathNode.node.Coords.x - offset.x, pathNode.node.Coords.y - offset.y + 1]);
-
-                if ((direction == Direction.LeftUp || direction == Direction.Up || direction == Direction.RightUp) &&
-                    (!GameController.Instance.Grid.NodeOccupied(pathNode.node.Coords + Vector2Int.up) ||
-                    GameController.Instance.SceneController.SelectedUnit.TeamId == GameController.Instance.Grid.GetUnitOnNode(pathNode.node.Coords + Vector2Int.up).TeamId))
-                {
-                    RecImpulse(mask[pathNode.node.Coords.x - offset.x, pathNode.node.Coords.y - offset.y + 1], maxRange, direction, area, offset, mask);
-                }
+                break;
             }
 
-            if (GameController.Instance.Grid.NodeExists(pathNode.node.Coords + Vector2Int.down) &&
-                mask[pathNode.node.Coords.x - offset.x, pathNode.node.Coords.y - offset.y - 1].length > pathNode.length + 1)
+            if (x0 == x1 && y0 == y1) break;
+            e2 = err;
+            if (e2 > -dx) 
+            { 
+                err -= dy; 
+                x0 += sx;
+                counter++;
+            }
+            if (e2 < dy)
             {
-                mask[pathNode.node.Coords.x - offset.x, pathNode.node.Coords.y - offset.y - 1].SetLength(pathNode.length + 1);
-                mask[pathNode.node.Coords.x - offset.x, pathNode.node.Coords.y - offset.y - 1].SetPrevious(pathNode);
-                area.Add(mask[pathNode.node.Coords.x - offset.x, pathNode.node.Coords.y - offset.y - 1]);
-
-                if ((direction == Direction.LeftDown || direction == Direction.Down || direction == Direction.RightDown) &&
-                    (!GameController.Instance.Grid.NodeOccupied(pathNode.node.Coords + Vector2Int.down) ||
-                    GameController.Instance.SceneController.SelectedUnit.TeamId == GameController.Instance.Grid.GetUnitOnNode(pathNode.node.Coords + Vector2Int.down).TeamId))
-                {
-                    RecImpulse(mask[pathNode.node.Coords.x - offset.x, pathNode.node.Coords.y - offset.y - 1], maxRange, direction, area, offset, mask);
-                }
+                err += dx; 
+                y0 += sy;
+                counter++;
             }
         }
+        return path;
     }
-
+    
     public static List<PathNode> GetNodesInAbsoluteRange(Node start, int minRange, int maxRange)
     {
         List<PathNode> area = new List<PathNode>();
@@ -348,64 +350,6 @@ public class Pathfinding
             target = target.prev;
         }
 
-        return path;
-    }
-    public static List<PathNode> GetLinePath(Node start, Vector2Int coords, bool isBlockedByAlly, bool isBlockedByEnemy, bool isBlockedByEntity)
-    {
-        int x0 = start.Coords.x, y0 = start.Coords.y;
-        int x1 = coords.x, y1 = coords.y;
-        var counter = 0;
-        
-        var path = new List<PathNode>();
-        
-        int dx = Math.Abs(x1 - x0), sx = x0 < x1 ? 1 : -1;
-        int dy = Math.Abs(y1 - y0), sy = y0 < y1 ? 1 : -1;
-        int err = (dx > dy ? dx : -dy) / 2, e2;
-
-        for(;;)
-        {
-            if (!GameController.Instance.Grid.NodeExists(x0, y0))
-            {
-                break;
-            }
-            
-            var newPathNode = new PathNode(GameController.Instance.Grid.nodeList[x0, y0], counter);
-            if (path.Count > 0)
-            {
-                newPathNode.SetPrevious(path[path.Count - 1]);
-            }
-            path.Add(newPathNode);
-
-            if (isBlockedByEntity && GameController.Instance.Grid.NodeOccupied(x0, y0) &&
-                ((GameController.Instance.Grid.GetUnitOnNode(x0, y0) != null &&
-                 GameController.Instance.Grid.GetUnitOnNode(x0, y0).TeamId == 0) ||
-                (GameController.Instance.Grid.GetUnitOnNode(x0, y0) == null)))
-            {
-                break;
-            }
-
-            if (GameController.Instance.Grid.GetUnitOnNode(x0, y0) != null &&
-                isBlockedByAlly && GameController.Instance.SceneController.SelectedUnit.TeamId ==
-                GameController.Instance.Grid.GetUnitOnNode(x0, y0).TeamId)
-            {
-                break;
-            }
-
-            if (GameController.Instance.Grid.GetUnitOnNode(x0, y0) != null &&
-                isBlockedByEnemy && GameController.Instance.SceneController.SelectedUnit.TeamId !=
-                GameController.Instance.Grid.GetUnitOnNode(x0, y0).TeamId && 
-                GameController.Instance.Grid.GetUnitOnNode(x0, y0).TeamId != 0)
-            {
-                break;
-            }
-
-            counter++;
-            
-            if (x0 == x1 && y0 == y1) break;
-            e2 = err;
-            if (e2 > -dx) { err -= dy; x0 += sx; }
-            if (e2 < dy) { err += dx; y0 += sy; }
-        }
         return path;
     }
 }

@@ -34,9 +34,12 @@ public class BoulderCage : Ability
             target = GameController.Instance.Grid.GetUnitOnNode(pathNode.node.Coords);
             var damage = (int)((abilityData.values[0] * (1 + user.UnitData.AspectDedications[1].Value / 100f) + user.UnitData.power) / 5f) * 5;
 
-            if (target && target.TeamId != 0 && target.TeamId != user.TeamId)
+            if (target)
             {
-                target.ChangeHealth(-damage);
+                if (target.TeamId != 0 && target.TeamId != user.TeamId)
+                {
+                    target.ChangeHealth(-damage);
+                }
             }
             else
             {

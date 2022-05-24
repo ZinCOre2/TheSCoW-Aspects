@@ -7,6 +7,7 @@ public class EntityManager : MonoBehaviour
     public List<Entity> Entities = new List<Entity>();
     public List<PhysicalEntity> PhysicalEntities = new List<PhysicalEntity>();
     public List<Unit> Units = new List<Unit>();
+    public List<MasterUnit> MasterUnits = new List<MasterUnit>();
 
     private void Awake()
     {
@@ -31,6 +32,11 @@ public class EntityManager : MonoBehaviour
         {
             Units.Add((Unit)entity);
         }
+        
+        if (entity is MasterUnit)
+        {
+            MasterUnits.Add((MasterUnit)entity);
+        }
     }
 
     public void RemoveEntity(Entity entity)
@@ -45,6 +51,11 @@ public class EntityManager : MonoBehaviour
         if (entity is Unit)
         {
             Units.Remove((Unit)entity);
+        }
+        
+        if (entity is MasterUnit)
+        {
+            MasterUnits.Remove((MasterUnit)entity);
         }
     }
 }
