@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 344f9be0ea49ebf449538edc04b1264c, type: 3}
+  m_Name: StunSlam
+  m_EditorClassIdentifier: 
+  cardName: "\u041E\u0433\u043B\u0443\u0448\u0430\u044E\u0449\u0438\u0439 \u0443\u0434\u0430\u0440"
+  icon: {fileID: 21300000, guid: 47ae9c092211280449fb77f7b1f11fe5, type: 3}
+  description: "\u0411\u043B\u0438\u0436\u043D\u044F\u044F \u0430\u0442\u0430\u043A\u0430,
+    \u0441\u0436\u0438\u0433\u0430\u044E\u0449\u0430\u044F {0} \u0437\u0434\u043E\u0440\u043E\u0432\u044C\u044F
+    \u0438 {1} \u044D\u043D\u0435\u0440\u0433\u0438\u0438 \u043E\u0434\u043D\u043E\u0433\u043E
+    \u043F\u0440\u043E\u0442\u0438\u0432\u043D\u0438\u043A\u0430."
+  rangeType: 1
+  areaType: 2
+  minRange: 1
+  maxRange: 1
+  minAreaRange: 0
+  maxAreaRange: 0
+  epCost: 20
+  tpCost: 20
+  Dedications:
+  - IsUsable: 0
+    Value: 0
+  - IsUsable: 1
+    Value: 0
+  - IsUsable: 0
+    Value: 0
+  - IsUsable: 0
+    Value: 0
+  values: 1900000019000000
