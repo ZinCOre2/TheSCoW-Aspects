@@ -1,5 +1,7 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 
 public class EntityManager : MonoBehaviour
@@ -9,6 +11,23 @@ public class EntityManager : MonoBehaviour
     public List<Unit> Units = new List<Unit>();
     public List<MasterUnit> MasterUnits = new List<MasterUnit>();
 
+    public List<int> UniqueIds = new List<int>();
+    
+    public int GenerateUniqueId()
+    {
+        var value = 0;
+
+        do
+        {
+            value = Random.Range(Int32.MinValue, Int32.MaxValue);
+        } 
+        while (UniqueIds.Contains(value));
+        
+        UniqueIds.Add(value);
+
+        return value;
+    }
+    
     private void Awake()
     {
         var entities = FindObjectsOfType<Entity>();
@@ -57,5 +76,21 @@ public class EntityManager : MonoBehaviour
         {
             MasterUnits.Remove((MasterUnit)entity);
         }
+    }
+
+    public bool FindMasterUnitByMasterId(int masterId, out MasterUnit foundUnit)
+    {
+        for (var i = 0; i < MasterUnits.Count; i++)
+        {
+            var masterUnit = MasterUnits[i];
+            
+            if (masterUnit.UnitStats.MasterId != masterId) { continue; }
+            
+            foundUnit = masterUnit;
+            return true;
+        }
+
+        foundUnit = null;
+        return false;
     }
 }

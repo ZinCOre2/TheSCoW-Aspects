@@ -47,7 +47,20 @@ public class SceneController : MonoBehaviour
     }
     private void Start()
     {
-        foreach (UIAbility uiAbility in GameController.Instance.UIController.UnitDataPanel.AbilitySlots)
+        foreach (var uiAbility in GameController.Instance.UIController.UnitDataPanel.AbilitySlots)
+        {
+            uiAbility.OnAbilitySelect += (Ability _ability, int id) =>
+            {
+                if (uiAbility.ability != null && uiAbility.ability == _ability && uiAbility.Id == id)
+                {
+                    _selectedAbility = _ability;
+                    UnmarkNodes();
+                    _nodesInRange = _ability.GetNodesInRange(SelectedUnit);
+                    MarkNodes();
+                }
+            };
+        }
+        foreach (var uiAbility in GameController.Instance.UIController.UnitDataPanel.CardSlots)
         {
             uiAbility.OnAbilitySelect += (Ability _ability, int id) =>
             {
@@ -152,7 +165,7 @@ public class SceneController : MonoBehaviour
                 // When pressed LMB on unit - set them as selected and redraw all UI acccordingly
                 if (Input.GetMouseButtonDown(0))
                 {
-                    if (_hitInfo.collider.gameObject.TryGetComponent(out Unit unitSelect) && unit.TeamId != 0 && unit.health > 0)
+                    if (_hitInfo.collider.gameObject.TryGetComponent(out Unit unitSelect) && unit.TeamId != 0 && unit.UnitStats.Health > 0)
                     {
                         OnUnitSelect?.Invoke(unitSelect);
                     }
@@ -329,9 +342,9 @@ public class SceneController : MonoBehaviour
         {
             if (unit.TeamId != 0)
             {
-                unit.ChangeHealth(unit.UnitData.hpRegen);
-                unit.ChangeEnergy(unit.UnitData.epRegen);
-                unit.ChangeTime(unit.UnitData.maxTime / 2);
+                unit.ChangeHealth(unit.UnitData.HPRegen);
+                unit.ChangeEnergy(unit.UnitData.EPRegen);
+                unit.ChangeTime(unit.UnitData.MaxTime / 2);
 
                 if (unit is MasterUnit masterUnit)
                 {

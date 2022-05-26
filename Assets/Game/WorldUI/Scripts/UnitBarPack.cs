@@ -63,15 +63,15 @@ public class UnitBarPack : MonoBehaviour
 
     private void BoundUnit_OnHealthChanged(Unit unit, int value)
     {
-        hpBar.fillAmount = value / (float)_boundUnit.UnitData.maxHealth;
+        hpBar.fillAmount = value / (float)_boundUnit.UnitData.MaxHealth;
     }
     private void BoundUnit_OnEnergyChanged(Unit unit, int value)
     {
-        epBar.fillAmount = value / (float)_boundUnit.UnitData.maxEnergy;
+        epBar.fillAmount = value / (float)_boundUnit.UnitData.MaxEnergy;
     }
     private void BoundUnit_OnTimeChanged(Unit unit, int value)
     {
-        tpBar.fillAmount = value / (float)_boundUnit.UnitData.maxTime;
+        tpBar.fillAmount = value / (float)_boundUnit.UnitData.MaxTime;
     }
     private void BoundUnit_OnUnitDeath(Unit unit)
     {

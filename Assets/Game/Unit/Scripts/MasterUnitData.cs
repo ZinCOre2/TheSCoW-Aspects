@@ -1,10 +1,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "MasterUnit", menuName = "MasterUnit")]
+[CreateAssetMenu(fileName = "MasterUnit", menuName = "GameData/MasterUnit")]
 public class MasterUnitData : UnitData
 {
-    public MasterUnit MasterUnitPrefab;
-    
-    public List<AbilityHolder.AbilityType> StartingDeck;
+    public List<AbilityHolder.AbilityType> StartingDeck = new List<AbilityHolder.AbilityType>();
 }

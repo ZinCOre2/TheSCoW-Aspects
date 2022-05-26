@@ -65,13 +65,11 @@ public class Ability : MonoBehaviour
         }
 
         if (!(user is MasterUnit masterUnit)) { return; }
-        if (GameController.Instance.UIController.selectedAbilityId != 0)
-        {
-            masterUnit.DeckManager.DiscardCard(GameController.Instance.UIController.selectedAbilityId - 1);
-            user.Animator.SetTrigger("UseSpell");
-            GameController.Instance.UIController.SetId(0);
-            GameController.Instance.SceneController.SetSelectedAbility(null);
-        }
+        if (GameController.Instance.UIController.selectedAbilityId == 0) { return; }
+        
+        masterUnit.DeckManager.DiscardCard(GameController.Instance.UIController.selectedAbilityId - 1);
+        user.Animator.SetTrigger("UseSpell");
+        GameController.Instance.UIController.SetId(0);
+        GameController.Instance.SceneController.SetSelectedAbility(null);
     }
-
 }

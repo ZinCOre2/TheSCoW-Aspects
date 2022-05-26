@@ -4,17 +4,19 @@ using UnityEngine;
 
 public class TurnQueuePanel : MonoBehaviour
 {
-    [SerializeField] private TurnQueueUnitPanel UnitPanelPrefab;
-    
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] private TurnQueueUnitPanel unitPanelPrefab;
 
-    // Update is called once per frame
-    void Update()
+    private readonly TurnQueueUnitPanel[] _queuePanels = new TurnQueueUnitPanel[TurnManager.QUEUE_CAPACITY];
+
+    public void SetQueue()
     {
-        
+        var masterIdQueue = GameController.Instance.TurnManager.GetNewQueue();
+        for (var i = 0; i < _queuePanels.Length; i++)
+        {
+            if (!GameController.Instance.EntityManager.FindMasterUnitByMasterId(masterIdQueue[i], out var masterUnit)) { continue; }
+            
+            _queuePanels[i].ChangePortrait(masterUnit.MasterUnitData.Portrait);
+            _queuePanels[i].ChangeBackgroundColor(GameController.Instance.TurnManager.TeamColors[masterUnit.UnitStats.TeamId - 1]);
+        }
     }
 }

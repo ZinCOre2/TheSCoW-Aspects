@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Random = System.Random;
+using Random = UnityEngine.Random;
 
 [RequireComponent(typeof(Move))]
 public class Unit : PhysicalEntity
@@ -21,11 +21,6 @@ public class Unit : PhysicalEntity
     [SerializeField] private float moveSpeed = 50f;
     [SerializeField] private int teamId;
     
-    // Stats
-    public int health { get; private set; }
-    public int energy { get; private set; }
-    public int time { get; private set; }
-
     // General
     public UnitData UnitData { get { return unitData; } private set { unitData = value; } }
     public Animator Animator { get { return animator; } private set { animator = value; } }
@@ -33,33 +28,18 @@ public class Unit : PhysicalEntity
 
     public bool usingAbility { get; private set; } = false;
 
-    // private void OnEnable()
-    // {
-    //     GameController.Instance.SceneController.OnUnitSelect += MarkUnit;
-    //     
-    //     if (teamId == 0) { return; }
-    //     
-    //     OnUnitDeath += UnitDeath;
-    //     OnUnitDeath += GameController.Instance.SceneController.UnitDeath;
-    // }
-
     protected override void Start()
     {
         base.Start();
-        
+        InitializeStats();
+        AssignIds(teamId, GameController.Instance.EntityManager.GenerateUniqueId());
+
         GameController.Instance.SceneController.OnUnitSelect += MarkUnit;
-
-        if (teamId == 0) { return; }
-
-        health = unitData.maxHealth;
-        energy = unitData.maxEnergy;
-        time = unitData.maxTime;
-
-        GameController.Instance.WorldUIManager.CreateBarPack(this);
-        
         OnUnitDeath += UnitDeath;
         OnUnitDeath += GameController.Instance.SceneController.UnitDeath;
         
+        GameController.Instance.WorldUIManager.CreateBarPack(this);
+
         switch (teamId)
         {
             case 1:
@@ -71,6 +51,32 @@ public class Unit : PhysicalEntity
         }
 
         SceneController.Counter[teamId - 1]++;
+    }
+
+    public void InitializeStats()
+    {
+        UnitStats.MaxHealth = UnitData.MaxHealth;
+        UnitStats.HealthRegen = UnitData.HPRegen;
+        UnitStats.Health = unitData.MaxHealth;
+
+        UnitStats.MaxEnergy = unitData.MaxEnergy;
+        UnitStats.EnergyRegen = unitData.EPRegen;
+        UnitStats.Energy = unitData.MaxEnergy;
+
+        UnitStats.MaxTime = UnitData.MaxTime;
+        UnitStats.Time = unitData.MaxTime;
+
+        UnitStats.Power = UnitData.Power;
+        UnitStats.Defence = UnitData.Defence;
+
+        UnitStats.AspectDedications = UnitData.AspectDedications;
+        UnitStats.InnerAbilities = UnitData.InnerAbilities;
+    }
+
+    public void AssignIds(int teamId, int masterId)
+    {
+        UnitStats.TeamId = teamId;
+        UnitStats.MasterId = masterId;
     }
 
     private void OnDisable()
@@ -109,19 +115,19 @@ public class Unit : PhysicalEntity
     {
         if (value < 0)
         {
-            value += UnitData.defence;
+            value += UnitData.Defence;
             value = Mathf.Clamp(value, Int32.MinValue, 0);
         }
         
-        health += value;
-        health = Mathf.Clamp(health, 0, unitData.maxHealth);
-        OnHealthChanged?.Invoke(this, health);
+        UnitStats.Health += value;
+        UnitStats.Health = Mathf.Clamp(UnitStats.Health, 0, unitData.MaxHealth);
+        OnHealthChanged?.Invoke(this, UnitStats.Health);
 
         if (value < 0)
         {
             GameController.Instance.WorldUIManager.CreateHoveringWorldText(HWTType.DamageTaken, transform.position, $"{value}");
 
-            if (health <= 0)
+            if (UnitStats.Health <= 0)
             {
                 animator?.SetTrigger("Death");
                 OnUnitDeath?.Invoke(this);
@@ -139,9 +145,9 @@ public class Unit : PhysicalEntity
     }
     public void ChangeEnergy(int value)
     {
-        energy += value;
-        energy = Mathf.Clamp(energy, 0, unitData.maxEnergy);
-        OnEnergyChanged?.Invoke(this, energy);
+        UnitStats.Energy += value;
+        UnitStats.Energy = Mathf.Clamp(UnitStats.Energy, 0, unitData.MaxEnergy);
+        OnEnergyChanged?.Invoke(this, UnitStats.Energy);
 
         if (value < 0)
         {
@@ -154,9 +160,9 @@ public class Unit : PhysicalEntity
     }
     public void ChangeTime(int value)
     {
-        time += value;
-        time = Mathf.Clamp(time, 0, unitData.maxTime);
-        OnTimeChanged?.Invoke(this, time);
+        UnitStats.Time += value;
+        UnitStats.Time = Mathf.Clamp(UnitStats.Time, 0, unitData.MaxTime);
+        OnTimeChanged?.Invoke(this, UnitStats.Time);
 
         if (value < 0)
         {

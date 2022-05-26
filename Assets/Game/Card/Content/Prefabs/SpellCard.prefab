@@ -823,7 +823,7 @@ GameObject:
   - component: {fileID: 6182925839704213254}
   - component: {fileID: 2571301237263360232}
   m_Layer: 5
-  m_Name: TimeCostText
+  m_Name: AreaText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1439,8 +1439,8 @@ GameObject:
   - component: {fileID: 7114213329242420814}
   - component: {fileID: 8372094686908722818}
   - component: {fileID: 3845378203026245744}
-  - component: {fileID: 2743445377179633217}
   - component: {fileID: 4779209996039916324}
+  - component: {fileID: 8118318269398398434}
   m_Layer: 5
   m_Name: SpellCard
   m_TagString: Untagged
@@ -1539,7 +1539,15 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &2743445377179633217
+--- !u!222 &4779209996039916324
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5851275805960669742}
+  m_CullTransparentMesh: 0
+--- !u!114 &8118318269398398434
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1548,7 +1556,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5851275805960669742}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ce962aa99e1b3046b1fa9f2d519d65b, type: 3}
+  m_Script: {fileID: 11500000, guid: 8c00b9b9768c4216871eeb0d7629aa9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   ScaledCardHolder: {fileID: 3724024825122028507}
@@ -1571,14 +1579,6 @@ MonoBehaviour:
   - {fileID: 6926206618489651741}
   - {fileID: 1256516446407691570}
   - {fileID: 3554350593383953919}
---- !u!222 &4779209996039916324
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5851275805960669742}
-  m_CullTransparentMesh: 0
 --- !u!1 &6367123648406369802
 GameObject:
   m_ObjectHideFlags: 0

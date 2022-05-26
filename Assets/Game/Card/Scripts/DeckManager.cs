@@ -34,8 +34,8 @@ public class DeckManager
             
             Hand[0] = DrawPile[index];
             
-            GameController.Instance.UIController.UnitDataPanel.AbilitySlots[1].gameObject.SetActive(true);
-            GameController.Instance.UIController.UnitDataPanel.AbilitySlots[1].SetAbility(card);
+            GameController.Instance.UIController.UnitDataPanel.CardSlots[0].gameObject.SetActive(true);
+            GameController.Instance.UIController.UnitDataPanel.CardSlots[0].SetAbility(card);
 
             DrawPile.RemoveAt(index);
             return true;
@@ -61,16 +61,16 @@ public class DeckManager
             i--;
         }
         
-        GameController.Instance.UIController.UnitDataPanel.AbilitySlots[i + 1].gameObject.SetActive(true);
+        GameController.Instance.UIController.UnitDataPanel.CardSlots[i].gameObject.SetActive(true);
         
         for (; i > 0; i--)
         {
             Hand[i] = Hand[i - 1];
-            GameController.Instance.UIController.UnitDataPanel.AbilitySlots[i + 1].SetAbility(Hand[i]);
+            GameController.Instance.UIController.UnitDataPanel.CardSlots[i].SetAbility(Hand[i]);
         }
 
         Hand[0] = AbilityHolder.AbilityType.None;
-        GameController.Instance.UIController.UnitDataPanel.AbilitySlots[1].SetAbility(Hand[0]);
+        GameController.Instance.UIController.UnitDataPanel.CardSlots[0].SetAbility(Hand[0]);
     }
 
     public void DiscardCard(int index)
@@ -79,7 +79,7 @@ public class DeckManager
         
         Hand[index] = AbilityHolder.AbilityType.None;
         
-        GameController.Instance.UIController.UnitDataPanel.AbilitySlots[index + 1].SetAbility(AbilityHolder.AbilityType.None);
+        GameController.Instance.UIController.UnitDataPanel.CardSlots[index].SetAbility(AbilityHolder.AbilityType.None);
     }
 
     public void ShuffleDeck()

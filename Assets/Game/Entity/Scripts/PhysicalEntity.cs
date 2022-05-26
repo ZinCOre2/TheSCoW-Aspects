@@ -23,7 +23,6 @@ public class PhysicalEntity : Entity
             newCoords = new Vector2Int(-1, -1);
         return newCoords;
     }
-
     private void SetNearbyCoordsAndPosition()
     {
         Vector2Int testCoords;

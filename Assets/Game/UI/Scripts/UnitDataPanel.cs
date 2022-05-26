@@ -25,6 +25,8 @@ public class UnitDataPanel : MonoBehaviour
     public TextMeshProUGUI PowerText;
     public TextMeshProUGUI DefenceText;
     
-    public UIAbility[] AbilitySlots = new UIAbility[7];
+    public UIAbility[] AbilitySlots = new UIAbility[4];
+    public UICard[] CardSlots = new UICard[6];
+    
     public Image[] CardBacks = new Image[6];
 }
