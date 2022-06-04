@@ -18,7 +18,7 @@ MonoBehaviour:
     {0} \u0437\u0434\u043E\u0440\u043E\u0432\u044C\u044F \u0441\u043E\u044E\u0437\u043D\u0438\u043A\u0430\u043C
     \u0432 \u0432\u044B\u0431\u0440\u0430\u043D\u043D\u043E\u0439 \u043E\u0431\u043B\u0430\u0441\u0442\u0438"
   rangeType: 1
-  areaType: 1
+  areaType: 0
   minRange: 0
   maxRange: 3
   minAreaRange: 0

@@ -263,7 +263,7 @@ public class SceneController : MonoBehaviour
             }
         }
     }
-    private void UnmarkNodes()
+    public void UnmarkNodes()
     {
         foreach (PathNode pathNodeAoe in _aoe)
             pathNodeAoe.node.Unmark();
@@ -323,6 +323,8 @@ public class SceneController : MonoBehaviour
     public void EndTurn() { OnTurnEnd?.Invoke(); }
     public void UpdateTurnData()
     {
+        SelectedUnit = null;
+        SetSelectedAbility(null);
         UnmarkNodes();
 
         foreach (Unit unit in GameController.Instance.EntityManager.Units)

@@ -97,6 +97,7 @@ public class UIAbility : MonoBehaviour, IPointerClickHandler, IPointerEnterHandl
     }
     public void OnPointerEnter(PointerEventData eventData)
     {
+        
         ScaledCardHolder.localScale = Vector3.one * scaleOnHover;
         transform.SetAsLastSibling();
     }

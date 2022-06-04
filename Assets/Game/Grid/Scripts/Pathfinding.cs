@@ -178,10 +178,14 @@ public class Pathfinding
             targetCoords.Add(new Vector2Int(start.Coords.x + i, start.Coords.y + maxRange - i));
             targetCoords.Add(new Vector2Int(start.Coords.x + i, start.Coords.y - maxRange + i));
         }
-        for (int i = -1; i >= -maxRange; i--)
+
+        if (maxRange > 0)
         {
-            targetCoords.Add(new Vector2Int(start.Coords.x + i, start.Coords.y + maxRange + i));
-            targetCoords.Add(new Vector2Int(start.Coords.x + i, start.Coords.y - maxRange - i));
+            for (int i = -1; i >= -maxRange; i--)
+            {
+                targetCoords.Add(new Vector2Int(start.Coords.x + i, start.Coords.y + maxRange + i));
+                targetCoords.Add(new Vector2Int(start.Coords.x + i, start.Coords.y - maxRange - i));
+            }
         }
 
         var impulseArea = new List<PathNode>();
@@ -203,7 +207,7 @@ public class Pathfinding
             if (!impulseArea.Contains(testNode))
             {
                 var nodes = GetLinePath(start, testNode.node.Coords, isBlockedByAlly, isBlockedByEnemy, isBlockedByEntity);
-
+        
                 foreach (var node in nodes)
                 {
                     if (!impulseArea.Contains(node))
@@ -229,6 +233,11 @@ public class Pathfinding
         }
 
         return result;
+    }
+
+    private void RemoveNodeDuplicates()
+    {
+        
     }
     public static List<PathNode> GetLinePath(Node start, Vector2Int coords, bool isBlockedByAlly, bool isBlockedByEnemy, bool isBlockedByEntity)
     {

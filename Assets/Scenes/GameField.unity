@@ -5114,7 +5114,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &145450364
 RectTransform:
   m_ObjectHideFlags: 0
@@ -15153,6 +15153,7 @@ MonoBehaviour:
   Entities: []
   PhysicalEntities: []
   Units: []
+  MasterUnits: []
 --- !u!1 &477154007
 GameObject:
   m_ObjectHideFlags: 0
@@ -34466,6 +34467,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 627ae28a132a45348e4a727c1eb0e4cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  UnitTimeDelays: 
   TurnTimer: {fileID: 1080304820}
   TurnDuration: 75
   TeamId: 0
@@ -41106,6 +41108,11 @@ PrefabInstance:
     - target: {fileID: 6109411336273915520, guid: ae1628afcee488247a6ad1526e5f8a7a,
         type: 3}
       propertyPath: m_textInfo.pageCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6791272783887164247, guid: ae1628afcee488247a6ad1526e5f8a7a,
+        type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6926206618489651741, guid: ae1628afcee488247a6ad1526e5f8a7a,
