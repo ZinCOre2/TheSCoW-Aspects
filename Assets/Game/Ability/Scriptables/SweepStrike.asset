@@ -22,8 +22,8 @@ MonoBehaviour:
   maxRange: 1
   minAreaRange: 0
   maxAreaRange: 1
-  epCost: 15
-  tpCost: 15
+  epCost: 25
+  tpCost: 30
   Dedications:
   - IsUsable: 0
     Value: 0
@@ -33,4 +33,4 @@ MonoBehaviour:
     Value: 0
   - IsUsable: 0
     Value: 0
-  values: 19000000
+  values: 14000000

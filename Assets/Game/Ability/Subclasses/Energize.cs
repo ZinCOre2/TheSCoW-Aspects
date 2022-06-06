@@ -5,14 +5,14 @@ public class Energize : Ability
 {
     public override void UseAbility(Unit user, List<PathNode> aoe)
     {
-        if (abilityData.epCost > user.energy)
+        if (abilityData.epCost > user.UnitStats.Energy)
         {
             GameController.Instance.WorldUIManager.CreateHoveringWorldText(HWTType.NotEnoughEnergy,
                 user.transform.position, "Недостаточно энергии!");
             return;
         }
         
-        if (abilityData.tpCost > user.time)
+        if (abilityData.tpCost > user.UnitStats.Time)
         {
             GameController.Instance.WorldUIManager.CreateHoveringWorldText(HWTType.NotEnoughTime,
                 user.transform.position, "Недостаточно времени!");
@@ -34,7 +34,9 @@ public class Energize : Ability
                 aEffect = GameController.Instance.ObjectPooler.SpawnFromPool(abilityEffect.EffectTag, 
                     GameController.Instance.Grid.nodeList[user.Coords.x, user.Coords.y].transform.position, abilityEffect.transform.rotation).GetComponent<AbilityEffect>();
 
-                target.ChangeEnergy(abilityData.values[0]);
+                var value = (int)((abilityData.values[0] * (1 + user.UnitStats.AspectDedications[3].Value / 100f) + user.UnitStats.Power) / 5f) * 5;
+
+                target.ChangeEnergy(value);
             }
         }
     }

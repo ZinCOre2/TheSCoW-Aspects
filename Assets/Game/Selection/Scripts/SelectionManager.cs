@@ -6,8 +6,8 @@ using UnityEngine.UI;
 
 public class SelectionManager : MonoBehaviour
 {
-    [HideInInspector] public Entity HoveredSelectable;
-    [HideInInspector] public Entity SelectedSelectable;
+    [HideInInspector] public PhysicalEntity HoveredSelectable;
+    [HideInInspector] public PhysicalEntity SelectedSelectable;
 
     [HideInInspector] public AbilityHolder.AbilityType HoveredAbility;
     [HideInInspector] public AbilityHolder.AbilityType SelectedAbility;
@@ -25,33 +25,37 @@ public class SelectionManager : MonoBehaviour
 
     private void Update()
     {
-        Ray _ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        RaycastHit _hitInfo;
+        var ray = GameController.Instance.CameraController.Camera.ScreenPointToRay(Input.mousePosition);
 
         if (IsMouseOverUI()) { return; }
-        if (!Physics.Raycast(_ray, out _hitInfo)) { return; }
+        if (!Physics.Raycast(ray, out var hitInfo)) { return; }
 
-        if (_hitInfo.collider.TryGetComponent(out Unit unit))
+        if (hitInfo.collider.TryGetComponent(out Unit unit))
         {
             HoverEntityStageOne(unit);
-            if (unit.UnitStats.TeamId == GameController.Instance.TurnManager.TeamId)
-            {
-                // GetAdditionalInfoAndAbilityPermissions
-            }
+            // if (unit.UnitStats.MasterId == GameController.Instance.TurnManager.CurrentMasterId)
+            // {
+            //     // GetAdditionalInfoAndAbilityPermissions
+            // }
+            // if (unit.UnitStats.TeamId == GameController.Instance.TurnManager.CurrentMasterId)
+            // {
+            //     // GetAdditionalInfo
+            //     // No ability permissions
+            // }
         }
-        if (Input.GetMouseButtonDown(0) && _hitInfo.collider.TryGetComponent(out unit))
+        if (Input.GetMouseButtonDown(0) && hitInfo.collider.TryGetComponent(out unit))
         {
             SelectEntityStageOne(unit);
         }
 
-        if (_hitInfo.collider.TryGetComponent(out Node node))
+        if (hitInfo.collider.TryGetComponent(out Node node))
         {
             HoverTargetStageThree(node);
         }
 
         if (_selectionStage < SelectionStage.Ability) { return; }
 
-        if (Input.GetMouseButtonDown(0) && _hitInfo.collider.TryGetComponent(out PhysicalEntity entity))
+        if (Input.GetMouseButtonDown(0) && hitInfo.collider.TryGetComponent(out PhysicalEntity entity))
         {
             SelectEntityStageOne(entity);
         }
@@ -90,7 +94,7 @@ public class SelectionManager : MonoBehaviour
     }
     private bool GetCameraRaycastHitInfo(out RaycastHit hitInfo)
     {
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        Ray ray = GameController.Instance.CameraController.Camera.ScreenPointToRay(Input.mousePosition);
 
         return Physics.Raycast(ray, out hitInfo);
     }

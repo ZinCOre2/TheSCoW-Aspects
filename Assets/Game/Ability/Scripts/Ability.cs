@@ -50,6 +50,10 @@ public class Ability : MonoBehaviour
             case AbilityData.AreaType.Absolute:
                 aoe = Pathfinding.GetNodesInAbsoluteRange(pathNode.node, abilityData.minAreaRange, abilityData.maxAreaRange);
                 break;
+            case AbilityData.AreaType.Line:
+                aoe = Pathfinding.GetLinePath(GameController.Instance.Grid.nodeList[user.Coords.x, user.Coords.y], 
+                    pathNode.node.Coords, false, false, false);
+                break;
             default:
                 break;
         }
@@ -64,14 +68,52 @@ public class Ability : MonoBehaviour
             audioSource.Play();
         }
 
-        if (!(user is MasterUnit masterUnit)) { return; }
-        if (GameController.Instance.UIController.selectedAbilityId != 0)
+        if (GameController.Instance.UIController.IsCard)
         {
-            masterUnit.DeckManager.DiscardCard(GameController.Instance.UIController.selectedAbilityId - 1);
+            if (!(user is MasterUnit masterUnit)) { return; }
+
+            CalculateDedication(user);
+
+            masterUnit.DeckManager.DiscardCard(GameController.Instance.UIController.selectedAbilityId);
             user.Animator.SetTrigger("UseSpell");
-            GameController.Instance.UIController.SetId(0);
+            GameController.Instance.UIController.SetId(0, false);
+            GameController.Instance.SceneController.SetSelectedAbility(null);
+        }
+        else
+        {
+            user.Animator.SetTrigger("UseSpell");
+            GameController.Instance.UIController.SetId(0, false);
             GameController.Instance.SceneController.SetSelectedAbility(null);
         }
     }
 
+    protected virtual void CalculateDedication(Unit user)
+    {
+        var aspectAmount = 0;
+        foreach (var dedication in abilityData.Dedications)
+        {
+            if (dedication.IsUsable)
+            {
+                aspectAmount++;
+            }
+        }
+
+        for (var i = 0; i < abilityData.Dedications.Length; i++)
+        {
+            if (abilityData.Dedications[i].IsUsable)
+            {
+                user.UnitStats.DedicationsEnergy[i] += (int)((abilityData.epCost * 2 + abilityData.tpCost) / 5 / aspectAmount) * 5;
+                Debug.Log($"Aspect {i}: power {user.UnitStats.DedicationsEnergy[i]}");
+                
+                if (user.UnitStats.DedicationsEnergy[i] >= 100)
+                {
+                    var multiplier = user.UnitStats.DedicationsEnergy[i] / 100;
+                    user.UnitStats.DedicationsEnergy[i] -= multiplier * 100;
+                    user.UnitStats.AspectDedications[i].Value += multiplier * 5;
+                    
+                    Debug.Log($"Aspect {i}: new power {user.UnitStats.DedicationsEnergy[i]}");
+                }
+            }
+        }
+    }
 }

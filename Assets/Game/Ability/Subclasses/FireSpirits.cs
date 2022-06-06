@@ -4,14 +4,14 @@ public class FireSpirits : Ability
 {
     public override void UseAbility(Unit user, List<PathNode> aoe)
     {
-        if (abilityData.epCost > user.energy)
+        if (abilityData.epCost > user.UnitStats.Energy)
         {
             GameController.Instance.WorldUIManager.CreateHoveringWorldText(HWTType.NotEnoughEnergy,
                 user.transform.position, "Недостаточно энергии!");
             return;
         }
         
-        if (abilityData.tpCost > user.time)
+        if (abilityData.tpCost > user.UnitStats.Time)
         {
             GameController.Instance.WorldUIManager.CreateHoveringWorldText(HWTType.NotEnoughTime,
                 user.transform.position, "Недостаточно времени!");

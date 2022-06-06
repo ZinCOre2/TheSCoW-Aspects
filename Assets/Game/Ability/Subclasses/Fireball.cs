@@ -5,14 +5,14 @@ public class Fireball : Ability
 {
     public override void UseAbility(Unit user, List<PathNode> aoe)
     {
-        if (abilityData.epCost > user.energy)
+        if (abilityData.epCost > user.UnitStats.Energy)
         {
             GameController.Instance.WorldUIManager.CreateHoveringWorldText(HWTType.NotEnoughEnergy,
                 user.transform.position, "Недостаточно энергии!");
             return;
         }
         
-        if (abilityData.tpCost > user.time)
+        if (abilityData.tpCost > user.UnitStats.Time)
         {
             GameController.Instance.WorldUIManager.CreateHoveringWorldText(HWTType.NotEnoughTime,
                 user.transform.position, "Недостаточно времени!");
@@ -32,7 +32,7 @@ public class Fireball : Ability
             target = GameController.Instance.Grid.GetUnitOnNode(pathNode.node.Coords);
             if (target && target.TeamId != 0 && target.TeamId != user.TeamId)
             {
-                var value = (int)((abilityData.values[0] * (1 + user.UnitData.AspectDedications[0].Value / 100f) + user.UnitData.power) / 5f) * 5;
+                var value = (int)((abilityData.values[0] * (1 + user.UnitStats.AspectDedications[0].Value / 100f) + user.UnitStats.Power) / 5f) * 5;
                 target.ChangeHealth(-value);
             }
         }

@@ -7,9 +7,9 @@ public class Move : Ability
         Node start = GameController.Instance.Grid.nodeList[user.Coords.x, user.Coords.y];
         area = new List<PathNode>();
 
-        var maxRange = user.energy / abilityData.epCost < user.time / abilityData.tpCost
-            ? user.energy / abilityData.epCost
-            : user.time / abilityData.tpCost;
+        var maxRange = user.UnitStats.Energy / abilityData.epCost < user.UnitStats.Time / abilityData.tpCost
+            ? user.UnitStats.Energy / abilityData.epCost
+            : user.UnitStats.Time / abilityData.tpCost;
         area = Pathfinding.GetNodesInPathfindingRange(start, 0, maxRange);
 
         return area;
@@ -23,13 +23,13 @@ public class Move : Ability
     }
     public override void UseAbility(Unit user, List<PathNode> aoe)
     {
-        if (user.energy < aoe[0].length * abilityData.epCost)
+        if (user.UnitStats.Energy < aoe[0].length * abilityData.epCost)
         {
             GameController.Instance.WorldUIManager.CreateHoveringWorldText(HWTType.NotEnoughEnergy,
                 user.transform.position, "Недостаточно энергии!");
             return;
         }
-        if (user.time < aoe[0].length * abilityData.tpCost)
+        if (user.UnitStats.Time < aoe[0].length * abilityData.tpCost)
         {
             GameController.Instance.WorldUIManager.CreateHoveringWorldText(HWTType.NotEnoughTime,
                 user.transform.position, "Недостаточно времени!");

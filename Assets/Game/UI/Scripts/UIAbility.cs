@@ -11,8 +11,8 @@ public class UIAbility : MonoBehaviour, IPointerClickHandler, IPointerEnterHandl
     public Transform ScaledCardHolder;    
 
     [SerializeField] private float scaleOnHover = 2.5f, scaleOnSelected = 1f;
-    [SerializeField] private Image icon;
-    [SerializeField] private TextMeshProUGUI cardName, description, epCost, tpCost, range, area;
+    [SerializeField] private Image icon, holderIcon;
+    [SerializeField] private TextMeshProUGUI cardName, description, epCost, epCostHolder, tpCost, tpCostHolder, range, area;
     [SerializeField] private GameObject[] aspectCovers = new GameObject[4];
     [SerializeField] private TextMeshProUGUI[] aspectDedications = new TextMeshProUGUI[4]; 
 
@@ -30,6 +30,7 @@ public class UIAbility : MonoBehaviour, IPointerClickHandler, IPointerEnterHandl
             var abilityInfo = ability.AbilityData;
             
             if (icon != null) icon.sprite = abilityInfo.icon;
+            if (holderIcon != null) holderIcon.sprite = abilityInfo.icon;
             if (cardName != null) cardName.text = abilityInfo.cardName;
             if (description != null)
             {
@@ -49,7 +50,9 @@ public class UIAbility : MonoBehaviour, IPointerClickHandler, IPointerEnterHandl
                 }
             }
             if (epCost != null) epCost.text = abilityInfo.epCost.ToString();
+            if (epCostHolder != null) epCostHolder.text = abilityInfo.epCost.ToString();
             if (tpCost != null) tpCost.text = abilityInfo.tpCost.ToString();
+            if (tpCostHolder != null) tpCostHolder.text = abilityInfo.tpCost.ToString();
             if (range != null) range.text = $"{abilityInfo.minRange.ToString()}\n-\n{abilityInfo.maxRange.ToString()}";
             if (area != null) area.text = $"{abilityInfo.minAreaRange.ToString()}\n-\n{abilityInfo.maxAreaRange.ToString()}";
             
@@ -97,12 +100,12 @@ public class UIAbility : MonoBehaviour, IPointerClickHandler, IPointerEnterHandl
     }
     public void OnPointerEnter(PointerEventData eventData)
     {
-        
-        ScaledCardHolder.localScale = Vector3.one * scaleOnHover;
-        transform.SetAsLastSibling();
+        ScaledCardHolder.gameObject.SetActive(true);
+        ScaledCardHolder.localScale *= scaleOnHover;
     }
     public void OnPointerExit(PointerEventData eventData)
     {
-        ScaledCardHolder.localScale = Vector3.one;
+        ScaledCardHolder.localScale /= scaleOnHover;
+        ScaledCardHolder.gameObject.SetActive(false);
     }
 }

@@ -33,6 +33,6 @@ MonoBehaviour:
     Value: 0
   - IsUsable: 1
     Value: 0
-  - IsUsable: 0
+  - IsUsable: 1
     Value: 0
-  values: 3200000032000000
+  values: 280000003c000000

@@ -13,53 +13,96 @@ public class UIController : MonoBehaviour
     [SerializeField] private TextMeshProUGUI gameTimer;
     
     public Unit selectedUnit { get; private set; }
+    [HideInInspector] public bool IsCard;
     public int selectedAbilityId { get; private set; } = 0;
-    public void SetId(int id) { selectedAbilityId = id; }
+
+    public void SetId(int id, bool isCard)
+    {
+        if (!IsCard && UnitDataPanel.AbilitySlots[selectedAbilityId].TryGetComponent(out Image prevImage))
+        {
+            UnitDataPanel.AbilitySlots[selectedAbilityId].ScaledCardHolder.localScale /= UnitDataPanel.AbilitySlots[selectedAbilityId].ScaleOnSelected;
+            prevImage.color = Color.white;
+        }
+        
+        if (IsCard && UnitDataPanel.CardSlots[selectedAbilityId].TryGetComponent(out prevImage))
+        {
+            UnitDataPanel.CardSlots[selectedAbilityId].ScaledCardHolder.localScale /= UnitDataPanel.CardSlots[selectedAbilityId].ScaleOnSelected;
+            prevImage.color = Color.white;
+        }
+
+        selectedAbilityId = id;
+        IsCard = isCard;
+    }
 
     private float _gameTime = 0f;
     
     private void Start()
     {
         GameController.Instance.SceneController.OnUnitSelect += ShowUnitUI;
-        GameController.Instance.SceneController.OnTurnEnd += () =>
-        {
-            UnitDataPanel.gameObject.SetActive(false);
-            if (selectedUnit)
-            {
-                selectedUnit.OnHealthChanged -= UnitHealthChanged;
-                selectedUnit.OnEnergyChanged -= UnitEnergyChanged;
-                selectedUnit.OnTimeChanged -= UnitTimeChanged;
-                selectedUnit.OnUnitDeath -= UnitDeath;
-                selectedUnit = null;
-            }
-        };
+        GameController.Instance.SceneController.OnAbilityUsed += UpdateUnitUI;
+        GameController.Instance.SceneController.OnTurnEnd += EndTurn;
+        
         foreach (UIAbility uiAbility in UnitDataPanel.AbilitySlots)
         {
-            uiAbility.OnAbilitySelect += (ability, id) =>
-            {
-                if (uiAbility.TryGetComponent(out Image selectedImage))
-                {
-                    if (uiAbility.Id == id)
-                    {
-                        uiAbility.ScaledCardHolder.localScale *= uiAbility.ScaleOnSelected;
-                        selectedImage.color = Color.green;
-
-                        if (UnitDataPanel.AbilitySlots[selectedAbilityId].TryGetComponent(out Image prevImage))
-                        {
-                            UnitDataPanel.AbilitySlots[selectedAbilityId].ScaledCardHolder.localScale /= UnitDataPanel.AbilitySlots[selectedAbilityId].ScaleOnSelected;
-                            prevImage.color = Color.white;
-                        }
-
-                        selectedAbilityId = id;
-                    }
-                }
-            };
+            uiAbility.OnAbilitySelect += OnUIAbilitySelected;
+        }
+        foreach (UICard uiCard in UnitDataPanel.CardSlots)
+        {
+            uiCard.OnAbilitySelect += OnUICardSelected;
         }
         UnitDataPanel.gameObject.SetActive(false);
     }
-    public void SetSelectedId(int id)
+
+    private void OnUIAbilitySelected(Ability ability, int id)
     {
         if (UnitDataPanel.AbilitySlots[id].TryGetComponent(out Image selectedImage))
+        {
+            UnitDataPanel.AbilitySlots[id].ScaledCardHolder.localScale *= UnitDataPanel.AbilitySlots[id].ScaleOnSelected;
+            selectedImage.color = Color.green;
+
+            if (!IsCard && UnitDataPanel.AbilitySlots[selectedAbilityId].TryGetComponent(out Image prevImage))
+            {
+                UnitDataPanel.AbilitySlots[selectedAbilityId].ScaledCardHolder.localScale /= UnitDataPanel.AbilitySlots[selectedAbilityId].ScaleOnSelected;
+                prevImage.color = Color.white;
+            }
+                    
+            if (IsCard && UnitDataPanel.CardSlots[selectedAbilityId].TryGetComponent(out prevImage))
+            {
+                UnitDataPanel.CardSlots[selectedAbilityId].ScaledCardHolder.localScale /= UnitDataPanel.CardSlots[selectedAbilityId].ScaleOnSelected;
+                prevImage.color = Color.white;
+            }
+
+            selectedAbilityId = id;
+            IsCard = false;
+        }
+    }
+    private void OnUICardSelected(Ability ability, int id)
+    {
+        if (UnitDataPanel.CardSlots[id].TryGetComponent(out Image selectedImage))
+        {
+            UnitDataPanel.CardSlots[id].ScaledCardHolder.localScale *= UnitDataPanel.CardSlots[id].ScaleOnSelected;
+            selectedImage.color = Color.green;
+
+            if (!IsCard && UnitDataPanel.AbilitySlots[selectedAbilityId].TryGetComponent(out Image prevImage))
+            {
+                UnitDataPanel.AbilitySlots[selectedAbilityId].ScaledCardHolder.localScale /= UnitDataPanel.AbilitySlots[selectedAbilityId].ScaleOnSelected;
+                prevImage.color = Color.white;
+            }
+                    
+            if (IsCard && UnitDataPanel.CardSlots[selectedAbilityId].TryGetComponent(out prevImage))
+            {
+                UnitDataPanel.CardSlots[selectedAbilityId].ScaledCardHolder.localScale /= UnitDataPanel.CardSlots[selectedAbilityId].ScaleOnSelected;
+                prevImage.color = Color.white;
+            }
+
+            selectedAbilityId = id;
+            IsCard = true;
+        }
+    }
+    
+    public void SetSelectedId(int id, bool isCard)
+    {
+        if (!isCard && UnitDataPanel.AbilitySlots[id].TryGetComponent(out Image selectedImage))
         {
             UnitDataPanel.AbilitySlots[id].ScaledCardHolder.localScale *= UnitDataPanel.AbilitySlots[id].ScaleOnSelected;
             selectedImage.color = Color.green;
@@ -71,6 +114,22 @@ public class UIController : MonoBehaviour
             }
 
             selectedAbilityId = id;
+            IsCard = false;
+        }
+        
+        if (isCard && UnitDataPanel.CardSlots[id].TryGetComponent(out selectedImage))
+        {
+            UnitDataPanel.CardSlots[id].ScaledCardHolder.localScale *= UnitDataPanel.CardSlots[id].ScaleOnSelected;
+            selectedImage.color = Color.green;
+
+            if (UnitDataPanel.CardSlots[selectedAbilityId].TryGetComponent(out Image prevImage))
+            {
+                UnitDataPanel.CardSlots[selectedAbilityId].ScaledCardHolder.localScale /= UnitDataPanel.CardSlots[selectedAbilityId].ScaleOnSelected;
+                prevImage.color = Color.white;
+            }
+
+            selectedAbilityId = id;
+            IsCard = true;
         }
     }
     private void Update()
@@ -79,8 +138,33 @@ public class UIController : MonoBehaviour
         gameTimer.text = (int)(_gameTime / 60) + ":" + (int)(_gameTime % 60);
     }
 
+    private void EndTurn()
+    {
+        UnitDataPanel.gameObject.SetActive(false);
+        if (selectedUnit)
+        {
+            selectedUnit.OnHealthChanged -= UnitHealthChanged;
+            selectedUnit.OnEnergyChanged -= UnitEnergyChanged;
+            selectedUnit.OnTimeChanged -= UnitTimeChanged;
+            selectedUnit.OnUnitDeath -= UnitDeath;
+            selectedUnit = null;
+        }
+    }
+    
     public void ShowUnitUI(Unit unit)
     {
+        for (int i = 1; i < 4; i++)
+        {
+            if (unit.UnitStats.InnerAbilities[i - 1] != AbilityHolder.AbilityType.None)
+            {
+                UnitDataPanel.AbilitySlots[i].gameObject.SetActive(true);
+            }
+            else
+            {
+                UnitDataPanel.AbilitySlots[i].gameObject.SetActive(false);
+            }
+        }
+        
         if (unit.TeamId - 1 != GameController.Instance.SceneController.turnId)
         {
             if (unit is MasterUnit)
@@ -121,37 +205,47 @@ public class UIController : MonoBehaviour
         selectedUnit.OnEnergyChanged += UnitEnergyChanged;
         selectedUnit.OnTimeChanged += UnitTimeChanged;
         selectedUnit.OnUnitDeath += UnitDeath;
-
-        UnitDataPanel.gameObject.SetActive(true);
-
-        UnitDataPanel.UnitNameText.text = unit.UnitData.unitName;
-        UnitDataPanel.Portrait.sprite = unit.UnitData.portrait;
-
-        UnitDataPanel.HPBar.fillAmount = unit.health / (float)unit.UnitData.maxHealth;
-        UnitDataPanel.HPStateText.text = unit.health.ToString() + "\n/\n" + unit.UnitData.maxHealth.ToString();
-        UnitDataPanel.HPRegenText.text = "+" + unit.UnitData.hpRegen.ToString();
-
-        UnitDataPanel.EPBar.fillAmount = unit.energy / (float)unit.UnitData.maxEnergy;
-        UnitDataPanel.EPStateText.text = unit.energy.ToString() + "\n/\n" + unit.UnitData.maxEnergy.ToString();
-        UnitDataPanel.EPRegenText.text = "+" + unit.UnitData.epRegen.ToString();
         
-        UnitDataPanel.TPBar.fillAmount = unit.time / (float)unit.UnitData.maxTime;
-        UnitDataPanel.TPStateText.text = unit.time.ToString() + "\n/\n" + unit.UnitData.maxTime.ToString();
+        UnitDataPanel.gameObject.SetActive(true);
+        
+        UpdateUnitUI();
+    }
+
+    private void UpdateUnitUI()
+    {
+        UnitDataPanel.UnitNameText.text = selectedUnit.UnitStats.UnitName;
+        UnitDataPanel.Portrait.sprite = selectedUnit.UnitStats.Portrait;
+
+        UnitDataPanel.HPBar.fillAmount = selectedUnit.UnitStats.Health / (float)selectedUnit.UnitStats.MaxHealth;
+        UnitDataPanel.HPStateText.text = selectedUnit.UnitStats.Health.ToString() + "\n/\n" + selectedUnit.UnitStats.MaxHealth.ToString();
+        UnitDataPanel.HPRegenText.text = "+" + selectedUnit.UnitStats.HealthRegen.ToString();
+
+        UnitDataPanel.EPBar.fillAmount = selectedUnit.UnitStats.Energy / (float)selectedUnit.UnitStats.MaxEnergy;
+        UnitDataPanel.EPStateText.text = selectedUnit.UnitStats.Energy.ToString() + "\n/\n" + selectedUnit.UnitStats.MaxEnergy.ToString();
+        UnitDataPanel.EPRegenText.text = "+" + selectedUnit.UnitStats.EnergyRegen.ToString();
+        
+        UnitDataPanel.TPBar.fillAmount = selectedUnit.UnitStats.Time / (float)selectedUnit.UnitStats.MaxTime;
+        UnitDataPanel.TPStateText.text = selectedUnit.UnitStats.Time.ToString() + "\n/\n" + selectedUnit.UnitStats.MaxTime.ToString();
 
         for (var i = 0; i < 4; i++)
         {
-            UnitDataPanel.AspectDedicationsText[i].gameObject.SetActive(selectedUnit.UnitData.AspectDedications[i].IsUsable);
-            UnitDataPanel.AspectCovers[i].gameObject.SetActive(!selectedUnit.UnitData.AspectDedications[i].IsUsable);
+            UnitDataPanel.AspectDedicationsText[i].gameObject.SetActive(selectedUnit.UnitStats.AspectDedications[i].IsUsable);
+            UnitDataPanel.AspectCovers[i].gameObject.SetActive(!selectedUnit.UnitStats.AspectDedications[i].IsUsable);
             
-            UnitDataPanel.AspectDedicationsText[i].text = selectedUnit.UnitData.AspectDedications[i].Value.ToString();
+            UnitDataPanel.AspectDedicationsText[i].text = selectedUnit.UnitStats.AspectDedications[i].Value.ToString();
         }
         
-        UnitDataPanel.PowerText.text = unit.UnitData.power.ToString();
-        UnitDataPanel.DefenceText.text = unit.UnitData.defence.ToString();
+        UnitDataPanel.PowerText.text = selectedUnit.UnitStats.Power.ToString();
+        UnitDataPanel.DefenceText.text = selectedUnit.UnitStats.Defence.ToString();
         
-        if (UnitDataPanel.AbilitySlots[selectedAbilityId].TryGetComponent(out Image prevImage))
+        if (!IsCard && UnitDataPanel.AbilitySlots[selectedAbilityId].TryGetComponent(out Image prevImage))
         {
             UnitDataPanel.AbilitySlots[selectedAbilityId].transform.localScale = Vector3.one;
+            prevImage.color = Color.white;
+        }
+        else if (IsCard && UnitDataPanel.CardSlots[selectedAbilityId].TryGetComponent(out prevImage))
+        {
+            UnitDataPanel.CardSlots[selectedAbilityId].transform.localScale = Vector3.one;
             prevImage.color = Color.white;
         }
         
@@ -160,21 +254,33 @@ public class UIController : MonoBehaviour
         UnitDataPanel.AbilitySlots[0].SetId(0);
         if (UnitDataPanel.AbilitySlots[0].TryGetComponent(out Image image))
         {
-            UnitDataPanel.AbilitySlots[0].ScaledCardHolder.localScale = Vector3.one * UnitDataPanel.AbilitySlots[0].ScaleOnSelected;
             image.color = Color.green;
         }
         selectedAbilityId = 0;
-
-        if (selectedUnit is MasterUnit)
+        
+        for (int i = 1; i < 4; i++)
         {
-            for (int i = 1; i < 7; i++)
+            if (selectedUnit.UnitStats.InnerAbilities[i - 1] != AbilityHolder.AbilityType.None)
             {
                 UnitDataPanel.AbilitySlots[i].gameObject.SetActive(true);
                 UnitDataPanel.AbilitySlots[i].SetId(i);
                 UnitDataPanel.AbilitySlots[i]
-                    .SetAbility(GameController.Instance.AbilityHolder.GetAbility(((MasterUnit)selectedUnit).DeckManager.Hand[i - 1]));
+                    .SetAbility(GameController.Instance.AbilityHolder.GetAbility(selectedUnit.UnitStats.InnerAbilities[i - 1]));
             }
         }
+
+        if (!(selectedUnit is MasterUnit masterUnit)) { return; }
+
+        for (int i = 0; i < 6; i++)
+        {
+            UnitDataPanel.CardSlots[i].gameObject.SetActive(true);
+            UnitDataPanel.CardSlots[i].SetId(i);
+            UnitDataPanel.CardSlots[i]
+                .SetAbility(GameController.Instance.AbilityHolder.GetAbility(masterUnit.DeckManager.Hand[i]));
+        }
+
+        UnitDataPanel.DrawPileSizeText.text = $"{masterUnit.DeckManager.DrawPile.Count}";
+        UnitDataPanel.DiscardPileSizeText.text = $"{masterUnit.DeckManager.DiscardPile.Count}";
     }
 
     private void UnitHealthChanged(Unit unit, int newHealth)

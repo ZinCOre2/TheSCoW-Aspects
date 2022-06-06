@@ -4,7 +4,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Ability", menuName = "Ability")]
 public class AbilityData : ScriptableObject
 {
-    public enum AreaType { Pathfinding, Impulse, Absolute }
+    public enum AreaType { Pathfinding, Impulse, Absolute, Line }
 
     [Header("General Data")]
     public string cardName;

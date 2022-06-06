@@ -5,14 +5,14 @@ public class StunningSlam : Ability
 {
     public override void UseAbility(Unit user, List<PathNode> aoe)
     {
-        if (abilityData.epCost > user.energy)
+        if (abilityData.epCost > user.UnitStats.Energy)
         {
             GameController.Instance.WorldUIManager.CreateHoveringWorldText(HWTType.NotEnoughEnergy,
                 user.transform.position, "Недостаточно энергии!");
             return;
         }
         
-        if (abilityData.tpCost > user.time)
+        if (abilityData.tpCost > user.UnitStats.Time)
         {
             GameController.Instance.WorldUIManager.CreateHoveringWorldText(HWTType.NotEnoughTime,
                 user.transform.position, "Недостаточно времени!");
@@ -32,9 +32,9 @@ public class StunningSlam : Ability
                 AbilityEffect aEffect;
                 aEffect = GameController.Instance.ObjectPooler.SpawnFromPool(abilityEffect.EffectTag, pathNode.node.transform.position, abilityEffect.transform.rotation).GetComponent<AbilityEffect>();
 
-                var value1 = (int)((abilityData.values[0] * (1 + user.UnitData.AspectDedications[1].Value / 100f) + user.UnitData.power) / 5f) * 5;
+                var value1 = (int)((abilityData.values[0] * (1 + user.UnitStats.AspectDedications[1].Value / 100f) + user.UnitStats.Power) / 5f) * 5;
                 target.ChangeHealth(-value1);
-                var value2 = (int)((abilityData.values[1] * (1 + user.UnitData.AspectDedications[1].Value / 100f) + user.UnitData.power) / 5f) * 5;
+                var value2 = (int)((abilityData.values[1] * (1 + user.UnitStats.AspectDedications[1].Value / 100f) + user.UnitStats.Power) / 5f) * 5;
                 target.ChangeEnergy(-value2);
             }
         }

@@ -1,6 +1,7 @@
 ﻿using System;
 using UnityEngine;
 using System.Collections.Generic;
+using System.Linq;
 
 public class Pathfinding
 {
@@ -173,7 +174,7 @@ public class Pathfinding
         
         var targetCoords = new List<Vector2Int>();
         
-        for (int i = 0; i <= maxRange; i++)
+        for (var i = 0; i <= maxRange; i++)
         {
             targetCoords.Add(new Vector2Int(start.Coords.x + i, start.Coords.y + maxRange - i));
             targetCoords.Add(new Vector2Int(start.Coords.x + i, start.Coords.y - maxRange + i));
@@ -181,7 +182,7 @@ public class Pathfinding
 
         if (maxRange > 0)
         {
-            for (int i = -1; i >= -maxRange; i--)
+            for (var i = -1; i >= -maxRange; i--)
             {
                 targetCoords.Add(new Vector2Int(start.Coords.x + i, start.Coords.y + maxRange + i));
                 targetCoords.Add(new Vector2Int(start.Coords.x + i, start.Coords.y - maxRange - i));
@@ -195,29 +196,30 @@ public class Pathfinding
 
             foreach (var node in nodes)
             {
-                if (!impulseArea.Contains(node))
+                if (!IsNodeDuplicate(impulseArea, node))
                 {
                     impulseArea.Add(node);
                 }
             }
         }
 
+        // Add nodes that weren't put via Brasenhem
         foreach (var testNode in testNodes)
         {
-            if (!impulseArea.Contains(testNode))
-            {
-                var nodes = GetLinePath(start, testNode.node.Coords, isBlockedByAlly, isBlockedByEnemy, isBlockedByEntity);
+            if (IsNodeDuplicate(impulseArea, testNode)) { continue; }
+            
+            var nodes = GetLinePath(start, testNode.node.Coords, isBlockedByAlly, isBlockedByEnemy, isBlockedByEntity);
         
-                foreach (var node in nodes)
+            foreach (var node in nodes)
+            {
+                if (!IsNodeDuplicate(impulseArea, node))
                 {
-                    if (!impulseArea.Contains(node))
-                    {
-                        impulseArea.Add(node);
-                    }
+                    impulseArea.Add(node);
                 }
             }
         }
 
+        // Min range cut
         var result = new List<PathNode>();
         foreach (var impulseNode in impulseArea)
         {
@@ -235,10 +237,11 @@ public class Pathfinding
         return result;
     }
 
-    private void RemoveNodeDuplicates()
+    private static bool IsNodeDuplicate(List<PathNode> area, PathNode searchedNode)
     {
-        
+        return area.Any(pNode => pNode.node == searchedNode.node);
     }
+    
     public static List<PathNode> GetLinePath(Node start, Vector2Int coords, bool isBlockedByAlly, bool isBlockedByEnemy, bool isBlockedByEntity)
     {
         int x0 = start.Coords.x, y0 = start.Coords.y;

@@ -682,7 +682,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9094436136724999334}
   m_Layer: 5
-  m_Name: AbilitySlot
+  m_Name: UnitInCardAbilitySlot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

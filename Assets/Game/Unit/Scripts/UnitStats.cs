@@ -22,7 +22,8 @@ public class UnitStats
     public int Defence;
 
     public AspectDedication[] AspectDedications = new AspectDedication[4];
-    public List<AbilityHolder.AbilityType> InnerAbilities = new List<AbilityHolder.AbilityType>();
+    public int[] DedicationsEnergy = new int[4];
+    public AbilityHolder.AbilityType[] InnerAbilities = new AbilityHolder.AbilityType[3];
     
     public int TeamId;
     public int MasterId;

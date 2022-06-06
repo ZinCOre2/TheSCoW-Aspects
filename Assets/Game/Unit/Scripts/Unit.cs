@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Random = System.Random;
+using Random = UnityEngine.Random;
 
 [RequireComponent(typeof(Move))]
 public class Unit : PhysicalEntity
@@ -21,11 +21,6 @@ public class Unit : PhysicalEntity
     [SerializeField] private float moveSpeed = 50f;
     [SerializeField] private int teamId;
     
-    // Stats
-    public int health { get; private set; }
-    public int energy { get; private set; }
-    public int time { get; private set; }
-
     // General
     public UnitData UnitData { get { return unitData; } private set { unitData = value; } }
     public Animator Animator { get { return animator; } private set { animator = value; } }
@@ -33,27 +28,15 @@ public class Unit : PhysicalEntity
 
     public bool usingAbility { get; private set; } = false;
 
-    // private void OnEnable()
-    // {
-    //     GameController.Instance.SceneController.OnUnitSelect += MarkUnit;
-    //     
-    //     if (teamId == 0) { return; }
-    //     
-    //     OnUnitDeath += UnitDeath;
-    //     OnUnitDeath += GameController.Instance.SceneController.UnitDeath;
-    // }
-
     protected override void Start()
     {
         base.Start();
+        InitializeStats();
+        AssignIds(teamId, GameController.Instance.EntityManager.GenerateUniqueId());
         
         GameController.Instance.SceneController.OnUnitSelect += MarkUnit;
 
         if (teamId == 0) { return; }
-
-        health = unitData.maxHealth;
-        energy = unitData.maxEnergy;
-        time = unitData.maxTime;
 
         GameController.Instance.WorldUIManager.CreateBarPack(this);
         
@@ -71,6 +54,38 @@ public class Unit : PhysicalEntity
         }
 
         SceneController.Counter[teamId - 1]++;
+    }
+
+    private void InitializeStats()
+    {
+        UnitStats.UnitName = unitData.unitName;
+        UnitStats.Portrait = unitData.portrait;
+
+        UnitStats.MaxHealth = unitData.maxHealth;
+        UnitStats.HealthRegen = unitData.hpRegen;
+        UnitStats.Health = unitData.maxHealth;
+
+        UnitStats.MaxEnergy = unitData.maxEnergy;
+        UnitStats.EnergyRegen = unitData.epRegen;
+        UnitStats.Energy = unitData.maxEnergy;
+
+        UnitStats.MaxTime = unitData.maxTime;
+        UnitStats.Time = unitData.maxTime;
+
+        UnitStats.Power = unitData.power;
+        UnitStats.Defence = unitData.defence;
+
+        for (var i = 0; i < UnitStats.AspectDedications.Length; i++)
+        {
+            UnitStats.AspectDedications[i] = unitData.AspectDedications[i];
+        }
+
+        UnitStats.InnerAbilities = unitData.innerAbilities;
+    }
+    private void AssignIds(int teamId, int masterId)
+    {
+        UnitStats.TeamId = teamId;
+        UnitStats.MasterId = masterId;
     }
 
     private void OnDisable()
@@ -113,15 +128,15 @@ public class Unit : PhysicalEntity
             value = Mathf.Clamp(value, Int32.MinValue, 0);
         }
         
-        health += value;
-        health = Mathf.Clamp(health, 0, unitData.maxHealth);
-        OnHealthChanged?.Invoke(this, health);
+        UnitStats.Health += value;
+        UnitStats.Health = Mathf.Clamp(UnitStats.Health, 0, UnitStats.MaxHealth);
+        OnHealthChanged?.Invoke(this, UnitStats.Health);
 
         if (value < 0)
         {
             GameController.Instance.WorldUIManager.CreateHoveringWorldText(HWTType.DamageTaken, transform.position, $"{value}");
 
-            if (health <= 0)
+            if (UnitStats.Health <= 0)
             {
                 animator?.SetTrigger("Death");
                 OnUnitDeath?.Invoke(this);
@@ -139,9 +154,9 @@ public class Unit : PhysicalEntity
     }
     public void ChangeEnergy(int value)
     {
-        energy += value;
-        energy = Mathf.Clamp(energy, 0, unitData.maxEnergy);
-        OnEnergyChanged?.Invoke(this, energy);
+        UnitStats.Energy += value;
+        UnitStats.Energy = Mathf.Clamp(UnitStats.Energy, 0, UnitStats.MaxEnergy);
+        OnEnergyChanged?.Invoke(this, UnitStats.Energy);
 
         if (value < 0)
         {
@@ -154,9 +169,9 @@ public class Unit : PhysicalEntity
     }
     public void ChangeTime(int value)
     {
-        time += value;
-        time = Mathf.Clamp(time, 0, unitData.maxTime);
-        OnTimeChanged?.Invoke(this, time);
+        UnitStats.Time += value;
+        UnitStats.Time = Mathf.Clamp(UnitStats.Time, 0, UnitStats.MaxTime);
+        OnTimeChanged?.Invoke(this, UnitStats.Time);
 
         if (value < 0)
         {
@@ -190,5 +205,26 @@ public class Unit : PhysicalEntity
             animator?.SetBool("Moving", false);
             OnFinishAbilityUse?.Invoke();
         }
+    }
+    
+    public IEnumerator RushToPosition(Node destinationNode)
+    {
+        usingAbility = true;
+        animator?.SetBool("Moving", true);
+
+        Vector3 destination = destinationNode.transform.position;
+        Vector3 startPos = pivot.position;
+        pivot.rotation = Quaternion.LookRotation(destination - pivot.position);
+
+        while ((destination - pivot.position).magnitude > moveSpeed * Time.deltaTime * 2)
+        {
+            pivot.position += (destination - pivot.position).normalized * moveSpeed * 5f * Time.deltaTime;
+            yield return new WaitForSeconds(Time.deltaTime);
+        }
+        pivot.position = destination;
+        
+        usingAbility = false;
+        animator?.SetBool("Moving", false);
+        OnFinishAbilityUse?.Invoke();
     }
 }

@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 344f9be0ea49ebf449538edc04b1264c, type: 3}
+  m_Name: FocusedEnergy
+  m_EditorClassIdentifier: 
+  cardName: "\u0421\u0444\u043E\u043A\u0443\u0441\u0438\u0440\u043E\u0432\u0430\u043D\u043D\u0430\u044F
+    \u044D\u043D\u0435\u0440\u0433\u0438\u044F"
+  icon: {fileID: 21300000, guid: 7efcbe499a37f454c918036719b9201e, type: 3}
+  description: "\u0412\u044B\u0431\u0440\u0430\u043D\u043D\u044B\u0439 \u0441\u043E\u044E\u0437\u043D\u0438\u043A
+    \u043F\u043E\u043B\u0443\u0447\u0430\u0435\u0442 +{0} \u043A \u043C\u0430\u043A\u0441\u0438\u043C\u0430\u043B\u044C\u043D\u043E\u0439
+    \u044D\u043D\u0435\u0440\u0433\u0438\u0438."
+  rangeType: 2
+  areaType: 0
+  minRange: 0
+  maxRange: 3
+  minAreaRange: 0
+  maxAreaRange: 0
+  epCost: 35
+  tpCost: 40
+  Dedications:
+  - IsUsable: 1
+    Value: 0
+  - IsUsable: 0
+    Value: 0
+  - IsUsable: 0
+    Value: 0
+  - IsUsable: 0
+    Value: 0
+  values: 14000000

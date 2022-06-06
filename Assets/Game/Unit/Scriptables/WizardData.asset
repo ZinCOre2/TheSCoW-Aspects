@@ -15,22 +15,23 @@ MonoBehaviour:
   Prefab: {fileID: 4492174275742544468, guid: a8745080818b71e4a8b2f0a40691206a, type: 3}
   unitName: "\u0427\u0430\u0440\u043E\u0434\u0435\u0439"
   portrait: {fileID: 21300000, guid: 394802f83355aaa49842dbcdc693f398, type: 3}
-  maxHealth: 150
+  maxHealth: 250
   maxEnergy: 175
-  maxTime: 150
-  hpRegen: 5
+  maxTime: 130
+  hpRegen: 10
   epRegen: 20
   AspectDedications:
   - IsUsable: 1
-    Value: 25
-  - IsUsable: 0
-    Value: 0
+    Value: 10
   - IsUsable: 0
     Value: 0
   - IsUsable: 1
+    Value: 5
+  - IsUsable: 1
     Value: 10
   power: 5
-  defence: 0
+  defence: -5
+  innerAbilities: 050000000000000000000000
   MasterUnitPrefab: {fileID: 4492174275742544468, guid: a8745080818b71e4a8b2f0a40691206a,
     type: 3}
-  StartingDeck: 050000000500000005000000050000000d0000000d0000000d000000070000000700000006000000060000000b0000000b0000000c0000000c0000000f0000000f0000000e000000
+  StartingDeck: 16000000060000000700000013000000120000001200000015000000070000001000000006000000170000000b00000016000000160000000c0000000c000000180000000e000000

@@ -18,12 +18,12 @@ MonoBehaviour:
     {0} \u0443\u0440\u043E\u043D\u0430 \u043F\u0440\u043E\u0442\u0438\u0432\u043D\u0438\u043A\u0430\u043C
     \u043F\u043E \u043E\u0431\u043B\u0430\u0441\u0442\u0438."
   rangeType: 2
-  areaType: 0
+  areaType: 1
   minRange: 3
   maxRange: 6
   minAreaRange: 0
   maxAreaRange: 3
-  epCost: 25
+  epCost: 30
   tpCost: 40
   Dedications:
   - IsUsable: 1

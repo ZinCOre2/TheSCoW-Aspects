@@ -15,6 +15,7 @@ public class SceneController : MonoBehaviour
 
     public event Action<Unit> OnUnitSelect;
     public event Action OnTurnEnd;
+    public event Action OnAbilityUsed;
 
     [Header("Game Data")]
     [SerializeField] private Timer turnTimer;
@@ -49,13 +50,26 @@ public class SceneController : MonoBehaviour
     {
         foreach (UIAbility uiAbility in GameController.Instance.UIController.UnitDataPanel.AbilitySlots)
         {
-            uiAbility.OnAbilitySelect += (Ability _ability, int id) =>
+            uiAbility.OnAbilitySelect += (Ability ability, int id) =>
             {
-                if (uiAbility.ability != null && uiAbility.ability == _ability && uiAbility.Id == id)
+                if (uiAbility.ability != null && uiAbility.ability == ability && uiAbility.Id == id)
                 {
-                    _selectedAbility = _ability;
+                    _selectedAbility = ability;
                     UnmarkNodes();
-                    _nodesInRange = _ability.GetNodesInRange(SelectedUnit);
+                    _nodesInRange = ability.GetNodesInRange(SelectedUnit);
+                    MarkNodes();
+                }
+            };
+        }
+        foreach (var uiCard in GameController.Instance.UIController.UnitDataPanel.CardSlots)
+        {
+            uiCard.OnAbilitySelect += (Ability ability, int id) =>
+            {
+                if (uiCard.ability != null && uiCard.ability == ability && uiCard.Id == id)
+                {
+                    _selectedAbility = ability;
+                    UnmarkNodes();
+                    _nodesInRange = ability.GetNodesInRange(SelectedUnit);
                     MarkNodes();
                 }
             };
@@ -63,6 +77,7 @@ public class SceneController : MonoBehaviour
         OnUnitSelect += (Unit unit) =>
         {
             SelectedUnit = unit;
+            SetSelectedAbility(null);
 
             UnmarkNodes();
             if (unit.TeamId - 1 == turnId)
@@ -74,6 +89,7 @@ public class SceneController : MonoBehaviour
             else
             {
                 _nodesInRange.Clear();
+                _aoe.Clear();
             }
             MarkNodes();
         };
@@ -152,7 +168,7 @@ public class SceneController : MonoBehaviour
                 // When pressed LMB on unit - set them as selected and redraw all UI acccordingly
                 if (Input.GetMouseButtonDown(0))
                 {
-                    if (_hitInfo.collider.gameObject.TryGetComponent(out Unit unitSelect) && unit.TeamId != 0 && unit.health > 0)
+                    if (_hitInfo.collider.gameObject.TryGetComponent(out Unit unitSelect) && unit.TeamId != 0 && unit.UnitStats.Health > 0)
                     {
                         OnUnitSelect?.Invoke(unitSelect);
                     }
@@ -173,12 +189,14 @@ public class SceneController : MonoBehaviour
                                 {
                                     if (pathNode.node == nodeTarget)
                                     {
-                                        _aoe = _selectedAbility.GetAoe(SelectedUnit, pathNode);
                                         _selectedAbility.UseAbility(SelectedUnit, _aoe);
+                                        
+                                        OnAbilityUsed?.Invoke();
 
                                         _selectedAbility = GameController.Instance.AbilityHolder.GetAbility(AbilityHolder.AbilityType.Move);
                                         _nodesInRange = _selectedAbility.GetNodesInRange(SelectedUnit);
-
+                                        _aoe = new List<PathNode>();
+                                        
                                         break;
                                     }
                                 }
@@ -196,11 +214,13 @@ public class SceneController : MonoBehaviour
                                 {
                                     if (pathNode.node == GameController.Instance.Grid.nodeList[unitTarget.Coords.x, unitTarget.Coords.y])
                                     {
-                                        _aoe = _selectedAbility.GetAoe(SelectedUnit, pathNode);
                                         _selectedAbility.UseAbility(SelectedUnit, _aoe);
+                                        
+                                        OnAbilityUsed?.Invoke();
 
                                         _selectedAbility = GameController.Instance.AbilityHolder.GetAbility(AbilityHolder.AbilityType.Move);
                                         _nodesInRange = _selectedAbility.GetNodesInRange(SelectedUnit);
+                                        _aoe = new List<PathNode>();
 
                                         break;
                                     }
@@ -226,50 +246,22 @@ public class SceneController : MonoBehaviour
         
         foreach (PathNode pathNode in _nodesInRange)
         {
-            if (GameController.Instance.Grid.NodeOccupied(pathNode.node.Coords))
-            {
-                if (GameController.Instance.Grid.GetUnitOnNode(pathNode.node.Coords) != null)
-                {
-                    pathNode.node.MarkCustom(Color.red);
-                }
-                else
-                {
-                    pathNode.node.MarkCustom(Color.cyan);
-                }
-            }
-            else
-            {
-                pathNode.node.MarkCustom(markColor);
-            }
+            pathNode.node.MarkCustom(markColor);
         }
 
         // Mark nodes in aoe
         foreach (PathNode pathNode in _aoe)
         {
-            if (GameController.Instance.Grid.NodeOccupied(pathNode.node.Coords))
-            {
-                if (GameController.Instance.Grid.GetUnitOnNode(pathNode.node.Coords) != null)
-                {
-                    pathNode.node.MarkCustom(Color.red);
-                }
-                else
-                {
-                    pathNode.node.MarkCustom(Color.cyan);
-                }
-            }
-            else
-            {
-                pathNode.node.MarkCustom(Color.yellow);
-            }
+            pathNode.node.MarkCustom(Color.yellow);
         }
     }
     public void UnmarkNodes()
     {
-        foreach (PathNode pathNodeAoe in _aoe)
-            pathNodeAoe.node.Unmark();
-
         foreach (PathNode pathNode in _nodesInRange)
             pathNode.node.Unmark();
+        
+        foreach (PathNode pathNodeAoe in _aoe)
+            pathNodeAoe.node.Unmark();
     }
 
     public void UnitDeath(Unit unit)
@@ -281,6 +273,8 @@ public class SceneController : MonoBehaviour
         }
 
         GameController.Instance.EntityManager.RemoveEntity(unit);
+        
+        if (!(unit is MasterUnit)) { return; }
 
         Counter[unit.TeamId - 1]--;
         Debug.Log("Team " + (unit.TeamId - 1) + " counter: " + Counter[unit.TeamId - 1]);
@@ -325,15 +319,14 @@ public class SceneController : MonoBehaviour
     {
         SelectedUnit = null;
         SetSelectedAbility(null);
-        UnmarkNodes();
 
         foreach (Unit unit in GameController.Instance.EntityManager.Units)
         {
             if (unit.TeamId != 0)
             {
-                unit.ChangeHealth(unit.UnitData.hpRegen);
-                unit.ChangeEnergy(unit.UnitData.epRegen);
-                unit.ChangeTime(unit.UnitData.maxTime / 2);
+                unit.ChangeHealth(unit.UnitStats.HealthRegen);
+                unit.ChangeEnergy(unit.UnitStats.EnergyRegen);
+                unit.ChangeTime(unit.UnitStats.MaxTime / 2);
 
                 if (unit is MasterUnit masterUnit)
                 {
