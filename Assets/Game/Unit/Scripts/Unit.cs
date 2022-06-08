@@ -204,6 +204,7 @@ public class Unit : PhysicalEntity
             usingAbility = false;
             animator?.SetBool("Moving", false);
             OnFinishAbilityUse?.Invoke();
+            path.Clear();
         }
     }
     

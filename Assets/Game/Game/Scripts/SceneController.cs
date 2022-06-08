@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using TMPro;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
@@ -117,9 +118,6 @@ public class SceneController : MonoBehaviour
 
             if (Physics.Raycast(_ray, out _hitInfo))
             {
-                UnmarkNodes();
-                MarkNodes();
-                
                 // Hovering cursor - always check area of effect
                 if (_hitInfo.collider.gameObject.TryGetComponent(out Node node))
                 {
@@ -132,7 +130,7 @@ public class SceneController : MonoBehaviour
                             // Find selected node. If not in range, do nothing
                             var targetPathNode = _usageArea.Find(n => n.node.Coords == node.Coords);
 
-                            if (targetPathNode.node == node)
+                            if (targetPathNode != null && targetPathNode.node == node)
                             {
                                 _effectArea.Clear();
                                 _effectArea = _selectedAbility.GetAoe(SelectedUnit, targetPathNode);
@@ -154,7 +152,7 @@ public class SceneController : MonoBehaviour
                             // Find selected node. If not in range, do nothing
                             var targetPathNode = _usageArea.Find(n => n.node.Coords == unit.Coords);
 
-                            if (targetPathNode.node.Coords == unit.Coords)
+                            if (targetPathNode != null && targetPathNode.node.Coords == unit.Coords)
                             {
                                 _effectArea.Clear();
                                 _effectArea = _selectedAbility.GetAoe(SelectedUnit, targetPathNode);
@@ -185,21 +183,17 @@ public class SceneController : MonoBehaviour
                             {
                                 UnmarkNodes();
                                 // Find selected node. If not in range, do nothing
-                                foreach (PathNode pathNode in _usageArea)
+                                if (_usageArea.Any(n => n.node.Coords == nodeTarget.Coords)) 
                                 {
-                                    if (pathNode.node == nodeTarget)
-                                    {
-                                        _selectedAbility.UseAbility(SelectedUnit, _effectArea);
-                                        
-                                        OnAbilityUsed?.Invoke();
+                                    _selectedAbility.UseAbility(SelectedUnit, _effectArea);
 
-                                        _selectedAbility = GameController.Instance.AbilityHolder.GetAbility(AbilityHolder.AbilityType.Move);
-                                        _usageArea.Clear();
-                                        _usageArea = _selectedAbility.GetNodesInRange(SelectedUnit);
-                                        _effectArea.Clear();
-                                        
-                                        break;
-                                    }
+                                    OnAbilityUsed?.Invoke();
+
+                                    UnmarkNodes();
+                                    _selectedAbility = GameController.Instance.AbilityHolder.GetAbility(AbilityHolder.AbilityType.Move);
+                                    
+                                    _usageArea.Clear();
+                                    _usageArea = _selectedAbility.GetNodesInRange(SelectedUnit);
                                 }
 
                                 MarkNodes();
@@ -211,21 +205,17 @@ public class SceneController : MonoBehaviour
                             {
                                 UnmarkNodes();
                                 // Find selected node. If not in range, do nothing
-                                foreach (PathNode pathNode in _usageArea)
+                                if (_usageArea.Any(n => n.node.Coords == unitTarget.Coords)) 
                                 {
-                                    if (pathNode.node == GameController.Instance.Grid.nodeList[unitTarget.Coords.x, unitTarget.Coords.y])
-                                    {
-                                        _selectedAbility.UseAbility(SelectedUnit, _effectArea);
-                                        
-                                        OnAbilityUsed?.Invoke();
+                                    _selectedAbility.UseAbility(SelectedUnit, _effectArea);
+                                    
+                                    OnAbilityUsed?.Invoke();
+                                    
+                                    UnmarkNodes();
+                                    _selectedAbility = GameController.Instance.AbilityHolder.GetAbility(AbilityHolder.AbilityType.Move);
 
-                                        _selectedAbility = GameController.Instance.AbilityHolder.GetAbility(AbilityHolder.AbilityType.Move);
-                                        _usageArea.Clear();
-                                        _usageArea = _selectedAbility.GetNodesInRange(SelectedUnit);
-                                        _effectArea.Clear();
-
-                                        break;
-                                    }
+                                    _usageArea.Clear();
+                                    _usageArea = _selectedAbility.GetNodesInRange(SelectedUnit);
                                 }
 
                                 MarkNodes();

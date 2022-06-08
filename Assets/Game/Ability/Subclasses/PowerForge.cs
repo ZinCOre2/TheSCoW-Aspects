@@ -36,7 +36,7 @@ public class PowerForge : Ability
             target.UnitStats.Power += value;
             
             GameController.Instance.WorldUIManager.CreateHoveringWorldText(HWTType.NotEnoughTime,
-                user.transform.position, $"+{value} мощи");
+                target.transform.position, $"+{value} мощи");
         }
     }
 }

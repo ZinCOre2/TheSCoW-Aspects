@@ -23,20 +23,26 @@ public class Move : Ability
     }
     public override void UseAbility(Unit user, List<PathNode> aoe)
     {
-        if (user.UnitStats.Energy < aoe[0].length * abilityData.epCost)
+        var path = new List<PathNode>();
+        foreach (var pNode in aoe)
+        {
+            path.Add(pNode);
+        }
+
+        if (user.UnitStats.Energy < path[0].length * abilityData.epCost)
         {
             GameController.Instance.WorldUIManager.CreateHoveringWorldText(HWTType.NotEnoughEnergy,
                 user.transform.position, "Недостаточно энергии!");
             return;
         }
-        if (user.UnitStats.Time < aoe[0].length * abilityData.tpCost)
+        if (user.UnitStats.Time < path[0].length * abilityData.tpCost)
         {
             GameController.Instance.WorldUIManager.CreateHoveringWorldText(HWTType.NotEnoughTime,
                 user.transform.position, "Недостаточно времени!");
             return;
         }
 
-        if (GameController.Instance.Grid.NodeOccupied(aoe[0].node.Coords))
+        if (GameController.Instance.Grid.NodeOccupied(path[0].node.Coords))
         {
             return;
         }
@@ -52,10 +58,10 @@ public class Move : Ability
             };
         }
 
-        user.SetCoords(aoe[0].node.Coords);
-        user.ChangeEnergy(-aoe[0].length * abilityData.epCost);
-        user.ChangeTime(-aoe[0].length * abilityData.tpCost);
+        user.SetCoords(path[0].node.Coords);
+        user.ChangeEnergy(-path[0].length * abilityData.epCost);
+        user.ChangeTime(-path[0].length * abilityData.tpCost);
 
-        StartCoroutine(user.MoveByPath(aoe));
+        StartCoroutine(user.MoveByPath(path));
     }
 }

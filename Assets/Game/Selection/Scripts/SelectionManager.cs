@@ -69,13 +69,13 @@ public class SelectionManager : MonoBehaviour
             // Clear material
             foreach (var uNode in UsageArea)
             {
-                uNode.MarkCustom(basicNodeMaterial);
+                uNode.MarkCustom(Color.white);
             }
             UsageArea.Clear();
 
             foreach (var eNode in EffectArea)
             {
-                eNode.MarkCustom(basicNodeMaterial);
+                eNode.MarkCustom(Color.white);
             }
             EffectArea.Clear();
         }
@@ -157,26 +157,27 @@ public class SelectionManager : MonoBehaviour
         //if (_selectionStage < SelectionStage.Target) { return; }
         foreach (var uNode in UsageArea)
         {
-            uNode.MarkCustom(basicNodeMaterial);
+            uNode.MarkCustom(Color.white);
         }
         UsageArea.Clear();
 
         foreach (var eNode in EffectArea)
         {
-            eNode.MarkCustom(basicNodeMaterial);
+            eNode.MarkCustom(Color.white);
         }
         EffectArea.Clear();
 
         EffectArea.Add(target);
 
+        var usageColor = SelectedAbility is AbilityHolder.AbilityType.Move ? Color.blue : Color.yellow;
         foreach (var node in UsageArea)
         {
-            node.MarkCustom(usageAreaNodeMaterial);
+            node.MarkCustom(usageColor);
         }
 
         foreach (var node in EffectArea)
         {
-            node.MarkCustom(effectAreaNodeMaterial);
+            node.MarkCustom(Color.yellow);
         }
 
         // EffectArea = Pathfinding.GetNodesInArea(abilityPrefab.EffectSearchType, abilityPrefab.minRange, abilityPrefab.maxRange)

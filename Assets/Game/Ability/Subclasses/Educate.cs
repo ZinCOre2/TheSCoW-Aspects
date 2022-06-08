@@ -21,7 +21,7 @@ public class Educate : Ability
         
         var target = GameController.Instance.Grid.GetUnitOnNode(aoe[0].node.Coords);
         
-        if (!target || !(target is MasterUnit masterUser)) { return; }
+        if (!target || !(target is MasterUnit)) { return; }
         
         if (target.TeamId == user.TeamId)
         {
@@ -35,7 +35,7 @@ public class Educate : Ability
 
             for (var i = 0; i < abilityData.values[0]; i++)
             {
-                masterUser.DeckManager.DrawCard();
+                ((MasterUnit)target).DeckManager.DrawCard();
             }
         }
     }

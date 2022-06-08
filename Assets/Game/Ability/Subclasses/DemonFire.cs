@@ -39,9 +39,9 @@ public class DemonFire : Ability
         }
         
         // Destroy right-most card of hand
-        if (!(user is MasterUnit masterUser)) { return; }
+        if (!(user is MasterUnit)) { return; }
 
-        var hand = masterUser.DeckManager.Hand;
+        var hand = ((MasterUnit)user).DeckManager.Hand;
 
         for (var i = hand.Length - 1; i >= 0; i--)
         {

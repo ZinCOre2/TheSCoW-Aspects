@@ -37,7 +37,7 @@ public class FocusedEnergy : Ability
             target.ChangeEnergy(value);
             
             GameController.Instance.WorldUIManager.CreateHoveringWorldText(HWTType.NotEnoughEnergy,
-                user.transform.position, $"+{value} макс. энергии");
+                target.transform.position, $"+{value} макс. энергии");
         }
     }
 }

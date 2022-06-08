@@ -70,11 +70,11 @@ public class Ability : MonoBehaviour
 
         if (GameController.Instance.UIController.IsCard)
         {
-            if (!(user is MasterUnit masterUnit)) { return; }
+            if (!(user is MasterUnit)) { return; }
 
             CalculateDedication(user);
 
-            masterUnit.DeckManager.DiscardCard(GameController.Instance.UIController.selectedAbilityId);
+            ((MasterUnit)user).DeckManager.DiscardCard(GameController.Instance.UIController.selectedAbilityId);
             user.Animator.SetTrigger("UseSpell");
             GameController.Instance.UIController.SetId(0, false);
             GameController.Instance.SceneController.SetSelectedAbility(null);

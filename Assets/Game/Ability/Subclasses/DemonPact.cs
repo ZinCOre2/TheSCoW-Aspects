@@ -43,7 +43,7 @@ public class DemonPact : Ability
             target.UnitStats.Power += value2;
             
             GameController.Instance.WorldUIManager.CreateHoveringWorldText(HWTType.NotEnoughTime,
-                user.transform.position, $"+{value2} мощи");
+                target.transform.position, $"+{value2} мощи");
             
             if (!(user is MasterUnit masterUser)) { return; }
             if (!target || !(target is MasterUnit masterTarget)) { return; }

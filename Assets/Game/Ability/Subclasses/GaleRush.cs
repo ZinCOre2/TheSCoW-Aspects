@@ -17,7 +17,9 @@ public class GaleRush : Ability
                 user.transform.position, "Недостаточно времени!");
             return;
         }
-
+        
+        if (GameController.Instance.Grid.NodeOccupied(aoe[0].node.Coords)) { return; }
+        
         base.UseAbility(user, aoe);
         user.ChangeEnergy(-abilityData.epCost);
         user.ChangeTime(-abilityData.tpCost);

@@ -29,12 +29,12 @@ public class UnitBarPack : MonoBehaviour
             transform.position = _boundUnit.transform.position + offset;
         }
 
-        if (!(_boundUnit is MasterUnit masterUnit)) { return; } 
+        if (!(_boundUnit is MasterUnit)) { return; } 
         
         var cardCount = 0;
-        for (var i = 0; i < masterUnit.DeckManager.Hand.Length; i++)
+        foreach (var t in ((MasterUnit)_boundUnit).DeckManager.Hand)
         {
-            if (masterUnit.DeckManager.Hand[i] != AbilityHolder.AbilityType.None)
+            if (t != AbilityHolder.AbilityType.None)
             {
                 cardCount++;
             }

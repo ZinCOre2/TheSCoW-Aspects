@@ -37,7 +37,7 @@ public class LifeGrowth : Ability
             target.ChangeHealth(value);
             
             GameController.Instance.WorldUIManager.CreateHoveringWorldText(HWTType.NotEnoughTime,
-                user.transform.position, $"+{value} макс. здоровья");
+                target.transform.position, $"+{value} макс. здоровья");
         }
     }
 }
