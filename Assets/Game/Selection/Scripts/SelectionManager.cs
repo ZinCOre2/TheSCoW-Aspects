@@ -149,7 +149,7 @@ public class SelectionManager : MonoBehaviour
 
         Debug.Log($"Ability targeted at coords {target.Coords.x}, {target.Coords.y}.");
 
-        UsageArea = new List<Node>();
+        UsageArea.Clear();
         // UsageArea = Pathfinding.GetNodesInArea(abilityPrefab.UsageSearchType, abilityPrefab.minRange, abilityPrefab.maxRange)
     }
     private void HoverTargetStageThree(Node target)

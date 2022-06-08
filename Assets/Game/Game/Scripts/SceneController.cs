@@ -33,8 +33,8 @@ public class SceneController : MonoBehaviour
 
     [HideInInspector] public Unit SelectedUnit;
     private Ability _selectedAbility = new Ability();
-    private List<PathNode> _nodesInRange = new List<PathNode>();
-    private List<PathNode> _aoe = new List<PathNode>();
+    private List<PathNode> _usageArea = new List<PathNode>();
+    private List<PathNode> _effectArea = new List<PathNode>();
 
     Ray _ray;
     RaycastHit _hitInfo;
@@ -56,7 +56,8 @@ public class SceneController : MonoBehaviour
                 {
                     _selectedAbility = ability;
                     UnmarkNodes();
-                    _nodesInRange = ability.GetNodesInRange(SelectedUnit);
+                    _usageArea.Clear();
+                    _usageArea = ability.GetNodesInRange(SelectedUnit);
                     MarkNodes();
                 }
             };
@@ -69,7 +70,8 @@ public class SceneController : MonoBehaviour
                 {
                     _selectedAbility = ability;
                     UnmarkNodes();
-                    _nodesInRange = ability.GetNodesInRange(SelectedUnit);
+                    _usageArea.Clear();
+                    _usageArea = ability.GetNodesInRange(SelectedUnit);
                     MarkNodes();
                 }
             };
@@ -84,12 +86,13 @@ public class SceneController : MonoBehaviour
             {
                 _selectedAbility = GameController.Instance.AbilityHolder.GetAbility(AbilityHolder.AbilityType.Move);
 
-                _nodesInRange = _selectedAbility.GetNodesInRange(SelectedUnit);
+                _usageArea.Clear();
+                _usageArea = _selectedAbility.GetNodesInRange(SelectedUnit);
             }
             else
             {
-                _nodesInRange.Clear();
-                _aoe.Clear();
+                _usageArea.Clear();
+                _effectArea.Clear();
             }
             MarkNodes();
         };
@@ -110,7 +113,7 @@ public class SceneController : MonoBehaviour
         }
         if (!IsMouseOverUI())
         {
-            _ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            _ray = GameController.Instance.CameraController.Camera.ScreenPointToRay(Input.mousePosition);
 
             if (Physics.Raycast(_ray, out _hitInfo))
             {
@@ -124,19 +127,17 @@ public class SceneController : MonoBehaviour
                     {
                         if (SelectedUnit.TeamId - 1 == turnId)
                         {
-                            // Clear aoe/path
                             UnmarkNodes();
 
                             // Find selected node. If not in range, do nothing
-                            foreach (PathNode pathNode in _nodesInRange)
-                            {
-                                if (pathNode.node == node)
-                                {
-                                    _aoe = _selectedAbility.GetAoe(SelectedUnit, pathNode);
-                                    break;
-                                }
-                            }
+                            var targetPathNode = _usageArea.Find(n => n.node.Coords == node.Coords);
 
+                            if (targetPathNode.node == node)
+                            {
+                                _effectArea.Clear();
+                                _effectArea = _selectedAbility.GetAoe(SelectedUnit, targetPathNode);
+                            }
+                            
                             MarkNodes();
                         }
                     }
@@ -151,15 +152,14 @@ public class SceneController : MonoBehaviour
                             UnmarkNodes();
 
                             // Find selected node. If not in range, do nothing
-                            foreach (PathNode pathNode in _nodesInRange)
-                            {
-                                if (pathNode.node.Coords == unit.Coords)
-                                {
-                                    _aoe = _selectedAbility.GetAoe(SelectedUnit, pathNode);
-                                    break;
-                                }
-                            }
+                            var targetPathNode = _usageArea.Find(n => n.node.Coords == unit.Coords);
 
+                            if (targetPathNode.node.Coords == unit.Coords)
+                            {
+                                _effectArea.Clear();
+                                _effectArea = _selectedAbility.GetAoe(SelectedUnit, targetPathNode);
+                            }
+                            
                             MarkNodes();
                         }
                     }
@@ -185,17 +185,18 @@ public class SceneController : MonoBehaviour
                             {
                                 UnmarkNodes();
                                 // Find selected node. If not in range, do nothing
-                                foreach (PathNode pathNode in _nodesInRange)
+                                foreach (PathNode pathNode in _usageArea)
                                 {
                                     if (pathNode.node == nodeTarget)
                                     {
-                                        _selectedAbility.UseAbility(SelectedUnit, _aoe);
+                                        _selectedAbility.UseAbility(SelectedUnit, _effectArea);
                                         
                                         OnAbilityUsed?.Invoke();
 
                                         _selectedAbility = GameController.Instance.AbilityHolder.GetAbility(AbilityHolder.AbilityType.Move);
-                                        _nodesInRange = _selectedAbility.GetNodesInRange(SelectedUnit);
-                                        _aoe = new List<PathNode>();
+                                        _usageArea.Clear();
+                                        _usageArea = _selectedAbility.GetNodesInRange(SelectedUnit);
+                                        _effectArea.Clear();
                                         
                                         break;
                                     }
@@ -210,17 +211,18 @@ public class SceneController : MonoBehaviour
                             {
                                 UnmarkNodes();
                                 // Find selected node. If not in range, do nothing
-                                foreach (PathNode pathNode in _nodesInRange)
+                                foreach (PathNode pathNode in _usageArea)
                                 {
                                     if (pathNode.node == GameController.Instance.Grid.nodeList[unitTarget.Coords.x, unitTarget.Coords.y])
                                     {
-                                        _selectedAbility.UseAbility(SelectedUnit, _aoe);
+                                        _selectedAbility.UseAbility(SelectedUnit, _effectArea);
                                         
                                         OnAbilityUsed?.Invoke();
 
                                         _selectedAbility = GameController.Instance.AbilityHolder.GetAbility(AbilityHolder.AbilityType.Move);
-                                        _nodesInRange = _selectedAbility.GetNodesInRange(SelectedUnit);
-                                        _aoe = new List<PathNode>();
+                                        _usageArea.Clear();
+                                        _usageArea = _selectedAbility.GetNodesInRange(SelectedUnit);
+                                        _effectArea.Clear();
 
                                         break;
                                     }
@@ -244,23 +246,23 @@ public class SceneController : MonoBehaviour
         else
             markColor = Color.green;
         
-        foreach (PathNode pathNode in _nodesInRange)
+        foreach (PathNode pathNode in _usageArea)
         {
             pathNode.node.MarkCustom(markColor);
         }
 
         // Mark nodes in aoe
-        foreach (PathNode pathNode in _aoe)
+        foreach (PathNode pathNode in _effectArea)
         {
             pathNode.node.MarkCustom(Color.yellow);
         }
     }
     public void UnmarkNodes()
     {
-        foreach (PathNode pathNode in _nodesInRange)
+        foreach (PathNode pathNode in _usageArea)
             pathNode.node.Unmark();
         
-        foreach (PathNode pathNodeAoe in _aoe)
+        foreach (PathNode pathNodeAoe in _effectArea)
             pathNodeAoe.node.Unmark();
     }
 
@@ -326,7 +328,7 @@ public class SceneController : MonoBehaviour
             {
                 unit.ChangeHealth(unit.UnitStats.HealthRegen);
                 unit.ChangeEnergy(unit.UnitStats.EnergyRegen);
-                unit.ChangeTime(unit.UnitStats.MaxTime / 2);
+                unit.ChangeTime(unit.UnitStats.MaxTime / 10 * 5);
 
                 if (unit is MasterUnit masterUnit)
                 {
@@ -360,13 +362,11 @@ public class SceneController : MonoBehaviour
     {
         UnmarkNodes();
         _selectedAbility = newAbility;
+        _usageArea.Clear();
+        
         if (_selectedAbility != null)
         {
-            _nodesInRange = _selectedAbility.GetNodesInRange(SelectedUnit);
-        }
-        else
-        {
-            _nodesInRange = new List<PathNode>();
+            _usageArea = _selectedAbility.GetNodesInRange(SelectedUnit);
         }
     }
 

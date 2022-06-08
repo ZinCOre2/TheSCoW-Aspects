@@ -13,7 +13,7 @@ public class Pathfinding
         List<PathNode> area = new List<PathNode>();
         Vector2Int offset = start.Coords - new Vector2Int(maxRange, maxRange);
         PathNode[,] mask = new PathNode[2 * maxRange + 1, 2 * maxRange + 1];
-
+        
         for (int i = 0; i < 2 * maxRange + 1; i++)
         {
             for (int j = 0; j < 2 * maxRange + 1; j++)
@@ -99,6 +99,8 @@ public class Pathfinding
                 newArea.Add(pathNode);
             }
         }
+        
+        area.Clear();
         
         return newArea;
     }
@@ -203,7 +205,6 @@ public class Pathfinding
             }
         }
 
-        // Add nodes that weren't put via Brasenhem
         foreach (var testNode in testNodes)
         {
             if (IsNodeDuplicate(impulseArea, testNode)) { continue; }
@@ -233,15 +234,17 @@ public class Pathfinding
                 result.Add(impulseNode);
             }
         }
+        
+        targetCoords.Clear();
+        impulseArea.Clear();
+        testNodes.Clear();
 
         return result;
     }
 
-    private static bool IsNodeDuplicate(List<PathNode> area, PathNode searchedNode)
-    {
-        return area.Any(pNode => pNode.node == searchedNode.node);
-    }
-    
+    private static bool IsNodeDuplicate(List<PathNode> area, PathNode searchedNode) =>
+        area.Any(pNode => pNode.node == searchedNode.node);
+
     public static List<PathNode> GetLinePath(Node start, Vector2Int coords, bool isBlockedByAlly, bool isBlockedByEnemy, bool isBlockedByEntity)
     {
         int x0 = start.Coords.x, y0 = start.Coords.y;
