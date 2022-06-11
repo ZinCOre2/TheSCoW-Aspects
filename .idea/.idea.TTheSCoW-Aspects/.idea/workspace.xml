@@ -2,9 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b0c121a3-3be3-48d5-88f0-a8b3abbfdeaf" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Game/Audio/Scripts/AudioClipData.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Game/Audio/Scripts/AudioClipData.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.TTheSCoW-Aspects/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TTheSCoW-Aspects/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assembly-CSharp.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Assembly-CSharp.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Ability/Scriptables/BoulderCage.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Ability/Scriptables/BoulderCage.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Fonts/JazzCreateBubble SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Fonts/JazzCreateBubble SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Ability/Scriptables/Fireball.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Ability/Scriptables/Fireball.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Ability/Scriptables/Healing.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Ability/Scriptables/Healing.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Ability/Scriptables/SweepStrike.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Ability/Scriptables/SweepStrike.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Ability/Scripts/Ability.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Ability/Scripts/Ability.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Game/Ability/Scripts/AbilityHolder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Ability/Scripts/AbilityHolder.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Game/Ability/Subclasses/Aeroblade.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Ability/Subclasses/Aeroblade.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Game/Ability/Subclasses/Blast.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Ability/Subclasses/Blast.cs" afterDir="false" />
@@ -12,90 +18,45 @@
       <change beforePath="$PROJECT_DIR$/Assets/Game/Ability/Subclasses/BoulderSlam.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Ability/Subclasses/BoulderSlam.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Game/Ability/Subclasses/CelestialSpear.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Ability/Subclasses/CelestialSpear.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Game/Ability/Subclasses/DemonFire.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Ability/Subclasses/DemonFire.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Ability/Subclasses/DemonPact.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Ability/Subclasses/DemonPact.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Game/Ability/Subclasses/DemonSeal.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Ability/Subclasses/DemonSeal.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Game/Ability/Subclasses/EMP.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Ability/Subclasses/EMP.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Ability/Subclasses/Educate.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Ability/Subclasses/Educate.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Ability/Subclasses/Energize.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Ability/Subclasses/Energize.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Game/Ability/Subclasses/EnergyBurst.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Ability/Subclasses/EnergyBurst.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Game/Ability/Subclasses/EnergyDrain.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Ability/Subclasses/EnergyDrain.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Game/Ability/Subclasses/FireSpirits.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Ability/Subclasses/FireSpirits.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Game/Ability/Subclasses/Fireball.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Ability/Subclasses/Fireball.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Ability/Subclasses/FocusedEnergy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Ability/Subclasses/FocusedEnergy.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Ability/Subclasses/GaleRush.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Ability/Subclasses/GaleRush.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Ability/Subclasses/Healing.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Ability/Subclasses/Healing.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Ability/Subclasses/HealingCircle.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Ability/Subclasses/HealingCircle.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Ability/Subclasses/InnerPower.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Ability/Subclasses/InnerPower.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Game/Ability/Subclasses/LeechLife.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Ability/Subclasses/LeechLife.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Ability/Subclasses/LifeGrowth.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Ability/Subclasses/LifeGrowth.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Ability/Subclasses/MindFlow.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Ability/Subclasses/MindFlow.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Ability/Subclasses/Move.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Ability/Subclasses/Move.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Ability/Subclasses/PowerForge.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Ability/Subclasses/PowerForge.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Game/Ability/Subclasses/StunningSlam.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Ability/Subclasses/StunningSlam.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Game/Ability/Subclasses/SweepStrike.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Ability/Subclasses/SweepStrike.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Audio/Content/AudioClips/Boulder.ogg.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Audio/Content/AudioClips/Boulder.ogg.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Audio/Content/AudioClips/Crystal Cave (for menu).mp3.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Audio/Content/AudioClips/Crystal Cave (for menu).mp3.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Audio/Content/AudioClips/EnergyFlux.mp3.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Audio/Content/AudioClips/EnergyFlux.mp3.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Audio/Content/AudioClips/Explosion.mp3.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Audio/Content/AudioClips/Explosion.mp3.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Audio/Content/AudioClips/PowerDrain.ogg.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Audio/Content/AudioClips/PowerDrain.ogg.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Audio/Content/AudioClips/Walking.mp3.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Audio/Content/AudioClips/Walking.mp3.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Audio/Content/AudioClips/enchanted tiki 86.mp3.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Audio/Content/AudioClips/enchanted tiki 86.mp3.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Audio/Content/AudioClips/fire.wav.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Audio/Content/AudioClips/fire.wav.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Audio/Content/AudioClips/heal.mp3.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Audio/Content/AudioClips/heal.mp3.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Animation/Scripts/AnimationHolder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Animation/Scripts/AnimationHolder.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Animation/Scripts/AnimationType.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Animation/Scripts/AnimationType.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Audio/Scripts/AudioManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Audio/Scripts/AudioManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Game/Game/Scripts/SceneController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Game/Scripts/SceneController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Selection/Scripts/SelectionManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Selection/Scripts/SelectionManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/UI/Scripts/UIController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/UI/Scripts/UIController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/UI/Scripts/UnitDataPanel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/UI/Scripts/UnitDataPanel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Unit/Content/Sprites/EnergyIcon.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Unit/Content/Sprites/EnergyIcon.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Unit/Content/Sprites/HeartIcon.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Unit/Content/Sprites/HeartIcon.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Unit/Content/Sprites/KnightPortrait.PNG.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Unit/Content/Sprites/KnightPortrait.PNG.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Unit/Content/Sprites/MoveIcon.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Unit/Content/Sprites/MoveIcon.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Unit/Content/Sprites/PriestPortrait.PNG.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Unit/Content/Sprites/PriestPortrait.PNG.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Unit/Content/Sprites/RunIcon.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Unit/Content/Sprites/RunIcon.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Unit/Content/Sprites/ShieldIcon.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Unit/Content/Sprites/ShieldIcon.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Unit/Content/Sprites/SwordIcon.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Unit/Content/Sprites/SwordIcon.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Unit/Content/Sprites/WizardPortrait.PNG.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Unit/Content/Sprites/WizardPortrait.PNG.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Unit/Scriptables/KnightData.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Unit/Scriptables/KnightData.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Unit/Scriptables/PriestData.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Unit/Scriptables/PriestData.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Unit/Scriptables/WizardData.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Unit/Scriptables/WizardData.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Unit/Scripts/EntityManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Entity/Scripts/EntityManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Unit/Scripts/EntityManager.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Entity/Scripts/EntityManager.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Unit/Scripts/Unit.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Unit/Scripts/Unit.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/WorldUI/Content/Prefabs/MasterUnitBarPack.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/WorldUI/Content/Prefabs/MasterUnitBarPack.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/WorldUI/Content/Prefabs/UnitBarPack.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/WorldUI/Content/Prefabs/UnitBarPack.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/WorldUI/Scripts/UnitBarPack.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/WorldUI/Scripts/UnitBarPack.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Unit/Scriptables/Units/BoulderAbility.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Unit/Scriptables/Units/BoulderAbility.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/WorldUI/Content/Prefabs/NotEnoughEnergyHWT.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/WorldUI/Content/Prefabs/NotEnoughEnergyHWT.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/WorldUI/Content/Prefabs/NotEnoughTimeHWT.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/WorldUI/Content/Prefabs/NotEnoughTimeHWT.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/WorldUI/Scripts/HWTType.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/WorldUI/Scripts/HWTType.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Game/WorldUI/Scripts/WorldUIManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/WorldUI/Scripts/WorldUIManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/GameField.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GameField.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/ArtifactDB" beforeDir="false" afterPath="$PROJECT_DIR$/Library/ArtifactDB" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/Artifacts/10/109d6922512e01ac45d83d5bb6264ed8" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/Artifacts/18/18f382bace6670929138f8a03db6e7bd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/Artifacts/52/52ac69ab524b03e74adfaca6f646f136" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/Artifacts/7c/7c27d309a195d8ec272244a3861ce965" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/Artifacts/ae/ae94f10195c20400afdb1ad8ac5aac13" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/Artifacts/b3/b3d4e2172c96647776b2a081278574d7" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/Artifacts/bc/bcf851fe5fc302ce91e7e16ad6452f6a" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/Artifacts/c9/c96c1139e476aadbe37eb0ee2ed0b0e6" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/Artifacts/ec/ecd180f8a05e2627dcbf35ed58d9630f" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/Artifacts/fd/fd789a06e9fba317b70cc2df9d3f231e" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/CurrentLayout-default.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/Library/CurrentLayout-default.dwlt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/EditorUserBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Library/EditorUserBuildSettings.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/InspectorExpandedItems.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Library/InspectorExpandedItems.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/LastBuild.buildreport" beforeDir="false" afterPath="$PROJECT_DIR$/Library/LastBuild.buildreport" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/PlayerDataCache/Win/Data/Managed/Assembly-CSharp.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Library/PlayerDataCache/Win/Data/Managed/Assembly-CSharp.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/PlayerDataCache/Win/Data/Managed/Unity.TextMeshPro.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Library/PlayerDataCache/Win/Data/Managed/Unity.TextMeshPro.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/PlayerDataCache/Win/Data/Managed/Unity.Timeline.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Library/PlayerDataCache/Win/Data/Managed/Unity.Timeline.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/PlayerDataCache/Win/Data/Managed/UnityEngine.UI.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Library/PlayerDataCache/Win/Data/Managed/UnityEngine.UI.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/PlayerDataCache/Win/Data/Resources/unity_builtin_extra" beforeDir="false" afterPath="$PROJECT_DIR$/Library/PlayerDataCache/Win/Data/Resources/unity_builtin_extra" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/PlayerDataCache/Win/Data/globalgamemanagers" beforeDir="false" afterPath="$PROJECT_DIR$/Library/PlayerDataCache/Win/Data/globalgamemanagers" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/PlayerDataCache/Win/Data/globalgamemanagers.assets" beforeDir="false" afterPath="$PROJECT_DIR$/Library/PlayerDataCache/Win/Data/globalgamemanagers.assets" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/PlayerDataCache/Win/Data/level0" beforeDir="false" afterPath="$PROJECT_DIR$/Library/PlayerDataCache/Win/Data/level0" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/PlayerDataCache/Win/Data/sharedassets0.assets" beforeDir="false" afterPath="$PROJECT_DIR$/Library/PlayerDataCache/Win/Data/sharedassets0.assets" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/PlayerDataCache/Win/Data/sharedassets0.resource" beforeDir="false" afterPath="$PROJECT_DIR$/Library/PlayerDataCache/Win/Data/sharedassets0.resource" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/PlayerDataCache/Win/Data/sharedassets1.assets" beforeDir="false" afterPath="$PROJECT_DIR$/Library/PlayerDataCache/Win/Data/sharedassets1.assets" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/PlayerDataCache/Win/Data/sharedassets1.assets.resS" beforeDir="false" afterPath="$PROJECT_DIR$/Library/PlayerDataCache/Win/Data/sharedassets1.assets.resS" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/PlayerDataCache/Win/ScriptsOnlyCache.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/Library/PlayerDataCache/Win/ScriptsOnlyCache.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/ScriptAssemblies/Assembly-CSharp.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Library/ScriptAssemblies/Assembly-CSharp.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/ScriptAssemblies/Assembly-CSharp.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Library/ScriptAssemblies/Assembly-CSharp.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/ShaderCache/EditorEncounteredVariants" beforeDir="false" afterPath="$PROJECT_DIR$/Library/ShaderCache/EditorEncounteredVariants" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/SourceAssetDB" beforeDir="false" afterPath="$PROJECT_DIR$/Library/SourceAssetDB" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/StateCache/Hierarchy/02da2c-mainStage.json" beforeDir="false" afterPath="$PROJECT_DIR$/Library/StateCache/Hierarchy/02da2c-mainStage.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/StateCache/SceneView/c20bda-mainStage.json" beforeDir="false" afterPath="$PROJECT_DIR$/Library/StateCache/SceneView/c20bda-mainStage.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/expandedItems" beforeDir="false" afterPath="$PROJECT_DIR$/Library/expandedItems" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/shadercompiler-UnityShaderCompiler.exe0.log" beforeDir="false" afterPath="$PROJECT_DIR$/Library/shadercompiler-UnityShaderCompiler.exe0.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/shadercompiler-UnityShaderCompiler.exe1.log" beforeDir="false" afterPath="$PROJECT_DIR$/Library/shadercompiler-UnityShaderCompiler.exe1.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/shadercompiler-UnityShaderCompiler.exe2.log" beforeDir="false" afterPath="$PROJECT_DIR$/Library/shadercompiler-UnityShaderCompiler.exe2.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/shadercompiler-UnityShaderCompiler.exe3.log" beforeDir="false" afterPath="$PROJECT_DIR$/Library/shadercompiler-UnityShaderCompiler.exe3.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -229,6 +190,7 @@
       <workItem from="1654763140332" duration="11208000" />
       <workItem from="1654778568419" duration="1094000" />
       <workItem from="1654941742967" duration="2555000" />
+      <workItem from="1654958848118" duration="13506000" />
     </task>
     <servers />
   </component>

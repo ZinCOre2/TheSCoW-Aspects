@@ -22,9 +22,4 @@ public class AbilityHolder : MonoBehaviour
 
     public Ability GetAbility(int id) { return abilityList[id]; }
     public Ability GetAbility(AbilityType id) { return abilityList[(int)id]; }
-
-    private void Update()
-    {
-        transform.position = GameController.Instance.CameraController.Camera.transform.position;
-    }
 }

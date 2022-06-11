@@ -21,7 +21,7 @@ public class Move : Ability
         
         return aoe;
     }
-    public override void UseAbility(Unit user, List<PathNode> aoe)
+    public override bool UseAbility(Unit user, List<PathNode> aoe)
     {
         var path = new List<PathNode>();
         foreach (var pNode in aoe)
@@ -29,29 +29,24 @@ public class Move : Ability
             path.Add(pNode);
         }
 
-        if (user.UnitStats.Energy < path[0].length * abilityData.epCost)
-        {
-            GameController.Instance.WorldUIManager.CreateHoveringWorldText(HWTType.NotEnoughEnergy,
-                user.transform.position, "Недостаточно энергии!");
-            return;
-        }
-        if (user.UnitStats.Time < path[0].length * abilityData.tpCost)
-        {
-            GameController.Instance.WorldUIManager.CreateHoveringWorldText(HWTType.NotEnoughTime,
-                user.transform.position, "Недостаточно времени!");
-            return;
-        }
-
         if (GameController.Instance.Grid.NodeOccupied(path[0].node.Coords))
         {
-            return;
+            return false;
         }
         
-        if (audioSource && soundEffect)
+        if (!EnoughBasicResources(path[0].length * abilityData.epCost,
+            path[0].length * abilityData.tpCost, user))
         {
-            audioSource.clip = soundEffect;
-            audioSource.loop = true;
-            audioSource.Play();
+            return false;
+        }
+        SpendBasicResourcesIfEnough(path[0].length * abilityData.epCost,
+            path[0].length * abilityData.tpCost,
+            user);
+
+        if (soundEffect)
+        {
+            var audioSource = GameController.Instance.AudioManager.UseAudioSource(soundEffect);
+            
             user.OnFinishAbilityUse += () =>
             {
                 audioSource.Stop();
@@ -59,9 +54,9 @@ public class Move : Ability
         }
 
         user.SetCoords(path[0].node.Coords);
-        user.ChangeEnergy(-path[0].length * abilityData.epCost);
-        user.ChangeTime(-path[0].length * abilityData.tpCost);
 
         StartCoroutine(user.MoveByPath(path));
+
+        return true;
     }
 }

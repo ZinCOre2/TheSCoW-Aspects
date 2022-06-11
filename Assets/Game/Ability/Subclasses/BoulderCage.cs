@@ -6,25 +6,15 @@ public class BoulderCage : Ability
 {
     [SerializeField] private PhysicalEntity rockEntity;
     
-    public override void UseAbility(Unit user, List<PathNode> aoe)
+    public override bool UseAbility(Unit user, List<PathNode> aoe)
     {
-        if (abilityData.epCost > user.UnitStats.Energy)
+        if (!EnoughBasicResources(abilityData.epCost, abilityData.tpCost, user))
         {
-            GameController.Instance.WorldUIManager.CreateHoveringWorldText(HWTType.NotEnoughEnergy,
-                user.transform.position, "Недостаточно энергии!");
-            return;
+            return false;
         }
-        
-        if (abilityData.tpCost > user.UnitStats.Time)
-        {
-            GameController.Instance.WorldUIManager.CreateHoveringWorldText(HWTType.NotEnoughTime,
-                user.transform.position, "Недостаточно времени!");
-            return;
-        }
-        
-        base.UseAbility(user, aoe);
-        user.ChangeTime(-abilityData.tpCost);        
-        user.ChangeEnergy(-abilityData.epCost);
+        SpendBasicResourcesIfEnough(abilityData.epCost, 
+            abilityData.tpCost, user);
+        CommitUseAbility(user, aoe);
 
         Unit target;
         foreach (PathNode pathNode in aoe)
@@ -50,5 +40,7 @@ public class BoulderCage : Ability
         Task.Delay(100);
         GameController.Instance.SceneController.SetSelectedAbility(AbilityHolder.AbilityType.Move);
         GameController.Instance.SceneController.ResetUsageArea();
+
+        return true;
     }
 }

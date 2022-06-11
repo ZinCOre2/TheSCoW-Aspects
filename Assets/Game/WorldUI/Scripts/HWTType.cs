@@ -8,5 +8,13 @@ public enum HWTType
     EnergyBurned,
     TimeBurned,
     NotEnoughEnergy,
-    NotEnoughTime
+    NotEnoughTime,
+    InetraBoost,
+    InetraSpent,
+    DiatraBoost,
+    DiatraSpent,
+    EfraBoost,
+    EfraSpent,
+    SaquaBoost,
+    SaquaSpent
 }

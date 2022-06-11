@@ -3,25 +3,15 @@ using UnityEngine;
 
 public class DemonFire : Ability
 {
-    public override void UseAbility(Unit user, List<PathNode> aoe)
+    public override bool UseAbility(Unit user, List<PathNode> aoe)
     {
-        if (abilityData.epCost > user.UnitStats.Energy)
+        if (!EnoughBasicResources(abilityData.epCost, abilityData.tpCost, user))
         {
-            GameController.Instance.WorldUIManager.CreateHoveringWorldText(HWTType.NotEnoughEnergy,
-                user.transform.position, "Недостаточно энергии!");
-            return;
+            return false;
         }
-        
-        if (abilityData.tpCost > user.UnitStats.Time)
-        {
-            GameController.Instance.WorldUIManager.CreateHoveringWorldText(HWTType.NotEnoughTime,
-                user.transform.position, "Недостаточно времени!");
-            return;
-        }
-        
-        base.UseAbility(user, aoe);
-        user.ChangeEnergy(-abilityData.epCost);
-        user.ChangeTime(-abilityData.tpCost);
+        SpendBasicResourcesIfEnough(abilityData.epCost, 
+            abilityData.tpCost, user);
+        CommitUseAbility(user, aoe);
 
         Unit target;
         foreach (PathNode pathNode in aoe)
@@ -39,7 +29,7 @@ public class DemonFire : Ability
         }
         
         // Destroy right-most card of hand
-        if (!(user is MasterUnit)) { return; }
+        if (!(user is MasterUnit)) { return false; }
 
         var hand = ((MasterUnit)user).DeckManager.Hand;
 
@@ -50,5 +40,7 @@ public class DemonFire : Ability
             hand[i] = AbilityHolder.AbilityType.None;
             break;
         }
+
+        return true;
     }
 }

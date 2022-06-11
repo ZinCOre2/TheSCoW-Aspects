@@ -3,27 +3,18 @@ using UnityEngine;
 
 public class MindFlow : Ability
 {
-    public override void UseAbility(Unit user, List<PathNode> aoe)
+    public override bool UseAbility(Unit user, List<PathNode> aoe)
     {
-        if (abilityData.epCost > user.UnitStats.Energy)
+        if (!EnoughBasicResources(abilityData.epCost, abilityData.tpCost, user))
         {
-            GameController.Instance.WorldUIManager.CreateHoveringWorldText(HWTType.NotEnoughEnergy,
-                user.transform.position, "Недостаточно энергии!");
-            return;
+            return false;
         }
         
-        if (abilityData.tpCost > user.UnitStats.Time)
-        {
-            GameController.Instance.WorldUIManager.CreateHoveringWorldText(HWTType.NotEnoughTime,
-                user.transform.position, "Недостаточно времени!");
-            return;
-        }
+        if (!(user is MasterUnit masterUser)) { return false; }
         
-        if (!(user is MasterUnit masterUser)) { return; }
-        
-        base.UseAbility(user, aoe);
-        user.ChangeEnergy(-abilityData.epCost);
-        user.ChangeTime(-abilityData.tpCost);
+        SpendBasicResourcesIfEnough(abilityData.epCost, 
+            abilityData.tpCost, user);
+        CommitUseAbility(user, aoe);
         
         AbilityEffect aEffect;
         aEffect = GameController.Instance.ObjectPooler.SpawnFromPool(abilityEffect.EffectTag, 
@@ -33,5 +24,7 @@ public class MindFlow : Ability
         {
             masterUser.DeckManager.DrawCard();
         }
+
+        return true;
     }
 }

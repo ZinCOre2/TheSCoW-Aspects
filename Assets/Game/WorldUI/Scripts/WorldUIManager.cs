@@ -17,6 +17,14 @@ public class WorldUIManager : MonoBehaviour
     public HoveringWorldText TimeBurnedHWT;
     public HoveringWorldText NotEnoughEnergyHWT;
     public HoveringWorldText NotEnoughTimeHWT;
+    public HoveringWorldText InetraBoostHWT;
+    public HoveringWorldText InetraSpentHWT;
+    public HoveringWorldText DiatraBoostHWT;
+    public HoveringWorldText DiatraSpentHWT;
+    public HoveringWorldText EfraBoostHWT;
+    public HoveringWorldText EfraSpentHWT;
+    public HoveringWorldText SaquaBoostHWT;
+    public HoveringWorldText SaquaSpentHWT;
 
     public UnitBarPack CreateBarPack(Unit boundUnit)
     {
@@ -54,6 +62,30 @@ public class WorldUIManager : MonoBehaviour
                 break;
             case HWTType.NotEnoughTime:
                 hwt = Instantiate(NotEnoughTimeHWT, WorldUIParent);
+                break;
+            case HWTType.InetraBoost:
+                hwt = Instantiate(InetraBoostHWT, WorldUIParent);
+                break;
+            case HWTType.InetraSpent:
+                hwt = Instantiate(InetraSpentHWT, WorldUIParent);
+                break;
+            case HWTType.DiatraBoost:
+                hwt = Instantiate(DiatraBoostHWT, WorldUIParent);
+                break;
+            case HWTType.DiatraSpent:
+                hwt = Instantiate(DiatraSpentHWT, WorldUIParent);
+                break;
+            case HWTType.EfraBoost:
+                hwt = Instantiate(EfraBoostHWT, WorldUIParent);
+                break;
+            case HWTType.EfraSpent:
+                hwt = Instantiate(EfraSpentHWT, WorldUIParent);
+                break;
+            case HWTType.SaquaBoost:
+                hwt = Instantiate(SaquaBoostHWT, WorldUIParent);
+                break;
+            case HWTType.SaquaSpent:
+                hwt = Instantiate(SaquaSpentHWT, WorldUIParent);
                 break;
             default:
                 hwt = Instantiate(NotEnoughTimeHWT, WorldUIParent);

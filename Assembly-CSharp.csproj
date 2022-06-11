@@ -93,6 +93,7 @@
      <Compile Include="Assets\Game\Animation\Scripts\AnimationType.cs" />
      <Compile Include="Assets\Game\Aspect\Scripts\AspectDedication.cs" />
      <Compile Include="Assets\Game\Aspect\Scripts\AspectType.cs" />
+     <Compile Include="Assets\Game\Audio\Scripts\AudioClipData.cs" />
      <Compile Include="Assets\Game\Audio\Scripts\AudioManager.cs" />
      <Compile Include="Assets\Game\Camera\Scripts\CameraController.cs" />
      <Compile Include="Assets\Game\Card\Scripts\AbilityUIData.cs" />

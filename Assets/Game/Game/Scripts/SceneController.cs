@@ -159,7 +159,7 @@ public class SceneController : MonoBehaviour
                     }
                 }
 
-                // When pressed LMB on unit - set them as selected and redraw all UI acccordingly
+                // When pressed LMB on unit - set them as selected and redraw all UI accordingly
                 if (Input.GetMouseButtonDown(0))
                 {
                     if (_hitInfo.collider.gameObject.TryGetComponent(out Unit unitSelect) && unit.UnitStats.Health > 0)

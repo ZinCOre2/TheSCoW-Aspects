@@ -3,30 +3,21 @@ using UnityEngine;
 
 public class InnerPower : Ability
 {
-    public override void UseAbility(Unit user, List<PathNode> aoe)
+    public override bool UseAbility(Unit user, List<PathNode> aoe)
     {
-        if (abilityData.epCost > user.UnitStats.Energy)
+        if (!EnoughBasicResources(abilityData.epCost, abilityData.tpCost, user))
         {
-            GameController.Instance.WorldUIManager.CreateHoveringWorldText(HWTType.NotEnoughEnergy,
-                user.transform.position, "Недостаточно энергии!");
-            return;
+            return false;
         }
         
-        if (abilityData.tpCost > user.UnitStats.Time)
-        {
-            GameController.Instance.WorldUIManager.CreateHoveringWorldText(HWTType.NotEnoughTime,
-                user.transform.position, "Недостаточно времени!");
-            return;
-        }
-
         Unit target;
 
         target = GameController.Instance.Grid.GetUnitOnNode(aoe[0].node.Coords);
         if (target && target.TeamId == user.TeamId)
         {
-            base.UseAbility(user, aoe);
-            user.ChangeEnergy(-abilityData.epCost);
-            user.ChangeTime(-abilityData.tpCost);
+            SpendBasicResourcesIfEnough(abilityData.epCost, 
+                abilityData.tpCost, user);
+            CommitUseAbility(user, aoe);
 
             AbilityEffect aEffect;
             aEffect = GameController.Instance.ObjectPooler.SpawnFromPool(abilityEffect.EffectTag, 
@@ -40,13 +31,14 @@ public class InnerPower : Ability
             target.ChangeHealth(value1);
             target.ChangeEnergy(value2);
             
-            if (!target || !(target is MasterUnit masterUser)) { return; }
+            if (!target || !(target is MasterUnit masterUser)) { return false; }
             
             for (var i = 0; i < abilityData.values[2]; i++)
             {
                 masterUser.DeckManager.DrawCard();
             }
         }
-        
+
+        return true;
     }
 }

@@ -3,31 +3,22 @@ using UnityEngine;
 
 public class Educate : Ability
 {
-    public override void UseAbility(Unit user, List<PathNode> aoe)
+    public override bool UseAbility(Unit user, List<PathNode> aoe)
     {
-        if (abilityData.epCost > user.UnitStats.Energy)
+        if (!EnoughBasicResources(abilityData.epCost, abilityData.tpCost, user))
         {
-            GameController.Instance.WorldUIManager.CreateHoveringWorldText(HWTType.NotEnoughEnergy,
-                user.transform.position, "Недостаточно энергии!");
-            return;
+            return false;
         }
-        
-        if (abilityData.tpCost > user.UnitStats.Time)
-        {
-            GameController.Instance.WorldUIManager.CreateHoveringWorldText(HWTType.NotEnoughTime,
-                user.transform.position, "Недостаточно времени!");
-            return;
-        }
-        
+
         var target = GameController.Instance.Grid.GetUnitOnNode(aoe[0].node.Coords);
         
-        if (!target || !(target is MasterUnit)) { return; }
+        if (!target || !(target is MasterUnit)) { return false; }
         
         if (target.TeamId == user.TeamId)
         {
-            base.UseAbility(user, aoe);
-            user.ChangeEnergy(-abilityData.epCost);
-            user.ChangeTime(-abilityData.tpCost);
+            SpendBasicResourcesIfEnough(abilityData.epCost, 
+                        abilityData.tpCost, user); 
+            CommitUseAbility(user, aoe);
 
             AbilityEffect aEffect;
             aEffect = GameController.Instance.ObjectPooler.SpawnFromPool(abilityEffect.EffectTag, aoe[0].node.transform.position, 
@@ -38,5 +29,7 @@ public class Educate : Ability
                 ((MasterUnit)target).DeckManager.DrawCard();
             }
         }
+
+        return true;
     }
 }

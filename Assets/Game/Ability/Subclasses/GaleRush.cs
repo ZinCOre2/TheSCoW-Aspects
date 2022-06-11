@@ -2,29 +2,22 @@
 
 public class GaleRush : Ability
 {
-    public override void UseAbility(Unit user, List<PathNode> aoe)
+    public override bool UseAbility(Unit user, List<PathNode> aoe)
     {
-        if (abilityData.epCost > user.UnitStats.Energy)
+        if (!EnoughBasicResources(abilityData.epCost, abilityData.tpCost, user))
         {
-            GameController.Instance.WorldUIManager.CreateHoveringWorldText(HWTType.NotEnoughEnergy,
-                user.transform.position, "Недостаточно энергии!");
-            return;
+            return false;
         }
+
+        if (GameController.Instance.Grid.NodeOccupied(aoe[0].node.Coords)) { return false; }
         
-        if (abilityData.tpCost > user.UnitStats.Time)
-        {
-            GameController.Instance.WorldUIManager.CreateHoveringWorldText(HWTType.NotEnoughTime,
-                user.transform.position, "Недостаточно времени!");
-            return;
-        }
-        
-        if (GameController.Instance.Grid.NodeOccupied(aoe[0].node.Coords)) { return; }
-        
-        base.UseAbility(user, aoe);
-        user.ChangeEnergy(-abilityData.epCost);
-        user.ChangeTime(-abilityData.tpCost);
+        SpendBasicResourcesIfEnough(abilityData.epCost, 
+            abilityData.tpCost, user);
+        CommitUseAbility(user, aoe);
         
         user.SetCoords(aoe[0].node.Coords);
         StartCoroutine(user.RushToPosition(aoe[0].node));
+
+        return true;
     }
 }
