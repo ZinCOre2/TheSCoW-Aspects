@@ -20,9 +20,10 @@ public class WorldUIManager : MonoBehaviour
 
     public UnitBarPack CreateBarPack(Unit boundUnit)
     {
-        // if (boundUnit is MasterUnit) ... else {}
-        var barPack = Instantiate(MasterUnitBarPackPrefab, WorldUIParent);
-        // else {var barPack = Instantiate(UnitBarPackPrefab, WorldUIParent);}
+        UnitBarPack barPack;
+        
+        barPack = Instantiate(boundUnit is MasterUnit ? MasterUnitBarPackPrefab : UnitBarPackPrefab, WorldUIParent);
+
         barPack.BindUnit(boundUnit);
 
         return barPack;

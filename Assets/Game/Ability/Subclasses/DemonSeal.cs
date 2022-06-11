@@ -24,6 +24,9 @@ public class DemonSeal : Ability
         target = GameController.Instance.Grid.GetUnitOnNode(aoe[0].node.Coords);
         if (target && target.TeamId != 0 && target.TeamId != user.TeamId)
         {
+            if (!(user is MasterUnit masterUser)) { return; }
+            if (!target || !(target is MasterUnit masterTarget)) { return; }
+            
             base.UseAbility(user, aoe);
             user.ChangeEnergy(-abilityData.epCost);
             user.ChangeTime(-abilityData.tpCost);
@@ -33,9 +36,6 @@ public class DemonSeal : Ability
                 aoe[0].node.transform.position, abilityEffect.transform.rotation).GetComponent<AbilityEffect>();
             aEffect = GameController.Instance.ObjectPooler.SpawnFromPool(abilityEffect.EffectTag, 
                 GameController.Instance.Grid.nodeList[user.Coords.x, user.Coords.y].transform.position, abilityEffect.transform.rotation).GetComponent<AbilityEffect>();
-            
-            if (!(user is MasterUnit masterUser)) { return; }
-            if (!target || !(target is MasterUnit masterTarget)) { return; }
 
             for (int i = 0, count = 0; i < masterTarget.DeckManager.Hand.Length && 
                                        count < abilityData.values[0]; i++)

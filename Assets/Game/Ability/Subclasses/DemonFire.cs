@@ -32,7 +32,7 @@ public class DemonFire : Ability
             target = GameController.Instance.Grid.GetUnitOnNode(pathNode.node.Coords);
             var damage = (int)((abilityData.values[0] * (1 + user.UnitStats.AspectDedications[0].Value / 100f) + user.UnitStats.Power) / 5f) * 5;
             
-            if (target && target.TeamId != 0 && target.TeamId != user.TeamId)
+            if (target && target.TeamId != user.TeamId)
             {
                 target.ChangeHealth(-damage);
             }

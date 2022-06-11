@@ -30,7 +30,7 @@ public class Aeroblade : Ability
             aEffect = GameController.Instance.ObjectPooler.SpawnFromPool(abilityEffect.EffectTag, pathNode.node.transform.position, abilityEffect.transform.rotation).GetComponent<AbilityEffect>();
 
             target = GameController.Instance.Grid.GetUnitOnNode(pathNode.node.Coords);
-            if (target && target.TeamId != 0 && target.TeamId != user.TeamId)
+            if (target && target.TeamId != user.TeamId)
             {
                 var value = (int)((abilityData.values[0] * (1 + user.UnitStats.AspectDedications[3].Value / 100f) + user.UnitData.power) / 5f) * 5;
                 target.ChangeHealth(-value);

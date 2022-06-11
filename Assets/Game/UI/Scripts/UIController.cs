@@ -164,10 +164,21 @@ public class UIController : MonoBehaviour
                 UnitDataPanel.AbilitySlots[i].gameObject.SetActive(false);
             }
         }
-        
-        if (unit.TeamId - 1 != GameController.Instance.SceneController.turnId)
+
+        if (!(unit is MasterUnit))
         {
-            if (unit is MasterUnit)
+            UnitDataPanel.CardPanel.SetActive(false);
+            
+            for (int i = 0; i < 6; i++)
+            {
+                UnitDataPanel.CardBacks[i].gameObject.SetActive(false);
+            }
+        }
+        else 
+        {
+            UnitDataPanel.CardPanel.SetActive(true);
+            
+            if (unit.TeamId - 1 != GameController.Instance.SceneController.turnId)
             {
                 for (int i = 0; i < 6; i++)
                 {
@@ -181,10 +192,7 @@ public class UIController : MonoBehaviour
                     }
                 }
             }
-        }
-        else
-        {
-            if (unit is MasterUnit)
+            else
             {
                 for (int i = 0; i < 6; i++)
                 {
@@ -275,8 +283,7 @@ public class UIController : MonoBehaviour
         {
             UnitDataPanel.CardSlots[i].gameObject.SetActive(true);
             UnitDataPanel.CardSlots[i].SetId(i);
-            UnitDataPanel.CardSlots[i]
-                .SetAbility(GameController.Instance.AbilityHolder.GetAbility(masterUnit.DeckManager.Hand[i]));
+            UnitDataPanel.CardSlots[i].SetAbility(GameController.Instance.AbilityHolder.GetAbility(masterUnit.DeckManager.Hand[i]));
         }
 
         UnitDataPanel.DrawPileSizeText.text = $"{masterUnit.DeckManager.DrawPile.Count}";

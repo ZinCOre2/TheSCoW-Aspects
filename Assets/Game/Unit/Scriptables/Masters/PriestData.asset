@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f8b370ed0b748c8beae10da42b36c30, type: 3}
+  m_Name: PriestData
+  m_EditorClassIdentifier: 
+  Prefab: {fileID: -1134558138893460406, guid: 04f86473c3accb34d9cb26fc215a7bad, type: 3}
+  unitName: "\u0421\u0432\u044F\u0449\u0435\u043D\u043D\u0438\u043A"
+  portrait: {fileID: 21300000, guid: e0c923c0dbb99f247bf25f214cf0e2c4, type: 3}
+  maxHealth: 175
+  maxEnergy: 200
+  maxTime: 140
+  hpRegen: 10
+  epRegen: 30
+  AspectDedications:
+  - IsUsable: 1
+    Value: 10
+  - IsUsable: 0
+    Value: 0
+  - IsUsable: 1
+    Value: 20
+  - IsUsable: 1
+    Value: 5
+  power: 0
+  defence: 5
+  innerAbilities: 030000000000000000000000
+  MasterUnitPrefab: {fileID: -1134558138893460406, guid: 04f86473c3accb34d9cb26fc215a7bad,
+    type: 3}
+  StartingDeck: 14000000120000000900000009000000140000000400000004000000120000001500000011000000100000001000000018000000190000000f0000000f000000130000000a000000

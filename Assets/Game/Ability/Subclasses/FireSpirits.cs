@@ -27,7 +27,7 @@ public class FireSpirits : Ability
         foreach (PathNode pathNode in aoe)
         {
             target = GameController.Instance.Grid.GetUnitOnNode(pathNode.node.Coords);
-            if (target && target.TeamId != 0 && target.TeamId != user.TeamId)
+            if (target && target.TeamId != user.TeamId)
             {
                 AbilityEffect aEffect;
                 aEffect = GameController.Instance.ObjectPooler.SpawnFromPool(abilityEffect.EffectTag, pathNode.node.transform.position, abilityEffect.transform.rotation).GetComponent<AbilityEffect>();

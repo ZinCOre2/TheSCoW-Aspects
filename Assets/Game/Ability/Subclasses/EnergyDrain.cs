@@ -23,7 +23,7 @@ public class EnergyDrain : Ability
         foreach (PathNode pathNode in aoe)
         {
             target = GameController.Instance.Grid.GetUnitOnNode(pathNode.node.Coords);
-            if (target && target.TeamId != 0 && target.TeamId != user.TeamId)
+            if (target && target.TeamId != user.TeamId)
             {
                 base.UseAbility(user, aoe);
                 user.ChangeEnergy(-abilityData.epCost);

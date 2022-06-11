@@ -454,7 +454,7 @@ GameObject:
   - component: {fileID: 1070400722596974198}
   - component: {fileID: 7841295407035870317}
   m_Layer: 5
-  m_Name: UnitBarPack
+  m_Name: MasterUnitBarPack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -507,11 +507,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c7e4cd3d7e26954aabb8b4f4f36338a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  barPackHolder: {fileID: 1070400722596974197}
+  shrinkValue: 1.5
   offset: {x: 0, y: 10, z: 0}
   cardCountText: {fileID: 1070400722776849578}
   hpBar: {fileID: 1070400723219370663}
   epBar: {fileID: 1070400721839304626}
   tpBar: {fileID: 1070400722261841158}
+  tpHolder: {fileID: 1070400722191392321}
 --- !u!1 &1070400722776849576
 GameObject:
   m_ObjectHideFlags: 0

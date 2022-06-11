@@ -6,13 +6,15 @@ public class AbilityHolder : MonoBehaviour
 {
     public enum AbilityType
     {
-        None, Move, SweepStrike, Healing, Energize,
-        Fireball, Blast, EnergyDrain, StunningSlam,
-        HealingCircle, EnergyBurst, FireSpirits, Emp,
-        LeechLife, MindFlow, //BoulderSlam, BoulderCage,
-        Educate, CelestialSpear, PowerForge, FocusedEnergy,
-        InnerPower, LifeGrowth, GaleRush, Aeroblade,
-        DemonFire, DemonPact, DemonSeal
+        None, 
+        Move, 
+        SweepStrike, Healing, Energize, Fireball, 
+        Blast, EnergyDrain, StunningSlam, HealingCircle, 
+        EnergyBurst, FireSpirits, Emp, LeechLife, 
+        MindFlow, Educate, CelestialSpear, PowerForge, 
+        FocusedEnergy, InnerPower, LifeGrowth, GaleRush, 
+        Aeroblade, DemonFire, DemonPact, DemonSeal,
+        BoulderSlam, BoulderCage
     };
 
     [SerializeField] private List<Ability> abilityList;

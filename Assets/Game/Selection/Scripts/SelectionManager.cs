@@ -50,7 +50,7 @@ public class SelectionManager : MonoBehaviour
 
         if (hitInfo.collider.TryGetComponent(out Node node))
         {
-            HoverTargetStageThree(node);
+            //HoverTargetStageThree(node);
         }
 
         if (_selectionStage < SelectionStage.Ability) { return; }

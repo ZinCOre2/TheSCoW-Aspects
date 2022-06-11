@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f8b370ed0b748c8beae10da42b36c30, type: 3}
+  m_Name: WizardData
+  m_EditorClassIdentifier: 
+  Prefab: {fileID: 4492174275742544468, guid: a8745080818b71e4a8b2f0a40691206a, type: 3}
+  unitName: "\u0427\u0430\u0440\u043E\u0434\u0435\u0439"
+  portrait: {fileID: 21300000, guid: 394802f83355aaa49842dbcdc693f398, type: 3}
+  maxHealth: 250
+  maxEnergy: 175
+  maxTime: 130
+  hpRegen: 10
+  epRegen: 20
+  AspectDedications:
+  - IsUsable: 1
+    Value: 10
+  - IsUsable: 0
+    Value: 0
+  - IsUsable: 1
+    Value: 5
+  - IsUsable: 1
+    Value: 10
+  power: 5
+  defence: -5
+  innerAbilities: 050000000000000000000000
+  MasterUnitPrefab: {fileID: 4492174275742544468, guid: a8745080818b71e4a8b2f0a40691206a,
+    type: 3}
+  StartingDeck: 16000000060000000700000013000000120000001200000015000000070000001000000006000000170000000b00000016000000160000000c0000000c000000180000000e000000

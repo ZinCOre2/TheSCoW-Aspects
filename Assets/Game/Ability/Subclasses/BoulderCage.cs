@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Threading.Tasks;
 using UnityEngine;
 
 public class BoulderCage : Ability
@@ -34,18 +35,20 @@ public class BoulderCage : Ability
             target = GameController.Instance.Grid.GetUnitOnNode(pathNode.node.Coords);
             var damage = (int)((abilityData.values[0] * (1 + user.UnitStats.AspectDedications[1].Value / 100f) + user.UnitStats.Power) / 5f) * 5;
 
-            if (target)
+            if (target && target.TeamId != user.TeamId)
             {
-                if (target.TeamId != 0 && target.TeamId != user.TeamId)
-                {
-                    target.ChangeHealth(-damage);
-                }
+                target.ChangeHealth(-damage);
             }
-            else
+            
+            if (!GameController.Instance.Grid.NodeOccupied(pathNode.node.Coords))
             {
                 var rock = Instantiate(rockEntity, pathNode.node.transform.position, Quaternion.identity);
                 GameController.Instance.EntityManager.AddEntity(rock);
             }
         }
+        
+        Task.Delay(100);
+        GameController.Instance.SceneController.SetSelectedAbility(AbilityHolder.AbilityType.Move);
+        GameController.Instance.SceneController.ResetUsageArea();
     }
 }

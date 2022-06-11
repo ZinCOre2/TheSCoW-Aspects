@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-[RequireComponent(typeof(Move))]
 public class Unit : PhysicalEntity
 {
     public event Action<Unit, int> OnHealthChanged;
@@ -36,8 +35,6 @@ public class Unit : PhysicalEntity
         
         GameController.Instance.SceneController.OnUnitSelect += MarkUnit;
 
-        if (teamId == 0) { return; }
-
         GameController.Instance.WorldUIManager.CreateBarPack(this);
         
         OnUnitDeath += UnitDeath;
@@ -53,6 +50,8 @@ public class Unit : PhysicalEntity
                 break;
         }
 
+        if (!(this is MasterUnit)) { return; }
+        
         SceneController.Counter[teamId - 1]++;
     }
 
@@ -138,13 +137,13 @@ public class Unit : PhysicalEntity
 
             if (UnitStats.Health <= 0)
             {
-                animator?.SetTrigger("Death");
+                if (animator) animator?.SetTrigger("Death");
                 OnUnitDeath?.Invoke(this);
                 // Dead, show animation, remove unit from scene soon, subtract from counter above
             }
             else
             {
-                animator?.SetTrigger("TakeHit");
+                if (animator) animator?.SetTrigger("TakeHit");
             }
         }
         else
@@ -182,7 +181,7 @@ public class Unit : PhysicalEntity
     public IEnumerator MoveByPath(List<PathNode> path)
     {
         usingAbility = true;
-        animator?.SetBool("Moving", true);
+        if (animator) animator?.SetBool("Moving", true);
 
         Vector3 destination = path[path.Count - 1].node.transform.position;
         path.RemoveAt(path.Count - 1);
@@ -202,7 +201,7 @@ public class Unit : PhysicalEntity
         else
         {
             usingAbility = false;
-            animator?.SetBool("Moving", false);
+            if (animator) animator?.SetBool("Moving", false);
             OnFinishAbilityUse?.Invoke();
             path.Clear();
         }
@@ -211,7 +210,7 @@ public class Unit : PhysicalEntity
     public IEnumerator RushToPosition(Node destinationNode)
     {
         usingAbility = true;
-        animator?.SetBool("Moving", true);
+        if (animator) animator?.SetBool("Moving", true);
 
         Vector3 destination = destinationNode.transform.position;
         Vector3 startPos = pivot.position;
@@ -225,7 +224,7 @@ public class Unit : PhysicalEntity
         pivot.position = destination;
         
         usingAbility = false;
-        animator?.SetBool("Moving", false);
+        if (animator) animator?.SetBool("Moving", false);
         OnFinishAbilityUse?.Invoke();
     }
 }

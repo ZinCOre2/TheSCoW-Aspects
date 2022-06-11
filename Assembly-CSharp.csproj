@@ -104,6 +104,7 @@
      <Compile Include="Assets\Game\Card\Scripts\UICardVisual.cs" />
      <Compile Include="Assets\Game\Effect\Scripts\AbilityEffect.cs" />
      <Compile Include="Assets\Game\Entity\Scripts\Entity.cs" />
+     <Compile Include="Assets\Game\Entity\Scripts\EntityManager.cs" />
      <Compile Include="Assets\Game\Entity\Scripts\PhysicalEntity.cs" />
      <Compile Include="Assets\Game\Game\Scripts\GameController.cs" />
      <Compile Include="Assets\Game\Game\Scripts\MasterTurnDelay.cs" />
@@ -124,7 +125,6 @@
      <Compile Include="Assets\Game\UI\Scripts\UIController.cs" />
      <Compile Include="Assets\Game\UI\Scripts\UIMethods.cs" />
      <Compile Include="Assets\Game\UI\Scripts\UnitDataPanel.cs" />
-     <Compile Include="Assets\Game\Unit\Scripts\EntityManager.cs" />
      <Compile Include="Assets\Game\Unit\Scripts\MasterUnit.cs" />
      <Compile Include="Assets\Game\Unit\Scripts\MasterUnitData.cs" />
      <Compile Include="Assets\Game\Unit\Scripts\Unit.cs" />

@@ -6,6 +6,7 @@ using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 using UnityEngine;
+using Object = System.Object;
 
 [RequireComponent(typeof(Timer))]
 public class SceneController : MonoBehaviour
@@ -56,10 +57,8 @@ public class SceneController : MonoBehaviour
                 if (uiAbility.ability != null && uiAbility.ability == ability && uiAbility.Id == id)
                 {
                     _selectedAbility = ability;
-                    UnmarkNodes();
-                    _usageArea.Clear();
-                    _usageArea = ability.GetNodesInRange(SelectedUnit);
-                    MarkNodes();
+
+                    ResetUsageArea();
                 }
             };
         }
@@ -70,10 +69,8 @@ public class SceneController : MonoBehaviour
                 if (uiCard.ability != null && uiCard.ability == ability && uiCard.Id == id)
                 {
                     _selectedAbility = ability;
-                    UnmarkNodes();
-                    _usageArea.Clear();
-                    _usageArea = ability.GetNodesInRange(SelectedUnit);
-                    MarkNodes();
+
+                    ResetUsageArea();
                 }
             };
         }
@@ -87,8 +84,7 @@ public class SceneController : MonoBehaviour
             {
                 _selectedAbility = GameController.Instance.AbilityHolder.GetAbility(AbilityHolder.AbilityType.Move);
 
-                _usageArea.Clear();
-                _usageArea = _selectedAbility.GetNodesInRange(SelectedUnit);
+                ResetUsageArea();
             }
             else
             {
@@ -121,7 +117,7 @@ public class SceneController : MonoBehaviour
                 // Hovering cursor - always check area of effect
                 if (_hitInfo.collider.gameObject.TryGetComponent(out Node node))
                 {
-                    if (SelectedUnit && SelectedUnit.TeamId != 0 && !SelectedUnit.usingAbility)
+                    if (SelectedUnit && !SelectedUnit.usingAbility)
                     {
                         if (SelectedUnit.TeamId - 1 == turnId)
                         {
@@ -142,7 +138,7 @@ public class SceneController : MonoBehaviour
                 }
                 if (_hitInfo.collider.gameObject.TryGetComponent(out Unit unit))
                 {
-                    if (SelectedUnit && SelectedUnit.TeamId != 0 && !SelectedUnit.usingAbility)
+                    if (SelectedUnit && !SelectedUnit.usingAbility)
                     {
                         if (SelectedUnit.TeamId - 1 == turnId)
                         {
@@ -166,7 +162,7 @@ public class SceneController : MonoBehaviour
                 // When pressed LMB on unit - set them as selected and redraw all UI acccordingly
                 if (Input.GetMouseButtonDown(0))
                 {
-                    if (_hitInfo.collider.gameObject.TryGetComponent(out Unit unitSelect) && unit.TeamId != 0 && unit.UnitStats.Health > 0)
+                    if (_hitInfo.collider.gameObject.TryGetComponent(out Unit unitSelect) && unit.UnitStats.Health > 0)
                     {
                         OnUnitSelect?.Invoke(unitSelect);
                     }
@@ -183,17 +179,14 @@ public class SceneController : MonoBehaviour
                             {
                                 UnmarkNodes();
                                 // Find selected node. If not in range, do nothing
-                                if (_usageArea.Any(n => n.node.Coords == nodeTarget.Coords)) 
+                                if (_usageArea.Any(n => n.node.Coords == nodeTarget.Coords))
                                 {
                                     _selectedAbility.UseAbility(SelectedUnit, _effectArea);
-
                                     OnAbilityUsed?.Invoke();
-
-                                    UnmarkNodes();
+                                    
                                     _selectedAbility = GameController.Instance.AbilityHolder.GetAbility(AbilityHolder.AbilityType.Move);
                                     
-                                    _usageArea.Clear();
-                                    _usageArea = _selectedAbility.GetNodesInRange(SelectedUnit);
+                                    ResetUsageArea();
                                 }
 
                                 MarkNodes();
@@ -201,21 +194,18 @@ public class SceneController : MonoBehaviour
                         }
                         if (_hitInfo.collider.gameObject.TryGetComponent(out Unit unitTarget))
                         {
-                            if (SelectedUnit.TeamId != 0 && !SelectedUnit.usingAbility)
+                            if (!SelectedUnit.usingAbility)
                             {
                                 UnmarkNodes();
                                 // Find selected node. If not in range, do nothing
-                                if (_usageArea.Any(n => n.node.Coords == unitTarget.Coords)) 
+                                if (_usageArea.Any(n => n.node.Coords == unitTarget.Coords))
                                 {
                                     _selectedAbility.UseAbility(SelectedUnit, _effectArea);
-                                    
                                     OnAbilityUsed?.Invoke();
                                     
-                                    UnmarkNodes();
                                     _selectedAbility = GameController.Instance.AbilityHolder.GetAbility(AbilityHolder.AbilityType.Move);
-
-                                    _usageArea.Clear();
-                                    _usageArea = _selectedAbility.GetNodesInRange(SelectedUnit);
+                                    
+                                    ResetUsageArea();
                                 }
 
                                 MarkNodes();
@@ -227,14 +217,21 @@ public class SceneController : MonoBehaviour
         }
     }
 
+    public void ResetUsageArea()
+    {
+        UnmarkNodes();
+        
+        _usageArea.Clear();
+        _usageArea = _selectedAbility.GetNodesInRange(SelectedUnit);
+        
+        MarkNodes();
+    }
+
     private void MarkNodes()
     {
         // Mark nodes in range
         Color markColor;
-        if (_selectedAbility is Move)
-            markColor = Color.blue;
-        else
-            markColor = Color.green;
+        markColor = _selectedAbility is Move ? Color.blue : Color.green;
         
         foreach (PathNode pathNode in _usageArea)
         {
@@ -306,7 +303,16 @@ public class SceneController : MonoBehaviour
         }
     }
 
-    public void EndTurn() { OnTurnEnd?.Invoke(); }
+    public void EndTurn()
+    {
+        turnId++;
+        if (turnId >= TEAM_AMOUNT)
+        {
+            turnId = 0;
+        }
+        
+        OnTurnEnd?.Invoke();
+    }
     public void UpdateTurnData()
     {
         SelectedUnit = null;
@@ -329,12 +335,6 @@ public class SceneController : MonoBehaviour
 
         turnTimer.Reset();
 
-        turnId++;
-        if (turnId >= TEAM_AMOUNT)
-        {
-            turnId = 0;
-        }
-
         switch (turnId)
         {
             case 0:
@@ -350,6 +350,20 @@ public class SceneController : MonoBehaviour
 
     public void SetSelectedAbility(Ability newAbility)
     {
+        UnmarkNodes();
+        _selectedAbility = newAbility;
+        _usageArea.Clear();
+        
+        if (_selectedAbility != null)
+        {
+            _usageArea = _selectedAbility.GetNodesInRange(SelectedUnit);
+        }
+    }
+    
+    public void SetSelectedAbility(AbilityHolder.AbilityType abilityType)
+    {
+        var newAbility = GameController.Instance.AbilityHolder.GetAbility(abilityType);
+        
         UnmarkNodes();
         _selectedAbility = newAbility;
         _usageArea.Clear();
