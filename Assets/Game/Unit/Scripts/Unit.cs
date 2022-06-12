@@ -81,10 +81,10 @@ public class Unit : PhysicalEntity
 
         UnitStats.InnerAbilities = unitData.innerAbilities;
     }
-    private void AssignIds(int teamId, int masterId)
+    private void AssignIds(int initTeamId, int initMasterId)
     {
-        UnitStats.TeamId = teamId;
-        UnitStats.MasterId = masterId;
+        UnitStats.TeamId = initTeamId;
+        UnitStats.MasterId = initMasterId;
     }
 
     private void OnDisable()
@@ -116,6 +116,7 @@ public class Unit : PhysicalEntity
         if (unit == this)
         {
             Destroy(pivot.gameObject, 3f);
+            GameController.Instance.EntityManager.RemoveEntity(this);
         }
     }
 
@@ -178,6 +179,10 @@ public class Unit : PhysicalEntity
         }
     }
 
+    public void StartMovingByPath(List<PathNode> path)
+    {
+        StartCoroutine(MoveByPath(path));
+    }
     public IEnumerator MoveByPath(List<PathNode> path)
     {
         usingAbility = true;
@@ -207,6 +212,10 @@ public class Unit : PhysicalEntity
         }
     }
     
+    public void StartRushingToPosition(Node destinationNode)
+    {
+        StartCoroutine(RushToPosition(destinationNode));
+    }
     public IEnumerator RushToPosition(Node destinationNode)
     {
         usingAbility = true;

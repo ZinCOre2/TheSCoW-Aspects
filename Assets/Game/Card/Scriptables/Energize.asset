@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 344f9be0ea49ebf449538edc04b1264c, type: 3}
+  m_Name: Energize
+  m_EditorClassIdentifier: 
+  cardName: "\u041F\u043E\u0434\u0437\u0430\u0440\u044F\u0434\u043A\u0430"
+  icon: {fileID: 21300000, guid: a5c0de96ed385d3439886dfcc8b153be, type: 3}
+  description: "\u0412\u043E\u0441\u0441\u0442\u0430\u043D\u0430\u0432\u043B\u0438\u0432\u0430\u0435\u0442
+    {0} \u044D\u043D\u0435\u0440\u0433\u0438\u0438 \u0432\u044B\u0431\u0440\u0430\u043D\u043D\u043E\u0433\u043E
+    \u0441\u043E\u044E\u0437\u043D\u0438\u043A\u0430."
+  rangeType: 1
+  areaType: 2
+  minRange: 0
+  maxRange: 2
+  minAreaRange: 0
+  maxAreaRange: 0
+  epCost: 10
+  tpCost: 10
+  Dedications:
+  - IsUsable: 0
+    Value: 0
+  - IsUsable: 0
+    Value: 0
+  - IsUsable: 1
+    Value: 0
+  - IsUsable: 0
+    Value: 0
+  values: 19000000

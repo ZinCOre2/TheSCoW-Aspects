@@ -1,4 +1,5 @@
-﻿using UnityEngine.EventSystems;
+﻿using System;
+using UnityEngine.EventSystems;
 using UnityEngine;
 using UnityEngine.Serialization;
 
@@ -6,7 +7,7 @@ public class CameraController : MonoBehaviour
 {
     public Transform FollowTransform;
 
-    [FormerlySerializedAs("cam")] public Camera Camera;
+    public Camera Camera;
 
     [Header("Camera Movement Values")]
     [SerializeField] private float normalSpeed = 0.2f;
@@ -24,6 +25,7 @@ public class CameraController : MonoBehaviour
     private Quaternion _newRotation;
     private Vector3 _newZoom;
     private float _movementSpeed;
+    private float _lengthDifference;
 
     private Vector3 _dragStartPosition;
     private Vector3 _dragCurrentPosition;
@@ -35,6 +37,10 @@ public class CameraController : MonoBehaviour
         _newPosition = transform.position;
         _newRotation = transform.rotation;
         _newZoom = Camera.transform.localPosition;
+        
+        Debug.Log(Camera.transform.localEulerAngles.x);
+        _lengthDifference = Mathf.Tan(Camera.transform.localEulerAngles.x * Mathf.Deg2Rad);
+        Debug.Log(_lengthDifference);
     }
     private void Update()
     {
@@ -56,7 +62,7 @@ public class CameraController : MonoBehaviour
         }*/
     }
 
-    void HandleMouseInput()
+    private void HandleMouseInput()
     {
         if (!SceneController.IsMouseOverUI())
         {
@@ -64,9 +70,8 @@ public class CameraController : MonoBehaviour
             {
                 _newZoom -= Camera.transform.localPosition.normalized *
                     Input.mouseScrollDelta.y * zoomAmount;
-                _newZoom.y = Mathf.Clamp(_newZoom.y, zoomRange.x, zoomRange.y);
+                _newZoom.y = Mathf.Clamp(_newZoom.y, zoomRange.x * _lengthDifference, zoomRange.y * _lengthDifference);
                 _newZoom.z = Mathf.Clamp(_newZoom.z, -zoomRange.y, -zoomRange.x);
-
             }
 
             // Перемещение камеры с помощью перетаскивания с зажатой ЛКМ
@@ -117,7 +122,7 @@ public class CameraController : MonoBehaviour
             }
         }
     }
-    void HandleMovementInput()
+    private void HandleMovementInput()
     {
         if (Input.GetKey(KeyCode.LeftShift))
         {
@@ -131,11 +136,11 @@ public class CameraController : MonoBehaviour
         _newPosition += transform.forward * Input.GetAxisRaw("Vertical") * _movementSpeed;
         _newPosition += transform.right * Input.GetAxisRaw("Horizontal") * _movementSpeed;
 
-        if (Input.GetKey(KeyCode.Q))
+        if (Input.GetKeyDown(KeyCode.Q))
         {
             _newRotation *= Quaternion.Euler(Vector3.up * rotationAmount);
         }
-        if (Input.GetKey(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.E))
         {
             _newRotation *= Quaternion.Euler(Vector3.up * -rotationAmount);
         }
@@ -151,7 +156,7 @@ public class CameraController : MonoBehaviour
 
         _newPosition.x = Mathf.Clamp(_newPosition.x, minPos.x, maxPos.x);
         _newPosition.z = Mathf.Clamp(_newPosition.z, minPos.y, maxPos.y);
-        _newZoom.y = Mathf.Clamp(_newZoom.y, zoomRange.x, zoomRange.y);
+        _newZoom.y = Mathf.Clamp(_newZoom.y, zoomRange.x * _lengthDifference, zoomRange.y * _lengthDifference);
         _newZoom.z = Mathf.Clamp(_newZoom.z, -zoomRange.y, -zoomRange.x);
 
         transform.position = Vector3.Lerp(transform.position, _newPosition, Time.deltaTime * movementTime);

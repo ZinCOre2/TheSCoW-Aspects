@@ -317,7 +317,6 @@ GameObject:
   - component: {fileID: 1217378464578296847}
   - component: {fileID: 2506718294664843846}
   - component: {fileID: 1987777540595361702}
-  - component: {fileID: 2332513484700559219}
   - component: {fileID: -1134558138893460406}
   m_Layer: 0
   m_Name: Priest
@@ -376,22 +375,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.6, y: 1.8, z: 0.5}
   m_Center: {x: 0, y: 0.7, z: 0}
---- !u!114 &2332513484700559219
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1220562109376818017}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62c9e157201572a4b82bfea239bebfe9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  abilityData: {fileID: 11400000, guid: 06d364c5a2868204c92245ba0e35098f, type: 2}
-  abilityEffect: {fileID: 0}
-  soundEffect: {fileID: 0}
-  audioSource: {fileID: 0}
 --- !u!114 &-1134558138893460406
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -430,6 +413,7 @@ MonoBehaviour:
       Value: 0
     - IsUsable: 0
       Value: 0
+    DedicationsEnergy: 00000000000000000000000000000000
     InnerAbilities: 
     TeamId: 0
     MasterId: 0

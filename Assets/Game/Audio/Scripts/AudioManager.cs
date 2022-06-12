@@ -4,64 +4,91 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
+    public AudioVolumeData AudioVolumeData;
+
     public List<AudioClipData> InternalClipDatas = new List<AudioClipData>();
-    public List<AudioSource> AudioSources = new List<AudioSource>();
+    public List<AudioSourceData> AudioSourcesData = new List<AudioSourceData>();
     public int InitialSourcesCapacity = 10;
 
     private void Start()
     {
         for (var i = 0; i < InitialSourcesCapacity; i++)
         {
-            AudioSources.Add(gameObject.AddComponent<AudioSource>());
+            var source = gameObject.AddComponent<AudioSource>();
+            AudioSourcesData.Add(new AudioSourceData(source));
         }
 
         foreach (var clipData in InternalClipDatas)
         {
             if (clipData.PlayOnAwake)
             {
-                UseAudioSource(clipData);
+                UseAudioSourceData(clipData);
+            }
+        }
+    }
+    private void Update()
+    {
+        transform.position = Camera.main.transform.position;
+    }
+
+    public AudioSourceData UseAudioSourceData(AudioClipData clipData)
+    {
+        var audioSourceData = ProvideAudioSourceData();
+        
+        audioSourceData.AudioSource.clip = clipData.Clip;
+        audioSourceData.AudioSource.volume = clipData.Volume * (clipData.IsMusic ? AudioVolumeData.MusicVolume : AudioVolumeData.SoundVolume);
+        audioSourceData.AudioSource.pitch = clipData.Pitch;
+        audioSourceData.AudioSource.priority = clipData.Priority;
+        audioSourceData.AudioSource.loop = clipData.Loop;
+
+        audioSourceData.AudioClipData = clipData;
+        
+        audioSourceData.AudioSource.Play();
+
+        return audioSourceData;
+    }
+
+    public void UpdateMusicSources(float value)
+    {
+        AudioVolumeData.MusicVolume = value;
+        foreach (var asData in AudioSourcesData)
+        {
+            if (asData.AudioClipData && asData.AudioClipData.IsMusic)
+            {
+                asData.AudioSource.volume = asData.AudioClipData.Volume * AudioVolumeData.MusicVolume;
+            }
+        }
+    }
+    public void UpdateSoundSources(float value)
+    {
+        AudioVolumeData.SoundVolume = value;
+        foreach (var asData in AudioSourcesData)
+        {
+            if (asData.AudioClipData && !asData.AudioClipData.IsMusic)
+            {
+                asData.AudioSource.volume = asData.AudioClipData.Volume * AudioVolumeData.SoundVolume;
             }
         }
     }
     
-    private void Update()
+    private AudioSourceData ProvideAudioSourceData()
     {
-        transform.position = GameController.Instance.
-            CameraController.Camera.transform.position;
-    }
-
-    public AudioSource UseAudioSource(AudioClipData clipData)
-    {
-        var audioSource = ProvideAudioSource();
+        AudioSourceData audioSourceData = null;
         
-        audioSource.clip = clipData.Clip;
-        audioSource.volume = clipData.Volume;
-        audioSource.pitch = clipData.Pitch;
-        audioSource.priority = clipData.Priority;
-        audioSource.loop = clipData.Loop;
-        
-        audioSource.Play();
-
-        return audioSource;
-    }
-    private AudioSource ProvideAudioSource()
-    {
-        AudioSource audioSource = null;
-        
-        foreach (var source in AudioSources)
+        foreach (var source in AudioSourcesData)
         {
-            if (!source.isPlaying)
+            if (!source.AudioSource.isPlaying)
             {
-                audioSource = source;
+                audioSourceData = source;
                 break;
             }    
         }
 
-        if (audioSource == null)
+        if (audioSourceData == null)
         {
-            audioSource = gameObject.AddComponent<AudioSource>();
+            audioSourceData = new AudioSourceData(gameObject.AddComponent<AudioSource>());
         }
 
-        return audioSource;
+        return audioSourceData;
     }
 }

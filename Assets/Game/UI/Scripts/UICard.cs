@@ -90,7 +90,7 @@ public class UICard : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler,
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        if (ability)
+        if (ability != null)
         {
             OnAbilitySelect?.Invoke(ability, Id);
         }

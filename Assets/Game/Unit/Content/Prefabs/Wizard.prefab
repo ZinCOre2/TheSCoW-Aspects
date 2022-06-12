@@ -2187,7 +2187,6 @@ GameObject:
   - component: {fileID: 7291047781639615325}
   - component: {fileID: 7518816465652633471}
   - component: {fileID: 1736086691767666464}
-  - component: {fileID: 4972845071688109282}
   - component: {fileID: 4492174275742544468}
   m_Layer: 0
   m_Name: Wizard
@@ -2246,22 +2245,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1.5, z: 0.5}
   m_Center: {x: 0, y: 1, z: 0}
---- !u!114 &4972845071688109282
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7291047781639188351}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62c9e157201572a4b82bfea239bebfe9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  abilityData: {fileID: 11400000, guid: 06d364c5a2868204c92245ba0e35098f, type: 2}
-  abilityEffect: {fileID: 0}
-  soundEffect: {fileID: 0}
-  audioSource: {fileID: 0}
 --- !u!114 &4492174275742544468
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2300,6 +2283,7 @@ MonoBehaviour:
       Value: 0
     - IsUsable: 0
       Value: 0
+    DedicationsEnergy: 00000000000000000000000000000000
     InnerAbilities: 
     TeamId: 0
     MasterId: 0

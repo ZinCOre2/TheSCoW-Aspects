@@ -93,7 +93,7 @@ public class UIAbility : MonoBehaviour, IPointerClickHandler, IPointerEnterHandl
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        if (ability)
+        if (ability != null)
         {
             OnAbilitySelect?.Invoke(ability, Id);
         }

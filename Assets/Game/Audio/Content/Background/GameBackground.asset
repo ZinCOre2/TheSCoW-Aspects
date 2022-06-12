@@ -18,3 +18,4 @@ MonoBehaviour:
   Priority: 128
   Loop: 1
   PlayOnAwake: 1
+  IsMusic: 1

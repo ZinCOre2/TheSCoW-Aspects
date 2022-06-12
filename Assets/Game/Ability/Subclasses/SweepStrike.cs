@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
 public class SweepStrike : Ability
 {
     public override bool UseAbility(Unit user, List<PathNode> aoe)
@@ -11,7 +12,7 @@ public class SweepStrike : Ability
         }
         SpendBasicResourcesIfEnough(abilityData.epCost, 
             abilityData.tpCost, user);
-        CommitUseAbility(user, aoe);
+        CommitUseAbility(user);
         
         Unit target;
         foreach (PathNode pathNode in aoe)

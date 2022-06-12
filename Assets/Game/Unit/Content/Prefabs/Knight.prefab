@@ -624,7 +624,6 @@ GameObject:
   - component: {fileID: 3041060682829482785}
   - component: {fileID: 4236196049779726037}
   - component: {fileID: 7973702287784248749}
-  - component: {fileID: 4236196049779726039}
   - component: {fileID: 3877281134070783614}
   m_Layer: 0
   m_Name: Knight
@@ -685,22 +684,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.6, y: 1.6, z: 0.6}
   m_Center: {x: 0, y: 1, z: 0}
---- !u!114 &4236196049779726039
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2048958939762243890}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62c9e157201572a4b82bfea239bebfe9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  abilityData: {fileID: 11400000, guid: 06d364c5a2868204c92245ba0e35098f, type: 2}
-  abilityEffect: {fileID: 0}
-  soundEffect: {fileID: 8300000, guid: 6e892731e5ea000488fbf463b0cbd42e, type: 3}
-  audioSource: {fileID: 0}
 --- !u!114 &3877281134070783614
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -739,6 +722,7 @@ MonoBehaviour:
       Value: 0
     - IsUsable: 0
       Value: 0
+    DedicationsEnergy: 00000000000000000000000000000000
     InnerAbilities: 
     TeamId: 0
     MasterId: 0

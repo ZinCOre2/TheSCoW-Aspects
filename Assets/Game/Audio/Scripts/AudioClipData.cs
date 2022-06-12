@@ -9,4 +9,6 @@ public class AudioClipData : ScriptableObject
     public int Priority = 128;
     public bool Loop = false;
     public bool PlayOnAwake = false;
+
+    public bool IsMusic = false;
 }

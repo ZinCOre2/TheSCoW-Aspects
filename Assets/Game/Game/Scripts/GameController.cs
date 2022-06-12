@@ -14,6 +14,7 @@ public class GameController : MonoBehaviour
     public EntityManager EntityManager;
     public AbilityHolder AbilityHolder;    
     public TurnManager TurnManager;
+    public UnitHolder UnitHolder;
     public ObjectPooler ObjectPooler;
     
     public void Awake()

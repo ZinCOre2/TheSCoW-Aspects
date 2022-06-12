@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
 public class Healing : Ability
 {
     public override bool UseAbility(Unit user, List<PathNode> aoe)
@@ -17,7 +18,7 @@ public class Healing : Ability
         {
             SpendBasicResourcesIfEnough(abilityData.epCost, 
                 abilityData.tpCost, user);
-            CommitUseAbility(user, aoe);
+            CommitUseAbility(user);
 
             AbilityEffect aEffect;
             aEffect = GameController.Instance.ObjectPooler.SpawnFromPool(abilityEffect.EffectTag, aoe[0].node.transform.position, abilityEffect.transform.rotation).GetComponent<AbilityEffect>();

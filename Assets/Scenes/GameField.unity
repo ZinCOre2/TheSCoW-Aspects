@@ -1117,6 +1117,7 @@ MonoBehaviour:
   EntityManager: {fileID: 476391578}
   AbilityHolder: {fileID: 1447597401}
   TurnManager: {fileID: 1080304821}
+  UnitHolder: {fileID: 2063316475}
   ObjectPooler: {fileID: 810744324}
 --- !u!1001 &36526203
 PrefabInstance:
@@ -2025,9 +2026,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7827e2a868bb4e909bd413a0cdd62963, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AudioVolumeData: {fileID: 11400000, guid: 9cff58131c0558c43882da4f361f7164, type: 2}
   InternalClipDatas:
   - {fileID: 11400000, guid: ccd9d8809a5e3cb44b5667b7ab897ea9, type: 2}
-  AudioSources: []
   InitialSourcesCapacity: 10
 --- !u!1 &58058404
 GameObject:
@@ -6955,12 +6956,12 @@ MonoBehaviour:
   Camera: {fileID: 963194227}
   normalSpeed: 0.4
   fastSpeedMultiplier: 2
-  rotationAmount: 1
+  rotationAmount: 45
   zoomAmount: 4
   movementTime: 8
   minPos: {x: -30, y: -40}
   maxPos: {x: 50, y: 40}
-  zoomRange: {x: 40, y: 200}
+  zoomRange: {x: 40, y: 160}
 --- !u!1 &196501197
 GameObject:
   m_ObjectHideFlags: 0
@@ -12459,6 +12460,7 @@ GameObject:
   - component: {fileID: 367438594}
   - component: {fileID: 367438593}
   - component: {fileID: 367438592}
+  - component: {fileID: 367438596}
   m_Layer: 5
   m_Name: Canvas_PausePanel
   m_TagString: Untagged
@@ -12548,6 +12550,21 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &367438596
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 367438591}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92ca638b18c24b7bb142cd87eb09cd1c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AudioManager: {fileID: 0}
+  MusicVolumeSlider: {fileID: 328571585}
+  SoundVolumeSlider: {fileID: 515036721}
 --- !u!1 &368166491
 GameObject:
   m_ObjectHideFlags: 0
@@ -15884,7 +15901,8 @@ PrefabInstance:
       propertyPath: hand.Array.data[2]
       value: 4
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2332513484700559219, guid: 04f86473c3accb34d9cb26fc215a7bad, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 04f86473c3accb34d9cb26fc215a7bad, type: 3}
 --- !u!4 &490138964 stripped
 Transform:
@@ -21456,6 +21474,7 @@ Transform:
   - {fileID: 476391577}
   - {fileID: 1447597400}
   - {fileID: 1080304819}
+  - {fileID: 2063316474}
   - {fileID: 810744323}
   - {fileID: 679567841}
   m_Father: {fileID: 0}
@@ -21870,7 +21889,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 664212583}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &680411248
 GameObject:
@@ -25368,7 +25387,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 664212583}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &810744324
 MonoBehaviour:
@@ -29339,13 +29358,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0.38268343, y: 0, z: 0, w: 0.92387956}
-  m_LocalPosition: {x: 0, y: 100, z: -100}
+  m_LocalRotation: {x: 0.42261827, y: 0, z: 0, w: 0.9063079}
+  m_LocalPosition: {x: 0, y: 100, z: -84}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 195116188}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 45, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 50, y: 0, z: 0}
 --- !u!1 &964646356
 GameObject:
   m_ObjectHideFlags: 0
@@ -32468,13 +32487,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 627ae28a132a45348e4a727c1eb0e4cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TeamIds: 
+  TeamIds: 0100000002000000
   TeamColors:
   - {r: 0, g: 0, b: 1, a: 1}
   - {r: 1, g: 0, b: 0, a: 1}
   Delays: []
   TurnTimer: {fileID: 1080304820}
-  TurnDuration: 75
+  TurnDuration: 30
   MasterIndex: 0
 --- !u!1 &1081139274
 GameObject:
@@ -59612,6 +59631,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   UnitDataPanel: {fileID: 2058082740}
   TurnQueuePanel: {fileID: 45076357}
+  PausePanel: {fileID: 367438596}
   gameTimer: {fileID: 1268057102}
   IsCard: 0
 --- !u!114 &1858058427
@@ -64493,6 +64513,55 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2061046474}
   m_CullTransparentMesh: 0
+--- !u!1 &2063316473
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2063316474}
+  - component: {fileID: 2063316475}
+  m_Layer: 0
+  m_Name: UnitHolder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2063316474
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2063316473}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 664212583}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2063316475
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2063316473}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a75b9fc13c3473abefe0697a185d475, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  unitList:
+  - {fileID: 0}
+  - {fileID: 11400000, guid: 92a2baa463a5d7b4ab249e9e0aa73843, type: 2}
+  - {fileID: 11400000, guid: 52440c90ef103614fb23e61d95f04f45, type: 2}
+  - {fileID: 11400000, guid: ef1dead1d31f3514586c943cc1251c1e, type: 2}
+  - {fileID: 11400000, guid: 76ad984e23983d74fa1c11fecceedef9, type: 2}
 --- !u!1 &2067907473
 GameObject:
   m_ObjectHideFlags: 0

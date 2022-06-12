@@ -38,6 +38,11 @@ public class EntityManager : MonoBehaviour
         }
     }
 
+    public void CreateEntity(Entity entity, Vector3 position)
+    {
+        var rock = Instantiate(entity, position, Quaternion.identity);
+        AddEntity(rock);
+    }
     public void AddEntity(Entity entity)
     {
         Entities.Add(entity);

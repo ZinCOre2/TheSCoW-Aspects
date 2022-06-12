@@ -12,6 +12,7 @@ using Object = System.Object;
 public class SceneController : MonoBehaviour
 {
     public const int TEAM_AMOUNT = 2;
+    public const int TICK_UPDATE_DELAY = 4;
     
     public static int[] Counter = new int[TEAM_AMOUNT];
 
@@ -38,8 +39,9 @@ public class SceneController : MonoBehaviour
     private List<PathNode> _usageArea = new List<PathNode>();
     private List<PathNode> _effectArea = new List<PathNode>();
 
-    Ray _ray;
-    RaycastHit _hitInfo;
+    private Ray _ray;
+    private RaycastHit _hitInfo;
+    private int _tickDelay;
 
     private void Awake()
     {
@@ -108,121 +110,104 @@ public class SceneController : MonoBehaviour
         {
             SceneManager.LoadScene(0); // or Pause
         }
-        if (!IsMouseOverUI())
+        if (IsMouseOverUI()) { return; }
+
+        _ray = GameController.Instance.CameraController.Camera.ScreenPointToRay(Input.mousePosition);
+
+        if (!Physics.Raycast(_ray, out _hitInfo)) { return; }
+        
+        AutoUpdateAreas();
+        // Hovering cursor - always check area of effect
+        if (_hitInfo.collider.gameObject.TryGetComponent(out Entity hoveredEntity))
         {
-            _ray = GameController.Instance.CameraController.Camera.ScreenPointToRay(Input.mousePosition);
-
-            if (Physics.Raycast(_ray, out _hitInfo))
+            if (SelectedUnit && !SelectedUnit.usingAbility)
             {
-                // Hovering cursor - always check area of effect
-                if (_hitInfo.collider.gameObject.TryGetComponent(out Node node))
+                if (SelectedUnit.TeamId - 1 == turnId)
                 {
-                    if (SelectedUnit && !SelectedUnit.usingAbility)
+                    UnmarkNodes();
+
+                    // Find selected node. If not in range, do nothing
+                    var targetPathNode = _usageArea.Find(n => n.node.Coords == hoveredEntity.Coords);
+
+                    if (targetPathNode != null && targetPathNode.node.Coords == hoveredEntity.Coords)
                     {
-                        if (SelectedUnit.TeamId - 1 == turnId)
-                        {
-                            UnmarkNodes();
-
-                            // Find selected node. If not in range, do nothing
-                            var targetPathNode = _usageArea.Find(n => n.node.Coords == node.Coords);
-
-                            if (targetPathNode != null && targetPathNode.node == node)
-                            {
-                                _effectArea.Clear();
-                                _effectArea = _selectedAbility.GetAoe(SelectedUnit, targetPathNode);
-                            }
-                            
-                            MarkNodes();
-                        }
+                        _effectArea.Clear();
+                        _effectArea = _selectedAbility.GetEffectArea(SelectedUnit, targetPathNode);
                     }
+                        
+                    MarkNodes();
                 }
-                if (_hitInfo.collider.gameObject.TryGetComponent(out Unit unit))
+            }
+        }
+
+        // When pressed LMB on unit - set them as selected and redraw all UI accordingly
+        if (Input.GetMouseButtonDown(0))
+        {
+            if (_hitInfo.collider.gameObject.TryGetComponent(out Entity selectedEntity))
+            {
+                var foundUnit = GameController.Instance.Grid.GetUnitOnNode(selectedEntity.Coords);
+                
+                if (foundUnit && foundUnit.UnitStats.Health > 0)
                 {
-                    if (SelectedUnit && !SelectedUnit.usingAbility)
-                    {
-                        if (SelectedUnit.TeamId - 1 == turnId)
-                        {
-                            // Clear aoe/path
-                            UnmarkNodes();
-
-                            // Find selected node. If not in range, do nothing
-                            var targetPathNode = _usageArea.Find(n => n.node.Coords == unit.Coords);
-
-                            if (targetPathNode != null && targetPathNode.node.Coords == unit.Coords)
-                            {
-                                _effectArea.Clear();
-                                _effectArea = _selectedAbility.GetAoe(SelectedUnit, targetPathNode);
-                            }
-                            
-                            MarkNodes();
-                        }
-                    }
+                    OnUnitSelect?.Invoke(foundUnit);
                 }
+            }
+        }
 
-                // When pressed LMB on unit - set them as selected and redraw all UI accordingly
-                if (Input.GetMouseButtonDown(0))
+        // When pressed RMB on node - if in range of ability, use it.
+        if (Input.GetMouseButtonDown(1))
+        {
+            if (SelectedUnit && SelectedUnit.TeamId - 1 == turnId)
+            {
+                if (_hitInfo.collider.gameObject.TryGetComponent(out Entity pressedEntity))
                 {
-                    if (_hitInfo.collider.gameObject.TryGetComponent(out Unit unitSelect) && unit.UnitStats.Health > 0)
+                    if (SelectedUnit.TeamId != 0 && !SelectedUnit.usingAbility)
                     {
-                        OnUnitSelect?.Invoke(unitSelect);
-                    }
-                }
-
-                // When pressed RMB on node - if in range of ability, use it.
-                if (Input.GetMouseButtonDown(1))
-                {
-                    if (SelectedUnit && SelectedUnit.TeamId - 1 == turnId)
-                    {
-                        if (_hitInfo.collider.gameObject.TryGetComponent(out Node nodeTarget))
+                        UnmarkNodes();
+                        // Find selected node. If not in range, do nothing
+                        if (_usageArea.Any(n => n.node.Coords == pressedEntity.Coords))
                         {
-                            if (SelectedUnit.TeamId != 0 && !SelectedUnit.usingAbility)
-                            {
-                                UnmarkNodes();
-                                // Find selected node. If not in range, do nothing
-                                if (_usageArea.Any(n => n.node.Coords == nodeTarget.Coords))
-                                {
-                                    _selectedAbility.UseAbility(SelectedUnit, _effectArea);
-                                    OnAbilityUsed?.Invoke();
-                                    
-                                    _selectedAbility = GameController.Instance.AbilityHolder.GetAbility(AbilityHolder.AbilityType.Move);
-                                    
-                                    ResetUsageArea();
-                                }
-
-                                MarkNodes();
-                            }
+                            _selectedAbility.UseAbility(SelectedUnit, _effectArea);
+                            OnAbilityUsed?.Invoke();
+                                
+                            _selectedAbility = GameController.Instance.AbilityHolder.GetAbility(AbilityHolder.AbilityType.Move);
+                                
+                            ResetUsageArea();
                         }
-                        if (_hitInfo.collider.gameObject.TryGetComponent(out Unit unitTarget))
-                        {
-                            if (!SelectedUnit.usingAbility)
-                            {
-                                UnmarkNodes();
-                                // Find selected node. If not in range, do nothing
-                                if (_usageArea.Any(n => n.node.Coords == unitTarget.Coords))
-                                {
-                                    _selectedAbility.UseAbility(SelectedUnit, _effectArea);
-                                    OnAbilityUsed?.Invoke();
-                                    
-                                    _selectedAbility = GameController.Instance.AbilityHolder.GetAbility(AbilityHolder.AbilityType.Move);
-                                    
-                                    ResetUsageArea();
-                                }
 
-                                MarkNodes();
-                            }
-                        }
+                        MarkNodes();
                     }
                 }
             }
         }
     }
 
-    public void ResetUsageArea()
+    public void AutoUpdateAreas()
     {
+        if (SelectedUnit == null || _selectedAbility == null) { return; }
+        if (_tickDelay < TICK_UPDATE_DELAY)
+        {
+            _tickDelay++;
+            return;
+        }
+
+        _tickDelay -= TICK_UPDATE_DELAY;
+        
         UnmarkNodes();
         
         _usageArea.Clear();
-        _usageArea = _selectedAbility.GetNodesInRange(SelectedUnit);
+        _usageArea = _selectedAbility.GetUsageArea(SelectedUnit);
+
+        MarkNodes();
+    }
+    public void ResetUsageArea()
+    {
+        if (SelectedUnit == null || _selectedAbility == null) { return; }
+        
+        UnmarkNodes();
+        
+        _usageArea.Clear();
+        _usageArea = _selectedAbility.GetUsageArea(SelectedUnit);
         
         MarkNodes();
     }
@@ -356,7 +341,7 @@ public class SceneController : MonoBehaviour
         
         if (_selectedAbility != null)
         {
-            _usageArea = _selectedAbility.GetNodesInRange(SelectedUnit);
+            _usageArea = _selectedAbility.GetUsageArea(SelectedUnit);
         }
     }
     
@@ -370,7 +355,7 @@ public class SceneController : MonoBehaviour
         
         if (_selectedAbility != null)
         {
-            _usageArea = _selectedAbility.GetNodesInRange(SelectedUnit);
+            _usageArea = _selectedAbility.GetUsageArea(SelectedUnit);
         }
     }
 

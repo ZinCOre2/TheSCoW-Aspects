@@ -25,7 +25,7 @@ MonoBehaviour:
   maxRange: 5
   minAreaRange: 0
   maxAreaRange: 1
-  epCost: 25
+  epCost: 30
   tpCost: 15
   Dedications:
   - IsUsable: 1

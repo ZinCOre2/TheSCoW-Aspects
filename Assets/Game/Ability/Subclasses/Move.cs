@@ -1,25 +1,26 @@
 ﻿using System.Collections.Generic;
 
+[System.Serializable]
 public class Move : Ability
 {
-    public override List<PathNode> GetNodesInRange(Unit user)
+    public override List<PathNode> GetUsageArea(Unit user)
     {
         Node start = GameController.Instance.Grid.nodeList[user.Coords.x, user.Coords.y];
-        area = new List<PathNode>();
+        UsageArea = new List<PathNode>();
 
         var maxRange = user.UnitStats.Energy / abilityData.epCost < user.UnitStats.Time / abilityData.tpCost
             ? user.UnitStats.Energy / abilityData.epCost
             : user.UnitStats.Time / abilityData.tpCost;
-        area = Pathfinding.GetNodesInPathfindingRange(start, 0, maxRange);
+        UsageArea = Pathfinding.GetNodesInPathfindingRange(start, 0, maxRange);
 
-        return area;
+        return UsageArea;
     }
-    public override List<PathNode> GetAoe(Unit user, PathNode pathNode)
+    public override List<PathNode> GetEffectArea(Unit user, PathNode pathNode)
     {
-        aoe = new List<PathNode>();
-        aoe = Pathfinding.GetPath(pathNode);
+        EffectArea = new List<PathNode>();
+        EffectArea = Pathfinding.GetPath(pathNode);
         
-        return aoe;
+        return EffectArea;
     }
     public override bool UseAbility(Unit user, List<PathNode> aoe)
     {
@@ -45,17 +46,17 @@ public class Move : Ability
 
         if (soundEffect)
         {
-            var audioSource = GameController.Instance.AudioManager.UseAudioSource(soundEffect);
+            var audioSourceData = GameController.Instance.AudioManager.UseAudioSourceData(soundEffect);
             
             user.OnFinishAbilityUse += () =>
             {
-                audioSource.Stop();
+                audioSourceData.AudioSource.Stop();
             };
         }
 
         user.SetCoords(path[0].node.Coords);
 
-        StartCoroutine(user.MoveByPath(path));
+        user.StartMovingByPath(path);
 
         return true;
     }
